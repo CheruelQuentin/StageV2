@@ -1,5 +1,4 @@
 <div style="text-align:right;padding-bottom:5px;">
-<button onclick="window.location.href='./?action=addIns';" id="bouton2" style="display:inline-block;">Ajouter</button>
 </div>
 <link rel="stylesheet" type="text/css" href="css/liste.css">
 <table class="table">

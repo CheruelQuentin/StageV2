@@ -13,6 +13,8 @@ $provcivil=$listeEtablissement['ETA_PROVCIVIL'];
 $provnom=$listeEtablissement['ETA_PROVNOM'];
 $provprenom=$listeEtablissement['ETA_PROVPRENOM'];
 $tel=$listeEtablissement['ETA_TEL'];
+$numSecu=$listeEtablissement['ETA_SECU'];
+$nomSecu=$listeEtablissement['ETA_NOMSECU'];
 
 $titre = "Modification de l'etablissement";
 include "vue/entete.html.php";

@@ -8,10 +8,16 @@
 
  <form method="post" action="./?action=insertIns">
 
-	<div class="ui-widget">
-  <label for="eleves">Eleve : </label>
-  <input id="eleves" name="INS_ELE">
-	</div>
+
+  <p><label for="INS_ELE">Eleve : </label>
+  <select name="INS_ELE">
+			<?php
+				for($i=0;$i<sizeof($eleves);$i++){ ?> 
+					<option value= <?= $eleves[$i]['ELE_ID'];?> > 
+						<?= getEleveIdByInfo($eleves[$i]['ELE_CLASSE']['ELE_PRENOM'],['ELE_NOM']) ?> </option> 
+			<?php } ?>
+		</select>
+</p>
 
 	<p><label for="INS_FORM"> Formation : </label>
 		<select name="INS_FORM">
