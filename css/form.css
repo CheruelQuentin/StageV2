@@ -1,0 +1,10 @@
+.container{
+	width:500px;
+	clear:both;
+	background-color:red;
+}
+
+.container input{
+	width:100%;
+	clear:both;
+}
