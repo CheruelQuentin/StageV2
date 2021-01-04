@@ -1,11 +1,10 @@
-<center><h5><?php echo $titre ?></h5></center>
 	<body>
-    <h2>Formulaire d'ajout </h2>
+    <center><h2>Formulaire d'ajout </h2>
 <script src="js/verification.js"> </script>
 <p></p>
 <?php $matiere=getMatiere(); ?>
  <form method="post" action="./?action=insertCre">
-
+	<table><tr><td>
 	<p><label for="CRE_MAT"> Matiere : </label> 
 		<select name="CRE_MAT">
 			<?php

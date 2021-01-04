@@ -11,14 +11,15 @@
 
 
              <form method="post" action="./?action=upMat">
+             <table><tr><td>
               <input id="MAT_CODE" type="hidden" name="MAT_CODE" size="50px" maxlength="20" value="<?=$_GET['id']?>" />
               <label for="MAT_LIBELLE"> Modification Libelle </label> : <input id="MAT_LIBELLE" type="text" name="MAT_LIBELLE" size="50px" maxlength="100" value="<?=$libelle?>" onblur="verifmodiflibelle();" /><span id = "erreurmodiflibelle" ></span>
-
+            
     
                     <input type="submit" value="valider" onclick="verifmodiflibelle()" />
                     <input type="reset"/></p>
                     <p></p>
-
+                    </td></tr></table>
              </form></center>
       </body>
 </html>

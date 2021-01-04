@@ -1,10 +1,9 @@
-<center><h5><?php echo $titre ?></h5></center>
 	<body>
-    <h2>Formulaire d'ajout </h2>
+    <center><h2>Formulaire d'ajout </h2>
 <script src="js/verification.js"> </script>
 <p></p>
  <form method="post" action="./?action=insertEta">
-
+<table><td><tr> 
 <p><label for="ETA_NOM"> Nom établissement : </label><input id="ETA_NOM" type="text" name="ETA_NOM" size="50px" maxlength="150" placeholder="Nom" onblur="verifnomEtab();" /><span id = "erreurnomEtab" ></span></p>
 
 <p><label for="ETA_VILLE"> Ville établissement : </label><input id="ETA_VILLE" type="text" name="ETA_VILLE" size="50px" maxlength="150" placeholder="Ville" onblur="verifville();"/><span id = "erreurville" ></span></p>
@@ -31,7 +30,7 @@
 <input type="radio" name="ETA_NOMSECU" value="MAE" for="MAE"> MAE</label>
 <input type="radio" name="ETA_NOMSECU" value="MAIF"  for="MAIF"> MAIF</label>
 </p>
-
+</tr></td></table>
 <br><input type="submit" value="valider"/>
 
 </form>
