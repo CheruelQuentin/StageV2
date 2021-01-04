@@ -14,7 +14,7 @@ $pdf->SetFont('Arial','',10);
 $pdf->MultiCell(0,9,utf8_decode('Entre
 Monsieur DUVAL-ROCHER Sébastien, Proviseur du collège  JEAN ROSTAND de Caen 
 et
-Mme ou M,Proviseur(e) '.$ETA_PROVNOM.' du collège  '.$ETA_NOM.'.'));
+Mme ou M.Proviseur(e) '.$ETA_PROVNOM.' du collège  '.$ETA_NOM.'.'));
 $pdf->MultiCell(0,9,utf8_decode('La présente convention a pour objet la mise en oeuvre au bénéfice des élèves du lycée d\'un stage afin que les jeunes puissent recueillir des informations qui leur permettront d\'élaborer leur projet personnel d\'orientation.'));
 $pdf->MultiCell(0,9,"");
 $pdf->SetFont('Arial','BU',10);

@@ -13,8 +13,6 @@
     <div id="test"><p><a href="">Accueil</a></p>
     <div id="test2"><p><img src="image/admin.png"width=100px; height=100px /></p>
     <div id="test"><p><a href="">Admin</a></p> -->
-
-
 <nav>
             
             <ul id="menuGeneral">
@@ -28,7 +26,7 @@
                 <li></li>
                 <li><h1 style="color:white; font-size: 30px; margin-top:0px;">Mini-Stage</h1></li>
                 <li></li>
-                <li></li>
+                <li><button id="bouton2" type="button" style="width:300px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button></li>
                  
                 <?php if(isLoggedOn()){ ?>
                 <li><a href="./?action=deconnexion"><img src="image/profil.png" alt="" />Déconnexion</a></li>
@@ -40,5 +38,35 @@
                 
             </ul>
     </nav>
+<?php if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
+    <nav>
+<ul id="menuGeneral">
+
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeCreneau'"> Gestion des créneaux </button></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEtablissement'"> Gestion des établissements </button></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeMatiere'"> Gestion des matières </button></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeFormation'"> Gestion des formations </button></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeStage'"> Gestion des stages </button></li>
+</ul>
+
+<?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ ?>
+<ul id="menuGeneral">
+    <li></li>
+    <li></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button></li>
+<li><button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFLycee.php'"> Generer PDF Lycée </button></li>
+<li><button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFCollege.php'"> Generer PDF Collège </button></li>
+</ul>
+<?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ENS"){ ?>
+<ul id="menuGeneral">
+    <li></li>
+    <li></li>
+    <li></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=prefCreneau'"> Préférences de créneaux </button></li>
+</ul>
+<?php } ?>
+</nav>
 
     

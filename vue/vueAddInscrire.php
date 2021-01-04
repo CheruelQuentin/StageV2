@@ -14,7 +14,8 @@
 			<?php
 				for($i=0;$i<sizeof($eleves);$i++){ ?> 
 					<option value= <?= $eleves[$i]['ELE_ID'];?> > 
-						<?= getEleveIdByInfo($eleves[$i]['ELE_CLASSE']['ELE_PRENOM'],['ELE_NOM']) ?> </option> 
+						<?= getEleveById($eleves[$i]['ELE_ID'])['ELE_NOM'], " , ", getEleveById($eleves[$i]['ELE_ID'])['ELE_PRENOM'];?>
+					</option> 
 			<?php } ?>
 		</select>
 </p>
