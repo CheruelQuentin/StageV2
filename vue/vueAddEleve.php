@@ -1,11 +1,11 @@
 <body>
-    <h2 id="titre">Ajout d'élève</h2>
+    <center><h2 id="titre">Ajout d'élève</h2>
 <script src="js/verification.js"> </script>
 <?php $formations=getFormation();?>
 <p></p> 
 
  <form method="post" action="./?action=insertEle">
-
+ <table><tr><td> 
 	<div class="ui-widget">
   <label for="etablissements">Etablissement : </label>
   <input id="etablissements" name="ELE_ETA">
