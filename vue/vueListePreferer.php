@@ -1,4 +1,6 @@
 <div style="text-align:right;padding-bottom:5px;">
+  <center><h2 id="titre">Gestion des créneaux </h2></center>
+
 <button onclick="window.location.href='./?action=addCre';" id="bouton2" style="display:inline-block;">Ajouter</button>
 <button onclick="window.location.href='./?action=modifCre';" id="bouton2" style="display:inline-block;">Modifier</button>
 <button onclick="window.location.href='./?action=delCre';" id='bouton2' style="display:inline-block;">Supprimer</button>

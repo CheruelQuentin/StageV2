@@ -27,7 +27,7 @@
 	</div>
 
 	<div class="ui-widget">
-	<p><label for="FORM_ELEMIN"> Nombre d'élève minimum : </label> <input type="number" id="ele_min" name="FORM_ELEMIN" min="11" max="40"></p>
+	<p><label for="FORM_ELEMIN"> Nombre d'élève minimum : </label> <input type="number" id="ele_min" name="FORM_ELEMIN" min="1" max="40"></p>
 	<p><label for="FORM_ELEMAX"> Nombre d'élève max : </label> <input type="number" id="ele_max" name="FORM_ELEMAX" min="11" max="40"></p>
 	</div>
 
