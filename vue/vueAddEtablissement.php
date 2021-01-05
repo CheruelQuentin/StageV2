@@ -4,7 +4,7 @@
 <p></p>
  <form method="post" action="./?action=insertEta">
 
-<table><td><tr> 
+<table><tr><td> 
 <p><label for="ETA_NOM"> Nom établissement : </label><input id="ETA_NOM" type="text" name="ETA_NOM" size="50px" maxlength="150"  onblur="verifnomEtab();" /><span id = "erreurnomEtab" ></span></p>
 
 
