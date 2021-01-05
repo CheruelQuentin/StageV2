@@ -18,7 +18,7 @@
 	<p><label for="CRE_SALLE"> Nouvelle salle : </label> <input id="CRE_SALLE" type="text" name="CRE_SALLE" size="50px" maxlength="5" placeholder="CRE_SALLE" onblur="verifSalle();" /><span id = "erreursalle" ></span></p>
 	<p><label for="CRE_HEUREFIN"> Nouvelle heure de fin : </label> <input id="CRE_HEUREFIN" type="time" name="CRE_HEUREFIN" size="50px" maxlength="20" placeholder="CRE_HEUREFIN" /></p>
 
-
+	</td></tr></table>
 			        <input type="submit" value="valider"/>
 				    <input type="reset"/></p>
 				    <p></p>

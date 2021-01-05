@@ -29,7 +29,7 @@
 			<?php } ?>          
     	</fieldset>
 	</div>
-
+	</td><tr></table>
 			        <input type="submit" value="valider"/>
 				    <input type="reset"/></p>
 				    <p></p>

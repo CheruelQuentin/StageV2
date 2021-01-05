@@ -13,7 +13,7 @@
 	<p><label for="ENS_MAIL"> Mail </label> : <input id="ENS_MAIL" type="text" name="ENS_MAIL" size="50px" maxlength="150" placeholder="ENS_MAIL" onblur="verifmailEns();" /><span id = "erreurmailEns" ></span></p>
 	<p><label for="ENS_TEL"> Téléphone </label> : <input id="ENS_TEL" type="tel" name="ENS_TEL" size="50px" maxlength="12" placeholder="ENS_TEL" onblur="veriftelEns();" /><span id = "erreurtelens" ></span></p>
 	<p><label for="ENS_DATENAISS"> Date de naissance </label> : <input id="ENS_DATENAISS" type="date" name="ENS_DATENAISS" size="50px"  placeholder="ENS_DATENAISS" /></p>
-
+	</td></tr></table>
 
 			        <input type="submit" value="valider"/>
 				    <input type="reset"/></p>

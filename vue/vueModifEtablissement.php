@@ -24,7 +24,7 @@
 <br>
 <p><label for="ETA_CP"> Modification code postal :</label>  <input id="ETA_CP" type="text" name="ETA_CP" size="50px" maxlength="6" value="<?=$CP?>" onblur="verifmodifcp();" /><span id = "erreurmodifcp" ></span></p>
 <br>
-<p><label for="ETA_MAIL"> Modification mail : </label>  <input id="ETA_MAIL" type="text" name="ETA_MAIL" size="50px" maxlength="150" value="<?=$mail?>"  /><span id = "erreurmodifmailEtab" ></span></p>
+<p><label for="ETA_MAIL"> Modification mail : </label>  <input id="ETA_MAIL" type="text" name="ETA_MAIL" size="50px" maxlength="150" value="<?=$mail?>"  /><span id = "erreurmodifmailEtab" ></span></p><br>
 
 <p><label for="ETA_PROVCIVIL"> Modification civilité du proviseur :</label>  <input id="ETA_PROVCIVIL" type="text" name="ETA_PROVCIVIL" size="50px" maxlength="3" value="<?=$provcivil?>" /></p>
 <br>
@@ -38,7 +38,7 @@
 
 <p><label for="ETA_NOMSECU"> Modification nom Secu :</label>  <input id="ETA_NOMSECU" type="tel" name="ETA_NOMSECU" size="50px" maxlength="12" value="<?=$nomSecu?>"/></p>
 
-
+  </td></tr></table>
     
                     <input type="submit" value="valider"/>
                     <input type="reset"/></p>
