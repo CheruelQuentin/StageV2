@@ -8,7 +8,7 @@ function login($Mail, $Mdp) {
     }
 
     $util = getUtilisateurByMail($Mail);
-    $mdpBD = $util["UTIL_MDP"];
+    $mdpBD = $util["UTIL_MDP"]; 
 /* echo "Mdp dans la bdd (crypté) : ".$util["UTIL_MDP"];
     echo "<br> Mail saisi : ".$Mail;
     echo "<br> Mdp saisi : ".$Mdp;

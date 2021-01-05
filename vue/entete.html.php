@@ -13,6 +13,7 @@
     <div id="test"><p><a href="">Accueil</a></p>
     <div id="test2"><p><img src="image/admin.png"width=100px; height=100px /></p>
     <div id="test"><p><a href="">Admin</a></p> -->
+
 <nav>
             
             <ul id="menuGeneral">
@@ -38,11 +39,13 @@
                 
             </ul>
     </nav>
-<?php if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
+<?php 
+if(isset($_SESSION["UTIL_MAIL"])){
+if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
     <nav>
 <ul id="menuGeneral">
 
-<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeCreneau'"> Gestion des créneaux </button></li>
+<li><button id="bouton1" type="button" style="width:250px;" onclick="window.location.href='./?action=listeCreneau'"> Gestion des créneaux </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEtablissement'"> Gestion des établissements </button></li>
@@ -54,8 +57,9 @@
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ ?>
 <ul id="menuGeneral">
     <li></li>
-    <li></li>
+    <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button></li>
+<li></li>
 <li><button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFLycee.php'"> Generer PDF Lycée </button></li>
 <li><button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFCollege.php'"> Generer PDF Collège </button></li>
 </ul>
@@ -66,7 +70,7 @@
     <li></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=prefCreneau'"> Préférences de créneaux </button></li>
 </ul>
-<?php } ?>
+<?php }} ?>
 </nav>
 
     
