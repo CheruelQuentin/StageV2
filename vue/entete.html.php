@@ -39,7 +39,9 @@
                 
             </ul>
     </nav>
-<?php if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
+<?php 
+if(isset($_SESSION["UTIL_MAIL"])){
+if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
     <nav>
 <ul id="menuGeneral">
 
@@ -55,8 +57,9 @@
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ ?>
 <ul id="menuGeneral">
     <li></li>
-    <li></li>
+    <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button></li>
+<li></li>
 <li><button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFLycee.php'"> Generer PDF Lycée </button></li>
 <li><button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFCollege.php'"> Generer PDF Collège </button></li>
 </ul>
@@ -67,7 +70,7 @@
     <li></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=prefCreneau'"> Préférences de créneaux </button></li>
 </ul>
-<?php } ?>
+<?php }} ?>
 </nav>
 
     
