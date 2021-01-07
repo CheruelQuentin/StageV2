@@ -6,7 +6,7 @@ include_once "../modele/bd.eleve.inc.php";
 include_once "../modele/bd.utilisateur.inc.php";
 include_once "../modele/bd.inscrire.inc.php";
 include_once "../modele/pdfLycee.inc.php";
-session_start();
+
 $etablissement = getEtablissementByUtilMail($_SESSION["UTIL_MAIL"]);
 
 $ETA_NOM=$etablissement['ETA_NOM'];
