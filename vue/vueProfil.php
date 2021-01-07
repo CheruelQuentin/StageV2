@@ -16,7 +16,7 @@
 
 <div style="display: inline-block; margin-left:20px;">
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Gestion des stagiaires </button>
-<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button>
+<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve2'"> Gestion des élèves </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEtablissement'"> Gestion des établissements </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeMatiere'"> Gestion des matières </button>

@@ -46,7 +46,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
 <ul id="menuGeneral">
 
 <li><button id="bouton1" type="button" style="width:250px;" onclick="window.location.href='./?action=listeCreneau'"> Gestion des créneaux </button></li>
-<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve2'"> Gestion des élèves </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEtablissement'"> Gestion des établissements </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeMatiere'"> Gestion des matières </button></li>
