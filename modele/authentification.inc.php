@@ -1,5 +1,6 @@
 <?php
 
+
 include_once "bd.utilisateur.inc.php";
 
 function login($Mail, $Mdp) {
@@ -9,6 +10,10 @@ function login($Mail, $Mdp) {
 
     $util = getUtilisateurByMail($Mail);
     $mdpBD = $util["UTIL_MDP"]; 
+
+   $eta= getEtablissementByMail($Mail);
+    $etaId = $eta["ETA_ID"]; 
+
 /* echo "Mdp dans la bdd (crypté) : ".$util["UTIL_MDP"];
     echo "<br> Mail saisi : ".$Mail;
     echo "<br> Mdp saisi : ".$Mdp;
@@ -22,6 +27,7 @@ function login($Mail, $Mdp) {
         // le mot de passe est celui de l'utilisateur dans la base de donnees
         $_SESSION["UTIL_MAIL"] = $Mail;
         $_SESSION["UTIL_MDP"] = $mdpBD;
+         $_SESSION["UTIL_ETA"]=$etaId;
     }
 }
 
@@ -31,6 +37,7 @@ function logout() {
     }
     unset($_SESSION["UTIL_MAIL"]);
     unset($_SESSION["UTIL_MDP"]);
+    session_destroy();
 }
 
 function getMailULoggedOn(){

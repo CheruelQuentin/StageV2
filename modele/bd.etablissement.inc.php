@@ -1,7 +1,7 @@
 <?php
 
 include_once "bd.inc.php";
-
+// select tout les établissement
 function getEtablissement() {
     $resultat = array();
     try {
@@ -19,12 +19,12 @@ function getEtablissement() {
     }
     return $resultat;
 }   
-
+//select un établissement selon son id passé en paramètre 
 function getEtablissementById($ETA_ID) {
     
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from etablissement where ETA_ID=:ETA_ID");
+        $req = $cnx->prepare("select * from etablissement where ETA_ID=:ETA_ID ");
         $req->bindValue(':ETA_ID', $ETA_ID, PDO::PARAM_STR);
 
         $req->execute();
@@ -36,7 +36,7 @@ function getEtablissementById($ETA_ID) {
     }
     return $resultat;
 }
-
+//select un établissement selon l'utilisateur passé en paramètre
 function getEtablissementByUtilMail($UTIL_MAIL) {
     
     try {
@@ -53,7 +53,7 @@ function getEtablissementByUtilMail($UTIL_MAIL) {
     }
     return $resultat;
 }
-
+//ajouter un établissement
     function getAddEtablissement($ETA_NOM, $ETA_VILLE, $ETA_ADRESSE, $ETA_CP, $ETA_MAIL, $ETA_PROVCIVIL, $ETA_PROVNOM, $ETA_PROVPRENOM, $ETA_TEL,$ETA_SECU,$ETA_NOMSECU) {
     $resultat = -1;
     try {
@@ -80,7 +80,7 @@ function getEtablissementByUtilMail($UTIL_MAIL) {
     return $resultat;
 }
 
-
+//supprimer un établissement
 function getDelEtablissement($ETA_ID) {
     $resultat = -1;
 
@@ -97,7 +97,7 @@ function getDelEtablissement($ETA_ID) {
     }
     return $resultat;
 }
-
+//update un établissement
 function getUpdateEtablissement($ETA_NOM,$ETA_VILLE,$ETA_ADRESSE,$ETA_CP,$ETA_MAIL,$ETA_PROVCIVIL,$ETA_PROVNOM,$ETA_PROVPRENOM,$ETA_TEL,$ETA_SECU,$ETA_NOMSECU,$ETA_ID){
     $resultat = -1;
     try {
@@ -146,4 +146,5 @@ function getEtabIdByInfo($etablissement) {
     }
     return $resultat['ETA_ID'];
 }
+
 ?>

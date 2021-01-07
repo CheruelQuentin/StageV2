@@ -25,7 +25,7 @@ function getFormation() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from formation");
+        $req = $cnx->prepare("select * from formation order by FORM_CRE DESC");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);

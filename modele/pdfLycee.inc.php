@@ -99,7 +99,7 @@ global $ELE_NOM , $INS_FORM;
          for ($i = 0; $i < count($stmt); $i++) {
                $this->Cell(40,10,$stmt[$i]['ELE_NOM'],1,0,'C');
                $this->Cell(40,10,$stmt[$i]['STA_LIBELLE'],1,0,'C');
-               $this->Cell(40,10,$stmt[$i]['ELE_DATENAISS'],1,0,'C');
+               $this->Cell(40,10,strftime('%d/%m/%Y',strtotime($stmt[$i]['ELE_DATENAISS'])),1,0,'C');
                $this->Cell(40,10,$stmt[$i]['ELE_CLASSE'],1,0,'C');
                $this->MultiCell(0,10,"");
                 }

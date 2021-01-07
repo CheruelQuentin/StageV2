@@ -20,7 +20,7 @@
 for ($i = 0; $i < count($listeCreneau); $i++) {
     ?>
         <tr>
-       <td><center><?= $listeCreneau[$i]["CRE_DATE"] ?></center></td>
+       <td><center><?= strftime('%d/%m/%Y',strtotime($listeCreneau[$i]["CRE_DATE"])) ?></center></td>
        <td><center><?= $listeCreneau[$i]["CRE_HEUREDEB"] ?></center></td>
        <td><center><?= $listeCreneau[$i]["CRE_HEUREFIN"] ?></center></td>
        <td><center><?= $listeCreneau[$i]["CRE_SALLE"] ?></center></td>

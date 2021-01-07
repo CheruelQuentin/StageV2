@@ -11,6 +11,7 @@ function controleurPrincipal($action){
     $lesActions["listeEnseigner"] = "listeEnseigner.php";
     $lesActions["listeEnseignant"] = "listeEnseignant.php";
     $lesActions["listeEleve"] = "listeEleve.php";
+    $lesActions["listeEleve2"] = "listeEleve2.php";
 
     //Connexion
     $lesActions["defaut"] = "connexion.php";

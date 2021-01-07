@@ -37,6 +37,22 @@ function getUtilisateurByMail($Mail) {
     return $resultat;
 }
 
+function getEtablissementByMail($Mail) {
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from etablissement, utilisateur where ETA_ID= UTIL_ETA and UTIL_MAIL=:Mail");
+        $req->bindValue(':Mail', $Mail, PDO::PARAM_STR);
+        $req->execute();
+        
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
 function getTypeUtilisateurByMail($Mail) {
 
     try {

@@ -6,8 +6,8 @@
 <h1 id="titre">Connexion</h1>
 <form action="./?action=connexion" method="POST">
 
-    <input id="champ" type="e-mail" name="Mail" /><br />
-    <input id="champ" type="password" name="Mdp" /><br />
+    <input id="champ" type="e-mail" name="Mail" placeholder="Identifiant" /><br />
+    <input id="champ" type="password" name="Mdp" placeholder="Mot de passe"/><br />
     <input id="bouton1" type="submit" value="Se connecter" />
 
 </form>

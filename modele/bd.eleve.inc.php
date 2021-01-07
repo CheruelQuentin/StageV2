@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 include_once "bd.inc.php";
 
@@ -25,7 +27,8 @@ function getEleve() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from eleve");
+        $req = $cnx->prepare("select * from eleve, etablissement where ELE_ETA=ETA_ID and ETA_ID=:uti_eta ");
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -140,6 +143,27 @@ function getEleveIdByInfo2($ELE_NOM,$ELE_PRENOM,$ELE_CLASSE,$ELE_ETA) {
         die();
     }
     return $resultat['ELE_ID'];
+}
+
+
+function getEleve2() {
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from eleve, etablissement group by ELE_ID ");
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
 }
 
 ?>

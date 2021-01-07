@@ -7,7 +7,7 @@ function getInscrire() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from inscrire");
+        $req = $cnx->prepare("select * from inscrire ");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -114,5 +114,32 @@ $req->bindValue(':INS_ELE', $INS_ELE, PDO::PARAM_INT);
     }
     return $resultat;
 }
+
+
+
+
+function getInscrireListe() {
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from inscrire, etablissement, eleve where INS_ELE= ELE_ID and ELE_ETA=ETA_ID and ETA_ID=:uti_eta");
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
+
 
 ?>

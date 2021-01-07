@@ -20,7 +20,7 @@
 
                 <li><a href="http://rostand.etab.ac-caen.fr/"><img id="logo" src="image/logo_entete.png" alt="logo" /></a></li>
                 <?php if(isLoggedOn()){ ?>
-                <li><a href="./?action=profil"><img src="image/Home.png" alt="maison" />Profil</a></li>
+                <li><a href="./?action=profil"><img src="image/Home.png" alt="maison" />Accueil</a></li>
                 <?php } else{?>
                 <li></li>
                 <?php } ?>
@@ -59,7 +59,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
     <li></li>
     <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button></li>
-<li></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button></li>
 <li><button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFLycee.php'"> Generer PDF Lycée </button></li>
 <li><button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFCollege.php'"> Generer PDF Collège </button></li>
 </ul>

@@ -29,6 +29,7 @@
 
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button>
+<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button>
 <button id="bouton2" type="button" style="width:300px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button>
 <button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFLycee.php'"> Generer PDF Lycée </button>
 <button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFCollege.php'"> Generer PDF Collège </button>
@@ -36,6 +37,7 @@
 <?php } else { //Si l'utilisateur est un enseignant ... ?>
 
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=prefCreneau'"> Préférences de créneaux </button>
+<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button>
 <button id="bouton2" type="button" style="width:300px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button>
 
 <?php } ?>

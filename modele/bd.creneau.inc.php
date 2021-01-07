@@ -25,7 +25,7 @@ function getCreneau() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from creneau");
+        $req = $cnx->prepare("select * from creneau order by CRE_DATE DESC");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);

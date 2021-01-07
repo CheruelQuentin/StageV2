@@ -1,3 +1,9 @@
+<?php
+//vue pour l'admin de la liste de tout les élèves
+?>
+
+
+
 <div style="text-align:right;padding-bottom:5px;">
 
 <center><h2 id="titre">Gestion des élèves</h2></center>
