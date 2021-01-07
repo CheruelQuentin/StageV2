@@ -12,7 +12,6 @@
             <th align="center">Heure début</th>
             <th align="center">Heure fin</th>
             <th align="center">Salle</th>
-            <th align="center">Matière</th>
             <th align="center">Supprimer</th>
          </thead>
          <tbody>
@@ -24,7 +23,7 @@ for ($i = 0; $i < count($listeCreneau); $i++) {
        <td><center><?= $listeCreneau[$i]["CRE_HEUREDEB"] ?></center></td>
        <td><center><?= $listeCreneau[$i]["CRE_HEUREFIN"] ?></center></td>
        <td><center><?= $listeCreneau[$i]["CRE_SALLE"] ?></center></td>
-       <td><center><?= getMatiereById($listeCreneau[$i]["CRE_MAT"])['MAT_LIBELLE'] ?></center></td>
+
        <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delCre&id=<?=$listeCreneau[$i]['CRE_ID']?>'; }" > Supp. </button></center></td>
         </tr>
     <?php

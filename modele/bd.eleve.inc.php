@@ -4,12 +4,12 @@ session_start();
 
 include_once "bd.inc.php";
 
-function getEleveById($ele_id) {
+function getEleveById($ELE_ID) {
     
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from eleve where ele_id=:ele_id");
-        $req->bindValue(':ele_id', $ele_id, PDO::PARAM_INT);
+        $req = $cnx->prepare("select * from eleve where ELE_ID=:ELE_ID");
+        $req->bindValue(':ELE_ID', $ELE_ID, PDO::PARAM_INT);
 
         $req->execute();
 
@@ -49,9 +49,9 @@ function getEleve() {
     try {
         $cnx = connexionPDO();
 
-        $req = $cnx->prepare( "insert into eleve (ELE_ETA,ELE_NOM,ELE_PRENOM,ELE_DATENAISS,ELE_CLASSE,ELE_MAIL ) values(:ELE_ETA,:ELE_NOM,:ELE_PRENOM,:ELE_DATENAISS,:ELE_CLASSE,:ELE_MAIL)");
+        $req = $cnx->prepare( "insert into eleve (ELE_ETA,ELE_NOM,ELE_PRENOM,ELE_DATENAISS,ELE_CLASSE,ELE_MAIL ) values(:uti_eta,:ELE_NOM,:ELE_PRENOM,:ELE_DATENAISS,:ELE_CLASSE,:ELE_MAIL)");
 
-        $req->bindValue(':ELE_ETA', $ELE_ETA, PDO::PARAM_INT);
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
         $req->bindValue(':ELE_NOM', $ELE_NOM, PDO::PARAM_STR);
         $req->bindValue(':ELE_PRENOM', $ELE_PRENOM, PDO::PARAM_STR);
         $req->bindValue(':ELE_DATENAISS', $ELE_DATENAISS, PDO::PARAM_STR);
@@ -129,11 +129,11 @@ function getEleveIdByInfo2($ELE_NOM,$ELE_PRENOM,$ELE_CLASSE,$ELE_ETA) {
     
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select ELE_ID from eleve where ELE_NOM=:ELE_NOM AND ELE_PRENOM=:ELE_PRENOM AND ELE_CLASSE=:ELE_CLASSE AND ELE_ETA=:ELE_ETA");
+        $req = $cnx->prepare("select ELE_ID from eleve, etablissement where ELE_NOM=:ELE_NOM AND ELE_PRENOM=:ELE_PRENOM AND ELE_CLASSE=:ELE_CLASSE AND ELE_ETA=ETA_ID and ETA_ID=:uti_eta ");
         $req->bindValue(':ELE_NOM', $ELE_NOM, PDO::PARAM_STR);
         $req->bindValue(':ELE_PRENOM', $ELE_PRENOM, PDO::PARAM_STR);
         $req->bindValue(':ELE_CLASSE', $ELE_CLASSE, PDO::PARAM_STR);
-        $req->bindValue(':ELE_ETA', $ELE_ETA, PDO::PARAM_INT);
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
 
         $req->execute();
 

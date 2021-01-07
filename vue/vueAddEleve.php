@@ -6,10 +6,7 @@
 
  <form method="post" action="./?action=insertEle">
  <table><tr><td> 
-	<div class="ui-widget">
-  <label for="etablissements">Etablissement : </label>
-  <input id="etablissements" name="ELE_ETA">
-	</div>
+ 	
 
 	<p><label for="ELE_NOM"> Nom :</label><input id="ELE_NOM" type="text" name="ELE_NOM" size="50px" maxlength="100"  onblur="verifnomEle();" /><span id = "erreurnomEle" ></span></p>
 	<p><label for="ELE_PRENOM"> Prénom :</label><input id="ELE_PRENOM" type="text" name="ELE_PRENOM" size="50px" maxlength="100"  onblur="verifprenomEle();" /><span id = "erreurprenomEle" ></span></p>

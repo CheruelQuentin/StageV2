@@ -2,14 +2,14 @@
 
 
 include_once "modele/bd.creneau.inc.php";
-$CRE_MAT=$_POST['CRE_MAT'];
+
 $CRE_DATE=$_POST['CRE_DATE'];
 $CRE_HEUREDEB=$_POST['CRE_HEUREDEB'];
 $CRE_SALLE=$_POST['CRE_SALLE'];
 $CRE_HEUREFIN=$_POST['CRE_HEUREFIN'];
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-getAddCreaneau($CRE_MAT, $CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN);
+getAddCreaneau($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN);
 
 
 // traitement si necessaire des donnees recuperees

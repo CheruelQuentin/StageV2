@@ -3,7 +3,8 @@
 include_once "modele/bd.eleve.inc.php";
 include_once "modele/bd.etablissement.inc.php";
 include_once "modele/bd.inscrire.inc.php";
-$ELE_ETA=getEtabIdByInfo($_POST['ELE_ETA']);
+
+$ELE_ETA = $_SESSION["UTIL_ETA"];
 $ELE_NOM=$_POST['ELE_NOM'];
 $ELE_PRENOM=$_POST['ELE_PRENOM'];
 $ELE_DATENAISS=$_POST['ELE_DATENAISS'];
@@ -20,8 +21,7 @@ $ELE_ID=getEleveIdByInfo2($ELE_NOM, $ELE_PRENOM, $ELE_CLASSE, $ELE_ETA);
 for($i=0;$i<sizeof($_POST['choixForm']);$i++){
 	getAddInscrire($ELE_ID,$_POST['choixForm'][$i]);
 }
-
-header('Location: ./?action=listeEleve');
+header('location: ./?action=listeEleve');
   	exit();
 }
 
