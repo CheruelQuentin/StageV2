@@ -34,5 +34,19 @@
 </p>
 </td><tr></table>
 <br><input type="submit" value="valider"/>
-
 </form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<?php   
+Echo ("Le mot de passe sera le nom de famille du proviseur/e")
+?>

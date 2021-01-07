@@ -65,10 +65,12 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
 </ul>
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ENS"){ ?>
 <ul id="menuGeneral">
-    <li></li>
-    <li></li>
-    <li></li>
+<li></li>
+<li></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button></li>
+<li></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=prefCreneau'"> Préférences de créneaux </button></li>
+<li></li>
 </ul>
 <?php }} ?>
 </nav>
