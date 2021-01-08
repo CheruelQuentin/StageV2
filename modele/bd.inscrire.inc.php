@@ -115,9 +115,6 @@ $req->bindValue(':INS_ELE', $INS_ELE, PDO::PARAM_INT);
     return $resultat;
 }
 
-
-
-
 function getInscrireListe() {
     $resultat = array();
 
@@ -139,6 +136,26 @@ function getInscrireListe() {
     return $resultat;
 }
 
+function getInscrireListe2() {
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select ELE_NOM, ELE_PRENOM, CRE_SALLE, CRE_DATE, CRE_HEUREDEB, STA_LIBELLE, FORM_ELEMAX, FORM_ELEMIN  from creneau, enseignant, eleve ,inscrire, stage, formation where FORM_CRE = CRE_ID and FORM_ID= INS_FORM and INS_ELE=ELE_ID and FORM_STA = STA_CODE and FORM_ENS = ENS_ID and ENS_ID =:uti_ens ORDER BY FORM_ID DESC");
+        $req->bindValue(':uti_ens', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
 
 
 

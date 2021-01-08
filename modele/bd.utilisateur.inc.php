@@ -41,7 +41,7 @@ function getEtablissementByMail($Mail) {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from etablissement, utilisateur where ETA_ID= UTIL_ETA and UTIL_MAIL=:Mail");
+        $req = $cnx->prepare("select * from etablissement, utilisateur where ETA_ID = UTIL_ETA and UTIL_MAIL=:Mail");
         $req->bindValue(':Mail', $Mail, PDO::PARAM_STR);
         $req->execute();
         
@@ -52,6 +52,24 @@ function getEtablissementByMail($Mail) {
     }
     return $resultat;
 }
+
+
+function getEnseignantByMail($Mail) {
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from enseignant, utilisateur where UTIL_ENS = ENS_ID and UTIL_MAIL=:Mail");
+        $req->bindValue(':Mail', $Mail, PDO::PARAM_STR);
+        $req->execute();
+        
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
 
 function getTypeUtilisateurByMail($Mail) {
 
@@ -141,21 +159,6 @@ $req = $cnx->prepare("UPDATE `utilisateur` SET UTIL_MAIL = :UTIL_MAIL, UTIL_MDP 
     return $resultat;
 }
 
-if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
-    // prog principal de test
-    header('Content-Type:text/plain');
 
-    echo "getUtilisateurs() : \n";
-    print_r(getUtilisateurs());
-
-    echo "addUtilisateur('mathieu.capliez3@gmail.com', 'azerty', 'ADMIN') : \n";
-    addUtilisateur("mathieu.capliez3@gmail.com", "azerty", "mat");
-
-    
-    echo "getUtilisateurByMail(\"test@admin.fr\") : \n";
-    print_r(getUtilisateurByMail("test@admin.fr"));
-
-
-}
 
 ?>

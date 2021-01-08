@@ -18,11 +18,26 @@
             </tr></td></table>
     
 
+
     
                     <input type="submit" value="valider"/>
                     <input type="reset"/></p>
                     <p></p>
 
              </form></center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<?php   
+Echo ("✨Attention le mot de passe peut actuellement être redonné par l'admin si vous le changez l'admin ne pourra plus vous le rendre");
+?>
       </body>
 </html>

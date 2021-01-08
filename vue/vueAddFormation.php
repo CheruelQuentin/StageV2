@@ -34,5 +34,20 @@
 	</table></tr><td>
 			        <input type="submit" value="valider"/>
 				    <input type="reset"/></p>
-				    <p></p></center>
+				    <p></p>
 </form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<?php   
+Echo ("✨Pensez à créer votre créneau si il n'existe pas ")
+?>
+</center></div>

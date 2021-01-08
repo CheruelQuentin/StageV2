@@ -20,4 +20,21 @@
 				    <input type="reset"/></p>
 				    <p></p>
 </form>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<?php   
+Echo ("✨Le mot de passe sera la date de naissance au format YYYY-MM-DD")
+?>
 </div>

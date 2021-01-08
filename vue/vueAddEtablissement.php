@@ -48,5 +48,5 @@
 <br>
 <br>
 <?php   
-Echo ("Le mot de passe sera le nom de famille du proviseur/e")
+Echo ("✨Le mot de passe sera le nom de famille du proviseur/e")
 ?>

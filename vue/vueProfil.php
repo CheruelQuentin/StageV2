@@ -36,8 +36,8 @@
 
 <?php } else { //Si l'utilisateur est un enseignant ... ?>
 
-<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=prefCreneau'"> Préférences de créneaux </button>
-<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button>
+
+<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription2'"> Liste des inscrits </button>
 <button id="bouton2" type="button" style="width:300px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button>
 
 <?php } ?>

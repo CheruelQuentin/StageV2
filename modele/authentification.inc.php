@@ -13,21 +13,16 @@ function login($Mail, $Mdp) {
 
    $eta= getEtablissementByMail($Mail);
     $etaId = $eta["ETA_ID"]; 
-
-/* echo "Mdp dans la bdd (crypté) : ".$util["UTIL_MDP"];
-    echo "<br> Mail saisi : ".$Mail;
-    echo "<br> Mdp saisi : ".$Mdp;
-
-    echo "<br> admin : ".trim(crypt("admin",$mdpBD));
-    echo "<br> enseignant : ".trim(crypt("enseignant",$mdpBD));
-    echo "<br> etablissement : ".trim(crypt("etablissement",$mdpBD));*/  //Affichage des mots de passe cryptés
-  
+    
+   $ens= getEnseignantByMail($Mail);
+    $ensId = $ens["ENS_ID"];  
  
     if (trim($mdpBD) == trim(crypt($Mdp, $mdpBD))) {
         // le mot de passe est celui de l'utilisateur dans la base de donnees
         $_SESSION["UTIL_MAIL"] = $Mail;
         $_SESSION["UTIL_MDP"] = $mdpBD;
-         $_SESSION["UTIL_ETA"]=$etaId;
+        $_SESSION["UTIL_ETA"]=$etaId;
+        $_SESSION["UTIL_ENS"]=$ensId;
     }
 }
 
@@ -67,21 +62,4 @@ function isLoggedOn() {
     return $ret;
 }
 
-if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
-    // prog principal de test
-   // header('Content-Type:text/plain');
-
-
-    // test de connexion
-    login("test@admin.fr", "admin");
-    if (isLoggedOn()) {
-        echo "logged";
-    } else {
-        echo "not logged";
-    }
-
-    // deconnexion
-    logout();
-
-}
 ?>
