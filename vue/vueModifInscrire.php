@@ -15,7 +15,8 @@
 
          <form method="post" action="./?action=upIns">
          <table><tr><td>
-          <input id="INS_ELE" type="hidden" name="INS_ELE" size="50px" maxlength="20" value="<?=$_GET['idEle']?>"/></p>
+         <input id="ELE_ID" type="hidden" name="ELE_ID" size="50px" maxlength="20" value="<?=$_GET['id']?>" />
+        </p>
           <label>Formation suivie :</label>
           <select id="form" name="INS_FORM">
           <?php
@@ -23,6 +24,7 @@
             <option value= <?= $listeFormation[$i]['FORM_ID'];?>><?= getCreneauById($listeFormation[$i]['FORM_CRE'])['CRE_DATE'], " ", getCreneauById($listeFormation[$i]['FORM_CRE'])['CRE_HEUREDEB'], ", ", getStageById($listeFormation[$i]['FORM_STA'])['STA_LIBELLE'];?> </option> 
           <?php } ?>
           </select>
+          
           <input type="submit" value="valider"/>
                     <input type="reset"/></p>
                     <p></p>

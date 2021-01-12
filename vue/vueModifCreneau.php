@@ -21,7 +21,7 @@
 <p><label for="CRE_SALLE"> Modification salle </label> : <input id="CRE_SALLE" type="text" name="CRE_SALLE" size="50px" maxlength="5"  onblur="verifModifSalle();" /><span id = "erreurmodifsalle" ></span></p>
 <p><label for="CRE_HEUREFIN"> Modification heure de fin </label> : <input id="CRE_HEUREFIN" type="time" name="CRE_HEUREFIN" size="50px" maxlength="20"  /></p>
 
-  </td></tr></table>
+  </td></tr></table><br>
                     <input type="submit" value="valider"/>
                     <input type="reset"/></p>
                     <p></p>

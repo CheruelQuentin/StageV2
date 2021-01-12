@@ -100,14 +100,14 @@ body{
 
 
     border-radius: 8px;
-    background-color: var(--blueC) ;
-    font-size:20px;
-    color: white;
-    border: 2px solid var(--dBlueC);
-}
-label
-{
-    display: block;
-    width: 150px;
-    float: left;
-}
+    background-color: var(--blueC) ;                        
+    font-size:20px;                     
+    color: white;                       
+    border: 2px solid var(--dBlueC);                        
+}                       
+label                       
+{                       
+    display: block;                     
+    width: 150px;                       
+    float: left;                        
+}                       

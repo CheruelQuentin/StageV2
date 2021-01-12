@@ -32,7 +32,7 @@ function getMiam2() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select COUNT(INS_ELE) from inscrire,eleve,etablissement,utilisateur where INS_ELE = ELE_ID and ELE_ETA = ETA_ID and ETA_MAIL = :UTIL_MAIL");
+        $req = $cnx->prepare("select COUNT(INS_ELE) from inscrire,eleve,etablissement,utilisateur where INS_ELE = ELE_ID and ELE_ETA = ETA_ID and ETA_ID=:uti_eta");
         $req->bindValue(':UTIL_MAIL', $_SESSION['UTIL_MAIL'], PDO::PARAM_STR);
         $resultat=$req->execute() ;
         

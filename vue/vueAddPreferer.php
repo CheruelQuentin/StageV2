@@ -29,7 +29,7 @@
 			<option value=1>Conflit</option>
 		</select></p>
 
-
+<br>
 			        <input type="submit" value="valider"/>
 				    <input type="reset"/></p>
 				    <p></p>

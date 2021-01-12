@@ -57,17 +57,17 @@ function getPreferer() {
 }
     
 
-function getAddPreferer($PREF_CRE, $PREF_ENS, $PREF_EDT) {
+function getAddPreferer($PREF_CRE, $PREF_ENS) {
     $resultat = -1;
 
     try {
         $cnx = connexionPDO();
 
-        $req = $cnx->prepare("insert into preferer (PREF_CRE, PREF_ENS, PREF_EDT) values(:PREF_CRE,:PREF_ENS,:PREF_EDT)");
+        $req = $cnx->prepare("insert into preferer (PREF_CRE, PREF_ENS) values(:PREF_CRE,:uti_ens)");
 
-        $req->bindValue(':PREF_ENS', $PREF_ENS, PDO::PARAM_INT);
+        $req->bindValue(':uti_ens', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
         $req->bindValue(':PREF_CRE', $PREF_CRE, PDO::PARAM_INT);
-        $req->bindValue(':PREF_EDT', $PREF_EDT, PDO::PARAM_STR);
+
 
         $resultat = $req->execute();
     } catch (PDOException $e) {
@@ -103,6 +103,26 @@ $req->bindValue(':PREF_CRE', $PREF_CRE, PDO::PARAM_INT);
 $req->bindValue(':PREF_ENS', $PREF_ENS, PDO::PARAM_INT);
 $req->bindValue(':PREF_EDT', $PREF_EDT, PDO::PARAM_INT);        
         $resultat = $req->execute();
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
+function getPropo(){
+    $resultat = array();
+    try{
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("SELECT * FROM preferer, creneau, formation, stage where PREF_CRE = CRE_ID and FORM_CRE = CRE_ID and STA_CODE = FORM_STA");
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
         die();

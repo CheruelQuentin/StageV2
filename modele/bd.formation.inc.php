@@ -44,11 +44,11 @@ function getAddFormation($FORM_CRE, $FORM_STA, $FORM_MAT, $FORM_ENS, $FORM_ELEMI
     $resultat = -1;
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("insert into formation (FORM_CRE,FORM_STA,FORM_MAT,FORM_ENS,FORM_ELEMIN,FORM_ELEMAX) values(:FORM_CRE,:FORM_STA,:FORM_MAT,:FORM_ENS,:FORM_ELEMIN,:FORM_ELEMAX)");
+        $req = $cnx->prepare("insert into formation (FORM_CRE,FORM_STA,FORM_MAT,FORM_ENS,FORM_ELEMIN,FORM_ELEMAX) values(:FORM_CRE,:FORM_STA,:FORM_MAT,:uti_ens,:FORM_ELEMIN,:FORM_ELEMAX)");
         $req->bindValue(':FORM_CRE', $FORM_CRE, PDO::PARAM_INT);
         $req->bindValue(':FORM_STA', $FORM_STA, PDO::PARAM_INT);
         $req->bindValue(':FORM_MAT', $FORM_MAT, PDO::PARAM_INT);
-        $req->bindValue(':FORM_ENS', $FORM_ENS, PDO::PARAM_INT);
+        $req->bindValue(':uti_ens', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
         $req->bindValue(':FORM_ELEMIN', $FORM_ELEMIN, PDO::PARAM_INT);
         $req->bindValue(':FORM_ELEMAX', $FORM_ELEMAX, PDO::PARAM_INT);
         

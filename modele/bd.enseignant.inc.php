@@ -123,4 +123,6 @@ function getEnseignantIdByInfo($enseignant) {
     }
     return $resultat['ENS_ID'];
 }
+
+
 ?>

@@ -21,7 +21,7 @@
 					<option value= <?= $etablissement[$i]['ETA_ID'];?> > 
 						<?= $etablissement[$i]['ETA_NOM'], ", ", $etablissement[$i]['ETA_VILLE']; ?> </option> 
 			<?php } ?>
-		</select></p>
+		</select></p><br>
 			        <input type="submit" value="valider"/>
 				    <input type="reset"/></p>
 				    <p></p>

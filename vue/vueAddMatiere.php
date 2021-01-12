@@ -1,4 +1,5 @@
 	<body>
+							<center><h2 id="titre">Gestion des matières</h2></center>
     <center><h2>Formulaire d'ajout </h2>
 <script src="js/verification.js"> </script>
 <p></p>

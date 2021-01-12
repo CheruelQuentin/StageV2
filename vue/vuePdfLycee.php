@@ -14,7 +14,7 @@ $pdf->SetFont('Arial','',10);
 $pdf->MultiCell(0,9,utf8_decode('Entre
 Monsieur DUVAL-ROCHER Sébastien, Proviseur du Lycée JEAN ROSTAND de Caen 
 et
-Mme ou M.Proviseur(e) '.$ETA_PROVNOM.' du Lycée '.$ETA_NOM.'.'));
+Mme ou M.Proviseur(e) '.$ETA_PROVNOM.' de l\'établissement '.$ETA_NOM.'.'));
 $pdf->MultiCell(0,9,utf8_decode('La présente convention a pour objet la mise en oeuvre au bénéfice des élèves du lycée d\'un stage afin que les jeunes puissent recueillir des informations qui leur permettront d\'élaborer leur projet personnel d\'orientation.'));
 $pdf->MultiCell(0,9,"");
 $pdf->SetFont('Arial','BU',10);
@@ -25,7 +25,7 @@ $pdf->MultiCell(0,9,"");
 $pdf->SetFont('Arial','BU',10);
 $pdf->MultiCell(0,9,utf8_decode('Article  3 :'));
 $pdf->SetFont('Arial','',10);
-$pdf->MultiCell(0,9,utf8_decode('Le déroulement du stage sera suivi par les professeurs dans les conditions déterminées en accord entre les Proviseurs de chaque lycée.'));
+$pdf->MultiCell(0,9,utf8_decode('Le déroulement du stage sera suivi par les professeurs dans les conditions déterminées en accord entre les Proviseurs de chaque établissement.'));
 $pdf->MultiCell(0,9,"");
 $pdf->SetFont('Arial','BU',10);
 $pdf->MultiCell(0,9,utf8_decode('Article  4 :'));
@@ -40,7 +40,7 @@ $pdf->MultiCell(0,9,"");$pdf->MultiCell(0,9,"");
 $pdf->SetFont('Arial','BU',10);
 $pdf->MultiCell(0,9,utf8_decode('Article  6 :'));
 $pdf->SetFont('Arial','',10);
-$pdf->MultiCell(0,9,utf8_decode('En cas d\'accident, la déclaration incombe au lycée  qui a déclaré l\'élève au titre de l\'assurance '.$ETA_NOMSECU.'  n°'.$ETA_SECU.'.En cas de nécessité, la responsabilité civile de l\'élève pourra être recherchée.'));
+$pdf->MultiCell(0,9,utf8_decode('En cas d\'accident, la déclaration incombe à l\'établissement  qui a déclaré l\'élève au titre de l\'assurance '.$ETA_NOMSECU.'  n°'.$ETA_SECU.'.En cas de nécessité, la responsabilité civile de l\'élève pourra être recherchée.'));
 $pdf->MultiCell(0,9,"");
 $pdf->SetFont('Arial','BU',10);
 $pdf->MultiCell(0,9,utf8_decode('Article  7 :'));
@@ -59,7 +59,7 @@ $pdf->MultiCell(0,9,utf8_decode("Les Proviseurs se tiendront mutuellement inform
 $pdf->MultiCell(0,9,"");
 
 $pdf->MultiCell(0,9,"");
-$pdf->MultiCell(0,9,utf8_decode('Le (ou la) Proviseur(e) du Lycée                                Le Proviseur du Lycee JEAN ROSTAND
+$pdf->MultiCell(0,9,utf8_decode('Le (ou la) Proviseur(e) de l\'établissement                   Le Proviseur du Lycee JEAN ROSTAND
                                                                                     P/O DDFPT (Directeur Délégué aux Formations
                                                                                     Professionnelles & Technologiques)  R.Legros'));
 $pdf->MultiCell(0,9,utf8_decode('A ..................,le .....................'));

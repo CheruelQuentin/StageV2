@@ -29,11 +29,11 @@
               <?php } ?>
             </select>
           </div>
-<p><label for="ELE_NOM"> Nom :</label><input id="ELE_NOM" type="text" name="ELE_NOM" size="50px" maxlength="100" value="<?=$nom?>"  onblur="verifmodifnomEle();" /><span id = "erreurmodifnomEle" ></span></p>
-<p><label for="ELE_PRENOM"> Prénom :</label><input id="ELE_PRENOM" type="text" name="ELE_PRENOM" size="50px" maxlength="100" value="<?=$prenom?>" onblur="verifmodifprenomEle();" /><span id = "erreurmodifprenomEle" ></span></p>
-<p><label for="ELE_DATENAISS"> Date de Naissance :</label><input id="ELE_DATENAISS" type="date" name="ELE_DATENAISS" size="50px" maxlength="20" value="<?=$dateN?>" /></p>
-<p><label for="ELE_CLASSE"> Classe :</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="10" value="<?=$classe?>" onblur="verifmodifclasse();" /><span id = "erreurmodifclasse" ></span></p>
-<p><label for="ELE_MAIL"> E-mail :</label><input id="ELE_MAIL" type="text" name="ELE_MAIL" size="50px" maxlength="150" value="<?=$mail?>" /></p>
+<p><label for="ELE_NOM">Nom :</label><input id="ELE_NOM" type="text" name="ELE_NOM" size="50px" maxlength="100" value="<?=$nom?>"  onblur="verifmodifnomEle();" /><span id = "erreurmodifnomEle" ></span></p>
+<p><label for="ELE_PRENOM">Prénom :</label><input id="ELE_PRENOM" type="text" name="ELE_PRENOM" size="50px" maxlength="100" value="<?=$prenom?>" onblur="verifmodifprenomEle();" /><span id = "erreurmodifprenomEle" ></span></p>
+<p><label for="ELE_DATENAISS">Date de Naissance :</label><input id="ELE_DATENAISS" type="date" name="ELE_DATENAISS" size="50px" maxlength="20" value="<?=$dateN?>" /></p>
+<p><label for="ELE_CLASSE">Classe :</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="10" value="<?=$classe?>" onblur="verifmodifclasse();" /><span id = "erreurmodifclasse" ></span></p>
+<p><label for="ELE_MAIL">E-mail :</label><input id="ELE_MAIL" type="text" name="ELE_MAIL" size="50px" maxlength="150" value="<?=$mail?>" /></p>
 
 <div id="choixForm">
     <fieldset>      
@@ -47,12 +47,23 @@
       <?php } ?>          
       </fieldset>
   </div>
-    </tr></td></table>
+    </tr></td></table><br>
                     <input type="submit" value="valider"/>
                     <input type="reset"/></p>
                     <p></p>
 
 
              </form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<?php  
+Echo ("✨L'E-mail de l'élève n'est pas obligatoire. ")
+?>
       </body>
 </html>

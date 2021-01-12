@@ -1,7 +1,7 @@
 <body>
+	<center><h2 id="titre">Gestion des élèves</h2></center>
     <center><h2 id="titre">Ajout d'élève</h2>
 <script src="js/verification.js"> </script>
-<?php $formations=getFormation();?>
 <p></p> 
 
  <form method="post" action="./?action=insertEle">
@@ -26,7 +26,7 @@
 			<?php } ?>          
     	</fieldset>
 	</div>
-	</td><tr></table>
+	</td><tr></table><br>
 			        <input type="submit" value="valider"/>
 				    <input type="reset"/></p>
 				    <p></p>

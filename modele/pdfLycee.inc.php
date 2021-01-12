@@ -3,7 +3,8 @@ require"../fpdf182/fpdf.php";
 include_once "../modele/bd.eleve.inc.php";
 include_once "../modele/bd.inscrire.inc.php";
 
-
+//echo "id eta".$_SESSION["UTIL_ETA"];
+//echo "<br>sql : select COUNT(INS_ELE) from inscrire,eleve,etablissement where INS_ELE = ELE_ID and ELE_ETA = ETA_ID and ETA_ID =".$_SESSION["UTIL_ETA"];
 
 function getInscrirePDf() {
     $resultat = array();
@@ -31,16 +32,18 @@ function getMiam() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select COUNT(INS_ELE) from inscrire,eleve,etablissement,utilisateur where INS_ELE = ELE_ID and ELE_ETA = ETA_ID and ETA_MAIL = :UTIL_MAIL");
-        $req->bindValue(':UTIL_MAIL', $_SESSION['UTIL_MAIL'], PDO::PARAM_STR);
+        $req = $cnx->prepare("select COUNT(INS_ELE) as nb from inscrire,eleve,etablissement where INS_ELE = ELE_ID and ELE_ETA = ETA_ID and ETA_ID = :uti_eta");
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
         $resultat=$req->execute() ;
         
 
-        $ligne = $req->fetch(PDO::PARAM_STR);
-        while ($ligne) {
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+ $resultat = $ligne['nb'];
+      //  echo "<br>nb eleve ".$resultat;
+        /*while ($ligne) {
             $resultat = $ligne;
             $ligne = $req->fetch(PDO::PARAM_STR);
-        }
+        }*/
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
         die();
@@ -61,7 +64,7 @@ function Header()
     // Décalage à droite
     $this->Cell(65);
     // Titre
-    $this->Cell(100,15,utf8_decode('Convention de stage - Lycée '.$ETA_NOM),1,1,'C');
+    $this->Cell(120,15,utf8_decode('Convention de stage - Établissement '.$ETA_NOM),1,1,'C');
     
     // Saut de ligne
     $this->Ln(10);
@@ -80,15 +83,16 @@ global $ETA_NOM , $ETA_VILLE;
     $this->SetTextColor(66, 66, 66);
     $this->SetFont('Arial','I',8);
     // Numéro de page
-    $this->Cell(0,10,utf8_decode('Convention ministages Lycée '.$ETA_NOM.'-'.$ETA_VILLE.' /Rostand 2020                                                                                                                  Page ').$this->PageNo().'/{nb}',0,0,'C');
+    $this->Cell(0,10,utf8_decode('Convention ministages Établissement '.$ETA_NOM.'-'.$ETA_VILLE.' /Rostand 2020                                                                                                                  Page ').$this->PageNo().'/{nb}',0,0,'C');
 }
 function Table()
 {
     $this->SetFont('times','',12);
-    $this->Cell(40,10,'Nom de l\'eleve',1,0,'C');
-    $this->Cell(40,10,'Formation',1,0,'C');
+    $this->Cell(30,10,'Nom de l\'eleve',1,0,'C');
     $this->Cell(40,10,'Date de Naissance',1,0,'C');
     $this->Cell(40,10,'Classe de l\'eleve',1,0,'C');
+    $this->Cell(40,10,'Date du Mini-Stage',1,0,'C');
+    $this->Cell(40,10,'Nom du Mini-Stage',1,0,'C');
     $this->Ln();
 }
 
@@ -98,7 +102,6 @@ global $ELE_NOM , $INS_FORM;
       $stmt=getInscrirePDF();
          for ($i = 0; $i < count($stmt); $i++) {
                $this->Cell(40,10,$stmt[$i]['ELE_NOM'],1,0,'C');
-               $this->Cell(40,10,$stmt[$i]['STA_LIBELLE'],1,0,'C');
                $this->Cell(40,10,strftime('%d/%m/%Y',strtotime($stmt[$i]['ELE_DATENAISS'])),1,0,'C');
                $this->Cell(40,10,$stmt[$i]['ELE_CLASSE'],1,0,'C');
                $this->MultiCell(0,10,"");

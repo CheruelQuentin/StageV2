@@ -22,21 +22,19 @@
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeMatiere'"> Gestion des matières </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeFormation'"> Gestion des formations </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeStage'"> Gestion des stages </button>
-<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeCreneau'"> Gestion des créneaux </button>
+<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeCreneauPropo'"> Gestion des créneaux </button>
 </div>
 
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ //Si l'utilisateur est un établissement ...  ?>
 
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button>
-<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button>
 <button id="bouton2" type="button" style="width:300px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button>
-<button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFLycee.php'"> Generer PDF Lycée </button>
-<button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFCollege.php'"> Generer PDF Collège </button>
+<button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFLycee.php'"> Generer PDF</button>
 
 <?php } else { //Si l'utilisateur est un enseignant ... ?>
 
-
+<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeCreneau'"> Gestion proposition de créneau </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription2'"> Liste des inscrits </button>
 <button id="bouton2" type="button" style="width:300px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button>
 

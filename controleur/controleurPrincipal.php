@@ -25,6 +25,7 @@ function controleurPrincipal($action){
     $lesActions["listeFormation"] = "listeFormation.php";
     $lesActions["listeStage"] = "listeStage.php";
     $lesActions["listeCreneau"] = "listeCreneau.php";
+    $lesActions["listeCreneauPropo"] = "listeCreneauPropo.php";
     $lesActions["listeInscription"] = "listeInscrire.php";
     $lesActions["listeInscription2"] = "listeInscrire2.php";
     $lesActions["inscription"] = "addInscrire.php";

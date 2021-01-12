@@ -1,6 +1,6 @@
-<center><h5><?php echo $titre ?></h5></center>
+<center><h2 id="titre">Inscription des élèves à une formation</h2></center>
 	<body>
-    <h2>Formulaire d'ajout </h2>
+    <center><h2>Formulaire d'ajout </h2></center>
 
 <p></p>
 
@@ -8,7 +8,8 @@
 
  <form method="post" action="./?action=insertIns">
 
-
+<center>
+	<table><tr><td>
   <p><label for="INS_ELE">Eleve : </label>
   <select name="INS_ELE">
 			<?php
@@ -28,9 +29,9 @@
 						<?= getStageById($formations[$i]['FORM_STA'])['STA_LIBELLE'], ", ", getMatiereById($formations[$i]['FORM_MAT'])['MAT_LIBELLE'], " - ", getCreneauById($formations[$i]['FORM_CRE'])['CRE_HEUREDEB']; ?> </option> 
 			<?php } ?>
 		</select>
-	</p>
+	</p></td></tr></table><br>
 	<input type="submit" value="valider"/>
-	<input type="reset"/>
+	<input type="reset"/></center>
 </form>
 
  

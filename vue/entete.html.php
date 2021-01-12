@@ -45,13 +45,14 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
     <nav>
 <ul id="menuGeneral">
 
-<li><button id="bouton1" type="button" style="width:250px;" onclick="window.location.href='./?action=listeCreneau'"> Gestion des créneaux </button></li>
+<li><button id="bouton1" type="button" style="width:250px;" onclick="window.location.href='./?action=listeCreneauPropo'"> Gestion des créneaux </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve2'"> Gestion des élèves </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEtablissement'"> Gestion des établissements </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeMatiere'"> Gestion des matières </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeFormation'"> Gestion des formations </button></li>
-<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeStage'"> Gestion des stages </button></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeStage'"> Gestion des mini-stages </button></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Gestion des stagiaires </button></li>
 </ul>
 
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ ?>
@@ -60,14 +61,14 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
     <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button></li>
-<li><button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFLycee.php'"> Generer PDF Lycée </button></li>
-<li><button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFCollege.php'"> Generer PDF Collège </button></li>
+<li><button id="bouton1" type="button" onclick="window.location.href='controleur/creationPDFLycee.php'"> Generer PDF</button></li>
+
 </ul>
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ENS"){ ?>
 <ul id="menuGeneral">
 <li></li>
 <li></li>
-<li></li>
+<li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeCreneau'"> Gestion proposition créneau </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription2'"> Liste des inscrits </button></li>
 <li></li>
 

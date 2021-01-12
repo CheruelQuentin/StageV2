@@ -13,8 +13,8 @@
              <form method="post" action="./?action=upEnsr">
 
 
-<p><label for="ENSR_MAT"> Selectionner la matière </label> : <input id="ENS_ID" type="int" name="ENS_ID" size="50px" maxlength="11"  /></p>
-<p><label for="ENSR_ENS"> Selectionner l(e,a) nouvel(le) enseignant(e) </label> : <input id="ENS_NOM" type="int" name="ENS_NOM" size="50px" maxlength="11"  /></p>
+<p><label for="ENSR_MAT">Sélectionner la matière </label> : <input id="ENS_ID" type="int" name="ENS_ID" size="50px" maxlength="11"  /></p>
+<p><label for="ENSR_ENS">Sélectionner l(e,a) nouvel(le) enseignant(e) </label> : <input id="ENS_NOM" type="int" name="ENS_NOM" size="50px" maxlength="11"  /></p>
 
     
                     <input type="submit" value="valider"/>

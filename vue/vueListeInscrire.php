@@ -1,14 +1,17 @@
 <div style="text-align:right;padding-bottom:5px;">
-</div>
+
 <link rel="stylesheet" type="text/css" href="css/liste.css">
 
 <center><h2 id="titre">Gestion des inscrits</h2></center>
-
+<button onclick="window.location.href='./?action=addIns';" id="bouton2" style="display:inline-block;">Ajouter</button></div>
 <table class="table">
         <thead>
             <th align="center">Nom Prénom</th>
             <th align="center">Etablissement</th>
             <th align="center">Stage</th>
+            <th align="center">Modifier</th>
+            <th align="center">Supprimer</th>
+
 
          </thead>
          <tbody>
@@ -19,6 +22,8 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
             <td><center><?= getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_NOM']," ",getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_PRENOM'] ?></center></td>
             <td><center><?= getEtablissementById(getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_ETA'])['ETA_NOM'] ?></center></td>
             <td><center><?= getStageById(getFormationById($listeInscrire[$i]["INS_FORM"])['FORM_STA'])['STA_LIBELLE'] ?></center></td>
+            <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifIns&id=<?=$listeInscrire[$i]['INS_ELE']?>'; }" > Modif. </button></center></td>
+            <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delIns&id=<?=$listeInscrire[$i]['INS_ELE']?>'; }" > Supp. </button></center></td>
 
     <?php
 }

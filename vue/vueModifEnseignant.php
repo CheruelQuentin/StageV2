@@ -13,13 +13,13 @@
              <form method="post" action="./?action=upEns">
                   <table><tr><td>
                   <input id="ENS_ID" type="hidden" name="ENS_ID" size="50px" maxlength="20" value="<?=$_GET['id']?>" />
-                  <p><label for="ENS_NOM"> Modification nom </label> : <input id="ENS_NOM" type="text" name="ENS_NOM" size="50px" maxlength="150" value="<?=$nom?>" onblur="verifmodifnomEns();" /><span id = "erreurmodifnomEns" ></span></p>
-                  <p><label for="ENS_PRENOM"> Modification prenom </label> : <input id="ENS_PRENOM" type="text" name="ENS_PRENOM" size="50px" maxlength="150" value="<?=$prenom?>" onblur="verifmodifprenomEns();" /><span id = "erreurmodifprenomEns" ></span></p>
-                  <p><label for="ENS_MAIL"> Modification mail </label> : <input id="ENS_MAIL" type="text" name="ENS_MAIL" size="50px" maxlength="150" value="<?=$mail?>" onblur="verifmodifmailEns();" /><span id = "erreurmodifmailEns" ></span></p>
-                  <p><label for="ENS_TEL"> Modification telephone </label> : <input id="ENS_TEL" type="tel" name="ENS_TEL" size="50px" maxlength="12" value="<?=$tel?>" onblur="verifmodiftelEns();" /><span id = "erreurmodiftelens" ></span></p>
-                  <p><label for="ENS_DATENAISS"> Modification date de naissance </label> : <input id="ENS_DATENAISS" type="date" name="ENS_DATENAISS" size="50px" maxlength="20" value="<?=$dateN?>" /></p>
-                  </td></tr></table><center>
-    
+                  <p><label for="ENS_NOM">Nom </label> : <input id="ENS_NOM" type="text" name="ENS_NOM" size="50px" maxlength="150" value="<?=$nom?>" onblur="verifmodifnomEns();" /><span id = "erreurmodifnomEns" ></span></p>
+                  <p><label for="ENS_PRENOM">Prénom </label> : <input id="ENS_PRENOM" type="text" name="ENS_PRENOM" size="50px" maxlength="150" value="<?=$prenom?>" onblur="verifmodifprenomEns();" /><span id = "erreurmodifprenomEns" ></span></p>
+                  <p><label for="ENS_MAIL">Mail </label> : <input id="ENS_MAIL" type="text" name="ENS_MAIL" size="50px" maxlength="150" value="<?=$mail?>" onblur="verifmodifmailEns();" /><span id = "erreurmodifmailEns" ></span></p>
+                  <p><label for="ENS_TEL">Téléphone </label> : <input id="ENS_TEL" type="tel" name="ENS_TEL" size="50px" maxlength="12" value="<?=$tel?>" onblur="verifmodiftelEns();" /><span id = "erreurmodiftelens" ></span></p>
+                  <p><label for="ENS_DATENAISS">Date de naissance </label> : <input id="ENS_DATENAISS" type="date" name="ENS_DATENAISS" size="50px" maxlength="20" value="<?=$dateN?>" /></p>
+                  </td></tr></table></center>
+    <br>
                     <input type="submit" value="valider"/>
                     <input type="reset"/></p>
                     <p></p>
