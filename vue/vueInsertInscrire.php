@@ -1,1 +1,1 @@
-<center><a href="./?action=listeInscription3">Retour à la liste</a></center>
+<center><a href="./?action=listeInscription">Retour à la liste</a></center>

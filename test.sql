@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 07 jan. 2021 à 10:23
+-- Généré le : mar. 12 jan. 2021 à 17:06
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.4.9
 
@@ -18,20 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `ministage`
+-- Base de données : `test`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `college`
---
-
-DROP TABLE IF EXISTS `college`;
-CREATE TABLE IF NOT EXISTS `college` (
-  `ETA_ID` int(11) NOT NULL,
-  PRIMARY KEY (`ETA_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -46,15 +34,21 @@ CREATE TABLE IF NOT EXISTS `creneau` (
   `CRE_HEUREDEB` time NOT NULL,
   `CRE_SALLE` varchar(5) NOT NULL,
   `CRE_HEUREFIN` time NOT NULL,
-  PRIMARY KEY (`CRE_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+  `CRE_MAT` int(11) DEFAULT NULL,
+  PRIMARY KEY (`CRE_ID`),
+  KEY `FK_CRENEAU_MATIERE` (`CRE_MAT`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `creneau`
 --
 
-INSERT INTO `creneau` (`CRE_ID`, `CRE_DATE`, `CRE_HEUREDEB`, `CRE_SALLE`, `CRE_HEUREFIN`) VALUES
-(10, '2021-01-13', '15:15:00', 'A400', '11:20:00');
+INSERT INTO `creneau` (`CRE_ID`, `CRE_DATE`, `CRE_HEUREDEB`, `CRE_SALLE`, `CRE_HEUREFIN`, `CRE_MAT`) VALUES
+(17, '2021-01-21', '09:09:00', 'A400', '09:10:00', 4),
+(37, '2021-01-23', '13:49:00', 'U170', '12:49:00', 2),
+(38, '2021-01-21', '13:23:00', 'Z044', '13:21:00', 1),
+(39, '2021-01-21', '13:23:00', 'Z044', '13:21:00', 2),
+(40, '2021-01-21', '13:23:00', 'Z044', '13:21:00', 4);
 
 -- --------------------------------------------------------
 
@@ -80,12 +74,12 @@ CREATE TABLE IF NOT EXISTS `eleve` (
 --
 
 INSERT INTO `eleve` (`ELE_ID`, `ELE_ETA`, `ELE_NOM`, `ELE_PRENOM`, `ELE_DATENAISS`, `ELE_CLASSE`, `ELE_MAIL`) VALUES
-(4, 7, 'Jacques', 'Arthur', '2000-02-09', 'ATF', ''),
-(7, 9, 'Frank', 'Kruger', '1997-07-06', 'TSTMG', ''),
-(8, 7, 'Franck', 'Russell', '2021-01-23', 'USTMG', ''),
-(13, 7, 'Karl', 'Kriegzum', '2021-01-29', 'USTMG', ''),
-(19, 7, 'Karl', 'Korx', '2021-02-03', 'USTMG', ''),
-(22, 7, 'Bjorn', 'Hansen', '2021-01-29', 'USTMG', '');
+(4, 7, 'Jacques', 'Arthur', '2000-02-09', 'ATF', NULL),
+(7, 9, 'Frank', 'Kruger', '1997-07-06', 'TSTMG', NULL),
+(8, 7, 'Franck', 'Russell', '2021-01-23', 'USTMG', NULL),
+(13, 7, 'Karl', 'Kriegzum', '2021-01-29', 'USTMG', NULL),
+(19, 7, 'Karl', 'Korx', '2021-02-03', 'USTMG', NULL),
+(22, 7, 'Bjorn', 'Hansen', '2021-01-29', 'USTMG', NULL);
 
 -- --------------------------------------------------------
 
@@ -111,30 +105,7 @@ CREATE TABLE IF NOT EXISTS `enseignant` (
 INSERT INTO `enseignant` (`ENS_ID`, `ENS_NOM`, `ENS_PRENOM`, `ENS_MAIL`, `ENS_TEL`, `ENS_DATENAISS`) VALUES
 (1, 'Test', 'Enseignant', 'test@enseignant.fr', '0712345678', '2020-05-19'),
 (20, 'zda', 'dzaqs', 'test.test@gmail.com', 'gerfdg', '2020-05-01'),
-(22, 'Mailhé', 'Patrick', 'Pat.mailhe@gmail.com', '54315244123', '2021-01-06'),
 (23, 'mailhé', 'patrick', 'mailhe.patrick@gmail.com', '090909099090', '2021-01-05');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `enseigner`
---
-
-DROP TABLE IF EXISTS `enseigner`;
-CREATE TABLE IF NOT EXISTS `enseigner` (
-  `ENSR_MAT` int(11) NOT NULL,
-  `ENSR_ENS` int(11) NOT NULL,
-  PRIMARY KEY (`ENSR_MAT`,`ENSR_ENS`),
-  KEY `I_FK_ENSEIGNER_MATIERE` (`ENSR_MAT`),
-  KEY `I_FK_ENSEIGNER_ENSEIGNANT` (`ENSR_ENS`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `enseigner`
---
-
-INSERT INTO `enseigner` (`ENSR_MAT`, `ENSR_ENS`) VALUES
-(1, 1);
 
 -- --------------------------------------------------------
 
@@ -175,26 +146,18 @@ INSERT INTO `etablissement` (`ETA_ID`, `ETA_NOM`, `ETA_VILLE`, `ETA_ADRESSE`, `E
 
 DROP TABLE IF EXISTS `formation`;
 CREATE TABLE IF NOT EXISTS `formation` (
-  `STA_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `STA_CRE` int(11) NOT NULL,
-  `STA_FORM` int(11) NOT NULL,
-  `STA_MAT` int(11) NOT NULL,
-  `STA_ENS` int(11) NOT NULL,
-  `STA_ELEMIN` int(11) NOT NULL,
-  `STA_ELEMAX` int(11) NOT NULL,
-  PRIMARY KEY (`STA_ID`),
-  KEY `I_FK_FORMATION_CRENEAU` (`STA_CRE`),
-  KEY `I_FK_FORMATION_STAGE` (`STA_FORM`),
-  KEY `I_FK_FORMATION_MATIERE` (`STA_MAT`),
-  KEY `I_FK_FORMATION_ENSEIGNANT` (`STA_ENS`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+  `FORM_CODE` int(11) NOT NULL AUTO_INCREMENT,
+  `FORM_LIBELLE` varchar(128) NOT NULL,
+  PRIMARY KEY (`FORM_CODE`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `formation`
 --
 
-INSERT INTO `formation` (`STA_ID`, `STA_CRE`, `STA_FORM`, `STA_MAT`, `STA_ENS`, `STA_ELEMIN`, `STA_ELEMAX`) VALUES
-(6, 10, 1, 4, 22, 1, 11);
+INSERT INTO `formation` (`FORM_CODE`, `FORM_LIBELLE`) VALUES
+(1, 'BTK - Biotechnologies'),
+(2, 'TEST');
 
 -- --------------------------------------------------------
 
@@ -208,20 +171,16 @@ CREATE TABLE IF NOT EXISTS `inscrire` (
   `INS_STA` int(11) NOT NULL,
   PRIMARY KEY (`INS_ELE`,`INS_STA`),
   KEY `I_FK_INSCRIRE_ELEVE` (`INS_ELE`),
-  KEY `I_FK_INSCRIRE_FORMATION` (`INS_STA`)
+  KEY `I_FK_INSCRIRE_STAGE` (`INS_STA`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Structure de la table `lycee`
+-- Déchargement des données de la table `inscrire`
 --
 
-DROP TABLE IF EXISTS `lycee`;
-CREATE TABLE IF NOT EXISTS `lycee` (
-  `ETA_ID` int(11) NOT NULL,
-  PRIMARY KEY (`ETA_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `inscrire` (`INS_ELE`, `INS_STA`) VALUES
+(8, 1),
+(19, 1);
 
 -- --------------------------------------------------------
 
@@ -255,11 +214,17 @@ DROP TABLE IF EXISTS `preferer`;
 CREATE TABLE IF NOT EXISTS `preferer` (
   `PREF_CRE` int(11) NOT NULL,
   `PREF_ENS` int(11) NOT NULL,
-  `PREF_EDT` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`PREF_CRE`,`PREF_ENS`),
   KEY `I_FK_PREFERER_CRENEAU` (`PREF_CRE`),
   KEY `I_FK_PREFERER_ENSEIGNANT` (`PREF_ENS`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `preferer`
+--
+
+INSERT INTO `preferer` (`PREF_CRE`, `PREF_ENS`) VALUES
+(17, 20);
 
 -- --------------------------------------------------------
 
@@ -283,18 +248,28 @@ CREATE TABLE IF NOT EXISTS `recuperation` (
 
 DROP TABLE IF EXISTS `stage`;
 CREATE TABLE IF NOT EXISTS `stage` (
-  `FORM_CODE` int(11) NOT NULL AUTO_INCREMENT,
-  `FORM_LIBELLE` varchar(128) NOT NULL,
-  PRIMARY KEY (`FORM_CODE`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+  `STA_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `STA_CRE` int(11) NOT NULL,
+  `STA_FORM` int(11) NOT NULL,
+  `STA_MAT` int(11) NOT NULL,
+  `STA_ENS` int(11) NOT NULL,
+  `STA_ELEMIN` int(11) NOT NULL,
+  `STA_ELEMAX` int(11) NOT NULL,
+  `STA_ARCHIVE` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`STA_ID`),
+  KEY `I_FK_stage_CRENEAU` (`STA_CRE`),
+  KEY `I_FK_stage_FORMATION` (`STA_FORM`),
+  KEY `I_FK_stage_MATIERE` (`STA_MAT`),
+  KEY `I_FK_stage_ENSEIGNANT` (`STA_ENS`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `stage`
 --
 
-INSERT INTO `stage` (`FORM_CODE`, `FORM_LIBELLE`) VALUES
-(1, 'BTK - Biotechnologies'),
-(2, 'TEST');
+INSERT INTO `stage` (`STA_ID`, `STA_CRE`, `STA_FORM`, `STA_MAT`, `STA_ENS`, `STA_ELEMIN`, `STA_ELEMAX`, `STA_ARCHIVE`) VALUES
+(1, 17, 1, 2, 23, 1, 11, NULL),
+(42, 38, 2, 1, 23, 1, 11, NULL);
 
 -- --------------------------------------------------------
 
@@ -358,8 +333,8 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 
 INSERT INTO `utilisateur` (`UTIL_MAIL`, `UTIL_MDP`, `UTIL_CODE`, `UTIL_ETA`, `UTIL_ENS`) VALUES
 ('jean.rostand@ac-caen.fr', 'seXq85xDmUobM', 'ETAB', NULL, NULL),
-('mailhe.patrick@gmail.com', 'sefZQ4h06XQUA', 'ENS', NULL, NULL),
-('malherbe@ac-caen.fr', 'sezsfqK3f6Xuw', 'ETAB', 7, NULL),
+('mailhe.patrick@gmail.com', 'sefZQ4h06XQUA', 'ENS', NULL, 23),
+('malherbe@ac-caen.fr', 'seUHVYfegYbL6', 'ETAB', 7, NULL),
 ('Mam.dou@gmail.com', 'sefZQ4h06XQUA', 'ENS', NULL, NULL),
 ('test@admin.fr', 'sefL3MSA2sN5s', 'ADMIN', NULL, NULL),
 ('test@enseignant.fr', 'en4Km8aNW/6BM', 'ENS', NULL, NULL),
@@ -371,10 +346,10 @@ INSERT INTO `utilisateur` (`UTIL_MAIL`, `UTIL_MDP`, `UTIL_CODE`, `UTIL_ETA`, `UT
 --
 
 --
--- Contraintes pour la table `college`
+-- Contraintes pour la table `creneau`
 --
-ALTER TABLE `college`
-  ADD CONSTRAINT `FK_COLLEGE_ETABLISSEMENT` FOREIGN KEY (`ETA_ID`) REFERENCES `etablissement` (`ETA_ID`) ON DELETE CASCADE;
+ALTER TABLE `creneau`
+  ADD CONSTRAINT `FK_CRENEAU_MATIERE` FOREIGN KEY (`CRE_MAT`) REFERENCES `matiere` (`MAT_CODE`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `eleve`
@@ -383,33 +358,11 @@ ALTER TABLE `eleve`
   ADD CONSTRAINT `FK_ELEVE_ETABLISSEMENT` FOREIGN KEY (`ELE_ETA`) REFERENCES `etablissement` (`ETA_ID`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `enseigner`
---
-ALTER TABLE `enseigner`
-  ADD CONSTRAINT `FK_ENSEIGNER_ENSEIGNANT` FOREIGN KEY (`ENSR_ENS`) REFERENCES `enseignant` (`ENS_ID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_ENSEIGNER_MATIERE` FOREIGN KEY (`ENSR_MAT`) REFERENCES `matiere` (`MAT_CODE`) ON DELETE CASCADE;
-
---
--- Contraintes pour la table `formation`
---
-ALTER TABLE `formation`
-  ADD CONSTRAINT `FK_FORMATION_CRENEAU` FOREIGN KEY (`STA_CRE`) REFERENCES `creneau` (`CRE_ID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_FORMATION_ENSEIGNANT` FOREIGN KEY (`STA_ENS`) REFERENCES `enseignant` (`ENS_ID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_FORMATION_MATIERE` FOREIGN KEY (`STA_MAT`) REFERENCES `matiere` (`MAT_CODE`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_FORMATION_STAGE` FOREIGN KEY (`STA_FORM`) REFERENCES `stage` (`FORM_CODE`) ON DELETE CASCADE;
-
---
 -- Contraintes pour la table `inscrire`
 --
 ALTER TABLE `inscrire`
   ADD CONSTRAINT `FK_INSCRIRE_ELEVE` FOREIGN KEY (`INS_ELE`) REFERENCES `eleve` (`ELE_ID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_INSCRIRE_FORMATION` FOREIGN KEY (`INS_STA`) REFERENCES `formation` (`STA_ID`) ON DELETE CASCADE;
-
---
--- Contraintes pour la table `lycee`
---
-ALTER TABLE `lycee`
-  ADD CONSTRAINT `FK_LYCEE_ETABLISSEMENT` FOREIGN KEY (`ETA_ID`) REFERENCES `etablissement` (`ETA_ID`) ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_INSCRIRE_stage` FOREIGN KEY (`INS_STA`) REFERENCES `stage` (`STA_ID`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `preferer`
@@ -417,6 +370,15 @@ ALTER TABLE `lycee`
 ALTER TABLE `preferer`
   ADD CONSTRAINT `FK_PREFERER_CRENEAU` FOREIGN KEY (`PREF_CRE`) REFERENCES `creneau` (`CRE_ID`) ON DELETE CASCADE,
   ADD CONSTRAINT `FK_PREFERER_ENSEIGNANT` FOREIGN KEY (`PREF_ENS`) REFERENCES `enseignant` (`ENS_ID`) ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `stage`
+--
+ALTER TABLE `stage`
+  ADD CONSTRAINT `FK_stage_CRENEAU` FOREIGN KEY (`STA_CRE`) REFERENCES `creneau` (`CRE_ID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_stage_ENSEIGNANT` FOREIGN KEY (`STA_ENS`) REFERENCES `enseignant` (`ENS_ID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_stage_FORMATION` FOREIGN KEY (`STA_FORM`) REFERENCES `formation` (`FORM_CODE`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_stage_MATIERE` FOREIGN KEY (`STA_MAT`) REFERENCES `matiere` (`MAT_CODE`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `travailler`

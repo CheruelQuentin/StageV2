@@ -60,6 +60,7 @@ function controleurPrincipal($action){
 
     //Delete
     $lesActions["delIns"] = "delInscrire.php";
+    $lesActions["delIns2"] = "delInscrire2.php";
     $lesActions["delEle"] = "delEleve.php";
     $lesActions["delCre"] = "delCreneau.php";
     $lesActions["delEns"] = "delEnseignant.php";
@@ -86,6 +87,7 @@ function controleurPrincipal($action){
 
     //Modif
     $lesActions["modifIns"] = "modifInscrire.php";
+    $lesActions["modifIns2"] = "modifInscrire2.php";
     $lesActions["modifEle"] = "modifEleve.php";
     $lesActions["modifCre"] = "modifCreneau.php";
     $lesActions["modifEns"] = "modifEnseignant.php";
@@ -101,6 +103,7 @@ function controleurPrincipal($action){
 
     //Update
     $lesActions["upIns"] = "updateInscrire.php";
+    $lesActions["upIns2"] = "updateInscrire2.php";
     $lesActions["upEle"] = "updateEleve.php";
     $lesActions["upCre"] = "updateCreneau.php";
     $lesActions["upEns"] = "updateEnseignant.php";

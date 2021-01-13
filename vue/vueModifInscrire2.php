@@ -12,7 +12,7 @@
          <center><h2>Modification Inscription </h2>
 
 
-         <form method="post" action="./?action=upIns">
+         <form method="post" action="./?action=upIns2">
          <table><tr><td>
          <input id="INS_ELE" type="hidden" name="INS_ELE" size="50px" maxlength="20"  value="<?=$_GET['id']?>"/>
         </p>
