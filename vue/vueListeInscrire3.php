@@ -7,7 +7,7 @@
 <table class="table">
         <thead>
             <th align="center">Nom Prénom</th>
-
+            <th align="center">Etablissement</th>
             <th align="center">Stage</th>
             <th align="center">Modifier</th>
             <th align="center">Supprimer</th>
@@ -20,6 +20,7 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
     ?>
         <tr>
             <td><center><?= getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_NOM']," ",getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_PRENOM'] ?></center></td>
+            <td><center><?= getEtablissementById(getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_ETA'])['ETA_NOM'] ?></center></td>
             <td><center><?= getFormationById(getStageById($listeInscrire[$i]["INS_STA"])['STA_FORM'])['FORM_LIBELLE'] ?></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifIns&id=<?=$listeInscrire[$i]['INS_ELE']?>'; }" > Modif. </button></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delIns&id=<?=$listeInscrire[$i]['INS_ELE']?>'; }" > Supp. </button></center></td>

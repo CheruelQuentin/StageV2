@@ -10,8 +10,8 @@
             <th align="center">Heure fin</th>
             <th align="center">Salle</th>
             <th align="center">Mini-stage</th>
-            <th align="center">Validez</th>
-            <th align="center">Refusez</th>
+            <th align="center">Validé</th>
+            <th align="center">Refusé</th>
          </thead>
          <tbody>
 
@@ -23,9 +23,9 @@ for ($i = 0; $i < count($listeCreneauPropo); $i++) {
        <td><center><?= $listeCreneauPropo[$i]["CRE_HEUREDEB"] ?></center></td>
        <td><center><?= $listeCreneauPropo[$i]["CRE_HEUREFIN"] ?></center></td>
        <td><center><?= $listeCreneauPropo[$i]["CRE_SALLE"] ?></center></td>
-       <td><center><?= $listeCreneauPropo[$i]["STA_LIBELLE"] ?></center></td>
-       <td><center><button> Validez </button></center></td>
-       <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delForm&id=<?=$listeCreneauPropo[$i]['FORM_ID']?>'; }" > Supp. </button></center></td>
+       <td><center><?= $listeCreneauPropo[$i]["FORM_LIBELLE"] ?></center></td>
+       <td><center><button> Validé </button></center></td>
+       <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delForm&id=<?=$listeCreneauPropo[$i]['STA_ID']?>'; }" > Supprimé </button></center></td>
         </tr>
     <?php
 }

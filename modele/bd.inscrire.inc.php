@@ -45,12 +45,12 @@ function getInscrireByEle($INS_ELE) {
 }
 
     
-    function getInscrireByForm($INS_FORM) {
+    function getInscrireByForm($INS_STA) {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from inscrire where INS_FORM=:INS_FORM");
-        $req->bindValue(':INS_FORM', $INS_FORM, PDO::PARAM_INT);
+        $req = $cnx->prepare("select * from inscrire where INS_STA=:INS_STA");
+        $req->bindValue(':INS_STA', $INS_STA, PDO::PARAM_INT);
 
         $req->execute();
 
@@ -63,15 +63,15 @@ function getInscrireByEle($INS_ELE) {
 }
 
 
-function getAddInscrire($INS_ELE, $INS_FORM) {
+function getAddInscrire($INS_ELE, $INS_STA) {
     $resultat = -1;
     try {
         $cnx = connexionPDO();
 
-        $req = $cnx->prepare("insert into inscrire (INS_ELE,INS_FORM) values(:INS_ELE,:INS_FORM)");
+        $req = $cnx->prepare("insert into inscrire (INS_ELE,INS_STA) values(:INS_ELE,:INS_STA)");
 
         $req->bindValue(':INS_ELE', $INS_ELE, PDO::PARAM_INT);
-        $req->bindValue(':INS_FORM', $INS_FORM, PDO::PARAM_INT);
+        $req->bindValue(':INS_STA', $INS_STA, PDO::PARAM_INT);
 
         $resultat = $req->execute();
     } catch (PDOException $e) {
@@ -82,14 +82,14 @@ function getAddInscrire($INS_ELE, $INS_FORM) {
 }
 
 
-function getDelInscrire($INS_ELE, $INS_FORM) {
+function getDelInscrire($INS_ELE, $INS_STA) {
     $resultat = -1;
     try {
         $cnx = connexionPDO();
 
-        $req = $cnx->prepare("delete from inscrire where INS_ELE=:INS_ELE AND INS_FORM=:INS_FORM");
+        $req = $cnx->prepare("delete from inscrire where INS_ELE=:INS_ELE AND INS_STA=:INS_STA");
         $req->bindValue(':INS_ELE', $INS_ELE, PDO::PARAM_INT);
-        $req->bindValue(':INS_FORM', $INS_FORM, PDO::PARAM_INT);
+        $req->bindValue(':INS_STA', $INS_STA, PDO::PARAM_INT);
                 
         $resultat = $req->execute();
     } catch (PDOException $e) {
@@ -99,12 +99,12 @@ function getDelInscrire($INS_ELE, $INS_FORM) {
     return $resultat;
 }
 
-function getUpdateInscrire($INS_ELE, $INS_FORM){
+function getUpdateInscrire($INS_ELE, $INS_STA){
     $resultat = -1;
     try {
 $cnx = connexionPDO();
-$req = $cnx->prepare("UPDATE `inscrire` SET INS_FORM = :INS_FORM WHERE `inscrire`.INS_ELE=:INS_ELE;");
-$req->bindValue(':INS_FORM', $INS_FORM, PDO::PARAM_INT);
+$req = $cnx->prepare("UPDATE `inscrire` SET INS_STA = :INS_STA WHERE `inscrire`.INS_ELE=:INS_ELE;");
+$req->bindValue(':INS_STA', $INS_STA, PDO::PARAM_INT);
 $req->bindValue(':INS_ELE', $INS_ELE, PDO::PARAM_INT);
         
         $resultat = $req->execute();
@@ -114,7 +114,7 @@ $req->bindValue(':INS_ELE', $INS_ELE, PDO::PARAM_INT);
     }
     return $resultat;
 }
-
+//etablissement
 function getInscrireListe() {
     $resultat = array();
 
@@ -135,13 +135,13 @@ function getInscrireListe() {
     }
     return $resultat;
 }
-
+//enseignant
 function getInscrireListe2() {
     $resultat = array();
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select *  from creneau, enseignant, eleve ,inscrire, stage, formation where FORM_CRE = CRE_ID and FORM_ID= INS_FORM and INS_ELE=ELE_ID and FORM_STA = STA_CODE and FORM_ENS = ENS_ID and ENS_ID =:uti_ens ORDER BY FORM_ID DESC");
+        $req = $cnx->prepare("select *  from creneau, enseignant, eleve ,inscrire, stage, formation where STA_CRE = CRE_ID and STA_ID= INS_STA and INS_ELE=ELE_ID and STA_FORM = FORM_CODE and STA_ENS = ENS_ID and ENS_ID =:uti_ens ORDER BY STA_ID DESC");
         $req->bindValue(':uti_ens', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
         $req->execute();
 
@@ -156,7 +156,27 @@ function getInscrireListe2() {
     }
     return $resultat;
 }
+//admin
+function getInscrireListe3() {
+    $resultat = array();
 
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from inscrire, eleve where INS_ELE= ELE_ID ");
+        
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
 
 
 ?>

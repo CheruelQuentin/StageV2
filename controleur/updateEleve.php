@@ -20,14 +20,14 @@ $ELE_INS=getInscrireByEle($ELE_ID);
 if(getUpdateEleve($ELE_ETA, $ELE_NOM, $ELE_PRENOM, $ELE_DATENAISS, $ELE_CLASSE, $ELE_MAIL,$ELE_ID)){
 
 	for($i=0;$i<sizeof($ELE_INS);$i++){	//Suppression de toutes les formations suivies
-	getDelInscrire($ELE_ID,$ELE_INS[$i]['INS_FORM']);
+	getDelInscrire($ELE_ID,$ELE_INS[$i]['INS_STA']);
 }
 
 	for($i=0;$i<sizeof($_POST['choixForm']);$i++){ //Ajout des formations cochées
 	getAddInscrire($ELE_ID,$_POST['choixForm'][$i]);
 }
 
-	header('Location: ./?action=listeEleve');
+	header('Location: ./?action=listeEleve2');
   	exit();
 } else{
 	echo "erreur.";

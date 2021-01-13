@@ -2,18 +2,25 @@
 
 
 include_once "modele/bd.formation.inc.php";
+include_once "modele/bd.stage.inc.php";
+include_once "modele/bd.creneau.inc.php";
+include_once "modele/bd.matiere.inc.php";
+include_once "modele/bd.enseignant.inc.php";
 
-
-$FORM_CRE=$_POST['FORM_CRE'];
-$FORM_STA=$_POST['FORM_STA'];
-$FORM_MAT=$_POST['FORM_MAT'];
-$FORM_ENS=$_POST['FORM_ENS'];
-$FORM_ELEMIN=$_POST['FORM_ELEMIN'];
-$FORM_ELEMAX=$_POST['FORM_ELEMAX'];
-$FORM_ID=$_POST['FORM_ID'];
+$STA_CRE=$_POST['STA_CRE'];
+$STA_FORM=$_POST['STA_FORM'];
+$STA_MAT=$_POST['STA_MAT'];
+$STA_ENS=$_POST['STA_ENS'];
+$STA_ELEMIN=$_POST['STA_ELEMIN'];
+$STA_ELEMAX=$_POST['STA_ELEMAX'];
+$STA_ID=$_POST['STA_ID'];
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
+$creneau=getCreneau(); 
+$formation=getFormation(); 
+$matiere=getMatiere(); 
+$enseignant=getEnseignant();
 
-getUpdateFormation($FORM_CRE, $FORM_STA, $FORM_MAT, $FORM_ENS, $FORM_ELEMIN, $FORM_ELEMAX, $FORM_ID);
+getUpdateStage($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $STA_ELEMAX, $STA_ID);
 
 
 // traitement si necessaire des donnees recuperees

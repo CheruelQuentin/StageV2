@@ -1,5 +1,5 @@
 <div style="text-align:right;padding-bottom:5px;">
-  <center><h2 id="titre">Gestion des stages</h2></center>
+  <center><h2 id="titre">Gestion des Formations</h2></center>
 
 <button onclick="window.location.href='./?action=addSta';" id="bouton2" style="display:inline-block;">Ajouter</button>
 </div>
@@ -12,12 +12,12 @@
          </thead>
          <tbody>
 <?php
-for ($i = 0; $i < count($listeStage); $i++) {
+for ($i = 0; $i < count($listeFormation); $i++) {
     ?>
         <tr>
-       <td><center><?= $listeStage[$i]["STA_LIBELLE"] ?></center></td>
-       <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delSta&id=<?=$listeStage[$i]['STA_CODE']?>'; }" > Supp. </button></center></td>
-       <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifSta&id=<?=$listeStage[$i]['STA_CODE']?>'; }" > Modifier </button></center></td>
+       <td><center><?= $listeFormation[$i]["FORM_LIBELLE"] ?></center></td>
+       <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delSta&id=<?=$listeFormation[$i]['FORM_CODE']?>'; }" > Supp. </button></center></td>
+       <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifSta&id=<?=$listeFormation[$i]['FORM_CODE']?>'; }" > Modifier </button></center></td>
         </tr>
     <?php
 }

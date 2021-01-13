@@ -57,13 +57,13 @@ function getPreferer() {
 }
     
 
-function getAddPreferer($PREF_CRE, $PREF_ENS) {
+function getAddPreferer($PREF_ENS, $PREF_CRE) {
     $resultat = -1;
 
     try {
         $cnx = connexionPDO();
 
-        $req = $cnx->prepare("insert into preferer (PREF_CRE, PREF_ENS) values(:PREF_CRE,:uti_ens)");
+        $req = $cnx->prepare("insert into preferer ( PREF_ENS,PREF_CRE) values(:uti_ens,:PREF_CRE)");
 
         $req->bindValue(':uti_ens', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
         $req->bindValue(':PREF_CRE', $PREF_CRE, PDO::PARAM_INT);
@@ -115,7 +115,7 @@ function getPropo(){
     $resultat = array();
     try{
         $cnx = connexionPDO();
-        $req = $cnx->prepare("SELECT * FROM preferer, creneau, formation, stage where PREF_CRE = CRE_ID and FORM_CRE = CRE_ID and STA_CODE = FORM_STA");
+        $req = $cnx->prepare("SELECT * FROM preferer, creneau, formation, stage where PREF_CRE = CRE_ID and STA_CRE = CRE_ID and FORM_CODE = STA_FORM");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);

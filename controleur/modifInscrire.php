@@ -5,7 +5,7 @@ include_once "modele/bd.formation.inc.php";
 include_once "modele/bd.creneau.inc.php";
 include_once "modele/bd.stage.inc.php";
 
-$listeFormation = getFormation();
+$listeStage = getStage();
 
 
 $titre = "Modification de l'inscription";

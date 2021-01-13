@@ -10,8 +10,7 @@
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script src="java/autocomplete.java"></script>
             <link rel="stylesheet" type="text/css" href="css/autocomplete.css">
-              <?php $etablissement=getEtablissement(); $formations=getFormation();
-              $etaById=getEtablissementById(getEleveById($_GET['id'])['ELE_ETA'])?>
+              
       </head>
       <body>
         <center><h2>Modification eleve </h2>
@@ -39,9 +38,9 @@
     <fieldset>      
         <legend>Formations à suivre</legend>           
         <?php
-        for($i=0;$i<sizeof($formations);$i++){ ?> 
-          <input type="checkbox" name="choixForm[]" value=<?= $formations[$i]['FORM_ID'];?>
-          ><?= getStageById($formations[$i]['FORM_STA'])['STA_LIBELLE'], " - ", getMatiereById($formations[$i]['FORM_MAT'])['MAT_LIBELLE'], " | ", getCreneauById($formations[$i]['FORM_CRE'])['CRE_DATE'], " - ",getCreneauById($formations[$i]['FORM_CRE'])['CRE_HEUREDEB'];?>
+        for($i=0;$i<sizeof($stage);$i++){ ?> 
+          <input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>
+          ><?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], " - ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " | ", getCreneauById($stage[$i]['STA_CRE'])['CRE_DATE'], " - ",getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB'];?>
           <br>
           
       <?php } ?>          

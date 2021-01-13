@@ -2,12 +2,12 @@
 
 include_once "bd.inc.php";
 
-function getFormationById($FORM_ID) {
-
+function getFormationById($FORM_CODE) {
+    
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from formation where FORM_ID=:FORM_ID");
-        $req->bindValue(':FORM_ID', $FORM_ID, PDO::PARAM_INT);
+        $req = $cnx->prepare("select * from formation where FORM_CODE=:FORM_CODE");
+        $req->bindValue(':FORM_CODE', $FORM_CODE, PDO::PARAM_STR);
 
         $req->execute();
 
@@ -25,7 +25,7 @@ function getFormation() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from formation order by FORM_CRE DESC");
+        $req = $cnx->prepare("select * from Formation");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -39,19 +39,18 @@ function getFormation() {
     }
     return $resultat;
 }
-
-function getAddFormation($FORM_CRE, $FORM_STA, $FORM_MAT, $FORM_ENS, $FORM_ELEMIN, $FORM_ELEMAX) {
+    
+function getAddFormation($FORM_CODE, $FORM_LIBELLE) {
     $resultat = -1;
+
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("insert into formation (FORM_CRE,FORM_STA,FORM_MAT,FORM_ENS,FORM_ELEMIN,FORM_ELEMAX) values(:FORM_CRE,:FORM_STA,:FORM_MAT,:uti_ens,:FORM_ELEMIN,:FORM_ELEMAX)");
-        $req->bindValue(':FORM_CRE', $FORM_CRE, PDO::PARAM_INT);
-        $req->bindValue(':FORM_STA', $FORM_STA, PDO::PARAM_INT);
-        $req->bindValue(':FORM_MAT', $FORM_MAT, PDO::PARAM_INT);
-        $req->bindValue(':uti_ens', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
-        $req->bindValue(':FORM_ELEMIN', $FORM_ELEMIN, PDO::PARAM_INT);
-        $req->bindValue(':FORM_ELEMAX', $FORM_ELEMAX, PDO::PARAM_INT);
+
+        $req = $cnx->prepare("insert into Formation (FORM_LIBELLE) values(:FORM_LIBELLE)");
+
+        $req->bindValue(':FORM_LIBELLE', $FORM_LIBELLE, PDO::PARAM_STR);
         
+
         $resultat = $req->execute();
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
@@ -60,14 +59,13 @@ function getAddFormation($FORM_CRE, $FORM_STA, $FORM_MAT, $FORM_ENS, $FORM_ELEMI
     return $resultat;
 }
 
-
-function getDelFormation($FORM_ID) {
+function getDelFormation($FORM_CODE) {
     $resultat = -1;
     try {
         $cnx = connexionPDO();
 
-        $req = $cnx->prepare("delete from formation where FORM_ID=:FORM_ID");
-        $req->bindValue(':FORM_ID', $FORM_ID, PDO::PARAM_INT);
+        $req = $cnx->prepare("delete from Formation where FORM_CODE=:FORM_CODE");
+        $req->bindValue(':FORM_CODE', $FORM_CODE, PDO::PARAM_INT);
         
         $resultat = $req->execute();
     } catch (PDOException $e) {
@@ -76,21 +74,14 @@ function getDelFormation($FORM_ID) {
     }
     return $resultat;
 }
-
-function getUpdateFormation($FORM_CRE, $FORM_STA, $FORM_MAT, $FORM_ENS, $FORM_ELEMIN, $FORM_ELEMAX, $FORM_ID){
+function getUpdateFormation($FORM_LIBELLE, $FORM_CODE){
     $resultat = -1;
     try {
 $cnx = connexionPDO();
-$req = $cnx->prepare("UPDATE `formation` SET FORM_CRE = :FORM_CRE,FORM_STA = :FORM_STA, FORM_MAT = :FORM_MAT,FORM_ENS = :FORM_ENS, FORM_ELEMIN = :FORM_ELEMIN, FORM_ELEMAX = :FORM_ELEMAX, FORM_ID = :FORM_ID WHERE `formation`.FORM_ID=:FORM_ID;");
-
-        $req->bindValue(':FORM_ID', $FORM_ID, PDO::PARAM_INT);
-        $req->bindValue(':FORM_CRE', $FORM_CRE, PDO::PARAM_INT);
-        $req->bindValue(':FORM_STA', $FORM_STA, PDO::PARAM_INT);
-        $req->bindValue(':FORM_MAT', $FORM_MAT, PDO::PARAM_INT);
-        $req->bindValue(':FORM_ENS', $FORM_ENS, PDO::PARAM_INT);
-        $req->bindValue(':FORM_ELEMIN', $FORM_ELEMIN, PDO::PARAM_INT);
-        $req->bindValue(':FORM_ELEMAX', $FORM_ELEMAX, PDO::PARAM_INT);
-
+$req = $cnx->prepare("UPDATE `Formation` SET FORM_LIBELLE = :FORM_LIBELLE WHERE `Formation`.FORM_CODE=:FORM_CODE;");
+$req->bindValue(':FORM_LIBELLE', $FORM_LIBELLE, PDO::PARAM_STR);
+$req->bindValue(':FORM_CODE', $FORM_CODE, PDO::PARAM_INT);
+        
         $resultat = $req->execute();
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
@@ -99,4 +90,20 @@ $req = $cnx->prepare("UPDATE `formation` SET FORM_CRE = :FORM_CRE,FORM_STA = :FO
     return $resultat;
 }
 
+function getFormationIdByInfo($FORM_LIBELLE) {
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select FORM_CODE from Formation where FORM_LIBELLE=:FORM_LIBELLE");
+        $req->bindValue(':FORM_LIBELLE', $FORM_LIBELLE, PDO::PARAM_STR);
+
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat['FORM_CODE'];
+}
 ?>

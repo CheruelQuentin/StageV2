@@ -11,7 +11,7 @@ function getInscrirePDf() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select DISTINCT ELE_NOM,ELE_CLASSE,ELE_DATENAISS,STA_LIBELLE from inscrire,eleve,stage,formation,etablissement,utilisateur where INS_ELE = ELE_ID and INS_FORM = FORM_STA and FORM_STA = STA_CODE and ELE_ETA = ETA_ID and ETA_MAIL = :UTIL_MAIL ORDER BY ELE_CLASSE, ELE_NOM;");
+        $req = $cnx->prepare("select DISTINCT ELE_NOM,ELE_CLASSE,ELE_DATENAISS,FORM_LIBELLE from inscrire,eleve,stage,formation,etablissement,utilisateur where INS_ELE = ELE_ID and INS_STA = STA_FORM and STA_FORM = FORM_CODE and ELE_ETA = ETA_ID and ETA_MAIL = :UTIL_MAIL ORDER BY ELE_CLASSE, ELE_NOM;");
         $req->bindValue(':UTIL_MAIL', $_SESSION['UTIL_MAIL'], PDO::PARAM_STR);
         $req->execute();
 
@@ -97,7 +97,7 @@ function Table()
 }
 
 function viewTable(){
-global $ELE_NOM , $INS_FORM;
+global $ELE_NOM , $INS_STA;
     $this->SetFont('Times','',12);
       $stmt=getInscrirePDF();
          for ($i = 0; $i < count($stmt); $i++) {

@@ -18,10 +18,10 @@
          <input id="ELE_ID" type="hidden" name="ELE_ID" size="50px" maxlength="20" value="<?=$_GET['id']?>" />
         </p>
           <label>Formation suivie :</label>
-          <select id="form" name="INS_FORM">
+          <select id="form" name="INS_STA">
           <?php
-           for($i=0;$i<sizeof($listeFormation);$i++){ ?> 
-            <option value= <?= $listeFormation[$i]['FORM_ID'];?>><?= getCreneauById($listeFormation[$i]['FORM_CRE'])['CRE_DATE'], " ", getCreneauById($listeFormation[$i]['FORM_CRE'])['CRE_HEUREDEB'], ", ", getStageById($listeFormation[$i]['FORM_STA'])['STA_LIBELLE'];?> </option> 
+           for($i=0;$i<sizeof($listeStage);$i++){ ?> 
+            <option value= <?= $listeStage[$i]['STA_ID'];?>><?= getFormationById($listeStage[$i]['STA_FORM'])['FORM_LIBELLE'], " ",getCreneauById($listeStage[$i]['STA_CRE'])['CRE_DATE'], " ", getCreneauById($listeStage[$i]['STA_CRE'])['CRE_HEUREDEB'];?> </option> 
           <?php } ?>
           </select>
           

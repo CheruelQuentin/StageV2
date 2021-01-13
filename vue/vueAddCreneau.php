@@ -5,7 +5,7 @@
 <p></p>
 
  <form method="post" action="./?action=insertCre">
- 	<?php echo($_SESSION["UTIL_ENS"]);?>
+ <?php  echo($_SESSION["UTIL_ENS"]); ?>
 	<table><tr><td>
 
 	<p><label for="CRE_DATE"> Date : </label> <input id="CRE_DATE" type="date" name="CRE_DATE" size="50px" maxlength="20"   /></p>
@@ -14,17 +14,17 @@
 	<p><label for="CRE_HEUREFIN"> Heure de fin : </label> <input id="CRE_HEUREFIN" type="time" name="CRE_HEUREFIN" size="50px" maxlength="20"  /></p>
 
 	<div class="ui-widget">
-	<p><label for="FORM_ELEMIN"> Nombre d'élève min : </label> <input type="number" id="ele_min" name="FORM_ELEMIN" min="1" max="40"></p>
-	<p><label for="FORM_ELEMAX"> Nombre d'élève max : </label> <input type="number" id="ele_max" name="FORM_ELEMAX" min="11" max="40"></p>
+	<p><label for="STA_ELEMIN"> Nombre d'élève min : </label> <input type="number" id="ele_min" name="STA_ELEMIN" min="1" max="40"></p>
+	<p><label for="STA_ELEMAX"> Nombre d'élève max : </label> <input type="number" id="ele_max" name="STA_ELEMAX" min="11" max="40"></p>
 	</div>
 
 	<div id="choixForm">
 		<fieldset>      
-        <legend>Mini-stage</legend>           
+        <legend>Stage</legend>           
         <?php
-				for($i=0;$i<sizeof($stage);$i++){ ?> 
-					<input type="radio" name="choixForm[]" value=<?= $stage[$i]['STA_CODE'];?>
-					><?= getStageById($stage[$i]['STA_CODE'])['STA_LIBELLE'];?>
+				for($i=0;$i<sizeof($formation);$i++){ ?> 
+					<input type="radio" name="choixForm[]" value=<?= $formation[$i]['FORM_CODE'];?>
+					><?= getFormationById($formation[$i]['FORM_CODE'])['FORM_LIBELLE'];?>
 					<br>
 					
 			<?php } ?>          

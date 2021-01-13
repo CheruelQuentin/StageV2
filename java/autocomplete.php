@@ -45,7 +45,7 @@ $listeEtablissement = getEtablissement();
 
     var availableStages = [
     <?php  for ($i = 0; $i < count($listeStage); $i++) {
-               echo '"'.$listeStage[$i]['STA_LIBELLE'].'"';
+               echo '"'.$listeStage[$i]['FORM_LIBELLE'].'"';
       if ($i < count($listeStage)-1){ echo ","; }
             } ?>
     ];

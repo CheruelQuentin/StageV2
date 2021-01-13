@@ -1,8 +1,8 @@
 <?php
 
-include_once "modele/bd.stage.inc.php";
+include_once "modele/bd.formation.inc.php";
 
-if(getDelStage($_GET['id'])){
+if(getDelFormation($_GET['id'])){
 	header('Location: ./?action=listeStage');
   	exit();
 } else{

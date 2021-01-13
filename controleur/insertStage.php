@@ -2,12 +2,12 @@
 
 
 include_once "modele/bd.stage.inc.php";
-$STA_CODE= NULL;
-$STA_LIBELLE=$_POST['STA_LIBELLE'];
+$FORM_CODE= NULL;
+$FORM_LIBELLE=$_POST['FORM_LIBELLE'];
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-getAddStage($STA_CODE, $STA_LIBELLE);
+getAddStage($FORM_CODE, $FORM_LIBELLE);
 
 
 // traitement si necessaire des donnees recuperees

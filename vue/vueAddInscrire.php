@@ -4,8 +4,6 @@
 
 <p></p>
 
-<?php $eleves=getEleve(); $formations=getFormation();?>
-
  <form method="post" action="./?action=insertIns">
 
 <center>
@@ -21,12 +19,12 @@
 		</select>
 </p>
 
-	<p><label for="INS_FORM"> Formation : </label>
-		<select name="INS_FORM">
+	<p><label for="INS_STA"> Formation : </label>
+		<select name="INS_STA">
 			<?php
-				for($i=0;$i<sizeof($formations);$i++){ ?> 
-					<option value= <?= $formations[$i]['FORM_ID'];?> > 
-						<?= getStageById($formations[$i]['FORM_STA'])['STA_LIBELLE'], ", ", getMatiereById($formations[$i]['FORM_MAT'])['MAT_LIBELLE'], " - ", getCreneauById($formations[$i]['FORM_CRE'])['CRE_HEUREDEB']; ?> </option> 
+				for($i=0;$i<sizeof($stage);$i++){ ?> 
+					<option value= <?= $stage[$i]['STA_ID'];?> > 
+						<?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], ", ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " - ", getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB']; ?> </option> 
 			<?php } ?>
 		</select>
 	</p></td></tr></table><br>

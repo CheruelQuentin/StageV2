@@ -12,8 +12,8 @@
 
              <form method="post" action="./?action=upSta">
              <table><tr><td>
-<input id="STA_CODE" type="hidden" name="STA_CODE" size="50px" maxlength="20" value="<?=$_GET['id']?>"/>
-    <label for="STA_LIBELLE">Libellé :</label><input id="STA_LIBELLE" type="text" name="STA_LIBELLE" size="50px" maxlength="128" value="<?=$libelle?>" onblur="verifmodiflibellestage();" /><span id = "erreurmodiflibellestage" ></span>
+<input id="FORM_CODE" type="hidden" name="FORM_CODE" size="50px" maxlength="20" value="<?=$_GET['id']?>"/>
+    <label for="FORM_LIBELLE">Libellé :</label><input id="FORM_LIBELLE" type="text" name="FORM_LIBELLE" size="50px" maxlength="128" value="<?=$libelle?>" onblur="verifmodiflibellestage();" /><span id = "erreurmodiflibellestage" ></span>
 
  
                     <input type="submit" value="valider"/>

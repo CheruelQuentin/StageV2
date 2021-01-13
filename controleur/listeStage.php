@@ -1,13 +1,13 @@
 <?php
 
-include_once "modele/bd.Stage.inc.php";
+include_once "modele/bd.formation.inc.php";
 
 
 // recuperation des donnees GET, POST, et SESSION
 ;
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
-$listeStage = getStage();
+$listeFormation = getFormation();
 
 // traitement si necessaire des donnees recuperees
 ;

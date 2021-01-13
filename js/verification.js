@@ -406,27 +406,27 @@ MAT_LIBELLE.style.borderColor="blue";
 }
 }
 function veriflibellestage(){	
-	var STA_LIBELLE = document.getElementById("STA_LIBELLE");
+	var FORM_LIBELLE = document.getElementById("FORM_LIBELLE");
 	var erreurlibellestage = document.getElementById("erreurlibellestage");
 
-if(STA_LIBELLE.value.length > 128 || STA_LIBELLE.value.length < 3) {
-STA_LIBELLE.style.borderColor="red";
+if(FORM_LIBELLE.value.length > 128 || FORM_LIBELLE.value.length < 3) {
+FORM_LIBELLE.style.borderColor="red";
 erreurlibellestage.innerHTML = "Il doit y avoir entre 3 et 128 caractères !";
 } else {
 erreurlibellestage.innerHTML = "";
-STA_LIBELLE.style.borderColor="blue";
+FORM_LIBELLE.style.borderColor="blue";
 }
 }
 function verifmodiflibellestage(){	
-	var STA_LIBELLE = document.getElementById("STA_LIBELLE");
+	var FORM_LIBELLE = document.getElementById("FORM_LIBELLE");
 	var erreurmodiflibellestage = document.getElementById("erreurmodiflibellestage");
 
-if(STA_LIBELLE.value.length > 128 || STA_LIBELLE.value.length < 3) {
-STA_LIBELLE.style.borderColor="red";
+if(FORM_LIBELLE.value.length > 128 || FORM_LIBELLE.value.length < 3) {
+FORM_LIBELLE.style.borderColor="red";
 erreurmodiflibellestage.innerHTML = "Il doit y avoir entre 3 et 128 caractères !";
 } else {
 erreurmodiflibellestage.innerHTML = "";
-STA_LIBELLE.style.borderColor="blue";
+FORM_LIBELLE.style.borderColor="blue";
 }
 }
 function verifModifSalle(){	

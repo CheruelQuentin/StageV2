@@ -2,11 +2,11 @@
 
 include_once "modele/bd.stage.inc.php";
 
-$STA_CODE=$_POST['STA_CODE'];
+$FORM_CODE=$_POST['FORM_CODE'];
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-getDelStage($STA_CODE);
+getDelStage($FORM_CODE);
 
 
 // traitement si necessaire des donnees recuperees

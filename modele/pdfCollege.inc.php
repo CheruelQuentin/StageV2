@@ -10,7 +10,7 @@ function getInscrirePDF2() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select DISTINCT ELE_NOM,ELE_CLASSE,ELE_DATENAISS,STA_LIBELLE from inscrire,eleve,stage,formation,etablissement,utilisateur where INS_ELE = ELE_ID and INS_FORM = FORM_STA and FORM_STA = STA_CODE and ELE_ETA = ETA_ID and ETA_MAIL = :UTIL_MAIL ORDER BY ELE_NOM, ELE_CLASSE;");
+        $req = $cnx->prepare("select DISTINCT ELE_NOM,ELE_CLASSE,ELE_DATENAISS,FORM_LIBELLE from inscrire,eleve,stage,formation,etablissement,utilisateur where INS_ELE = ELE_ID and INS_STA = STA_FORM and STA_FORM = FORM_CODE and ELE_ETA = ETA_ID and ETA_MAIL = :UTIL_MAIL ORDER BY ELE_NOM, ELE_CLASSE;");
         $req->bindValue(':UTIL_MAIL', $_SESSION['UTIL_MAIL'], PDO::PARAM_STR);
 
         $req->execute();
@@ -94,12 +94,12 @@ function Table()
 }
 
 function viewTable(){
-global $ELE_NOM , $INS_FORM;
+global $ELE_NOM , $INS_STA;
     $this->SetFont('Times','',12);
       $stmt=getInscrirePDF2();
          for ($i = 0; $i < count($stmt); $i++) {
                $this->Cell(40,10,$stmt[$i]['ELE_NOM'],1,0,'C');
-               $this->Cell(40,10,$stmt[$i]['STA_LIBELLE'],1,0,'C');
+               $this->Cell(40,10,$stmt[$i]['FORM_LIBELLE'],1,0,'C');
                $this->Cell(40,10,$stmt[$i]['ELE_DATENAISS'],1,0,'C');
                $this->Cell(40,10,$stmt[$i]['ELE_CLASSE'],1,0,'C');
                $this->MultiCell(0,10,"");

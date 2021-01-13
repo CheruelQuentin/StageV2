@@ -2,11 +2,11 @@
 
 include_once "modele/bd.formation.inc.php";
 
-$FORM_ID=$_POST['FORM_ID'];
+$STA_ID=$_POST['STA_ID'];
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-getDelFormation($FORM_ID);
+getDelFormation($STA_ID);
 
 
 // traitement si necessaire des donnees recuperees

@@ -1,9 +1,9 @@
 <?php
 
-include_once "modele/bd.stage.inc.php";
+include_once "modele/bd.formation.inc.php";
 
-$stage=getStageById($_GET['id']);
-$libelle=$stage['STA_LIBELLE'];
+$formation=getFormationById($_GET['id']);
+$libelle=$formation['FORM_LIBELLE'];
 
 $titre = "Modification du Stage";
 include "vue/entete.html.php";

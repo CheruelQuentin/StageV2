@@ -4,11 +4,11 @@
 include_once "modele/bd.inscrire.inc.php";
 
 $INS_ELE=$_POST['INS_ELE'];
-$INS_FORM=$_POST['INS_FORM'];
+$INS_STA=$_POST['INS_STA'];
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-getAddInscrire($INS_ELE, $INS_FORM);
+getAddInscrire($INS_ELE, $INS_STA);
 
 
 // traitement si necessaire des donnees recuperees
