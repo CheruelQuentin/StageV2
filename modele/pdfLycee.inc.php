@@ -2,17 +2,20 @@
 require"../fpdf182/fpdf.php";
 include_once "../modele/bd.eleve.inc.php";
 include_once "../modele/bd.inscrire.inc.php";
+include_once "../modele/bd.formation.inc.php";
+include_once "../modele/bd.creneau.inc.php";
+include_once "../modele/bd.stage.inc.php";
+include_once "../modele/bd.etablissement.inc.php";
 
-//echo "id eta".$_SESSION["UTIL_ETA"];
-//echo "<br>sql : select COUNT(INS_ELE) from inscrire,eleve,etablissement where INS_ELE = ELE_ID and ELE_ETA = ETA_ID and ETA_ID =".$_SESSION["UTIL_ETA"];
 
-function getInscrirePDf() {
+function getInscrirePDf($STA_ID) {
     $resultat = array();
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select DISTINCT ELE_NOM,ELE_CLASSE,ELE_DATENAISS,FORM_LIBELLE from inscrire,eleve,stage,formation,etablissement,utilisateur where INS_ELE = ELE_ID and INS_STA = STA_FORM and STA_FORM = FORM_CODE and ELE_ETA = ETA_ID and ETA_MAIL = :UTIL_MAIL ORDER BY ELE_CLASSE, ELE_NOM;");
-        $req->bindValue(':UTIL_MAIL', $_SESSION['UTIL_MAIL'], PDO::PARAM_STR);
+        $req = $cnx->prepare("select DISTINCT ELE_NOM, ELE_DATENAISS, ELE_CLASSE, CRE_DATE, FORM_LIBELLE from etablissement, eleve, inscrire, stage, formation, creneau where ETA_ID= ELE_ETA and INS_ELE = ELE_ID and INS_STA=STA_ID and STA_FORM = FORM_CODE and STA_CRE = CRE_ID and ETA_ID =:uti_eta and STA_ID = :STA_ID");
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
+        $req->bindValue(':STA_ID', $STA_ID, PDO::PARAM_INT);
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -32,7 +35,7 @@ function getMiam() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select COUNT(INS_ELE) as nb from inscrire,eleve,etablissement where INS_ELE = ELE_ID and ELE_ETA = ETA_ID and ETA_ID = :uti_eta");
+        $req = $cnx->prepare("select COUNT(INS_ELE) AS nb from etablissement, eleve, inscrire, stage, formation, creneau where ETA_ID= ELE_ETA and INS_ELE = ELE_ID and INS_STA=STA_ID and STA_FORM = FORM_CODE and STA_CRE = CRE_ID and ETA_ID =:uti_eta ");
         $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
         $resultat=$req->execute() ;
         
@@ -97,13 +100,15 @@ function Table()
 }
 
 function viewTable(){
-global $ELE_NOM , $INS_STA;
+global $ELE_NOM , $INS_STA ,$ELE_DATENAISS , $ELE_CLASSE, $CRE_DATE, $FORM_LIBELLE, $STA_ID;
     $this->SetFont('Times','',12);
-      $stmt=getInscrirePDF();
+      $stmt=getInscrirePDF($STA_ID);
          for ($i = 0; $i < count($stmt); $i++) {
                $this->Cell(40,10,$stmt[$i]['ELE_NOM'],1,0,'C');
                $this->Cell(40,10,strftime('%d/%m/%Y',strtotime($stmt[$i]['ELE_DATENAISS'])),1,0,'C');
                $this->Cell(40,10,$stmt[$i]['ELE_CLASSE'],1,0,'C');
+               $this->Cell(40,10,$stmt[$i]['CRE_DATE'],1,0,'C');
+               $this->Cell(40,10,$stmt[$i]['FORM_LIBELLE'],1,0,'C');
                $this->MultiCell(0,10,"");
                 }
 
