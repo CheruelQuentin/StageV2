@@ -11,9 +11,12 @@ $ENS_DATENAISS=$_POST['ENS_DATENAISS'];
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-getAddEnseignant($ENS_NOM, $ENS_PRENOM, $ENS_MAIL, $ENS_TEL, $ENS_DATENAISS);
-addUtiEnseignant($ENS_MAIL, $ENS_DATENAISS);
+if(getAddEnseignant($ENS_NOM, $ENS_PRENOM, $ENS_MAIL, $ENS_TEL, $ENS_DATENAISS)){
+	
+$ENS_ID =getEnseignantIdByInfo2($ENS_NOM,$ENS_PRENOM,$ENS_DATENAISS,$ENS_MAIL);
 
+addUtiEnseignant($ENS_MAIL, $ENS_DATENAISS,$ENS_ID);
+}
 // traitement si necessaire des donnees recuperees
 
 // appel du script de vue qui permet de gerer l'affichage des donnees

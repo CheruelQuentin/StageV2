@@ -113,7 +113,7 @@ $req = $cnx->prepare("UPDATE `etablissement` SET ETA_NOM = :ETA_NOM,ETA_VILLE = 
         $req->bindValue(':ETA_PROVNOM', $ETA_PROVNOM, PDO::PARAM_STR);
         $req->bindValue(':ETA_PROVPRENOM', $ETA_PROVPRENOM, PDO::PARAM_STR);
         $req->bindValue(':ETA_TEL', $ETA_TEL, PDO::PARAM_STR);
-        $req->bindValue(':ETA_SECU', $ETA_SECU, PDO::PARAM_STR);
+        $req->bindValue(':ETA_SECU', $ETA_SECU, PDO::PARAM_INT);
         $req->bindValue(':ETA_NOMSECU', $ETA_NOMSECU, PDO::PARAM_STR);
         $req->bindValue(':ETA_ID', $ETA_ID, PDO::PARAM_INT);
 
@@ -124,6 +124,36 @@ $req = $cnx->prepare("UPDATE `etablissement` SET ETA_NOM = :ETA_NOM,ETA_VILLE = 
     }
     return $resultat;
 }
+
+
+//recuperation total
+function getEtablissementIdByInfo($ETA_NOM,$ETA_VILLE,$ETA_CP,$ETA_MAIL) {
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select ETA_ID from etablissement where ETA_NOM=:ETA_NOM AND ETA_VILLE=:ETA_VILLE AND ETA_CP=:ETA_CP AND ETA_MAIL=:ETA_MAIL ");
+        $req->bindValue(':ETA_NOM', $ETA_NOM, PDO::PARAM_STR);
+        $req->bindValue(':ETA_VILLE', $ETA_VILLE, PDO::PARAM_STR);
+        $req->bindValue(':ETA_CP', $ETA_CP, PDO::PARAM_STR);
+        $req->bindValue(':ETA_MAIL', $ETA_MAIL, PDO::PARAM_STR);
+
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat['ETA_ID'];
+}
+
+
+
+
+
+
+
+//recup partielle
 
 function getEtabIdByInfo($etablissement) {
     

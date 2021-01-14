@@ -99,7 +99,7 @@ $req = $cnx->prepare("UPDATE enseignant SET ENS_NOM = :ENS_NOM , ENS_PRENOM = :E
     }
     return $resultat;
 }
-
+//recup partielle 
 function getEnseignantIdByInfo($enseignant) {
 
     $enseignant=explode(" - ",$enseignant);
@@ -112,6 +112,26 @@ function getEnseignantIdByInfo($enseignant) {
         $req = $cnx->prepare("select ENS_ID from enseignant where ENS_NOM=:ENS_NOM AND ENS_PRENOM=:ENS_PRENOM AND ENS_MAIL=:ENS_MAIL");
         $req->bindValue(':ENS_NOM', $ENS_NOM, PDO::PARAM_STR);
         $req->bindValue(':ENS_PRENOM', $ENS_PRENOM, PDO::PARAM_STR);
+        $req->bindValue(':ENS_MAIL', $ENS_MAIL, PDO::PARAM_STR);
+
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat['ENS_ID'];
+}
+//recup precise est total
+function getEnseignantIdByInfo2($ENS_NOM,$ENS_PRENOM,$ENS_DATENAISS,$ENS_MAIL) {
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select ENS_ID from enseignant where ENS_NOM=:ENS_NOM AND ENS_PRENOM=:ENS_PRENOM AND ENS_DATENAISS=:ENS_DATENAISS AND ENS_MAIL=:ENS_MAIL ");
+        $req->bindValue(':ENS_NOM', $ENS_NOM, PDO::PARAM_STR);
+        $req->bindValue(':ENS_PRENOM', $ENS_PRENOM, PDO::PARAM_STR);
+        $req->bindValue(':ENS_DATENAISS', $ENS_DATENAISS, PDO::PARAM_STR);
         $req->bindValue(':ENS_MAIL', $ENS_MAIL, PDO::PARAM_STR);
 
         $req->execute();

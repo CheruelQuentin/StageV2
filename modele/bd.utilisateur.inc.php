@@ -106,14 +106,15 @@ function addUtilisateur($Mail, $Mdp, $type) {
     return $resultat;
 }
 
-function addUtiEnseignant($ENS_MAIL, $ENS_DATENAISS) {
+function addUtiEnseignant($ENS_MAIL, $ENS_DATENAISS,$ENS_ID) {
     try {
         $cnx = connexionPDO();
 
         $mdpUCrypt = crypt($ENS_DATENAISS, "sel");
-        $req = $cnx->prepare("insert into utilisateur (UTIL_MAIL, UTIL_MDP, UTIL_CODE) values (:ENS_MAIL,:ENS_DATENAISS,'ENS')");
+        $req = $cnx->prepare("insert into utilisateur (UTIL_MAIL, UTIL_MDP, UTIL_CODE,UTIL_ENS) values (:ENS_MAIL,:ENS_DATENAISS,'ENS',:ENS_ID)");
         $req->bindValue(':ENS_MAIL', $ENS_MAIL, PDO::PARAM_STR);
         $req->bindValue(':ENS_DATENAISS', $mdpUCrypt, PDO::PARAM_STR);
+        $req->bindValue(':ENS_ID', $ENS_ID, PDO::PARAM_INT);
         
         
         $resultat = $req->execute();
@@ -124,14 +125,15 @@ function addUtiEnseignant($ENS_MAIL, $ENS_DATENAISS) {
     return $resultat;
 }
 
-function addUtiEtablissement($ETA_MAIL, $ETA_PROVNOM) {
+function addUtiEtablissement($ETA_MAIL, $ETA_PROVNOM,$ETA_ID) {
     try {
         $cnx = connexionPDO();
 
         $mdpUCrypt = crypt($ETA_PROVNOM, "sel");
-        $req = $cnx->prepare("insert into utilisateur (UTIL_MAIL, UTIL_MDP, UTIL_CODE) values (:ETA_MAIL,:ETA_PROVNOM,'ETAB')");
+        $req = $cnx->prepare("insert into utilisateur (UTIL_MAIL, UTIL_MDP, UTIL_CODE,UTIL_ETA) values (:ETA_MAIL,:ETA_PROVNOM,'ETAB',:ETA_ID)");
         $req->bindValue(':ETA_MAIL', $ETA_MAIL, PDO::PARAM_STR);
         $req->bindValue(':ETA_PROVNOM', $mdpUCrypt, PDO::PARAM_STR);
+        $req->bindValue(':ETA_ID', $ETA_ID, PDO::PARAM_INT);
         
         
         $resultat = $req->execute();

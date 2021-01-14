@@ -5,11 +5,11 @@
 <link rel="stylesheet" type="text/css" href="css/liste.css">
 <table class="table">
         <thead>
+          <th align="center">Mini-stage</th>
             <th align="center">Date</th>
             <th align="center">Heure début</th>
             <th align="center">Heure fin</th>
-            <th align="center">Salle</th>
-            <th align="center">Mini-stage</th>
+            <th align="center">Salle</th>  
             <th align="center">Validé</th>
             <th align="center">Refusé</th>
          </thead>
@@ -18,12 +18,12 @@
 <?php
 for ($i = 0; $i < count($listeCreneauPropo); $i++) {
     ?>
-        <tr>
+        <tr><td>
+       <center><?= $listeCreneauPropo[$i]["FORM_LIBELLE"] ?></center></td>
        <td><center><?= strftime('%d/%m/%Y',strtotime($listeCreneauPropo[$i]["CRE_DATE"])) ?></center></td>
        <td><center><?= $listeCreneauPropo[$i]["CRE_HEUREDEB"] ?></center></td>
        <td><center><?= $listeCreneauPropo[$i]["CRE_HEUREFIN"] ?></center></td>
        <td><center><?= $listeCreneauPropo[$i]["CRE_SALLE"] ?></center></td>
-       <td><center><?= $listeCreneauPropo[$i]["FORM_LIBELLE"] ?></center></td>
        <td><center><button> Validé </button></center></td>
        <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delForm&id=<?=$listeCreneauPropo[$i]['STA_ID']?>'; }" > Supprimé </button></center></td>
         </tr>
