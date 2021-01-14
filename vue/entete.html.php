@@ -53,6 +53,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeFormation'"> Gestion des mini-stage </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeStage'"> Gestion des formations </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription3'"> Gestion des stagiaires </button></li>
+<li><button id="bouton1" type="button" onclick="window.location.href='./controleur/creationPDFpartage'"> Generer PDF pour les etab</button></li>
 </ul>
 
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ ?>
@@ -62,7 +63,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button></li>
 <li><button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button></li>
 <li><button id="bouton1" type="button" onclick="window.location.href='./?action=choixFormPdf'"> Generer PDF</button></li>
-<li><button id="bouton1" type="button" onclick="window.location.href='./?action=choixFormPdf'"> Generer PDF pour les etab</button></li>
+
 </ul>
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ENS"){ ?>
 <ul id="menuGeneral">
