@@ -8,8 +8,9 @@ include_once "modele/bd.stage.inc.php";
 include_once "modele/bd.creneau.inc.php";
 include_once "modele/bd.etablissement.inc.php";
 
-$listeInscrire2 = getInscrireListe2();
 $listeInscrire = getInscrireListe();
+
+
 
 $titre = "Profil";
 include "vue/entete.html.php";

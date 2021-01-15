@@ -28,7 +28,7 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
     ?>
         <tr>
             <td><center><?= getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_NOM']," ",getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_PRENOM'] ?></center></td>
-            <td><center><?= getFormationById(getStageById($listeInscrire[$i]["INS_STA"])['STA_FORM'])['FORM_LIBELLE'] ?></center></td>
+            <td><center><?= $listeInscrire[$i]['FORM_LIBELLE'] ?></center></td>
 
     <?php
 }
@@ -49,13 +49,13 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
          </thead>
          <tbody>
 <?php
-for ($i = 0; $i < count($listeInscrire2); $i++) {
+for ($i = 0; $i < count($listeInscrire); $i++) {
     ?>
         <tr>
-            <td><center><?= getEleveById($listeInscrire2[$i]["INS_ELE"])['ELE_NOM'], " ",getEleveById($listeInscrire2[$i]["INS_ELE"])['ELE_PRENOM'] ?></center></td>
-            <td><center><?= getCreneauById($listeInscrire2[$i]["STA_CRE"])['CRE_SALLE']?></center></td>
-            <td><center><?= getCreneauById($listeInscrire2[$i]["STA_CRE"])['CRE_DATE'], " ",getCreneauById($listeInscrire2[$i]["STA_CRE"])['CRE_HEUREDEB'] ?></center></td>
-            <td><center><?= getFormationById(getStageById($listeInscrire2[$i]["INS_STA"])['STA_FORM'])['FORM_LIBELLE'] ?></center></td>
+            <td><center><?= getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_NOM'], " ",getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_PRENOM'] ?></center></td>
+            <td><center><?= getCreneauById($listeInscrire[$i]["STA_CRE"])['CRE_SALLE']?></center></td>
+            <td><center><?= getCreneauById($listeInscrire[$i]["STA_CRE"])['CRE_DATE'], " ",getCreneauById($listeInscrire[$i]["STA_CRE"])['CRE_HEUREDEB'] ?></center></td>
+            <td><center><?= getFormationById(getStageById($listeInscrire[$i]["INS_STA"])['STA_FORM'])['FORM_LIBELLE'] ?></center></td>
 
     <?php
 }

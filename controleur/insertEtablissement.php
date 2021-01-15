@@ -15,11 +15,13 @@ $ETA_SECU=$_POST['ETA_SECU'];
 $ETA_NOMSECU=$_POST['ETA_NOMSECU'];
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-getAddEtablissement($ETA_NOM, $ETA_VILLE, $ETA_ADRESSE, $ETA_CP, $ETA_MAIL, $ETA_PROVCIVIL, $ETA_PROVNOM, $ETA_PROVPRENOM, $ETA_TEL, $ETA_SECU, $ETA_NOMSECU);
+if(getAddEtablissement($ETA_NOM, $ETA_VILLE, $ETA_ADRESSE, $ETA_CP, $ETA_MAIL, $ETA_PROVCIVIL, $ETA_PROVNOM, $ETA_PROVPRENOM, $ETA_TEL, $ETA_SECU, $ETA_NOMSECU)){
 
-addUtiEtablissement($ETA_MAIL, $ETA_PROVNOM);
+$ETA_ID = getEtablissementIdByInfo($ETA_NOM,$ETA_VILLE,$ETA_CP,$ETA_MAIL);
+
+addUtiEtablissement($ETA_MAIL, $ETA_PROVNOM,$ETA_ID);
 // traitement si necessaire des donnees recuperees
-
+}
 // appel du script de vue qui permet de gerer l'affichage des donnees
 
 $titre = "Liste des établissements";

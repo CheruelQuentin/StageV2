@@ -6,7 +6,7 @@ function controleurPrincipal($action){
     $lesActions["listeEtablissement"] = "listeEtablissement.php";
     $lesActions["listeCollege"] = "listeCollege.php";
     $lesActions["listeLycee"] = "listeLycee.php";
-
+    $lesActions["choixFormPdf"] = "ChoixFormPdf.php";
     //Listes de personnes
     $lesActions["listeEnseigner"] = "listeEnseigner.php";
     $lesActions["listeEnseignant"] = "listeEnseignant.php";
@@ -120,6 +120,7 @@ function controleurPrincipal($action){
     $lesActions["listeMatiere"] = "listeMatiere.php";
     $lesActions["prefCreneau"] = "listePreferer.php";
     $lesActions["pdf"] = "testpdf.php";
+
 
     if (array_key_exists ( $action , $lesActions )){
         return $lesActions[$action];

@@ -29,6 +29,7 @@ $CRE_ID=getCreneauIdByInfo2($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN)
 $STA_CRE=$CRE_ID;
 //Ajout des inscriptions aux formations
 getAddStage($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $STA_ELEMAX);
+
 $PREF_CRE=$CRE_ID;
 $PREF_ENS=$STA_ENS;
 
