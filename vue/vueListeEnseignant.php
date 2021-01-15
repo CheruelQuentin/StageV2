@@ -30,5 +30,12 @@ for ($i = 0; $i < count($listeEnseignant); $i++) {
 
     <?php
 }
-?>
+
+
+for ($i = 0; $i < count($listepdf); $i++) {
+    
+
+echo $listepdf[$i]['FORM_LIBELLE']; 
+
+ } ?>
 </tbody></table>

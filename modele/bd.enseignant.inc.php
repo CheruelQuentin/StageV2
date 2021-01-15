@@ -144,5 +144,27 @@ function getEnseignantIdByInfo2($ENS_NOM,$ENS_PRENOM,$ENS_DATENAISS,$ENS_MAIL) {
     return $resultat['ENS_ID'];
 }
 
+function StagePDF2(){
+$resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select  distinct FORM_LIBELLE , CRE_DATE, CRE_SALLE, CRE_HEUREDEB, CRE_HEUREFIN, STA_ELEMIN, STA_ELEMAX from formation, stage, creneau where STA_FORM = FORM_CODE and STA_CRE = CRE_ID and CRE_DATE > sysdate()");
+        $req->execute() ;
+        
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        
+        while ($ligne) {
+            $resultat[] = $ligne;
+                $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
 
 ?>
