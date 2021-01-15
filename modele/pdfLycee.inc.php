@@ -30,18 +30,19 @@ function getInscrirePDf($STA_ID) {
     return $resultat;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function getMiam() {
+function getMiam($STA_ID){
 
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select COUNT(INS_ELE) AS nb from etablissement, eleve, inscrire, stage, formation, creneau where ETA_ID= ELE_ETA and INS_ELE = ELE_ID and INS_STA=STA_ID and STA_FORM = FORM_CODE and STA_CRE = CRE_ID and ETA_ID =:uti_eta ");
+        $req = $cnx->prepare("select COUNT(INS_ELE) AS nb from etablissement, eleve, inscrire, stage, formation, creneau where ETA_ID= ELE_ETA and INS_ELE = ELE_ID and INS_STA=STA_ID and STA_FORM = FORM_CODE and STA_CRE = CRE_ID and ETA_ID =:uti_eta AND  STA_ID = :STA_ID");
         $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
+        $req->bindValue(':STA_ID', $STA_ID, PDO::PARAM_INT);
         $resultat=$req->execute() ;
         
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
- $resultat = $ligne['nb'];
+        $resultat = $ligne['nb'];
       //  echo "<br>nb eleve ".$resultat;
         /*while ($ligne) {
             $resultat = $ligne;
@@ -104,7 +105,7 @@ global $ELE_NOM , $INS_STA ,$ELE_DATENAISS , $ELE_CLASSE, $CRE_DATE, $FORM_LIBEL
     $this->SetFont('Times','',12);
       $stmt=getInscrirePDF($STA_ID);
          for ($i = 0; $i < count($stmt); $i++) {
-               $this->Cell(40,10,$stmt[$i]['ELE_NOM'],1,0,'C');
+               $this->Cell(30,10,$stmt[$i]['ELE_NOM'],1,0,'C');
                $this->Cell(40,10,strftime('%d/%m/%Y',strtotime($stmt[$i]['ELE_DATENAISS'])),1,0,'C');
                $this->Cell(40,10,$stmt[$i]['ELE_CLASSE'],1,0,'C');
                $this->Cell(40,10,$stmt[$i]['CRE_DATE'],1,0,'C');

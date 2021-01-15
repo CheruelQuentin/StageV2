@@ -18,10 +18,10 @@ $ETA_SECU=$etablissement['ETA_SECU'];
 $ETA_NOMSECU=$etablissement['ETA_NOMSECU'];
 $ETA_VILLE=$etablissement['ETA_VILLE'];
 
-$Miam=getMiam();
+
 
 $STA_ID =$_POST['STA_ID'];
-
+$Miam=getMiam($STA_ID);
 require_once "../fpdf182/fpdf.php";
 include_once "../vue/vuePdfLycee.php";
 
