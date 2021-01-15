@@ -7,7 +7,7 @@ $PREF_ENS=$_POST['PREF_ENS'];
 $PREF_EDT=$_POST['PREF_EDT'];
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-getAddMatiere($MAT_CODE,$PREF_CRE,PREF_EDT);
+getAddMatiere($MAT_CODE,$PREF_CRE,$PREF_EDT);
 
 
 // traitement si necessaire des donnees recuperees

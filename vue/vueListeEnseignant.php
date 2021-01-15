@@ -30,5 +30,5 @@ for ($i = 0; $i < count($listeEnseignant); $i++) {
 
     <?php
 }
-?>
+ ?>
 </tbody></table>

@@ -62,10 +62,10 @@ function getTravailler() {
     try {
         $cnx = connexionPDO();
 
-        $req = $cnx->prepare("insert into travailler (TRA_ENS,TRA_ETA) values(:TRA_ENS,:TRA_ETA)");
+        $req = $cnx->prepare("insert into travailler (TRA_ENS,TRA_ETA) values(:TRA_ENS,:uti_eta)");
 
         $req->bindValue(':TRA_ENS', $TRA_ENS, PDO::PARAM_INT);
-        $req->bindValue(':TRA_ETA', $TRA_ETA, PDO::PARAM_INT);
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
 
         $resultat = $req->execute();
     } catch (PDOException $e) {
