@@ -129,5 +129,3 @@ function getPropo(){
     }
     return $resultat;
 }
-
-?>
