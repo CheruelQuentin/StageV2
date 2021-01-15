@@ -8,7 +8,27 @@ include_once "../modele/bd.stage.inc.php";
 include_once "../modele/bd.etablissement.inc.php";
 
 
+function StagePDF(){
+$resultat = array();
 
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select  distinct FORM_LIBELLE , CRE_DATE, CRE_SALLE, CRE_HEUREDEB, CRE_HEUREFIN, STA_ELEMIN, STA_ELEMAX from formation, stage, creneau where STA_FORM = FORM_CODE and STA_CRE = CRE_ID and CRE_DATE > sysdate()");
+       $resultat=$req->execute() ;
+        
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        $resultat = $ligne;
+       /* while ($ligne) {
+            $resultat[] = $ligne;
+                $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }*/
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
 class PDF extends FPDF
 {
 // En-tête
@@ -40,16 +60,22 @@ function Footer()
     $this->SetTextColor(66, 66, 66);
     $this->SetFont('Arial','I',8);
     // Numéro de page
-    $this->Cell(0,10,utf8_decode(' Rostand 2020                                                                                                                  Page ').$this->PageNo().'/{nb}',0,0,'C');
+    $this->Cell(0,10,utf8_decode('Lycée Jean-Rostand 2020                                                                                                                  Page ').$this->PageNo().'/{nb}',0,0,'C');
 }
 
 
 function Table()
 {
+    global $FORM_LIBELLE;
+    $this->SetFont('Times','',12);
+    $stmt = StagePDF();
+     
     $this->SetFont('times','',12);
-    $this->Cell(190,10,'Nom de la formation',1,0,'C');
+    $this->SetFillColor(153,204,255);
+    $this->Cell(190,10,utf8_decode($stmt['FORM_LIBELLE']),1,0,'C',TRUE);
 
     $this->Ln();
+
 }
 function viewTable()
 {
@@ -63,13 +89,18 @@ function viewTable()
 }
 function viewTable2()
 {
+    global $CRE_DATE , $CRE_SALLE ,$CRE_HEUREDEB , $CRE_HEUREDEB, $CRE_HEUREFIN, $STA_ELEMIN, $STA_ELEMAX;
+    $stmt = StagePDF();
+    
     $this->SetFont('times','',12);
-    $this->Cell(40,10,utf8_decode(123456),1,0,'C');
-    $this->Cell(35,10,utf8_decode('Salle'),1,0,'C');
-    $this->Cell(35,10,utf8_decode(123456),1,0,'C');
-    $this->Cell(40,10,utf8_decode(12345),1,0,'C');
-    $this->Cell(40,10,utf8_decode(12345),1,0,'C');
+    $this->Cell(40,10,utf8_decode($stmt['CRE_DATE']),1,0,'C');
+    $this->Cell(35,10,utf8_decode($stmt['CRE_SALLE']),1,0,'C');
+    $this->Cell(35,10,utf8_decode($stmt['CRE_HEUREDEB'].'-'.$stmt['CRE_HEUREFIN']),1,0,'C');
+    $this->Cell(40,10,utf8_decode($stmt['STA_ELEMIN']),1,0,'C');
+    $this->Cell(40,10,utf8_decode($stmt['STA_ELEMAX']),1,0,'C');
     $this->Ln();
+                                        }
+
 }
-}
+
 ?>
