@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include_once "bd.inc.php";
 
 function getInscrire() {
@@ -141,7 +141,7 @@ function getInscrireListe2() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select *  from creneau, enseignant, eleve ,inscrire, stage, formation where STA_CRE = CRE_ID and STA_ID= INS_STA and INS_ELE=ELE_ID and STA_FORM = FORM_CODE and STA_ENS = ENS_ID and ENS_ID =:uti_ens ORDER BY STA_ID DESC ORDER BY FORM_CODE");
+        $req = $cnx->prepare("select *  from creneau, enseignant, eleve ,inscrire, stage, formation where STA_CRE = CRE_ID and STA_ID= INS_STA and INS_ELE=ELE_ID and STA_FORM = FORM_CODE and STA_ENS = ENS_ID and ENS_ID =:uti_ens ORDER BY STA_ID");
         $req->bindValue(':uti_ens', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
         $req->execute();
 

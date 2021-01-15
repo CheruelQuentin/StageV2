@@ -74,7 +74,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
     <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button>
     <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button>
     <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button>
-    <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='controleur/creationPDFLycee.php'"> Generer PDF</button>
+    <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='controleur/choixFormPdf'"> Generer PDF</button>
     <button id="bouton2" type="button" style="width:350px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button>
     </form>
 </nav>

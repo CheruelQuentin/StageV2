@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include_once "bd.inc.php";
 
 function getCreneauById($CRE_ID) {
