@@ -8,7 +8,7 @@ include_once "modele/bd.enseignant.inc.php";
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 $listeEnseignant = getEnseignant();
-$listepdf=StagePDF2();
+
 
 // traitement si necessaire des donnees recuperees
 ;
