@@ -4,17 +4,15 @@
             <title> Formulaire de modification </title>
             <meta name="description" content="Formulaire de modification"/>
             <meta charset="utf-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script src="java/autocomplete.java"></script>
             <link rel="stylesheet" type="text/css" href="css/autocomplete.css">
-              
+            <script src="js/verification.js"> </script>
+            <link rel="stylesheet" type="text/css" href="css/liste.css">
+            <link rel="stylesheet" type="text/css" href="css/style.css">
       </head>
       <body>
         <center><h2>Modification eleve </h2>
-        <script src="js/verification.js"> </script>
+        
         <form method="post" action="./?action=upEle">
         <table><tr><td>            
           <input id="ELE_ID" type="hidden" name="ELE_ID" size="50px" maxlength="20" value="<?=$_GET['id']?>" />
@@ -28,15 +26,20 @@
               <?php } ?>
             </select>
           </div>
+          <br>
 <p><label for="ELE_NOM">Nom :</label><input id="ELE_NOM" type="text" name="ELE_NOM" size="50px" maxlength="100" value="<?=$nom?>"  onblur="verifmodifnomEle();" /><span id = "erreurmodifnomEle" ></span></p>
+
 <p><label for="ELE_PRENOM">Prénom :</label><input id="ELE_PRENOM" type="text" name="ELE_PRENOM" size="50px" maxlength="100" value="<?=$prenom?>" onblur="verifmodifprenomEle();" /><span id = "erreurmodifprenomEle" ></span></p>
+
 <p><label for="ELE_DATENAISS">Date de Naissance :</label><input id="ELE_DATENAISS" type="date" name="ELE_DATENAISS" size="50px" maxlength="20" value="<?=$dateN?>" /></p>
+
 <p><label for="ELE_CLASSE">Classe :</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="10" value="<?=$classe?>" onblur="verifmodifclasse();" /><span id = "erreurmodifclasse" ></span></p>
+
 <p><label for="ELE_MAIL">E-mail :</label><input id="ELE_MAIL" type="text" name="ELE_MAIL" size="50px" maxlength="150" value="<?=$mail?>" /></p>
 
 <div id="choixForm">
-    <fieldset>      
-        <legend>Formations à suivre</legend>           
+    <fieldset class="scheduler-border">    
+          <legend class="scheduler-border">Formations à suivre</legend>           
         <?php
         for($i=0;$i<sizeof($stage);$i++){ ?> 
           <input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>

@@ -47,7 +47,7 @@ function getAddCreaneau($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN) {
     try {
         $cnx = connexionPDO();
 
-        $req = $cnx->prepare( "insert into creneau (CRE_DATE,CRE_HEUREDEB,CRE_SALLE,CRE_HEUREFIN ) values(:CRE_DATE,:CRE_HEUREDEB,:CRE_SALLE,:CRE_HEUREFIN)");
+        $req = $cnx->prepare( "insert into creneau (CRE_DATE,CRE_HEUREDEB,CRE_SALLE,CRE_HEUREFIN,CRE_VALIDE ) values(:CRE_DATE,:CRE_HEUREDEB,:CRE_SALLE,:CRE_HEUREFIN,0)");
 
         
         $req->bindValue(':CRE_DATE', $CRE_DATE, PDO::PARAM_STR);

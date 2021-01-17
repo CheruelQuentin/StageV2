@@ -89,6 +89,8 @@ global $ETA_NOM , $ETA_VILLE;
     // Numéro de page
     $this->Cell(0,10,utf8_decode('Convention ministages Établissement '.$ETA_NOM.'-'.$ETA_VILLE.' /Rostand 2020                                                                                                                  Page ').$this->PageNo().'/{nb}',0,0,'C');
 }
+
+
 function Table()
 {
     $this->SetFont('times','',12);

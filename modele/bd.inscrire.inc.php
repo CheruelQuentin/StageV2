@@ -120,7 +120,7 @@ function getInscrireListe() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from inscrire, etablissement, eleve where INS_ELE= ELE_ID and ELE_ETA=ETA_ID and ETA_ID=:uti_eta");
+        $req = $cnx->prepare("select * from inscrire, etablissement, eleve,stage,formation, enseignant where INS_ELE= ELE_ID and ELE_ETA=ETA_ID and ETA_ID=:uti_eta and INS_STA=STA_ID and STA_FORM=FORM_CODE and STA_ENS=ENS_ID ORDER BY FORM_CODE ");
         $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
         $req->execute();
 
@@ -141,7 +141,7 @@ function getInscrireListe2() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select *  from creneau, enseignant, eleve ,inscrire, stage, formation where STA_CRE = CRE_ID and STA_ID= INS_STA and INS_ELE=ELE_ID and STA_FORM = FORM_CODE and STA_ENS = ENS_ID and ENS_ID =:uti_ens ORDER BY STA_ID DESC");
+        $req = $cnx->prepare("select *  from creneau, enseignant, eleve ,inscrire, stage, formation where STA_CRE = CRE_ID and STA_ID= INS_STA and INS_ELE=ELE_ID and STA_FORM = FORM_CODE and STA_ENS = ENS_ID and ENS_ID =:uti_ens ORDER BY STA_ID");
         $req->bindValue(':uti_ens', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
         $req->execute();
 

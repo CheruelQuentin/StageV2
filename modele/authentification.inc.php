@@ -2,7 +2,7 @@
 
 
 include_once "bd.utilisateur.inc.php";
-
+session_start();
 function login($Mail, $Mdp) {
     if (!isset($_SESSION)) {
         session_start();

@@ -27,7 +27,7 @@
                 <li></li>
                 <li><h1 style="color:white; font-size: 30px; margin-top:0px;">Mini-Stage</h1></li>
                 <li></li>
-                <li><button id="bouton2" type="button" style="width:300px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button></li>
+                <li></li>
                  
                 <?php if(isLoggedOn()){ ?>
                 <li><a href="./?action=deconnexion"><img src="image/profil.png" alt="" />Déconnexion</a></li>
@@ -51,7 +51,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
     </script>
         <nav class="navbar navbar-light" style="background-color: #729FCF;">
            <form class="form-inline">
-
+<button id="bouton2" type="button" style="width:350px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button>
 <button id="bouton1" type="button" style="width:250px;" onclick="window.location.href='./?action=listeCreneauPropo'"> Gestion des créneaux </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve2'"> Gestion des élèves </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button>
@@ -70,10 +70,10 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <nav class="navbar navbar-light" style="background-color: #729FCF;">
+    <nav class="jumborton" style="background-color: #729FCF;">
         <form class="form-inline">
 
-
+<button id="bouton2" type="button" style="width:350px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button>
@@ -95,8 +95,6 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
 <button id="bouton2" type="button" style="width:350px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button>
     </form>
 </nav>
-
-
 
 <?php }} ?>
 </nav>

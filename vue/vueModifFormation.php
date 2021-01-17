@@ -51,6 +51,7 @@
       <?php } ?>
   </select><br><br>
   <label for="STA_ELEMIN"> Nb Minimum d'élèves :</label><input id="STA_ELEMIN" type="number" name="STA_ELEMIN" size="50px" maxlength="3" /><br><br>
+  <br>
   <label for="STA_ELEMAX"> Nb Maximum d'élèves :</label><input id="STA_ELEMAX" type="number" name="STA_ELEMAX" size="50px" maxlength="3"  /><br>
   </tr></td></table><br>
                     <input type="submit" value="Valider"/>

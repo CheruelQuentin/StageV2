@@ -5,16 +5,10 @@ include_once "modele/bd.utilisateur.inc.php";
 
 
 $UTIL_MAIL=$_POST['UTIL_MAIL'];
-$UTIL_MDP=$_POST['UTIL_MDP'];
+
 $UTIL_MDP2=$_POST['UTIL_MDP2'];
 
-if($_POST['UTIL_MDP'] == $_POST['UTIL_MDP2']) {
-   getUpdateUtiMdp($UTIL_MAIL,$UTIL_MDP);
-
-} else {
-   header('Location: ./?action=modifMdp');
-
-}
+getUpdateUtiMdp($UTIL_MAIL,$UTIL_MDP);
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 

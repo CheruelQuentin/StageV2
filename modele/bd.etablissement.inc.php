@@ -37,12 +37,12 @@ function getEtablissementById($ETA_ID) {
     return $resultat;
 }
 //select un établissement selon l'utilisateur passé en paramètre
-function getEtablissementByUtilMail($UTIL_MAIL) {
-    
+function getEtablissementByUtilMail() {
+    session_start();
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from etablissement where ETA_MAIL=:UTIL_MAIL");
-        $req->bindValue(':UTIL_MAIL', $UTIL_MAIL, PDO::PARAM_STR);
+        $req = $cnx->prepare("select * from etablissement where ETA_ID=:uti_eta");
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_STR);
 
         $req->execute();
 

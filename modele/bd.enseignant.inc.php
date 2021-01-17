@@ -1,7 +1,7 @@
 <?php
 
 include_once "bd.inc.php";
-session_start();
+
 function getEnseignantById($ENS_ID) {
     
     try {

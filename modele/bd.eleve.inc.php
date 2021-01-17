@@ -1,6 +1,6 @@
 <?php
 include_once "bd.inc.php";
-session_start();    
+   
 function getEleveById($ELE_ID) {
     
     try {

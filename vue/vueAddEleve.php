@@ -3,6 +3,8 @@
     <center><h2 id="titre">Ajout d'élève</h2>
 <script src="js/verification.js"> </script>
 <p></p> 
+	<link rel="stylesheet" type="text/css" href="css/liste.css">
+ 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
  <form method="post" action="./?action=insertEle">
  <table><tr><td> 
@@ -15,13 +17,13 @@
 	<p><label for="ELE_MAIL"> Mail(non obligatoire) :</label><input id="ELE_MAIL" type="text" name="ELE_MAIL" size="50px" maxlength="150"  /></p>
 
 	<div id="choixForm">
-		<fieldset>      
-        <legend>Formations à suivre</legend>           
+		<fieldset class="scheduler-border">    
+        	<legend class="scheduler-border">Formations à suivre</legend>           
         <?php
 				for($i=0;$i<sizeof($stage);$i++){ ?> 
 					<input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>
-					><?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], " - ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " | ", getCreneauById($stage[$i]['STA_CRE'])['CRE_DATE'], " - ",getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB'];?>
-					<br>
+					><?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], " - ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " | ", getCreneauById($stage[$i]['STA_CRE'])['CRE_DATE'], " - ",substr(getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB'],0,-3);?>
+					<br><br>
 					
 			<?php } ?>          
     	</fieldset>

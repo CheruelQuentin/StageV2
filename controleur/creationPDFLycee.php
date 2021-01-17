@@ -10,7 +10,7 @@ include_once "../modele/bd.formation.inc.php";
 include_once "../modele/bd.creneau.inc.php";
 include_once "../modele/bd.stage.inc.php";
 
-$etablissement = getEtablissementByUtilMail($_SESSION["UTIL_MAIL"]);
+$etablissement = getEtablissementByUtilMail();
 
 $ETA_NOM=$etablissement['ETA_NOM'];
 $ETA_PROVNOM=$etablissement['ETA_PROVNOM'];
