@@ -24,7 +24,7 @@ function getStage() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from Stage order by STA_CRE DESC");
+        $req = $cnx->prepare("select * from stage order by STA_CRE DESC");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -43,7 +43,7 @@ function getAddStage($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $STA_
     $resultat = -1;
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("insert into Stage (STA_CRE,STA_FORM,STA_MAT,STA_ENS,STA_ELEMIN,STA_ELEMAX) values(:STA_CRE,:STA_FORM,:STA_MAT,:uti_ens,:STA_ELEMIN,:STA_ELEMAX)");
+        $req = $cnx->prepare("insert into stage (STA_CRE,STA_FORM,STA_MAT,STA_ENS,STA_ELEMIN,STA_ELEMAX) values(:STA_CRE,:STA_FORM,:STA_MAT,:uti_ens,:STA_ELEMIN,:STA_ELEMAX)");
         $req->bindValue(':STA_CRE', $STA_CRE, PDO::PARAM_INT);
         $req->bindValue(':STA_FORM', $STA_FORM, PDO::PARAM_INT);
         $req->bindValue(':STA_MAT', $STA_MAT, PDO::PARAM_INT);
@@ -65,7 +65,7 @@ function getDelStage($STA_ID) {
     try {
         $cnx = connexionPDO();
 
-        $req = $cnx->prepare("delete from Stage where STA_ID=:STA_ID");
+        $req = $cnx->prepare("delete from stage where STA_ID=:STA_ID");
         $req->bindValue(':STA_ID', $STA_ID, PDO::PARAM_INT);
         
         $resultat = $req->execute();
@@ -80,7 +80,7 @@ function getUpdateStage($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $S
     $resultat = -1;
     try {
 $cnx = connexionPDO();
-$req = $cnx->prepare("UPDATE `Stage` SET STA_CRE = :STA_CRE,STA_FORM = :STA_FORM, STA_MAT = :STA_MAT,STA_ENS = :STA_ENS, STA_ELEMIN = :STA_ELEMIN, STA_ELEMAX = :STA_ELEMAX, STA_ID = :STA_ID WHERE `Stage`.STA_ID=:STA_ID;");
+$req = $cnx->prepare("UPDATE `stage` SET STA_CRE = :STA_CRE,STA_FORM = :STA_FORM, STA_MAT = :STA_MAT,STA_ENS = :STA_ENS, STA_ELEMIN = :STA_ELEMIN, STA_ELEMAX = :STA_ELEMAX, STA_ID = :STA_ID WHERE `Stage`.STA_ID=:STA_ID;");
 
         $req->bindValue(':STA_ID', $STA_ID, PDO::PARAM_INT);
         $req->bindValue(':STA_CRE', $STA_CRE, PDO::PARAM_INT);

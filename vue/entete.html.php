@@ -76,7 +76,6 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
 <button id="bouton2" type="button" style="width:350px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEleve'"> Gestion des élèves </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription'"> Liste des inscrits </button>
-<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeEnseignant'"> Gestion des enseignants </button>
 <button id="bouton1" type="button" onclick="window.location.href='./?action=choixFormPdf'"> Generer PDF</button>
 
         </form>
@@ -90,9 +89,11 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
 
     <nav class="navbar navbar-light" style="background-color: #729FCF;">
         <form class="form-inline">
+
+<button id="bouton2" type="button" style="width:350px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button>            
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeCreneau'"> Gestion proposition créneau </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription2'"> Liste des inscrits </button>
-<button id="bouton2" type="button" style="width:350px;" onclick="window.location.href='./?action=modifMdp'"> Changer de mot de passe </button>
+
     </form>
 </nav>
 
