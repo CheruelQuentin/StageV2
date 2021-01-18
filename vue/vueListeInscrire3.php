@@ -8,7 +8,7 @@
         <thead>
             <th align="center">Nom Prénom</th>
             <th align="center">Etablissement</th>
-            <th align="center">Stage</th>
+            <th align="center">Formation</th>
             <th align="center">Modifier</th>
             <th align="center">Supprimer</th>
 

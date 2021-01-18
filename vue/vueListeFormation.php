@@ -7,7 +7,7 @@
 <table class="table">
         <thead>
             <th align="center">Créneau</th>
-            <th align="center">Stage</th>
+            <th align="center">Formation</th>
             <th align="center">Matière</th>
             <th align="center">Enseignant</th>
             <th align="center">Min. Elèves</th>

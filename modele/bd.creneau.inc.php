@@ -173,11 +173,11 @@ function getListeCreneau() {
 
 
 function getCreneauByForm($FORM_CODE) {
-    
+    $resultat = array();
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from formation, stage, creneau where STA_FORM = FORM_CODE and STA_CRE = CRE_ID and FORM_CODE=:FORM_CODE ");
-        
+        $req = $cnx->prepare("select * from formation, stage, creneau, enseignant where STA_FORM = FORM_CODE and STA_CRE = CRE_ID and FORM_CODE=:FORM_CODE AND STA_ENS = ENS_ID AND ENS_ID =:uti_ens");
+        $req->bindValue(':uti_ens', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
         $req->bindValue(':FORM_CODE', $FORM_CODE, PDO::PARAM_INT);
 
         $req->execute();

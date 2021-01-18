@@ -9,7 +9,7 @@
             <th align="center">Nom Prénom </th>
             <th align="center">Salle</th>
             <th align="center">Créneau</th>
-            <th align="center">Stage</th>
+            <th align="center">Formation</th>
          </thead>
          <tbody>
 <?php
