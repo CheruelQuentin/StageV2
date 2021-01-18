@@ -3,8 +3,8 @@
             @import url("css/connexion.css");
 </style>
 <br>
-<h1 id="titre">Bienvenue</h1>
-<h1 id="titre"><?php echo $_SESSION["UTIL_MAIL"] ?></h1>
+<h1 id="titre">Bienvenue</h1><br>
+<center><h1>Liste des mini-stages en cours</h1></center>
 
 <div style="display:table; margin:auto;">
 <?php if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ //Si l'utilisateur est un admin ... ?>
@@ -15,7 +15,7 @@
            <table class="table">
         <thead>
             <th align="center">Créneau</th>
-            <th align="center">Stage</th>
+            <th align="center">Formation</th>
             <th align="center">Matière</th>
             <th align="center">Enseignant</th>
             <th align="center">Min. Elèves</th>

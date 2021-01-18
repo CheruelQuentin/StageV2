@@ -111,7 +111,7 @@ function getCreneauIdByInfo($creneau) {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select CRE_ID from creneau where CRE_DATE=:CRE_DATE AND CRE_SALLE=:CRE_SALLE AND CRE_HEUREDEB=:CRE_HEUREDEB AND CRE_HEUREFIN=:CRE_HEUREFIN");
+        $req = $cnx->prepare("select CRE_ID from creneau where CRE_DATE=:CRE_DATE AND CRE_SALLE=:CRE_SALLE AND CRE_HEUREDEB=:CRE_HEUREDEB AND CRE_HEUREFIN=:CRE_HEUREFIN AND");
         $req->bindValue(':CRE_DATE', $CRE_DATE, PDO::PARAM_STR);
         $req->bindValue(':CRE_SALLE', $CRE_SALLE, PDO::PARAM_STR);
         $req->bindValue(':CRE_HEUREDEB', $CRE_HEUREDEB, PDO::PARAM_STR);
@@ -132,7 +132,7 @@ function getCreneauIdByInfo2($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select CRE_ID from creneau where CRE_DATE=:CRE_DATE AND CRE_SALLE=:CRE_SALLE AND CRE_HEUREDEB=:CRE_HEUREDEB AND CRE_HEUREFIN=:CRE_HEUREFIN");
+        $req = $cnx->prepare("select CRE_ID from creneau where CRE_DATE=:CRE_DATE AND CRE_SALLE=:CRE_SALLE AND CRE_HEUREDEB=:CRE_HEUREDEB AND CRE_HEUREFIN=:CRE_HEUREFIN ");
         $req->bindValue(':CRE_DATE', $CRE_DATE, PDO::PARAM_STR);
         $req->bindValue(':CRE_SALLE', $CRE_SALLE, PDO::PARAM_STR);
         $req->bindValue(':CRE_HEUREDEB', $CRE_HEUREDEB, PDO::PARAM_STR);

@@ -99,7 +99,7 @@ function controleurPrincipal($action){
     $lesActions["modifTra"] = "modifTravailler.php";
     $lesActions["modifMat"] = "modifMatiere.php";
     $lesActions["modifMdp"] = "modifMdp.php";
-
+    $lesActions["updateCreneauPro"] = "updateCreneauPro.php";
 
     //Update
     $lesActions["upIns"] = "updateInscrire.php";

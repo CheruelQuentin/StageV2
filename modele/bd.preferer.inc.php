@@ -115,7 +115,7 @@ function getPropo(){
     $resultat = array();
     try{
         $cnx = connexionPDO();
-        $req = $cnx->prepare("SELECT * FROM preferer, creneau, formation, stage where PREF_CRE = CRE_ID and STA_CRE = CRE_ID and FORM_CODE = STA_FORM");
+        $req = $cnx->prepare("SELECT * FROM preferer, creneau, formation, stage where PREF_CRE = CRE_ID and STA_CRE = CRE_ID and FORM_CODE = STA_FORM and CRE_VALIDE=0");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
