@@ -13,7 +13,7 @@ $resultat = array();
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select FORM_CODE, FORM_LIBELLE , CRE_DATE, CRE_SALLE, CRE_HEUREDEB, CRE_HEUREFIN, STA_ELEMIN, STA_ELEMAX from formation, stage, creneau where STA_FORM = FORM_CODE and STA_CRE = CRE_ID and CRE_DATE > sysdate()");
+        $req = $cnx->prepare("select * from  formation order by FORM_LIBELLE");
         $req->execute() ;
         
 
@@ -126,7 +126,8 @@ for ($j= 0; $j < count($result); $j++) {
     $this->Cell(40,10,utf8_decode($result[$j]['STA_ELEMIN']),1,0,'C');
     $this->Cell(40,10,utf8_decode($result[$j]['STA_ELEMAX']),1,0,'C');
 $this->Ln();
-}$this->Ln();$this->Ln();
+}
+$this->Ln();$this->Ln();
  
                                     }    
     

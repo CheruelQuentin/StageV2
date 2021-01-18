@@ -19,7 +19,7 @@ $ENS_ID =getEnseignantIdByInfo2($ENS_NOM,$ENS_PRENOM,$ENS_DATENAISS,$ENS_MAIL);
 addUtiEnseignant($ENS_MAIL, $ENS_DATENAISS,$ENS_ID);
 
 $TRA_ENS = $ENS_ID;
-$TRA_ETA = $_SESSION["UTIL_ETA"];
+$TRA_ETA = 7;
 
 getAddTravailler($TRA_ENS, $TRA_ETA);
 }

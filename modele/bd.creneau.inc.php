@@ -147,4 +147,50 @@ function getCreneauIdByInfo2($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN
     }
     return $resultat['CRE_ID'];
 }
+
+
+
+function getListeCreneau() {
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from  formation order by FORM_LIBELLE ");
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
+
+function getCreneauByForm($FORM_CODE) {
+    
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from formation, stage, creneau where STA_FORM = FORM_CODE and STA_CRE = CRE_ID and FORM_CODE=:FORM_CODE ");
+        
+        $req->bindValue(':FORM_CODE', $FORM_CODE, PDO::PARAM_INT);
+
+        $req->execute();
+
+         $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+                $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
 ?>
