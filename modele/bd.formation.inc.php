@@ -78,7 +78,7 @@ function getUpdateFormation($FORM_LIBELLE, $FORM_CODE){
     $resultat = -1;
     try {
 $cnx = connexionPDO();
-$req = $cnx->prepare("UPDATE `formation` SET FORM_LIBELLE = :FORM_LIBELLE WHERE `Formation`.FORM_CODE=:FORM_CODE;");
+$req = $cnx->prepare("UPDATE `formation` SET FORM_LIBELLE = :FORM_LIBELLE WHERE `formation`.FORM_CODE=:FORM_CODE;");
 $req->bindValue(':FORM_LIBELLE', $FORM_LIBELLE, PDO::PARAM_STR);
 $req->bindValue(':FORM_CODE', $FORM_CODE, PDO::PARAM_INT);
         

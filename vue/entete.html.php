@@ -59,8 +59,8 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeMatiere'"> Gestion des matières </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeFormation'"> Gestion des mini-stage </button>
 <button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeStage'"> Gestion des formations </button>
-<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription3'"> Gestion des stagiaires </button>
-<button id="bouton1" type="button" onclick="window.location.href='./controleur/creationPDFpartage'"> Generer PDF pour les etab</button>
+<button id="bouton1" type="button" style="width:300px;" onclick="window.location.href='./?action=listeInscription3'"> Gestion des inscrits </button>
+<button id="bouton1" type="button" onclick="window.location.href='./controleur/creationPDFpartage.php'"> Generer PDF pour les etab</button>
             </form>
         </nav>
 

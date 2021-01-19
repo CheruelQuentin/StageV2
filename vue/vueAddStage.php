@@ -1,5 +1,5 @@
 	<body>
-							<center><h2 id="titre">Gestion des stages</h2></center>
+							<center><h2 id="titre">Gestion des Formations</h2></center>
 
     <center><h2>Formulaire d'ajout </h2>
 <script src="js/verification.js"> </script>

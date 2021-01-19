@@ -1,8 +1,8 @@
 <div style="text-align:right;padding-bottom:5px;">
 
 <link rel="stylesheet" type="text/css" href="css/liste.css">
-
-<center><h2 id="titre">Gestion des inscrits</h2></center>
+<br>
+<center><h2 id="titre">Gestion des inscrits</h2></center><br>
 <button onclick="window.location.href='./?action=addIns';" id="bouton2" style="display:inline-block;">Ajouter</button></div>
 <table class="table">
         <thead>

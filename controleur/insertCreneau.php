@@ -14,12 +14,12 @@ $CRE_SALLE=$_POST['CRE_SALLE'];
 $CRE_HEUREFIN=$_POST['CRE_HEUREFIN'];
 $STA_ENS=$_SESSION["UTIL_ENS"];
 $STA_ELEMIN=$_POST['STA_ELEMIN'];
-$STA_ELEMAX=$_POST['STA_ELEMAX'];  
+$STA_ELEMAX=$_POST['STA_ELEMAX'];
+$CRE_MAT=$_POST['CRE_MAT'];
+$STA_MAT=$CRE_MAT;
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 if(getAddCreaneau($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN)){
-for($i=0;$i<sizeof($_POST['choixForm2']);$i++){
-	$STA_MAT=$_POST['choixForm2'][$i];
-}
+
 for($i=0;$i<sizeof($_POST['choixForm']);$i++){
 	$STA_FORM=$_POST['choixForm'][$i];
 }

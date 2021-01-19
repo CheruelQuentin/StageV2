@@ -6,7 +6,7 @@ function controleurPrincipal($action){
     $lesActions["listeEtablissement"] = "listeEtablissement.php";
     $lesActions["listeCollege"] = "listeCollege.php";
     $lesActions["listeLycee"] = "listeLycee.php";
-    $lesActions["choixFormPdf"] = "ChoixFormPdf.php";
+    $lesActions["choixFormPdf"] = "choixFormPdf.php";
     //Listes de personnes
     $lesActions["listeEnseigner"] = "listeEnseigner.php";
     $lesActions["listeEnseignant"] = "listeEnseignant.php";
@@ -34,6 +34,7 @@ function controleurPrincipal($action){
 
     //Ajouts
     $lesActions["addIns"] = "addInscrire.php";
+    $lesActions["addIns2"] = "addInscrire2.php";
     $lesActions["addEle"] = "addEleve.php";
     $lesActions["addCre"] = "addCreneau.php";
     $lesActions["addEns"] = "addEnseignant.php";
@@ -47,6 +48,7 @@ function controleurPrincipal($action){
 
     //Inserts
     $lesActions["insertIns"] = "insertInscrit.php";
+    $lesActions["insertIns2"] = "insertInscrit2.php";
     $lesActions["insertEle"] = "insertEleve.php";
     $lesActions["insertCre"] = "insertCreneau.php";
     $lesActions["insertEns"] = "insertEnseignant.php";

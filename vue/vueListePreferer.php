@@ -1,5 +1,5 @@
-<div style="text-align:right;padding-bottom:5px;">
-  <center><h2 id="titre">Gestion des créneaux </h2></center>
+<div style="text-align:right;padding-bottom:5px;"><br>
+  <center><h2 id="titre">Gestion des créneaux </h2></center><br>
 
 <button onclick="window.location.href='./?action=addCre';" id="bouton2" style="display:inline-block;">Ajouter</button>
 <button onclick="window.location.href='./?action=modifCre';" id="bouton2" style="display:inline-block;">Modifier</button>

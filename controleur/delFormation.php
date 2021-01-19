@@ -6,7 +6,7 @@ include_once "modele/bd.creneau.inc.php";
 include_once "modele/bd.matiere.inc.php";
 
 
-if(getDelFormation($_GET['id'])){
+if(getDelStage($_GET['id'])){
 	header('Location: ./?action=listeFormation');
   	exit();
 } else{

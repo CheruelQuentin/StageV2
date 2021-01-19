@@ -80,7 +80,7 @@ function getUpdateStage($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $S
     $resultat = -1;
     try {
 $cnx = connexionPDO();
-$req = $cnx->prepare("UPDATE `stage` SET STA_CRE = :STA_CRE,STA_FORM = :STA_FORM, STA_MAT = :STA_MAT,STA_ENS = :STA_ENS, STA_ELEMIN = :STA_ELEMIN, STA_ELEMAX = :STA_ELEMAX, STA_ID = :STA_ID WHERE `Stage`.STA_ID=:STA_ID;");
+$req = $cnx->prepare("UPDATE `stage` SET STA_CRE = :STA_CRE,STA_FORM = :STA_FORM, STA_MAT = :STA_MAT,STA_ENS = :STA_ENS, STA_ELEMIN = :STA_ELEMIN, STA_ELEMAX = :STA_ELEMAX, STA_ID = :STA_ID WHERE `stage`.STA_ID=:STA_ID;");
 
         $req->bindValue(':STA_ID', $STA_ID, PDO::PARAM_INT);
         $req->bindValue(':STA_CRE', $STA_CRE, PDO::PARAM_INT);

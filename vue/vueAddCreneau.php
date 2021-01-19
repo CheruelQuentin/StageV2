@@ -18,9 +18,20 @@
 	<br>
 	<p><label for="STA_ELEMAX"> Nombre d'élève max: </label> <input type="number" id="ele_max" name="STA_ELEMAX" min="1" max="40"></p>
 	</div>
-<br>
-	<div id="choixForm">
 
+
+
+<p><label for="CRE_MAT"> Matière : </label> 
+			<select name="CRE_MAT">
+			<?php
+				for($i=0;$i<sizeof($matiere);$i++){ ?> 
+					<option value= <?= $matiere[$i]['MAT_CODE'];?> > 
+						<?= $matiere[$i]['MAT_LIBELLE']; ?> </option> 
+			<?php } ?>
+		</select>
+	</p>
+
+<br>	<div id="choixForm">
 		<fieldset class="scheduler-border">    
         	<legend class="scheduler-border">Stage</legend>           
         <?php
@@ -33,18 +44,8 @@
     	</fieldset>
 	</div>
 	<br>
-	<div id="choixForm2">
-		<fieldset class="scheduler-border">    
-        	<legend class="scheduler-border">Matière</legend>           
-        <?php
-				for($i=0;$i<sizeof($matiere);$i++){ ?> 
-					<input type="radio" name="choixForm2[]" value=<?= $matiere[$i]['MAT_CODE'];?>
-					><?= getMatiereById($matiere[$i]['MAT_CODE'])['MAT_LIBELLE'];?>
-					<br>
-					
-			<?php } ?>          
-    	</fieldset>
-	</div>
+
+
 	</td></tr></table>
 	<br>
 

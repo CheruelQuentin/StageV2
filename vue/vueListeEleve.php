@@ -1,6 +1,6 @@
 <div style="text-align:right;padding-bottom:5px;">
-
-<center><h2 id="titre">Gestion des élèves</h2></center>
+<br>
+<center><h2 id="titre">Gestion des élèves</h2></center><br>
 <button onclick="window.location.href='./?action=addEle';" id="bouton2" style="display:inline-block;">Ajouter</button>
 </div>
 <link rel="stylesheet" type="text/css" href="css/liste.css">

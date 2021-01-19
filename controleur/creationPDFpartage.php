@@ -1,4 +1,5 @@
 <?php
+include_once "../modele/bd.inc.php";
 include_once "../modele/bd.etablissement.inc.php";
 include_once "../modele/bd.eleve.inc.php";
 include_once "../modele/bd.utilisateur.inc.php";
@@ -10,7 +11,7 @@ include_once "../modele/bd.stage.inc.php";
 
 
 
-require_once "../fpdf182/fpdf.php";
-include_once "../vue/vuePdfpartage.php";
+require_once"../fpdf182/fpdf.php";
+include_once "../vue/vuePDFpartage.php";
 
 ?>

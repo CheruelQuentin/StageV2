@@ -1,4 +1,4 @@
-<div style="text-align:right;padding-bottom:5px;">
+<div style="text-align:right;padding-bottom:5px;"><br>
   <center><h2 id="titre">Gestion des Formations</h2></center>
 
 <button onclick="window.location.href='./?action=addSta';" id="bouton2" style="display:inline-block;">Ajouter</button>
