@@ -34,7 +34,7 @@ function getPDFFormationById($FORM_CODE) {
 
         $req->execute();
 
-         $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
         while ($ligne) {
             $resultat[] = $ligne;
                 $ligne = $req->fetch(PDO::FETCH_ASSOC);
