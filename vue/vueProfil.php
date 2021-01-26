@@ -4,7 +4,6 @@
 </style>
 <br>
 <h1 id="titre">Bienvenue</h1><br>
-<center><h1>Liste des mini-stages en cours</h1></center>
 
 <div style="display:table; margin:auto;">
 <?php if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ //Si l'utilisateur est un admin ... ?>
@@ -45,6 +44,7 @@ for ($i = 0; $i < count($listeStage); $i++) {
     <br>
     <link rel="stylesheet" type="text/css" href="css/liste.css">
     <center><h1>Liste des inscrits</h1></center>
+
     <br>
     <table class="table">
         <thead>

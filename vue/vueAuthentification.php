@@ -3,7 +3,7 @@
 </style>
 
 <div id=Form>
-<h1 id="titre">Connexion</h1>
+<br><h1 id="titre">Connexion</h1><br>
 <form action="./?action=connexion" method="POST">
 
     <input id="champ" type="e-mail" name="Mail" placeholder="Identifiant" /><br />

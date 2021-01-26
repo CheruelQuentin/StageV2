@@ -1,4 +1,5 @@
 <div style="text-align:right;padding-bottom:5px;">
+<br>
  <center><h2 id="titre">Gestion des matières</h2></center>
 
 <button onclick="window.location.href='./?action=addMat';" id="bouton2" style="display:inline-block;">Ajouter</button>

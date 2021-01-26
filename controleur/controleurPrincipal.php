@@ -98,7 +98,9 @@ function controleurPrincipal($action){
     $lesActions["modifForm"] = "modifFormation.php";
     $lesActions["modifTra"] = "modifTravailler.php";
     $lesActions["modifMat"] = "modifMatiere.php";
-    $lesActions["modifMdp"] = "modifMdp.php";
+    $lesActions["modifMdpAdmin"] = "modifMdpAdmin.php";
+    $lesActions["modifMdpEtablissement"] = "modifMdpEtablissement.php";
+    $lesActions["modifMdpEnseignant"] = "modifMdpEnseignant.php";
     $lesActions["updateCreneauPro"] = "updateCreneauPro.php";
 
     //Update
