@@ -1,11 +1,7 @@
 <?php
 require"../fpdf182/fpdf.php";
-include_once "../modele/bd.eleve.inc.php";
-include_once "../modele/bd.inscrire.inc.php";
-include_once "../modele/bd.formation.inc.php";
-include_once "../modele/bd.creneau.inc.php";
-include_once "../modele/bd.stage.inc.php";
-include_once "../modele/bd.etablissement.inc.php";
+include_once "bd.inc.php";
+
 
 
 function StagePDF(){
@@ -30,7 +26,7 @@ $resultat = array();
 }
 
 function getPDFFormationById($FORM_CODE) {
-    
+    $resultat = array();
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select FORM_CODE, FORM_LIBELLE , CRE_DATE, CRE_SALLE, CRE_HEUREDEB, CRE_HEUREFIN, STA_ELEMIN, STA_ELEMAX from formation, stage, creneau where STA_FORM = FORM_CODE and STA_CRE = CRE_ID and FORM_CODE=:FORM_CODE");
@@ -38,7 +34,7 @@ function getPDFFormationById($FORM_CODE) {
 
         $req->execute();
 
-         $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
         while ($ligne) {
             $resultat[] = $ligne;
                 $ligne = $req->fetch(PDO::FETCH_ASSOC);

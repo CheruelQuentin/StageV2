@@ -1,5 +1,5 @@
-
-<center><h5><?php echo $titre ?></h5></center>
+<br>
+<center><h5><?php echo $titre ?></h5></center><br>
 <center><a href="./?action=addEnsr">Ajouter</a></center>
 <center><a href="./?action=modifEnsr">Modification</a></center>
 <table align="center" width="80%" border="1">

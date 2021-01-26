@@ -1,6 +1,6 @@
 <div style="text-align:right;padding-bottom:5px;">
-<br>
-<center><h2 id="titre">Liste des créneaux </h2></center>
+<br><br>
+<center><h2 id="titre">Liste des créneaux </h2></center><br><br>
 
 
 <button onclick="window.location.href='./?action=addCre';" id="bouton2" style="display:inline-block;">Ajouter</button>

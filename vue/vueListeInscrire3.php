@@ -3,12 +3,12 @@
 <link rel="stylesheet" type="text/css" href="css/liste.css">
 <br>
 <center><h2 id="titre">Gestion des inscrits</h2></center>
-<button onclick="window.location.href='./?action=addIns';" id="bouton2" style="display:inline-block;">Ajouter</button></div>
+<button onclick="window.location.href='./?action=addIns2';" id="bouton2" style="display:inline-block;">Ajouter</button></div>
 <table class="table">
         <thead>
             <th align="center">Nom Prénom</th>
             <th align="center">Etablissement</th>
-            <th align="center">Stage</th>
+            <th align="center">Formation</th>
             <th align="center">Modifier</th>
             <th align="center">Supprimer</th>
 

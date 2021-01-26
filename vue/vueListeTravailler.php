@@ -1,5 +1,5 @@
-
-<center><h5><?php echo $titre ?></h5></center>
+<br>
+<center><h5><?php echo $titre ?></h5></center><br>
 <a href="./?action=addTra">Ajout Travailler</a>
 <center><a href="./?action=modifTra">Modification</a></center>
 <table align="center" width="80%" border="1">
