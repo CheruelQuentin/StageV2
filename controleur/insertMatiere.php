@@ -2,7 +2,7 @@
 
 include_once "modele/bd.matiere.inc.php";
 
-$MAT_LIBELLE=$_POST['MAT_LIBELLE'];
+$MAT_LIBELLE=htmlspecialchars($_POST['MAT_LIBELLE']);
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 

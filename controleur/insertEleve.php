@@ -12,11 +12,11 @@ function sanitize_string($str) {
 	return $sanitize;
 }
 $ELE_ETA = $_SESSION["UTIL_ETA"];
-$ELE_NOM=$_POST['ELE_NOM'];
-$ELE_PRENOM=$_POST['ELE_PRENOM'];
-$ELE_DATENAISS=$_POST['ELE_DATENAISS'];
-$ELE_CLASSE=$_POST['ELE_CLASSE'];
-$ELE_MAIL=$_POST['ELE_MAIL'];
+$ELE_NOM=htmlspecialchars($_POST['ELE_NOM']);
+$ELE_PRENOM=htmlspecialchars($_POST['ELE_PRENOM']);
+$ELE_DATENAISS=htmlspecialchars($_POST['ELE_DATENAISS']);
+$ELE_CLASSE=htmlspecialchars($_POST['ELE_CLASSE']);
+$ELE_MAIL=htmlspecialchars($_POST['ELE_MAIL']);
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 

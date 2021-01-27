@@ -14,4 +14,4 @@
 
 </div>
 
-<button id="bouton2" type="button" onclick="window.location.href='./?action=recup'" style="position:absolute;right:5%;bottom:10%;"> Mot de passe oublié ? </button>
+<center><button onclick="window.location.href='./?action=addEta';" id="bouton2" style="display:inline-block;">Inscription etablissement</button></center>

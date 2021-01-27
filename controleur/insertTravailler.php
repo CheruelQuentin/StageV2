@@ -3,8 +3,8 @@
 
 include_once "modele/bd.travailler.inc.php";
 
-$TRA_ENS=$_POST['TRA_ENS'];
-$TRA_ETA=$_POST['TRA_ETA'];
+$TRA_ENS=htmlspecialchars($_POST['TRA_ENS']);
+$TRA_ETA=htmlspecialchars($_POST['TRA_ETA']);
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 

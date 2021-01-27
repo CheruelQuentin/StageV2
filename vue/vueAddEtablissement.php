@@ -1,6 +1,6 @@
-	<body>
-			<center><h2 id="titre">Gestion des Établissements</h2></center>
-    <center><h2>Formulaire d'ajout </h2>
+	<body><br>
+			<center><h2 id="titre">Gestion des Établissements</h2></center><br>
+    <center><h2>Formulaire d'ajout </h2><br>
 <script src="js/verification.js"> </script>
 <p></p>
  <form method="post" action="./?action=insertEta">
@@ -25,7 +25,7 @@
 
 <p><label for="ETA_PROVPRENOM"> Prénom du proviseur: </label><input id="ETA_PROVPRENOM" type="text" name="ETA_PROVPRENOM" size="50px" maxlength="150"  onblur="verifprenomProv();" /><span id = "erreurprovprenom" ></p>
 <br>
-<p><label for="ETA_TEL"> Téléphone: </label><input id="ETA_TEL" type="tel" name="ETA_TEL" size="50px" maxlength="12"  onblur="veriftel();"/><span id = "erreurtel" ></p>
+<p><label for="ETA_TEL"> Téléphone: </label><input id="ETA_TEL" type="tel" name="ETA_TEL" size="50px" maxlength="14"  onblur="veriftel();"/><span id = "erreurtel" ></p>
 <br>
 <p><label for="ETA_SECU"> N° Assurance: </label><input id="ETA_SECU" type="text" name="ETA_SECU" size="50px" maxlength="15"/>
 
@@ -33,6 +33,12 @@
 <input type="radio" name="ETA_NOMSECU" value="MAE" for="MAE"> MAE</label>
 <input type="radio" name="ETA_NOMSECU" value="MAIF"  for="MAIF"> MAIF</label>
 </p>
+
+<p>Type d'établissement :
+<input type="radio" name="ETA_CATEG" value="0" for="0"> Lycée</label>
+<input type="radio" name="ETA_CATEG" value="1"  for="1"> Collège</label>
+</p>
+
 </td><tr></table>
 <br><input type="submit" value="valider"/>
 </form>

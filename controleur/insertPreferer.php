@@ -2,9 +2,9 @@
 
 include_once "modele/bd.preferer.inc.php";
 
-$PREF_CRE=$_POST['PREF_CRE'];
-$PREF_ENS=$_POST['PREF_ENS'];
-$PREF_EDT=$_POST['PREF_EDT'];
+$PREF_CRE=htmlspecialchars($_POST['PREF_CRE']);
+$PREF_ENS=htmlspecialchars($_POST['PREF_ENS']);
+$PREF_EDT=htmlspecialchars($_POST['PREF_EDT']);
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
 getAddMatiere($MAT_CODE,$PREF_CRE,$PREF_EDT);

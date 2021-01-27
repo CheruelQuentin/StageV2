@@ -3,7 +3,7 @@
 
 include_once "modele/bd.formation.inc.php";
 $FORM_CODE= NULL;
-$FORM_LIBELLE=$_POST['FORM_LIBELLE'];
+$FORM_LIBELLE=htmlspecialchars($_POST['FORM_LIBELLE']);
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 

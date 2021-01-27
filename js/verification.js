@@ -210,9 +210,9 @@ function verifmodiftel(){
 	// alert (tel);
 	var ETA_TEL = document.getElementById("ETA_TEL");
 	var erreurmodiftel = document.getElementById("erreurmodiftel");
-if(ETA_TEL.value.length > 12 || ETA_TEL.value.length < 10) {
+if(ETA_TEL.value.length > 14 || ETA_TEL.value.length < 10) {
 ETA_TEL.style.borderColor="red";
-erreurmodiftel.innerHTML = "Il faut remplir le champ avec un minimum 10 caratères !";
+erreurmodiftel.innerHTML = "Il faut remplir le champ avec un maximum 14 caratères !";
 } else {
 erreurmodiftel.innerHTML = "";
 ETA_TEL.style.borderColor="blue";

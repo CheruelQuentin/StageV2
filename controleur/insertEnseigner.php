@@ -3,8 +3,8 @@
 
 include_once "modele/bd.enseigner.inc.php";
 
-$ENSR_MAT=$_POST['ENSR_MAT'];
-$ENSR_ENS=$_POST['ENSR_ENS'];
+$ENSR_MAT=htmlspecialchars($_POST['ENSR_MAT']);
+$ENSR_ENS=htmlspecialchars($_POST['ENSR_ENS']);
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
