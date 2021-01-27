@@ -3,6 +3,7 @@
 include_once "modele/bd.eleve.inc.php";
 include_once "modele/bd.etablissement.inc.php";
 include_once "modele/bd.inscrire.inc.php";
+
 function sanitize_string($str) {
 	if (get_magic_quotes_gpc()) {
 		$sanitize = mysqli_real_escape_string(stripslashes($str));	 

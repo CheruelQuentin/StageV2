@@ -17,6 +17,7 @@
             <th align="center">Formation</th>
             <th align="center">Matière</th>
             <th align="center">Enseignant</th>
+            <th align="center">Salle</th>
             <th align="center">Min. Elèves</th>
             <th align="center">Max. Elèves</th>
          </thead>
@@ -31,6 +32,7 @@ for ($i = 0; $i < count($listeStage); $i++) {
             
             <td><center><?= getMatiereById($listeStage[$i]["STA_MAT"])['MAT_LIBELLE'] ?></center></td>
             <td><center><?= getEnseignantById($listeStage[$i]["STA_ENS"])['ENS_NOM'], " ", getEnseignantById($listeStage[$i]["STA_ENS"])['ENS_PRENOM'] ?></center></td>
+            <td><center><?= getCreneauById($listeStage[$i]["STA_CRE"])['CRE_SALLE'] ?></center></td>
             <td><center><?= $listeStage[$i]["STA_ELEMIN"] ?></center></td>
             <td><center><?= $listeStage[$i]["STA_ELEMAX"] ?></center></td>
 

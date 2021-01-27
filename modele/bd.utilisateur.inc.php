@@ -178,6 +178,7 @@ $req = $cnx->prepare("UPDATE `utilisateur` SET UTIL_MDP = :zadiste WHERE `utilis
     return $resultat;
 }
 
+
 function getUpdateUtiMdpEnseignant($UTIL_ENS,$UTIL_MDP){
     $resultat = -1;
     try {

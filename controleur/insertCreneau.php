@@ -8,7 +8,6 @@ include_once "modele/bd.stage.inc.php";
 include_once "modele/bd.enseignant.inc.php";
 include_once "modele/bd.preferer.inc.php";
 
-
 $CRE_DATE=htmlspecialchars($_POST['CRE_DATE']);
 $CRE_HEUREDEB=htmlspecialchars($_POST['CRE_HEUREDEB']);
 $CRE_SALLE=htmlspecialchars($_POST['CRE_SALLE']);
@@ -17,6 +16,7 @@ $STA_ENS=htmlspecialchars($_SESSION["UTIL_ENS"]);
 $STA_ELEMIN=htmlspecialchars($_POST['STA_ELEMIN']);
 $STA_ELEMAX=htmlspecialchars($_POST['STA_ELEMAX']);
 $CRE_MAT=htmlspecialchars($_POST['CRE_MAT']);
+
 $STA_MAT=$CRE_MAT;
 
 

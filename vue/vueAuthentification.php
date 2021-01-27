@@ -15,3 +15,4 @@
 </div>
 
 <center><button onclick="window.location.href='./?action=addEta';" id="bouton2" style="display:inline-block;">Inscription etablissement</button></center>
+
