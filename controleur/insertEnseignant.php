@@ -4,6 +4,8 @@
 include_once "modele/bd.enseignant.inc.php";
 include_once "modele/bd.utilisateur.inc.php";
 include_once "modele/bd.travailler.inc.php";
+
+
 $ENS_NOM=$_POST['ENS_NOM'];
 $ENS_PRENOM=$_POST['ENS_PRENOM'];
 $ENS_MAIL=$_POST['ENS_MAIL'];

@@ -6,7 +6,7 @@
 <p></p>
  <form method="post" action="./?action=insertSta">
 	<table><tr><td>
-	<p><label for="FORM_LIBELLE"> Nouveau Libelle </label>  <input id="FORM_LIBELLE" type="text" name="FORM_LIBELLE" size="50px" maxlength="128"  onblur="veriflibellestage();" /><span id = "erreurlibellestage" ></span>
+	<p><label for="FORM_LIBELLE"> Nouveau Libelle </label>  <input id="FORM_LIBELLE" type="text" name="FORM_LIBELLE" size="50px" maxlength="128" required pattern="[a-zA-ZÀ-ÿ]{1,128}" title="La première lettre doit être une majuscule" onblur="veriflibellestage();" /><span id = "erreurlibellestage" ></span>
 			        <input type="submit" value="valider"/>
 				    <input type="reset"/></p>
 				    <p></p>

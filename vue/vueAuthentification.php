@@ -9,7 +9,6 @@
     <input id="champ" type="e-mail" name="Mail" placeholder="Identifiant" /><br />
     <input id="champ" type="password" name="Mdp" placeholder="Mot de passe"/><br />
     <input id="bouton1" type="submit" value="Se connecter" />
-    <button onclick="window.location.href='./?action=addEta';" id="bouton2" style="display:inline-block;">Ajouter</button>
 
 </form>
 

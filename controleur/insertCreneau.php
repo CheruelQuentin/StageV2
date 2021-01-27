@@ -17,6 +17,8 @@ $STA_ELEMIN=$_POST['STA_ELEMIN'];
 $STA_ELEMAX=$_POST['STA_ELEMAX'];
 $CRE_MAT=$_POST['CRE_MAT'];
 $STA_MAT=$CRE_MAT;
+
+
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 if(getAddCreaneau($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN)){
 

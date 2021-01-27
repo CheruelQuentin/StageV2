@@ -119,7 +119,8 @@ function controleurPrincipal($action){
     $lesActions["upTra"] = "updateTravailler.php";
     $lesActions["upMat"] = "updateMatiere.php";
     $lesActions["upMdp"] = "updateMotDePasse.php";
-
+    $lesActions["upMdp2"] = "updateMotDePasseEnseignant.php";
+    $lesActions["upMdp3"] = "updateMotDePasseAdmin.php";
     //Autre
     $lesActions["listeMatiere"] = "listeMatiere.php";
     $lesActions["prefCreneau"] = "listePreferer.php";

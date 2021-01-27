@@ -23,7 +23,7 @@
     <nav class="navbar navbar-light " style="background-color: #7FACB2;">
         <a href="http://rostand.etab.ac-caen.fr/"><img id="logo" src="image/logo_entete.png" alt="logo" height= 100/></a>
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link text-dark " href="./?action=profil"><h1> Mini-Stage </h1></a></li>
+            <li class="nav-item"><a class="nav-link text-dark "><h1> Mini-Stage </h1></a></li>
             </ul>
                     <?php 
                     if(isset($_SESSION["UTIL_MAIL"])){
@@ -67,7 +67,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Etablissement
+                            Établissement
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="./?action=listeEtablissement">Liste</a>

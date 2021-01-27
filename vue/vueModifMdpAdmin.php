@@ -9,7 +9,7 @@
             <?php echo $_SESSION["UTIL_ETA"]; ?>
             <br><center><h2>Modification Mot de passe </h2><br>
 
-            <form method="post" action="./?action=upMdp">
+            <form method="post" action="./?action=upMdp3">
                   <table>
                         <tr>
                               <td>
@@ -18,7 +18,7 @@
                         </tr>
                         <tr>
                               <td>
-                                    <label for="UTIL_MDP2"> Nouveau mot de passe </label> : <input id="UTIL_MDP2" type="password" name="UTIL_MDP2" size="50px" maxlength="150"  />
+                                    <label for="UTIL_MDP2"> Nouveau mot de passe </label> : <input id="UTIL_MDP2" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"title=" Doit contenir au moins un chiffre et une lettre majuscule et minuscule, et au moins 8 caractères ou plus" name="UTIL_MDP2" size="50px" maxlength="150"  />
                               </td>
                         </tr>
                         <tr>

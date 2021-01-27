@@ -10,6 +10,8 @@ erreurnomEtab.innerHTML = "";
 ETA_NOM.style.borderColor="blue";
 }
 }
+
+
 function verifmodifnomEtab(){	
 	var nomEtab = document.getElementById("ETA_NOM");
 	var erreurmodifnomEtab = document.getElementById("erreurmodifnomEtab");
@@ -22,6 +24,8 @@ erreurmodifnomEtab.innerHTML = "";
 ETA_NOM.style.borderColor="blue";
 }
 }
+
+
 function verifville(){
 	var ville = document.getElementById("ETA_VILLE");
 	var erreurville = document.getElementById("erreurville");
@@ -33,6 +37,8 @@ erreurville.innerHTML = "";
 ETA_VILLE.style.borderColor="blue";
 }
 }
+
+
 function verifmodifville(){
 	var ville = document.getElementById("ETA_VILLE");
 	var erreurmodifville = document.getElementById("erreurmodifville");
@@ -44,6 +50,8 @@ erreurmodifville.innerHTML = "";
 ETA_VILLE.style.borderColor="blue";
 }
 }
+
+
 function verifadresse(){
 	var adresse = document.getElementById("ETA_ADRESSE");
 	var erreuradresse = document.getElementById("erreuradresse");
@@ -55,6 +63,8 @@ erreuradresse.innerHTML = "";
 ETA_ADRESSE.style.borderColor="blue";
 }
 }
+
+
 function verifmodifadresse(){
 	var adresse = document.getElementById("ETA_ADRESSE");
 	var erreurmodifadresse = document.getElementById("erreurmodifadresse");
@@ -66,6 +76,8 @@ erreurmodifadresse.innerHTML = "";
 ETA_ADRESSE.style.borderColor="blue";
 }
 }
+
+
 function verifcp(){
 	var CP = document.getElementById("ETA_CP");
 	var erreurcp = document.getElementById("erreurcp");
@@ -77,6 +89,8 @@ erreurcp.innerHTML = "";
 ETA_CP.style.borderColor="blue";
 }
 }
+
+
 function verifmodifcp(){
 	var CP = document.getElementById("ETA_CP");
 	var erreurmodifcp = document.getElementById("erreurmodifcp");
@@ -88,6 +102,8 @@ erreurmodifcp.innerHTML = "";
 ETA_CP.style.borderColor="blue";
 }
 }
+
+
 function verifmail(){
 	// var mail = document.getElementById('mail').value;
 	// alert (mail);
@@ -101,6 +117,8 @@ erreurmail.innerHTML = "";
 ETA_MAIL.style.borderColor="blue";
 }
 }
+
+
 function verifmodifmail(){
 	// var mail = document.getElementById('mail').value;
 	// alert (mail);
@@ -114,6 +132,8 @@ erreurmodifmail.innerHTML = "";
 ETA_MAIL.style.borderColor="blue";
 }
 }
+
+
 function verifnomProv(){	
 	var ETA_PROVNOM = document.getElementById("ETA_PROVNOM");
 	var erreurprovnom = document.getElementById("erreurprovnom");
@@ -126,6 +146,8 @@ erreurprovnom.innerHTML = "";
 ETA_PROVNOM.style.borderColor="blue";
 }
 }
+
+
 function verifmodifProvnom(){	
 	var ETA_PROVNOM = document.getElementById("ETA_PROVNOM");
 	var erreurmodifprovnom = document.getElementById("erreurmodifprovnom");
@@ -138,6 +160,8 @@ erreurmodifprovnom.innerHTML = "";
 ETA_PROVNOM.style.borderColor="blue";
 }
 }
+
+
 function verifmodifProvprenom(){	
 	var ETA_PROVPRENOM = document.getElementById("ETA_PROVPRENOM");
 	var erreurmodifprovprenom = document.getElementById("erreurmodifprovprenom");
@@ -150,6 +174,8 @@ erreurmodifprovprenom.innerHTML = "";
 ETA_PROVPRENOM.style.borderColor="blue";
 }
 }
+
+
 function verifprenomProv(){	
 	var ETA_PROVPRENOM = document.getElementById("ETA_PROVPRENOM");
 	var erreurprovprenom = document.getElementById("erreurprovprenom");
@@ -162,6 +188,8 @@ erreurprovprenom.innerHTML = "";
 ETA_PROVPRENOM.style.borderColor="blue";
 }
 }
+
+
 function veriftel(){
 	// var tel = document.getElementById('tel').value;
 	// alert (tel);
@@ -169,12 +197,14 @@ function veriftel(){
 	var erreurtel = document.getElementById("erreurtel");
 if(ETA_TEL.value.length > 12 || ETA_TEL.value.length < 10) {
 ETA_TEL.style.borderColor="red";
-erreurtel.innerHTML = "Il faut remplir le champ avec minimum 10 caratères !";
+erreurtel.innerHTML = "Il faut remplir le champ avec un minimum 10 caratères !";
 } else {
 erreurtel.innerHTML = "";
 ETA_TEL.style.borderColor="blue";
 }
 }
+
+
 function verifmodiftel(){
 	// var tel = document.getElementById('tel').value;
 	// alert (tel);
@@ -182,25 +212,17 @@ function verifmodiftel(){
 	var erreurmodiftel = document.getElementById("erreurmodiftel");
 if(ETA_TEL.value.length > 12 || ETA_TEL.value.length < 10) {
 ETA_TEL.style.borderColor="red";
-erreurmodiftel.innerHTML = "Il faut remplir le champ avec minimum 10 caratères !";
+erreurmodiftel.innerHTML = "Il faut remplir le champ avec un minimum 10 caratères !";
 } else {
 erreurmodiftel.innerHTML = "";
 ETA_TEL.style.borderColor="blue";
 }
 }
-function verifsecu(){
-	// var tel = document.getElementById('tel').value;
-	// alert (tel);
-	var ETA_SECU = document.getElementById("ETA_SECU");
-	var erreursecu = document.getElementById("erreursecu");
-if(ETA_SECU.value.length > 15 || ETA_SECU.value.length < 10) {
-ETA_SECU.style.borderColor="red";
-erreursecu.innerHTML = "Il faut remplir le champ avec minimum 10 caratères !";
-} else {
-erreursecu.innerHTML = "";
-ETA_SECU.style.borderColor="blue";
-}
-}
+
+
+
+
+
 function verifSalle(){	
 	var CRE_SALLE = document.getElementById("CRE_SALLE");
 	var erreursalle = document.getElementById("erreursalle");
@@ -213,6 +235,8 @@ erreursalle.innerHTML = "";
 CRE_SALLE.style.borderColor="blue";
 }
 }
+
+
 function verifnomEle(){	
 	var ELE_NOM = document.getElementById("ELE_NOM");
 	var erreurnomEle = document.getElementById("erreurnomEle");
@@ -225,6 +249,8 @@ erreurnomEle.innerHTML = "";
 ELE_NOM.style.borderColor="blue";
 }
 }
+
+
 function verifmodifnomEle(){	
 	var ELE_NOM = document.getElementById("ELE_NOM");
 	var erreurmodifnomEle = document.getElementById("erreurmodifnomEle");
@@ -237,6 +263,8 @@ erreurmodifnomEle.innerHTML = "";
 ELE_NOM.style.borderColor="blue";
 }
 }
+
+
 function verifprenomEle(){	
 	var ELE_PRENOM = document.getElementById("ELE_PRENOM");
 	var erreurprenomEle = document.getElementById("erreurprenomEle");
@@ -249,6 +277,8 @@ erreurprenomEle.innerHTML = "";
 ELE_PRENOM.style.borderColor="blue";
 }
 }
+
+
 function verifmodifprenomEle(){	
 	var ELE_PRENOM = document.getElementById("ELE_PRENOM");
 	var erreurmodifprenomEle = document.getElementById("erreurmodifprenomEle");
@@ -261,6 +291,8 @@ erreurmodifprenomEle.innerHTML = "";
 ELE_PRENOM.style.borderColor="blue";
 }
 }
+
+
 function verifclasse(){	
 	var ELE_CLASSE = document.getElementById("ELE_CLASSE");
 	var erreurclasse = document.getElementById("erreurclasse");
@@ -273,6 +305,8 @@ erreurclasse.innerHTML = "";
 ELE_CLASSE.style.borderColor="blue";
 }
 }
+
+
 function verifmodifclasse(){	
 	var ELE_CLASSE = document.getElementById("ELE_CLASSE");
 	var erreurmodifclasse = document.getElementById("erreurmodifclasse");
@@ -285,6 +319,8 @@ erreurmodifclasse.innerHTML = "";
 ELE_CLASSE.style.borderColor="blue";
 }
 }
+
+
 function verifnomEns(){	
 	var ENS_NOM = document.getElementById("ENS_NOM");
 	var erreurnomEns = document.getElementById("erreurnomEns");
@@ -297,6 +333,8 @@ erreurnomEns.innerHTML = "";
 ENS_NOM.style.borderColor="blue";
 }
 }
+
+
 function verifmodifnomEns(){	
 	var ENS_NOM = document.getElementById("ENS_NOM");
 	var erreurmodifnomEns = document.getElementById("erreurmodifnomEns");
@@ -309,6 +347,8 @@ erreurmodifnomEns.innerHTML = "";
 ENS_NOM.style.borderColor="blue";
 }
 }
+
+
 function verifprenomEns(){	
 	var ENS_PRENOM = document.getElementById("ENS_PRENOM");
 	var erreurprenomEns = document.getElementById("erreurprenomEns");
@@ -321,6 +361,8 @@ erreurprenomEns.innerHTML = "";
 ENS_PRENOM.style.borderColor="blue";
 }
 }
+
+
 function verifmodifprenomEns(){	
 	var ENS_PRENOM = document.getElementById("ENS_PRENOM");
 	var erreurmodifprenomEns = document.getElementById("erreurmodifprenomEns");
@@ -333,30 +375,36 @@ erreurmodifprenomEns.innerHTML = "";
 ENS_PRENOM.style.borderColor="blue";
 }
 }
+
+
 function veriftelEns(){
 
 	var ENS_TEL = document.getElementById("ENS_TEL");
 	var erreurtelens = document.getElementById("erreurtelens");
 if(ENS_TEL.value.length > 12 || ENS_TEL.value.length < 10) {
 ENS_TEL.style.borderColor="red";
-erreurtelens.innerHTML = "Il faut remplir le champ avec minimum 10 caratères !";
+erreurtelens.innerHTML = "Il faut remplir le champ avec un minimum 10 caratères !";
 } else {
 erreurtelens.innerHTML = "";
 ENS_TEL.style.borderColor="blue";
 }
 }
+
+
 function verifmodiftelEns(){
 
 	var ENS_TEL = document.getElementById("ENS_TEL");
 	var erreurmodiftelens = document.getElementById("erreurmodiftelens");
 if(ENS_TEL.value.length > 12 || ENS_TEL.value.length < 10) {
 ENS_TEL.style.borderColor="red";
-erreurmodiftelens.innerHTML = "Il faut remplir le champ avec minimum 10 caratères !";
+erreurmodiftelens.innerHTML = "Il faut remplir le champ avec un minimum 10 caratères !";
 } else {
 erreurmodiftelens.innerHTML = "";
 ENS_TEL.style.borderColor="blue";
 }
 }
+
+
 function verifmailEns(){	
 	var ENS_MAIL = document.getElementById("ENS_MAIL");
 	var erreurmailEns = document.getElementById("erreurmailEns");
@@ -369,6 +417,8 @@ erreurmailEns.innerHTML = "";
 ENS_MAIL.style.borderColor="blue";
 }
 }
+
+
 function verifmodifmailEns(){	
 	var ENS_MAIL = document.getElementById("ENS_MAIL");
 	var erreurmodifmailEns = document.getElementById("erreurmodifmailEns");
@@ -381,6 +431,8 @@ erreurmodifmailEns.innerHTML = "";
 ENS_MAIL.style.borderColor="blue";
 }
 }
+
+
 function veriflibelle(){	
 	var MAT_LIBELLE = document.getElementById("MAT_LIBELLE");
 	var erreurlibelle = document.getElementById("erreurlibelle");
@@ -393,6 +445,8 @@ erreurlibelle.innerHTML = "";
 MAT_LIBELLE.style.borderColor="blue";
 }
 }
+
+
 function verifmodiflibelle(){	
 	var MAT_LIBELLE = document.getElementById("MAT_LIBELLE");
 	var erreurmodiflibelle = document.getElementById("erreurmodiflibelle");
@@ -405,6 +459,8 @@ erreurmodiflibelle.innerHTML = "";
 MAT_LIBELLE.style.borderColor="blue";
 }
 }
+
+
 function veriflibellestage(){	
 	var FORM_LIBELLE = document.getElementById("FORM_LIBELLE");
 	var erreurlibellestage = document.getElementById("erreurlibellestage");
@@ -417,6 +473,8 @@ erreurlibellestage.innerHTML = "";
 FORM_LIBELLE.style.borderColor="blue";
 }
 }
+
+
 function verifmodiflibellestage(){	
 	var FORM_LIBELLE = document.getElementById("FORM_LIBELLE");
 	var erreurmodiflibellestage = document.getElementById("erreurmodiflibellestage");
@@ -429,6 +487,8 @@ erreurmodiflibellestage.innerHTML = "";
 FORM_LIBELLE.style.borderColor="blue";
 }
 }
+
+
 function verifModifSalle(){	
 	var CRE_SALLE = document.getElementById("CRE_SALLE");
 	var erreurmodifsalle = document.getElementById("erreurmodifsalle");
@@ -441,5 +501,7 @@ erreurmodifsalle.innerHTML = "";
 CRE_SALLE.style.borderColor="blue";
 }
 }
+
+
 
 

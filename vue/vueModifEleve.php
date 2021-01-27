@@ -27,15 +27,15 @@
             </select>
           </div>
           <br>
-<p><label for="ELE_NOM">Nom :</label><input id="ELE_NOM" type="text" name="ELE_NOM" size="50px" maxlength="100" value="<?=$nom?>"  onblur="verifmodifnomEle();" /><span id = "erreurmodifnomEle" ></span></p>
+<p><label for="ELE_NOM">Nom :</label><input id="ELE_NOM" type="text" name="ELE_NOM" size="50px" maxlength="100" value="<?=$nom?>" required pattern="[a-zA-ZÀ-ÿ]{1,25}" title="La première lettre doit être une majuscule et le libelle ne doit pas contenir des carac.spéciaux" onblur="verifmodifnomEle();" /><span id = "erreurmodifnomEle" ></span></p>
 
-<p><label for="ELE_PRENOM">Prénom :</label><input id="ELE_PRENOM" type="text" name="ELE_PRENOM" size="50px" maxlength="100" value="<?=$prenom?>" onblur="verifmodifprenomEle();" /><span id = "erreurmodifprenomEle" ></span></p>
+<p><label for="ELE_PRENOM">Prénom :</label><input id="ELE_PRENOM" type="text" name="ELE_PRENOM" size="50px" maxlength="100" value="<?=$prenom?>" required pattern="[a-zA-ZÀ-ÿ]{1,25}" title="La première lettre doit être une majuscule et le libelle ne doit pas contenir des carac.spéciaux" onblur="verifmodifprenomEle();" /><span id = "erreurmodifprenomEle" ></span></p>
 
 <p><label for="ELE_DATENAISS">Date de Naissance :</label><input id="ELE_DATENAISS" type="date" name="ELE_DATENAISS" size="50px" maxlength="20" value="<?=$dateN?>" /></p>
 
 <p><label for="ELE_CLASSE">Classe :</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="10" value="<?=$classe?>" onblur="verifmodifclasse();" /><span id = "erreurmodifclasse" ></span></p>
 
-<p><label for="ELE_MAIL">E-mail :</label><input id="ELE_MAIL" type="text" name="ELE_MAIL" size="50px" maxlength="150" value="<?=$mail?>" /></p>
+<p><label for="ELE_MAIL">E-mail :</label><input id="ELE_MAIL" type="text" name="ELE_MAIL" size="50px" maxlength="150" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?=$mail?>" /></p>
 
 <div id="choixForm">
     <fieldset class="scheduler-border">    

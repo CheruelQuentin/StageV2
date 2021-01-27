@@ -2,7 +2,7 @@
 
 
 include_once "modele/bd.utilisateur.inc.php";
-
+$UTIL_MAIL=$_POST['UTIL_MAIL'];
 $UTIL_MDP=$_POST['UTIL_MDP2'];
 $UTIL_MDP3=$_POST['UTIL_MDP3'];
 if($UTIL_MDP == $UTIL_MDP3){

@@ -6,7 +6,7 @@
             <meta charset="utf-8"/>
       </head>
       <body>
-         <center><h2>Modification Etablissement </h2></center>
+         <center><h2>Modification Établissement </h2></center><br>
              <script src="js/verification.js"> </script>
 
 
@@ -24,7 +24,7 @@
 
 <p><label for="ETA_CP">Code postal :</label>  <input id="ETA_CP" type="text" name="ETA_CP" size="50px" maxlength="6" value="<?=$CP?>" onblur="verifmodifcp();" /><span id = "erreurmodifcp" ></span></p>
 
-<p><label for="ETA_MAIL">Mail : </label>  <input id="ETA_MAIL" type="text" name="ETA_MAIL" size="50px" maxlength="150" value="<?=$mail?>"  /><span id = "erreurmodifmailEtab" ></span></p>
+<p><label for="ETA_MAIL">Mail : </label>  <input id="ETA_MAIL" type="text" name="ETA_MAIL" size="50px" maxlength="150" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?=$mail?>"  /><span id = "erreurmodifmailEtab" ></span></p>
 
 <p><label for="ETA_PROVCIVIL">Civilité du proviseur :</label>  <input id="ETA_PROVCIVIL" type="text" name="ETA_PROVCIVIL" size="50px" maxlength="3" value="<?=$provcivil?>" /></p>
 
@@ -32,9 +32,9 @@
 
 <p><label for="ETA_PROVPRENOM">Prénom proviseur :</label>  <input id="ETA_PROVPRENOM" type="text" name="ETA_PROVPRENOM" size="50px" maxlength="150" value="<?=$provprenom?>" onblur="verifmodifProvprenom();" /><span id = "erreurmodifprovprenom" ></span></p>
 
-<p><label for="ETA_TEL">Téléphone :</label>  <input id="ETA_TEL" type="tel" name="ETA_TEL" size="50px" maxlength="12" value="<?=$tel?>" onblur="verifmodiftel();" /><span id = "erreurmodiftel" ></span></p>
+<p><label for="ETA_TEL">Téléphone :</label>  <input id="ETA_TEL" type="int" name="ETA_TEL" size="50px" maxlength="14" value="<?=$tel?>" onblur="verifmodiftel();" /><span id = "erreurmodiftel" ></span></p>
 
-<p><label for="ETA_SECU">Sécu :</label>  <input id="ETA_SECU" type="int" name="ETA_SECU" size="50px" maxlength="12" value="<?=$numSecu?>"  /></p>
+<p><label for="ETA_SECU">Sécu :</label>  <input id="ETA_SECU" type="int" name="ETA_SECU" size="50px" maxlength="15" value="<?=$numSecu?>"  /></p>
 
 <p><label for="ETA_NOMSECU">Nom Sécu :</label>  <input id="ETA_NOMSECU" type="tel" name="ETA_NOMSECU" size="50px" maxlength="12" value="<?=$nomSecu?>"/>  </p>
 
