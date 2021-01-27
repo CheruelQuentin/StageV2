@@ -27,7 +27,7 @@
 <br>
 <p><label for="ETA_TEL"> Téléphone: </label><input id="ETA_TEL" type="tel" name="ETA_TEL" size="50px" maxlength="12"  onblur="veriftel();"/><span id = "erreurtel" ></p>
 <br>
-<p><label for="ETA_SECU"> N° Sécu: </label><input id="ETA_SECU" type="text" name="ETA_SECU" size="50px" maxlength="15" onblur="verifsecu();"/><span id = "erreursecu" ></p>
+<p><label for="ETA_SECU"> N° Assurance: </label><input id="ETA_SECU" type="text" name="ETA_SECU" size="50px" maxlength="15" onblur="verifsecu();"/><span id = "erreursecu" ></p>
 
 <p>Type de sécu :
 <input type="radio" name="ETA_NOMSECU" value="MAE" for="MAE"> MAE</label>
