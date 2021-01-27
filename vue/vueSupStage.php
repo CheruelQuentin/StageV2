@@ -1,0 +1,1 @@
+<center><a href="./?action=listeStage">Retour à la liste</a></center>

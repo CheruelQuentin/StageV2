@@ -1,0 +1,1 @@
+<center><a href="./?action=profil">Retour à la liste</a></center>

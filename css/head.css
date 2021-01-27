@@ -1,0 +1,12 @@
+div {
+	height: 100px; 
+	background-color: #00EEFF;
+	
+}
+p{
+	float:left;
+}
+
+#test2 {
+	float: right;
+}
