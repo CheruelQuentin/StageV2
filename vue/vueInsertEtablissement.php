@@ -1,1 +1,1 @@
-<center><a href="./?action=listeEtablissement">Retour à la liste</a></center>
+<center><a href="./?action=connexion">Retour à la liste</a></center>

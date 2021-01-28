@@ -6,11 +6,11 @@ include_once "modele/bd.utilisateur.inc.php";
 include_once "modele/bd.travailler.inc.php";
 
 
-$ENS_NOM=$_POST['ENS_NOM'];
-$ENS_PRENOM=$_POST['ENS_PRENOM'];
-$ENS_MAIL=$_POST['ENS_MAIL'];
-$ENS_TEL=$_POST['ENS_TEL'];
-$ENS_DATENAISS=$_POST['ENS_DATENAISS'];
+$ENS_NOM=htmlspecialchars($_POST['ENS_NOM']);
+$ENS_PRENOM=htmlspecialchars($_POST['ENS_PRENOM']);
+$ENS_MAIL=htmlspecialchars($_POST['ENS_MAIL']);
+$ENS_TEL=htmlspecialchars($_POST['ENS_TEL']);
+$ENS_DATENAISS=htmlspecialchars($_POST['ENS_DATENAISS']);
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 

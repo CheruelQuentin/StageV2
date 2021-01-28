@@ -41,7 +41,7 @@ function getEtablissementByUtilMail() {
     session_start();
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from etablissement where ETA_ID=:uti_eta");
+        $req = $cnx->prepare("select * from etablissement, categeta where CAT_ID = ETA_CATEG and ETA_ID=:uti_eta");
         $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_STR);
 
         $req->execute();
@@ -53,12 +53,32 @@ function getEtablissementByUtilMail() {
     }
     return $resultat;
 }
+
+ 
+function getEtablissementAndCateg($ETA_ID) {
+    session_start();
+    try {
+        $cnx = connexionPDO();
+        $req =$cnx->prepare("select * from etablissement, categeta where CAT_ID = ETA_CATEG AND ETA_ID =:uti_eta");
+        $req->bindValue(':uti_eta', $ETA_ID, PDO::PARAM_INT);
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
+
 //ajouter un établissement
-    function getAddEtablissement($ETA_NOM, $ETA_VILLE, $ETA_ADRESSE, $ETA_CP, $ETA_MAIL, $ETA_PROVCIVIL, $ETA_PROVNOM, $ETA_PROVPRENOM, $ETA_TEL,$ETA_SECU,$ETA_NOMSECU) {
+    function getAddEtablissement($ETA_NOM, $ETA_VILLE, $ETA_ADRESSE, $ETA_CP, $ETA_MAIL, $ETA_PROVCIVIL, $ETA_PROVNOM, $ETA_PROVPRENOM, $ETA_TEL,$ETA_SECU,$ETA_NOMSECU,$ETA_CATEG) {
     $resultat = -1;
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("insert into etablissement (ETA_NOM,ETA_VILLE,ETA_ADRESSE,ETA_CP,ETA_MAIL,ETA_PROVCIVIL,ETA_PROVNOM,ETA_PROVPRENOM,ETA_TEL,ETA_SECU,ETA_NOMSECU) values(:ETA_NOM,:ETA_VILLE,:ETA_ADRESSE,:ETA_CP,:ETA_MAIL,:ETA_PROVCIVIL,:ETA_PROVNOM,:ETA_PROVPRENOM,:ETA_TEL,:ETA_SECU,:ETA_NOMSECU)");
+        $req = $cnx->prepare("insert into etablissement (ETA_NOM,ETA_VILLE,ETA_ADRESSE,ETA_CP,ETA_MAIL,ETA_PROVCIVIL,ETA_PROVNOM,ETA_PROVPRENOM,ETA_TEL,ETA_SECU,ETA_NOMSECU,ETA_CATEG) values(:ETA_NOM,:ETA_VILLE,:ETA_ADRESSE,:ETA_CP,:ETA_MAIL,:ETA_PROVCIVIL,:ETA_PROVNOM,:ETA_PROVPRENOM,:ETA_TEL,:ETA_SECU,:ETA_NOMSECU,:ETA_CATEG)");
         
         $req->bindValue(':ETA_NOM', $ETA_NOM, PDO::PARAM_STR);
         $req->bindValue(':ETA_VILLE', $ETA_VILLE, PDO::PARAM_STR);
@@ -71,7 +91,7 @@ function getEtablissementByUtilMail() {
         $req->bindValue(':ETA_TEL', $ETA_TEL, PDO::PARAM_STR);
         $req->bindValue(':ETA_SECU', $ETA_SECU, PDO::PARAM_STR);
         $req->bindValue(':ETA_NOMSECU', $ETA_NOMSECU, PDO::PARAM_STR);
-
+        $req->bindValue(':ETA_CATEG', $ETA_CATEG, PDO::PARAM_INT);
         $resultat = $req->execute();
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
