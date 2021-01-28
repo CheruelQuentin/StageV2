@@ -14,8 +14,8 @@ function getInscrirePDf($STA_ID) {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select DISTINCT ELE_NOM, ELE_DATENAISS, ELE_CLASSE, CRE_DATE, FORM_LIBELLE, CRE_SALLE, CRE_HEUREDEB, CRE_HEUREFIN from etablissement, eleve, inscrire, stage, formation, creneau where ETA_ID= ELE_ETA and INS_ELE = ELE_ID and INS_STA=STA_ID and STA_FORM = FORM_CODE and STA_CRE = CRE_ID and ETA_ID =:uti_eta and STA_ID = :STA_ID");
-        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
+        $req = $cnx->prepare("select DISTINCT ELE_NOM,ELE_PRENOM, ELE_DATENAISS, ELE_CLASSE, CRE_DATE, FORM_LIBELLE, CRE_SALLE, CRE_HEUREDEB, CRE_HEUREFIN from etablissement, eleve, inscrire, stage, formation, creneau where ETA_ID= ELE_ETA and INS_ELE = ELE_ID and INS_STA=STA_ID and STA_FORM = FORM_CODE and STA_CRE = CRE_ID  and STA_ID = :STA_ID");
+        
         $req->bindValue(':STA_ID', $STA_ID, PDO::PARAM_INT);
         $req->execute();
 
@@ -24,31 +24,6 @@ function getInscrirePDf($STA_ID) {
             $resultat[] = $ligne;
             $ligne = $req->fetch(PDO::FETCH_ASSOC);
         }
-    } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
-        die();
-    }
-    return $resultat;
-}
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function getMiam($STA_ID){
-
-
-    try {
-        $cnx = connexionPDO();
-        $req = $cnx->prepare("select COUNT(INS_ELE) AS nb from etablissement, eleve, inscrire, stage, formation, creneau where ETA_ID= ELE_ETA and INS_ELE = ELE_ID and INS_STA=STA_ID and STA_FORM = FORM_CODE and STA_CRE = CRE_ID and ETA_ID =:uti_eta AND  STA_ID = :STA_ID");
-        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
-        $req->bindValue(':STA_ID', $STA_ID, PDO::PARAM_INT);
-        $resultat=$req->execute() ;
-        
-
-        $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        $resultat = $ligne['nb'];
-      //  echo "<br>nb eleve ".$resultat;
-        /*while ($ligne) {
-            $resultat = $ligne;
-            $ligne = $req->fetch(PDO::PARAM_STR);
-        }*/
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
         die();
@@ -145,7 +120,7 @@ global $ETA_NOM , $ETA_VILLE, $CAT_LIBELLE;
 function Table()
 {
     $this->SetFont('times','',9);
-    $this->Cell(27,10,'Nom de l\'eleve',1,0,'C');
+    $this->Cell(27,10,utf8_decode('Nom/Prénom élèves'),1,0,'C');
     $this->Cell(27,10,'Date de Naissance',1,0,'C');
     $this->Cell(27,10,'Classe de l\'eleve',1,0,'C');
     $this->Cell(28,10,'Nom du Mini-Stage',1,0,'C');
@@ -156,11 +131,11 @@ function Table()
 }
 
 function viewTable(){
-global $ELE_NOM , $INS_STA ,$ELE_DATENAISS , $ELE_CLASSE, $CRE_DATE, $FORM_LIBELLE, $STA_ID;
+global $ELE_NOM ,$ELE_PRENOM, $INS_STA ,$ELE_DATENAISS , $ELE_CLASSE, $CRE_DATE, $FORM_LIBELLE, $STA_ID;
     $this->SetFont('Times','',8);
       $stmt=getInscrirePDF($STA_ID);
          for ($i = 0; $i < count($stmt); $i++) {
-               $this->Cell(27,10,$stmt[$i]['ELE_NOM'],1,0,'C');
+               $this->Cell(27,10,$stmt[$i]['ELE_NOM'].' - '.$stmt[$i]['ELE_PRENOM'],1,0,'C');
                $this->Cell(27,10,strftime('%d/%m/%Y',strtotime($stmt[$i]['ELE_DATENAISS'])),1,0,'C');
                $this->Cell(27,10,$stmt[$i]['ELE_CLASSE'],1,0,'C');
                $this->Cell(28,10,$stmt[$i]['FORM_LIBELLE'],1,0,'C');

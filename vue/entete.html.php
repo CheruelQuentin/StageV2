@@ -103,6 +103,8 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php">Génération de PDF</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf2">Génération Convention de stage</a></li>
+
                 </ul>
             </div>
         </div>

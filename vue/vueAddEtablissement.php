@@ -34,11 +34,14 @@
 <input type="radio" name="ETA_NOMSECU" value="MAIF"  for="MAIF"> MAIF</label>
 </p>
 
-<p>Type d'établissement :
-<input type="radio" name="ETA_CATEG" value="0" for="0"> Lycée</label>
-<input type="radio" name="ETA_CATEG" value="1"  for="1"> Collège</label>
-</p>
-
+<p><label for="ETA_CATEG"> Type d'établissement : </label> 
+			<select  required name="CRE_MAT">
+			<?php
+				for($i=0;$i<sizeof($categeta);$i++){ ?> 
+					<option value= <?= $categeta[$i]['CAT_ID'];?> > 
+						<?= $categeta[$i]['CAT_LIBELLE']; ?> </option> 
+			<?php } ?>
+		</select>
 </td><tr></table>
 <br><input type="submit" value="valider"/>
 </form>

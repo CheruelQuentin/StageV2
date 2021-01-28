@@ -7,6 +7,7 @@ function controleurPrincipal($action){
     $lesActions["listeCollege"] = "listeCollege.php";
     $lesActions["listeLycee"] = "listeLycee.php";
     $lesActions["choixFormPdf"] = "choixFormPdf.php";
+    $lesActions["choixFormPdf2"] = "choixFormPdf2.php";
     //Listes de personnes
     $lesActions["listeEnseigner"] = "listeEnseigner.php";
     $lesActions["listeEnseignant"] = "listeEnseignant.php";
