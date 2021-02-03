@@ -1,6 +1,7 @@
 <body>
+	<br>
 	<center><h2 id="titre">Gestion des élèves</h2></center>
-    <center><h2 id="titre">Ajout d'élève</h2>
+    <center><h2 id="titre">Ajout d'élève</h2><br>
 <script src="js/verification.js"> </script>
 <p></p> 
 	<link rel="stylesheet" type="text/css" href="css/liste.css">
