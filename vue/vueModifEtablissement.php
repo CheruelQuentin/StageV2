@@ -20,7 +20,7 @@
 
 <p><label for="ETA_VILLE">Ville  :</label> <input id="ETA_VILLE" type="text" name="ETA_VILLE" size="50px" maxlength="150" value="<?=$ville?>"  required pattern="[a-zA-ZÀ-ÿ-\(-\-]{1,100}" title="La première lettre doit être une majuscule"  /></p>
 
-<p><label for="ETA_ADRESSE">Adresse :</label>  <input id="ETA_ADRESSE" type="text" name="ETA_ADRESSE" size="50px" maxlength="150" value="<?=$adresse?>" required pattern="[a-zA-ZÀ-ÿ-\(-\-]{1,100}" title="La première lettre doit être une majuscule"/> /></p>
+<p><label for="ETA_ADRESSE">Adresse :</label>  <input id="ETA_ADRESSE" type="text" name="ETA_ADRESSE" size="50px" maxlength="150" value="<?=$adresse?>" required pattern="[a-zA-ZÀ-ÿ-\(-\-]{1,100}" title="La première lettre doit être une majuscule"/></p>
 
 <p><label for="ETA_CP">Code postal :</label>  <input id="ETA_CP" type="text" name="ETA_CP" size="50px" maxlength="6" value="<?=$CP?>" onblur="verifmodifcp();" /></p>
 
