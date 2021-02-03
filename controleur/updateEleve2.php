@@ -27,7 +27,8 @@ if(getUpdateEleve($ELE_ETA, $ELE_NOM, $ELE_PRENOM, $ELE_DATENAISS, $ELE_CLASSE, 
 	getAddInscrire($ELE_ID,$_POST['choixForm'][$i]);
 }
 	
-	header('Location: ./?action=listeEleve2');
+	header('Location: ./?action=listeEleve');
+	
   	exit();
 } else{
 	echo "erreur.";

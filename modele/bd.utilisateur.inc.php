@@ -125,14 +125,14 @@ function addUtiEnseignant($ENS_MAIL, $ENS_DATENAISS,$ENS_ID) {
     return $resultat;
 }
 
-function addUtiEtablissement($ETA_MAIL, $ETA_PROVNOM,$ETA_ID) {
+function addUtiEtablissement($ETA_MAIL, $ETA_MDP,$ETA_ID) {
     try {
         $cnx = connexionPDO();
 
-        $mdpUCrypt = crypt($ETA_PROVNOM, "sel");
-        $req = $cnx->prepare("insert into utilisateur (UTIL_MAIL, UTIL_MDP, UTIL_CODE,UTIL_ETA) values (:ETA_MAIL,:ETA_PROVNOM,'ETAB',:ETA_ID)");
+        $mdpUCrypt = crypt($ETA_MDP, "sel");
+        $req = $cnx->prepare("insert into utilisateur (UTIL_MAIL, UTIL_MDP, UTIL_CODE,UTIL_ETA) values (:ETA_MAIL,:ETA_MDP,'ETAB',:ETA_ID)");
         $req->bindValue(':ETA_MAIL', $ETA_MAIL, PDO::PARAM_STR);
-        $req->bindValue(':ETA_PROVNOM', $mdpUCrypt, PDO::PARAM_STR);
+        $req->bindValue(':ETA_MDP', $mdpUCrypt, PDO::PARAM_STR);
         $req->bindValue(':ETA_ID', $ETA_ID, PDO::PARAM_INT);
         
         

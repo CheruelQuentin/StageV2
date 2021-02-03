@@ -9,7 +9,7 @@ for($i=0;$i<sizeof($ELE_INS);$i++){	//Suppression de toutes les formations suivi
 }
 
 if(getDelEleve($_GET['id'])){
-	header('Location: ./?action=listeEleve');
+	header('Location: ./?action=listeEleve2');
   	exit();
 } else{
 	echo "erreur.";

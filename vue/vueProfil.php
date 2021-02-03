@@ -45,6 +45,11 @@ for ($i = 0; $i < count($listeStage); $i++) {
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ //Si l'utilisateur est un établissement ...  ?>
     <br>
     <link rel="stylesheet" type="text/css" href="css/liste.css">
+    <?php  
+    if($listeInscrire == null){
+        echo('Aucun élève inscrit actuellement dans un mini-stage');
+    }else{?>
+    
     <center><h1>Liste des inscrits</h1></center>
 
     <br>
@@ -67,8 +72,9 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
 }
 ?>
 </tbody></table>
-
-
+<?php
+}
+?>
 <?php } else { //Si l'utilisateur est un enseignant ... ?>
    <br>
    <link rel="stylesheet" type="text/css" href="css/liste.css">

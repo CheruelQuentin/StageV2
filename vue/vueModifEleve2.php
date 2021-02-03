@@ -13,7 +13,7 @@
       <body>
         <center><h2>Modification eleve </h2>
         
-        <form method="post" action="./?action=upEle">
+        <form method="post" action="./?action=upEle2">
         <table><tr><td>            
           <input id="ELE_ID" type="hidden" name="ELE_ID" size="50px" maxlength="20" value="<?=$_GET['id']?>" />
           <div class="ui-widget">
