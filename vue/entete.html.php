@@ -29,12 +29,15 @@
                     if(isset($_SESSION["UTIL_MAIL"])){
                     if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                     <a type="button" class="btn btn-info " href="./?action=modifMdpAdmin">Changer de mot de passe</a>
+                    <a type="button" class="btn btn-danger" href="./?action=deconnexion">Déconnexion</a>
                     <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ ?>
                         <a type="button" class="btn btn-info " href="./?action=modifMdpEtablissement">Changer de mot de passe</a>
+                        <a type="button" class="btn btn-danger" href="./?action=deconnexion">Déconnexion</a>
                     <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ENS"){ ?>
                     <a type="button" class="btn btn-info " href="./?action=modifMdpEnseignant">Changer de mot de passe</a>
-                    <?php }} ?>
                     <a type="button" class="btn btn-danger" href="./?action=deconnexion">Déconnexion</a>
+                    <?php }} ?>
+                    
     </nav>
 
 <?php 
