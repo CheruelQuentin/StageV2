@@ -1,8 +1,8 @@
 
 <html>
       <head>
-            <title> Formulaire de modification </title>
-            <meta name="description" content="Formulaire de modification"/>
+            <center><h2 id="titre">Génération de pdf</h2></center>
+            <meta name="description" content="Génération de pdf"/>
             <meta charset="utf-8"/>
       </head>
       <body>

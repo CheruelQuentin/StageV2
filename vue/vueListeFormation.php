@@ -20,7 +20,7 @@
 for ($i = 0; $i < count($listeStage); $i++) {
     ?>
         <tr>
-            <td><center><?= getCreneauById($listeStage[$i]["STA_CRE"])['CRE_DATE'], " | ",getCreneauById($listeStage[$i]["STA_CRE"])['CRE_HEUREDEB']," - ", getCreneauById($listeStage[$i]["STA_CRE"])['CRE_HEUREFIN'] ?></center></td>
+            <td><center><?= strftime('%d/%m/%Y',strtotime(getCreneauById($listeStage[$i]["STA_CRE"])['CRE_DATE'])), " | ",getCreneauById($listeStage[$i]["STA_CRE"])['CRE_HEUREDEB']," - ", getCreneauById($listeStage[$i]["STA_CRE"])['CRE_HEUREFIN'] ?></center></td>
             
             <td><center><?= getFormationById($listeStage[$i]["STA_FORM"])['FORM_LIBELLE'] ?></center></td>
             

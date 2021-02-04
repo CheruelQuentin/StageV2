@@ -45,7 +45,7 @@ function getInscrireByEle($INS_ELE) {
 }
 
     
-    function getInscrireByForm($INS_STA) {
+    function getInscrireByStage($INS_STA) {
 
     try {
         $cnx = connexionPDO();
@@ -120,7 +120,7 @@ function getInscrireListe() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from inscrire, etablissement, eleve,stage,formation, enseignant where INS_ELE= ELE_ID and ELE_ETA=ETA_ID and ETA_ID=:uti_eta and INS_STA=STA_ID and STA_FORM=FORM_CODE and STA_ENS=ENS_ID ORDER BY FORM_CODE ");
+        $req = $cnx->prepare("select * from inscrire, etablissement, eleve,stage,formation, enseignant, creneau where INS_ELE= ELE_ID and ELE_ETA=ETA_ID and ETA_ID=:uti_eta and INS_STA=STA_ID and STA_FORM=FORM_CODE and STA_ENS=ENS_ID and STA_CRE = CRE_ID ORDER BY CRE_DATE, FORM_CODE, ELE_NOM ");
         $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
         $req->execute();
 
@@ -178,5 +178,34 @@ function getInscrireListe3() {
     return $resultat;
 }
 
+
+function getInscrireByForm($FORM_CODE) {
+    $resultat = array();
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select CRE_SALLE,ELE_NOM,ELE_PRENOM,CRE_DATE,CRE_HEUREDEB,CRE_HEUREFIN,ELE_CLASSE 
+            from formation, stage, creneau, eleve, inscrire 
+where ELE_ID =INS_ELE 
+AND INS_STA= STA_ID 
+AND STA_FORM = FORM_CODE 
+and STA_CRE = CRE_ID 
+and FORM_CODE=:FORM_CODE 
+AND ELE_ETA =:uti_eta");
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
+        $req->bindValue(':FORM_CODE', $FORM_CODE, PDO::PARAM_INT);
+
+        $req->execute();
+
+         $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+                $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
 
 ?>

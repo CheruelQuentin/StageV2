@@ -2,29 +2,58 @@
 
 <link rel="stylesheet" type="text/css" href="css/liste.css">
 <br>
-<center><h2 id="titre">Gestion des inscrits</h2></center><br>
+<center><h2 id="titre">Liste des inscrits</h2></center><br>
 <button onclick="window.location.href='./?action=addIns';" id="bouton2" style="display:inline-block;">Ajouter</button></div>
-<table class="table">
-        <thead>
-            <th align="center">Nom Prénom</th>
 
-            <th align="center">Formation</th>
+<?php
+$listeCreneau = getListeCreneau();
+for ($i = 0; $i < count($listeCreneau); $i++) {
+    
+    ?>
+<table class="table">
+
+
+<thead>
+       <th colspan="8"><?= $listeCreneau[$i]["FORM_LIBELLE"] ?></th>
+     </thead>
+
+
+<tbody>
+        
+            
+            <th align="center">Date</th>
+            <th align="center">Nom/Prénom</th>
+            <th align="center">Classe</th>
+            <th align="center">Heure début</th>
+            <th align="center">Heure fin</th>
+            <th align="center">Salle</th>
             <th align="center">Modifier</th>
             <th align="center">Supprimer</th>
+      
 
 
-         </thead>
-         <tbody>
+
 <?php
-for ($i = 0; $i < count($listeInscrire); $i++) {
+
+$result=getInscrireByForm($listeCreneau[$i]["FORM_CODE"]);
+
+for ($j = 0; $j < count($result); $j++) {
     ?>
-        <tr>
-            <td><center><?= getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_NOM']," ",getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_PRENOM'] ?></center></td>
-            <td><center><?= getFormationById(getStageById($listeInscrire[$i]["INS_STA"])['STA_FORM'])['FORM_LIBELLE'] ?></center></td>
+ <tr>
+       <td><center><?= strftime('%d/%m/%Y',strtotime($result[$j]["CRE_DATE"])) ?></center></td>
+       <td><center><?= $result[$j]["ELE_NOM"],' ',$result[$j]["ELE_PRENOM"] ?></center></td>
+       <td><center><?= $result[$j]["ELE_CLASSE"] ?></center></td>
+       <td><center><?= $result[$j]["CRE_HEUREDEB"] ?></center></td>
+       <td><center><?= $result[$j]["CRE_HEUREFIN"] ?></center></td>
+       <td><center><?= $result[$j]["CRE_SALLE"] ?></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifIns2&id=<?=$listeInscrire[$i]['INS_ELE']?>'; }" > Modif. </button></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delIns&id=<?=$listeInscrire[$i]['INS_ELE']?>&amp;stage=<?=$listeInscrire[$i]["INS_STA"]?>'; }" > Supp. </button></center></td>
-
+        </tr>
     <?php
-}
+        }
+
+       ?>
+<br>
+     <?php                     }
 ?>
 </tbody></table>

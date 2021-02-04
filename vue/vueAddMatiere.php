@@ -5,8 +5,9 @@
 <p></p>
  <form method="post" action="./?action=insertMat">
 <table><tr><td>
-	<p><label for="MAT_LIBELLE"> Nouveau Libelle </label>  <input id="MAT_LIBELLE" type="text" name="MAT_LIBELLE" size="50px" maxlength="150" required pattern="[a-zA-ZÀ-ÿ]{1,150}" title="La première lettre doit être une majuscule et le libelle ne doit pas contenir des carac.spéciaux"/>
+	<p><label for="MAT_LIBELLE"> Nouveau Libelle*: </label>  <input id="MAT_LIBELLE" type="text" name="MAT_LIBELLE" size="50px" maxlength="150" required placeholder="ex : Math"/>
 			        <input type="submit" value="valider"/>
 				    <input type="reset"/></p>
+				    <p>Champs obligatoire *</p>
 				    <p></p>
 </form>

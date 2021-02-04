@@ -7,8 +7,11 @@ $INS_ELE=htmlspecialchars($_POST['INS_ELE']);
 $INS_STA=htmlspecialchars($_POST['INS_STA']);
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
+if(getAddInscrire($INS_ELE, $INS_STA)){
+header('Location: ./?action=listeInscription');
+  	exit();
+}
 
-getAddInscrire($INS_ELE, $INS_STA);
 
 
 // traitement si necessaire des donnees recuperees

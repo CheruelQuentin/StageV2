@@ -1,16 +1,16 @@
 
 <html>
       <head>
-            <title> Formulaire de modification </title>
-            <meta name="description" content="Formulaire de modification"/>
+            <center><h2 id="titre">Génération de pdf</h2></center>
+            <meta name="description" content="Génération de pdf"/>
             <meta charset="utf-8"/>
       </head>
       <body>
          <center><h2>Choix du mini-stage </h2>
        
 
-
-             <form method="post" action="./controleur/creationPDFLycee.php">
+<br>
+             <form method="post" action="./controleur/creationPDFLycee.php" TARGET="_BLANK">
              <table><tr><td>
               
              <label for="STA_ID"> Stage </label> : 
@@ -23,9 +23,9 @@
                       </option> 
                   <?php } ?>
                 </select>
-
+<br>
                     <input type="submit" value="valider"/>
-                    <input type="reset"/></p>
+                    
                     <p></p>
                     </td></tr></table>
              </form></center>

@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
       <head>
+        <center><h2 id="titre">Inscrits </h2></center>
             <title> Formulaire de modification </title>
             <meta name="description" content="Formulaire de modificaion"/>
             <meta charset="utf-8"/>
@@ -23,9 +24,9 @@
             <option value= <?= $listeStage[$i]['STA_ID'];?>><?= getFormationById($listeStage[$i]['STA_FORM'])['FORM_LIBELLE'], " ",getCreneauById($listeStage[$i]['STA_CRE'])['CRE_DATE'], " ", getCreneauById($listeStage[$i]['STA_CRE'])['CRE_HEUREDEB'];?> </option> 
           <?php } ?>
           </select>
-          
+          <br><br><center>
           <input type="submit" value="valider"/>
-                    <input type="reset"/></p>
+                   </center> 
                     <p></p>
                     </td></tr></table><center>
 

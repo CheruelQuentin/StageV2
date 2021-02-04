@@ -2,7 +2,7 @@
 if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
 
 }
-include_once "modele/recupmdp.inc.php";
+include_once "modele/bd.utilisateur.inc.php";
 include_once "modele/bd.inc.php";
 
 
@@ -29,17 +29,11 @@ include_once "modele/bd.inc.php";
 						$recupcode .= mt_rand(0,9); //random entre 0 et 9
 					}
 					
-					$mail_recup_existe = $cnx -> prepare('SELECT id FROM recuperation WHERE mail = ?');
+					$mail_recup_existe = $cnx -> prepare('SELECT UTIL_MAIL FROM utilisateur WHERE UTIL_MAIL = ?');
 					$mail_recup_existe -> execute(array($recupmail)); // recup de toutes les demandes de récup ayant un mail correspondant.
 					$mail_recup_existe = $mail_recup_existe -> rowCount(); //Compte le nbr de récupération ayant cette adresse mail (normalement 1 ou 0)
 
-					if ($mail_recup_existe == 1){//Si une demande de recup a déjà été faite par ce mail on update la demande précédente
-						$recupinsert = $cnx -> prepare('UPDATE recuperation SET code = ? WHERE mail = ?');
-						$recupinsert -> execute(array($recupcode, $recupmail));
-					}else{	//Si une demande de récup n'a pas déjà été faite par ce mail on insert la demande
-						$recupinsert = $cnx -> prepare('INSERT INTO recuperation(mail,code) VALUES (?, ?)');
-						$recupinsert -> execute(array($recupmail, $recupcode));
-					}
+					
 		/////////////////CONTENU MAIL (A adapter sur la version externe)///////////////////
 	         $header.='From:"[Lycée Jean Rostand]"<votremail@mail.com>'."\n";
 	         $header.='Content-Type:text/html; charset="utf-8"'."\n";

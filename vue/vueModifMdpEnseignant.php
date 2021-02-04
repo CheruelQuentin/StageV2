@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
       <head>
-            <title> Formulaire de modification </title>
+            <center><h2 id="titre">Changement de mot de passe </h2></center>
             <meta name="description" content="Formulaire de modificaion"/>
            <meta charset="utf-8"/>
      </head>
@@ -28,19 +28,6 @@
       <input type="reset"/></p>
       </form>
              
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<?php   
-Echo ("✨Attention le mot de passe peut actuellement être redonné par l'admin si vous le changez l'admin ne pourra plus vous le rendre");
-?>
+
       </body>
 </html>

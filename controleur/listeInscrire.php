@@ -3,6 +3,7 @@
 
 include_once "modele/bd.inscrire.inc.php";
 include_once "modele/bd.eleve.inc.php";
+include_once "modele/bd.creneau.inc.php";
 include_once "modele/bd.etablissement.inc.php";
 include_once "modele/bd.formation.inc.php";
 include_once "modele/bd.stage.inc.php";
@@ -10,9 +11,9 @@ include_once "modele/bd.stage.inc.php";
 
 // recuperation des donnees GET, POST, et SESSION
 ;
-
+$listeCreneau = getListeCreneau();
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
-$listeInscrire = getInscrireListe();
+$listeInscrire = getInscrireListe($listeCreneau);
 
 // traitement si necessaire des donnees recuperees
 ;

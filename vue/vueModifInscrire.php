@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
       <head>
+        <center><h2 id="titre">Modification de l'inscrit </h2></center><br>
             <title> Formulaire de modification </title>
             <meta name="description" content="Formulaire de modificaion"/>
             <meta charset="utf-8"/>

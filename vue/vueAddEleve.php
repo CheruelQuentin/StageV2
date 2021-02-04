@@ -10,15 +10,15 @@
  <table><tr><td> 
  	
 
-	<p><label for="ELE_NOM"> Nom :</label><input id="ELE_NOM" type="text" name="ELE_NOM" size="50px" maxlength="100" required pattern="[a-zA-ZÀ-ÿ-\(-\-]{1,100}" title="La première lettre doit être une majuscule"/></p>
-	<p><label for="ELE_PRENOM"> Prénom :</label><input id="ELE_PRENOM" required pattern="[a-zA-ZÀ-ÿ-\(-\-]{1,100}" title="La première lettre doit être une majuscule" type="text" name="ELE_PRENOM" size="50px" maxlength="100"/></p>
-	<p><label for="ELE_DATENAISS"> Date de naissance :</label><input id="ELE_DATENAISS" type="date" name="ELE_DATENAISS" size="50px" maxlength="20"  /></p>
-	<p><label for="ELE_CLASSE"> Classe :</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="10"/></span></p>
-	<p><label for="ELE_MAIL"> Mail(non obligatoire) :</label><input id="ELE_MAIL" type="text" name="ELE_MAIL" size="50px" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" maxlength="150"  /></p>
+	<p><label for="ELE_NOM"> Nom*:</label><input id="ELE_NOM" type="text" name="ELE_NOM" size="50px" maxlength="100" required placeholder="ex : Jack" /></p>
+	<p><label for="ELE_PRENOM"> Prénom*:</label><input id="ELE_PRENOM" required  type="text" name="ELE_PRENOM" size="50px" maxlength="100" placeholder="ex : Frank"/></p>
+	<p><label for="ELE_DATENAISS"> Date de naissance*:</label><input id="ELE_DATENAISS" type="date" name="ELE_DATENAISS" size="50px" maxlength="20"  /></p>
+	<p><label for="ELE_CLASSE"> Classe*:</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="10" placeholder="ex : 1STMG2"/></p>
+	<p><label for="ELE_MAIL"> Mail:</label><input id="ELE_MAIL" type="email" name="ELE_MAIL" size="50px" maxlength="150"  /></p>
 
 	<div id="choixForm">
 		<fieldset class="scheduler-border">    
-        	<legend class="scheduler-border">Formations à suivre</legend>           
+        	<legend class="scheduler-border">Choisir les ministages suivi par l’élève</legend>           
         <?php
 				for($i=0;$i<sizeof($stage);$i++){ ?> 
 					<input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>
@@ -31,5 +31,5 @@
 	</td><tr></table><br>
 			        <input type="submit" value="valider"/>
 				    <input type="reset"/></p>
-				    <p></p>
+				    <p>Champs obligatoire *</p>
 </form>

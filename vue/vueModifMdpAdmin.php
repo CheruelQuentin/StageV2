@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
       <head>
-            <title> Formulaire de modification </title>
+            <center><h2 id="titre">Changement de mot de passe </h2></center>
             <meta name="description" content="Formulaire de modificaion"/>
             <meta charset="utf-8"/>
      </head>
