@@ -19,7 +19,7 @@ function controleurPrincipal($action){
     $lesActions["connexion"] = "connexion.php";
     $lesActions["deconnexion"] = "deconnexion.php";
     $lesActions["profil"] = "profil.php";
-    $lesActions["recup"] = "recupMdp.php";
+    $lesActions["recup"] = "forgot_password.php";
 
     
     //Stage
