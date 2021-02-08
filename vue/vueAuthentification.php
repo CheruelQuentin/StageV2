@@ -23,7 +23,7 @@
 <form action="./?action=connexion" method="POST">
 <table><tr><td>
 
-	<p><label for="mail"><strong> Login </strong></label><input id="champ" type="e-mail" name="Mail" placeholder="Identifiant" size="50" required/></p><br />
+	<p><label for="mail"><strong> Login </strong></label><input id="champ" type="e-mail" name="Mail" placeholder="Identifiant" size="25" required/></p><br />
 	<label for="Mdp"><strong> Mot de passe </strong></label><input id="champ" type="password" name="Mdp" placeholder="Mot de passe" required/><span class="show-password">afficher le mot de passe</span>
 
     <input id="bouton1" type="submit" value="Se connecter" />

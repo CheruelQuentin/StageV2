@@ -52,3 +52,6 @@ input {
 	cursor: pointer;
 	margin-left: -48px;
 }
+div{
+	float:right;
+}

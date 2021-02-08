@@ -4,6 +4,7 @@ function verifnomEtab(){
 
 if(ETA_NOM.value.length > 150 || ETA_NOM.value.length < 3) {
 ETA_NOM.style.borderColor="red";
+erreurnomEtab.style.color = '#f00';
 erreurnomEtab.innerHTML = "Il doit y avoir entre 3 et 150 caractères !";
 } else {
 erreurnomEtab.innerHTML = "";
@@ -244,6 +245,7 @@ function verifnomEle(){
 if(ELE_NOM.value.length > 100 || ELE_NOM.value.length < 3) {
 ELE_NOM.style.borderColor="red";
 erreurnomEle.innerHTML = "Il doit y avoir entre 3 et 100 caractères !";
+
 } else {
 erreurnomEle.innerHTML = "";
 ELE_NOM.style.borderColor="blue";
