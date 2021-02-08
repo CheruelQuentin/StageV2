@@ -21,7 +21,7 @@
     <br>
     <center>
                     <input type="submit" value="valider"/>
-                    <input type="reset"/></p>
+                    
                     </center><p></p>
                   
              </form>

@@ -10,7 +10,7 @@
        
 
 
-             <form method="post" action="./controleur/creationPDFLycee2.php">
+             <form method="post" action="./controleur/creationPDFLycee2.php" TARGET="_BLANK">
              <table><tr><td>
               
              <label for="ETA_ID"> Etablissement </label> : 

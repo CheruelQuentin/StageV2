@@ -7,8 +7,9 @@ $FORM_LIBELLE=htmlspecialchars($_POST['FORM_LIBELLE']);
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-getAddFormation($FORM_CODE, $FORM_LIBELLE);
-
+if(getAddFormation($FORM_CODE, $FORM_LIBELLE)){
+header('Location: ./?action=listeMatiere');
+}
 
 // traitement si necessaire des donnees recuperees
 

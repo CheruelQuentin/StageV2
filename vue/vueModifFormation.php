@@ -55,7 +55,7 @@
   <label for="STA_ELEMAX"> Nb Maximum d'élèves :</label><input id="STA_ELEMAX" type="number" name="STA_ELEMAX" size="50px" maxlength="3"  /><br>
   </tr></td></table><br>
                     <input type="submit" value="Valider"/>
-                    <input type="reset" value="Réinitialiser"/>
+                    
 
              </form></center>
       </body>

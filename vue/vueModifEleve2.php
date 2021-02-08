@@ -51,7 +51,7 @@
   </div>
     </tr></td></table><br>
                     <input type="submit" value="valider"/>
-                    <input type="reset"/></p>
+ 
                     <p></p>
 
 
@@ -64,8 +64,5 @@
 <br>
 <br>
 <br>
-<?php  
-Echo ("✨L'E-mail de l'élève n'est pas obligatoire. ")
-?>
       </body>
 </html>

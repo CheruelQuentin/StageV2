@@ -102,7 +102,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="./?action=listeInscription3">Liste</a>
-                            <a class="dropdown-item" href="./?action=addIns">Ajouter</a>
+                            <a class="dropdown-item" href="./?action=addIns2">Ajouter</a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php">Génération de PDF</a></li>

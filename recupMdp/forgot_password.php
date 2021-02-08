@@ -6,16 +6,20 @@ require "../modele/bd.inc.php"
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Recuperation mot de passe</title>
+    <title>Récupération du mot de passe</title>
   </head>
   <body>
-    <h2>Forgot password</h2>
+    <br>
+   <center> <h2>Mot de passe oublié</h2></center>
+   <br>
     <form method="post">
-      <div class="container">
-        <label for="email"><b>Email</b></label>
-        <input type="email" placeholder="Enter Email" name="email" required>
-        <button type="submit">Send me a random password</button>
-      </div>
+      
+       <center> <table><tr><td>
+        <label for="email"><b>Veuillez entrer votre adresse mail :</b></label>
+     <input type="email" placeholder="Enter Email" name="email" required>
+   
+       <button type="submit">Envoyé</button></center>
+      
     </form>
   </body>
 </html>

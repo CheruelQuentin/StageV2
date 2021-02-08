@@ -29,8 +29,8 @@
 			<?php } ?>          
     	</fieldset>
 	</div>
-	</td><tr></table><br>
+	</td><tr></table><br><p>* Champs obligatoire</p><br>
 			        <input type="submit" value="valider"/>
 				    <input type="reset"/></p>
-				    <p>Champs obligatoire *</p>
+				    
 </form>
