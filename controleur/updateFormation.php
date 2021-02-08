@@ -20,7 +20,14 @@ $formation=getFormation();
 $matiere=getMatiere(); 
 $enseignant=getEnseignant();
 
-getUpdateStage($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $STA_ELEMAX, $STA_ID);
+if(getUpdateStage($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $STA_ELEMAX, $STA_ID)){
+	header('Location: ./?action=listeFormation');
+  	exit();
+} else{
+	echo "erreur.";
+}
+
+
 
 
 // traitement si necessaire des donnees recuperees
@@ -28,6 +35,6 @@ getUpdateStage($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $STA_ELEMAX
 // appel du script de vue qui permet de gerer l'affichage des donnees
 $titre = "Formation";
 include "vue/entete.html.php";
-include "vue/vueInsertFormation.php";
+
 include "vue/pied.html.php";
 ?>

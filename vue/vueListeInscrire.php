@@ -14,7 +14,7 @@ for ($i = 0; $i < count($listeCreneau); $i++) {
 
 
 <thead>
-       <th colspan="8"><?= $listeCreneau[$i]["FORM_LIBELLE"] ?></th>
+       <th colspan="9"><?= $listeCreneau[$i]["FORM_LIBELLE"] ?></th>
      </thead>
 
 
@@ -22,7 +22,8 @@ for ($i = 0; $i < count($listeCreneau); $i++) {
         
             
             <th align="center">Date</th>
-            <th align="center">Nom/Prénom</th>
+            <th align="center">Nom</th>
+            <th align="center">Prénom</th>
             <th align="center">Classe</th>
             <th align="center">Heure début</th>
             <th align="center">Heure fin</th>
@@ -41,7 +42,8 @@ for ($j = 0; $j < count($result); $j++) {
     ?>
  <tr>
        <td><center><?= strftime('%d/%m/%Y',strtotime($result[$j]["CRE_DATE"])) ?></center></td>
-       <td><center><?= $result[$j]["ELE_NOM"],' ',$result[$j]["ELE_PRENOM"] ?></center></td>
+       <td><center><?= $result[$j]["ELE_NOM"] ?></center></td>
+       <td><center><?= $result[$j]["ELE_PRENOM"] ?></center></td>
        <td><center><?= $result[$j]["ELE_CLASSE"] ?></center></td>
        <td><center><?= $result[$j]["CRE_HEUREDEB"] ?></center></td>
        <td><center><?= $result[$j]["CRE_HEUREFIN"] ?></center></td>
