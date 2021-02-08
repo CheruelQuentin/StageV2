@@ -12,8 +12,9 @@
             <th align="center">Enseignant</th>
             <th align="center">Min. Elèves</th>
             <th align="center">Max. Elèves</th>
-            <th align="center">Supprimer</th>
             <th align="center">Modifier</th>
+            <th align="center">Supprimer</th>
+            
          </thead>
          <tbody>
 <?php
@@ -28,8 +29,9 @@ for ($i = 0; $i < count($listeStage); $i++) {
             <td><center><?= getEnseignantById($listeStage[$i]["STA_ENS"])['ENS_NOM'], " ", getEnseignantById($listeStage[$i]["STA_ENS"])['ENS_PRENOM'] ?></center></td>
             <td><center><?= $listeStage[$i]["STA_ELEMIN"] ?></center></td>
             <td><center><?= $listeStage[$i]["STA_ELEMAX"] ?></center></td>
-            <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delForm&id=<?=$listeStage[$i]['STA_ID']?>'; }" > Supp. </button></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifForm&id=<?=$listeStage[$i]['STA_ID']?>'; }" > Modif. </button></center></td>
+            <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delForm&id=<?=$listeStage[$i]['STA_ID']?>'; }" > ❌ </button></center></td>
+            
 
     <?php
 }

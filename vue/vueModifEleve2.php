@@ -27,7 +27,7 @@
             </select>
           </div>
           <br>
-<p><label for="ELE_NOM">Nom :</label><input id="ELE_NOM" type="text" name="ELE_NOM" size="50px" maxlength="100" value="<?=$nom?>" required/></p>
+<p><label for="ELE_NOM">Nom :</label><input id="ELE_NOM" type="text" name="ELE_NOM" size="50px" maxlength="100" value="<?=$nom?>" required /></p>
 
 <p><label for="ELE_PRENOM">Prénom :</label><input id="ELE_PRENOM" type="text" name="ELE_PRENOM" size="50px" maxlength="100" value="<?=$prenom?>" required /></p>
 

@@ -26,7 +26,7 @@ for ($i = 0; $i < count($listeCreneauPropo); $i++) {
        <td><center><?= $listeCreneauPropo[$i]["CRE_HEUREFIN"] ?></center></td>
        <td><center><?= $listeCreneauPropo[$i]["CRE_SALLE"] ?></center></td>
        <td><input type="checkbox" name="checkCreneau[]" value="<?php echo $listeCreneauPropo[$i]["CRE_ID"]; ?>"></td>
-       <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delForm&id=<?=$listeCreneauPropo[$i]['STA_ID']?>'; }" > Supprimé </button></center></td>
+       <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delForm&id=<?=$listeCreneauPropo[$i]['STA_ID']?>'; }" > ❌ </button></center></td>
         </tr>
     <?php
 }

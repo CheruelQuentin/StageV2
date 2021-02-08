@@ -12,8 +12,9 @@
             <th align="center">E-mail</th>
             <th align="center">Tél.</th>
             <th align="center">Date de naissance</th>
-            <th align="center">Supprimer</th>
             <th align="center">Modifier</th>
+            <th align="center">Supprimer</th>
+            
          </thead>
          <tbody>
 <?php
@@ -25,8 +26,10 @@ for ($i = 0; $i < count($listeEnseignant); $i++) {
             <td><center><?= $listeEnseignant[$i]["ENS_MAIL"] ?></center></td>
             <td><center><?= $listeEnseignant[$i]["ENS_TEL"] ?></center></td>
             <td><center><?=strftime('%d/%m/%Y',strtotime($listeEnseignant[$i]["ENS_DATENAISS"])) ?></center></td>
-            <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delEns&id=<?=$listeEnseignant[$i]['ENS_ID']?>'; }" > Supp. </button></center></td>
+
             <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifEns&id=<?=$listeEnseignant[$i]['ENS_ID']?>'; }" > Modif. </button></center></td>
+            <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delEns&id=<?=$listeEnseignant[$i]['ENS_ID']?>'; }" > ❌ </button></center></td>
+            
 
 
     <?php

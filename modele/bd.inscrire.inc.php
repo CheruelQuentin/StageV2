@@ -183,7 +183,7 @@ function getInscrireByForm($FORM_CODE) {
     $resultat = array();
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select ELE_ID, CRE_SALLE,ELE_NOM,ELE_PRENOM,CRE_DATE,CRE_HEUREDEB,CRE_HEUREFIN,ELE_CLASSE 
+        $req = $cnx->prepare("select STA_ID,ELE_ID, CRE_SALLE,ELE_NOM,ELE_PRENOM,CRE_DATE,CRE_HEUREDEB,CRE_HEUREFIN,ELE_CLASSE 
             from formation, stage, creneau, eleve, inscrire 
 where ELE_ID =INS_ELE 
 AND INS_STA= STA_ID 
