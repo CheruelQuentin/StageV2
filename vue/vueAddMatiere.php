@@ -5,7 +5,7 @@
 <p></p>
  <form method="post" action="./?action=insertMat">
 <table><tr><td>
-	<p><label for="MAT_LIBELLE"> Nouveau Libelle*: </label>  <input id="MAT_LIBELLE" type="text" name="MAT_LIBELLE" size="50px" maxlength="150" required placeholder="ex : Math"/>
+	<p><label for="MAT_LIBELLE"> Nouveau Libelle*: </label>  <input id="MAT_LIBELLE" type="text" name="MAT_LIBELLE" size="50px" maxlength="150" required placeholder="ex : Math"onblur="veriflibelle();" /><div><span id = "erreurlibelle" ></span></div><br>
 			        <p>* Champs obligatoire</p>
 			        <br>
 			        <input type="submit" value="valider"/>

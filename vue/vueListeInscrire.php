@@ -38,6 +38,7 @@ for ($i = 0; $i < count($listeCreneau); $i++) {
 
 $result=getInscrireByForm($listeCreneau[$i]["FORM_CODE"]);
 
+if(count($result)>0){
 for ($j = 0; $j < count($result); $j++) {
     ?>
  <tr>
@@ -48,12 +49,12 @@ for ($j = 0; $j < count($result); $j++) {
        <td><center><?= $result[$j]["CRE_HEUREDEB"] ?></center></td>
        <td><center><?= $result[$j]["CRE_HEUREFIN"] ?></center></td>
        <td><center><?= $result[$j]["CRE_SALLE"] ?></center></td>
-            <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifIns2&id=<?=$listeInscrire[$i]['INS_ELE']?>'; }" > Modif. </button></center></td>
-            <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delIns&id=<?=$listeInscrire[$i]['INS_ELE']?>&amp;stage=<?=$listeInscrire[$i]["INS_STA"]?>'; }" > Supp. </button></center></td>
+            <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifIns2&id=<?=$result[$j]['ELE_ID'] ?>'; }" > Modif. </button></center></td>
+            <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delIns&id=<?=$result[$j]['ELE_ID'] ?>'; }" > Supp. </button></center></td>
         </tr>
     <?php
         }
-
+}
        ?>
 <br>
      <?php                     }
