@@ -14,7 +14,7 @@
 	<p><label for="ELE_PRENOM"> Prénom*:</label><input id="ELE_PRENOM" required  type="text" name="ELE_PRENOM" size="50px" maxlength="100" placeholder="ex : Frank"/></p>
 	<p><label for="ELE_DATENAISS"> Date de naissance*:</label><input id="ELE_DATENAISS" type="date" name="ELE_DATENAISS" size="50px" maxlength="20"  /></p>
 	<p><label for="ELE_CLASSE"> Classe*:</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="10" placeholder="ex : 1STMG2"/></p>
-	<p><label for="ELE_MAIL"> Mail:</label><input id="ELE_MAIL" type="email" name="ELE_MAIL" size="50px" maxlength="150"  /></p>
+	<p><label for="ELE_MAIL"> Mail:</label><input id="ELE_MAIL" type="email" name="ELE_MAIL" size="50px" maxlength="150"  /></p><br>
 
 	<div id="choixForm">
 		<fieldset class="scheduler-border">    
