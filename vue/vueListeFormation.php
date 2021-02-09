@@ -1,5 +1,5 @@
 <div style="text-align:right;padding-bottom:5px;"><br>
-    <center><h2 id="titre">Gestion des stages</h2></center><br>
+    <center><h2 id="titre">Gestion des ministages</h2></center><br>
 
 
 </div>

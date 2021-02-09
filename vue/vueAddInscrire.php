@@ -22,15 +22,16 @@
 
 
 <p>Veuillez sélectionner un stage *: </p>
-	<div id="choixForm">
+<div id="choixForm">
 		<fieldset class="scheduler-border">    
-        	<legend class="scheduler-border">Stage</legend>           
-            <?php
+        	<legend class="scheduler-border">Choisir les ministages suivi par l’élève</legend>           
+
+        <?php
 				for($i=0;$i<sizeof($stage);$i++){ ?> 
-					<input required type="radio"name="choixForm[]"value= <?= $stage[$i]['STA_ID'];?>
-					><?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], ", ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " - ", getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB']; ?>
-					<br> 
-					<br>		
+					<input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>>&nbsp;&nbsp;&nbsp;
+					<?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], " - ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " | ", getCreneauById($stage[$i]['STA_CRE'])['CRE_DATE'], " - ",substr(getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB'],0,-3);?>
+					<br><br>
+					
 			<?php } ?>          
     	</fieldset>
 	</div>

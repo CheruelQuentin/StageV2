@@ -15,10 +15,11 @@ require "../modele/bd.inc.php"
     <form method="post">
       
        <center> <table><tr><td>
-        <label for="email"><b>Veuillez entrer votre adresse mail :</b></label>
-     <input type="email" placeholder="Enter Email" name="email" required>
-   
-       <button type="submit">Envoyé</button></center>
+        <label for="email"style="width:220px;"><b>Entrer votre adresse mail :</b></label>
+     <input type="email" placeholder="Mail" name="email" required>
+   <br><br>
+   <center>
+       <input type="submit" style="padding : 10px; width: 100px" value="Valider"/></center>
       
     </form>
   </body>
@@ -31,7 +32,11 @@ if(isset($_POST['email']))
   
   $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-  $message = "bonjour, voici votre nouveau mot de passe: $password";
+  $message = "Bonjour, vous trouverez ci-joint votre nouveau mot de passe.
+  Veuillez lors de votre prochaine connexion changer votre mot de passe en allant dans l'onglet 'Changer de mot de passe'.
+  Votre nouveau mot de passe est $password 
+
+  Cordialement";
   $headers ='Content-Type: text/plain; charset="utf-8"'." ";
 
 if(mail($_POST['email'],'mot de passe oublié', $message, $headers))

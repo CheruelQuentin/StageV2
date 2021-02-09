@@ -106,8 +106,8 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addIns2">Ajouter</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php">Génération de PDF</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf2">Génération Convention de stage</a></li>
+                    <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php">PDF ministage</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf2">Convention de stage</a></li>
 
                 </ul>
             </div>
@@ -145,8 +145,8 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addIns">Ajouter</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf">Génération de PDF</a></li>
-                    <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php">Génération de PDF</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf">Convention de stage</a></li>
+                    <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php">PDF ministage</a></li>
                 </ul>
             </div>
         </div>
