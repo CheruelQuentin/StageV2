@@ -50,13 +50,13 @@
           <input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>
           ><?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], " - ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " | ", getCreneauById($stage[$i]['STA_CRE'])['CRE_DATE'], " - ",getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB'];?>
           <br>
-          
+          <br>
       <?php } ?>          
       </fieldset>
   </div>
     </tr></td></table><br>
     <p>* Champ obligatoire</p>
-                    <input type="submit" value="valider"/>
+                    <input type="submit" style="padding : 10px; width: 200px" value="valider"/>
 
                     <p></p>
              </form>

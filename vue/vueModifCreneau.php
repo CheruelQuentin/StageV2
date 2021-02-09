@@ -23,7 +23,7 @@
 <p><label for="CRE_HEUREFIN"> Modification heure de fin </label> : <input id="CRE_HEUREFIN" type="time" name="CRE_HEUREFIN" size="50px" maxlength="20" value="<?=$heureFin?>" /></p>
 
   </td></tr></table><br>
-                    <input type="submit" value="valider"/>
+                    <input type="submit" style="padding : 10px; width: 200px" value="valider"/>
 
                     <p></p>
 </div></center>

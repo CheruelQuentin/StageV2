@@ -571,3 +571,25 @@ erreurmin.innerHTML = "Le minimun est supérieur au maximun";
 erreurmin.innerHTML = "";
 }
 }
+
+
+
+
+
+function verifChangementMDP(){	
+	var UTIL_MDP2 = document.getElementById("UTIL_MDP2");
+	var UTIL_MDP3 = document.getElementById("UTIL_MDP3");
+	var erreurmdp = document.getElementById("erreurChangementmdp");
+
+if(UTIL_MDP2.value != UTIL_MDP3.value) {
+UTIL_MDP2.style.borderColor="red";
+UTIL_MDP3.style.borderColor="red";
+erreurmdp.style.color = '#f00';
+erreurmdp.innerHTML = "Les mots de passe sont différents";
+} else {
+erreurmdp.innerHTML = "";
+UTIL_MDP2.style.borderColor="blue";
+UTIL_MDP3.style.borderColor="blue";
+}
+}
+

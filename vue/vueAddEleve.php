@@ -33,7 +33,7 @@
     	</fieldset>
 	</div>
 	</td><tr></table><br><p>* Champs obligatoire</p><br>
-			        <input type="submit" value="valider"/>
+			        <input type="submit" style="padding : 10px; width: 200px" value="valider"/>
 				    <input type="reset"/></p>
 				    
 </form>

@@ -11,8 +11,13 @@
             <link rel="stylesheet" type="text/css" href="css/style.css">
       </head>
       <body>
-        <center><h2>Modification eleve </h2>
-        
+ <style type="text/css">
+            @import url("css/form.css");
+</style>
+<div id="container">
+  <br>
+  <center><h2 id="titre">Gestion des élèves</h2></center>
+    <center><h2>Modification d'élève</h2><br>
         <form method="post" action="./?action=upEle2">
         <table><tr><td>            
           <input id="ELE_ID" type="hidden" name="ELE_ID" size="50px" maxlength="20" value="<?=$_GET['id']?>" />
@@ -26,31 +31,34 @@
               <?php } ?>
             </select>
           </div>
-          <br>
-<p><label for="ELE_NOM">Nom :</label><input id="ELE_NOM" type="text" name="ELE_NOM" size="50px" maxlength="100" value="<?=$nom?>" required /></p>
+          <br><br>
+<p><label for="ELE_NOM">Nom *:</label><input id="ELE_NOM" type="text" name="ELE_NOM" size="50px" maxlength="100" value="<?=$nom?>" required onblur="verifmodifnomEle();" /><div><span id = "erreurmodifnomEle" ></span></div><br>
 
-<p><label for="ELE_PRENOM">Prénom :</label><input id="ELE_PRENOM" type="text" name="ELE_PRENOM" size="50px" maxlength="100" value="<?=$prenom?>" required /></p>
+<p><label for="ELE_PRENOM">Prénom *:</label><input id="ELE_PRENOM" type="text" name="ELE_PRENOM" size="50px" maxlength="100" value="<?=$prenom?>" required onblur="verifmodifprenomEle();" /><div><span id = "erreurmodifprenomEle" ></span></div><br>
 
-<p><label for="ELE_DATENAISS">Date de Naissance :</label><input id="ELE_DATENAISS" type="date" name="ELE_DATENAISS" size="50px" maxlength="20" value="<?=$dateN?>" /></p>
+<p><label for="ELE_DATENAISS">Date de Naissance *:</label><input id="ELE_DATENAISS" type="date" name="ELE_DATENAISS" size="50px" maxlength="20" value="<?=$dateN?>" required /></p><br>
 
-<p><label for="ELE_CLASSE">Classe :</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="10" value="<?=$classe?>"  /></p>
+<p><label for="ELE_CLASSE">Classe *:</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="10" required value="<?=$classe?>"  onblur="verifmodifclasse();" /><div><span id = "erreurmodifclasse" ></span></div><br>
 
 <p><label for="ELE_MAIL">E-mail :</label><input id="ELE_MAIL" type="mail" name="ELE_MAIL" size="50px" maxlength="150"   value="<?=$mail?>" /></p>
 
 <div id="choixForm">
     <fieldset class="scheduler-border">    
-          <legend class="scheduler-border">Formations à suivre</legend>           
+          <legend class="scheduler-border">Formations à suivre *</legend>           
         <?php
         for($i=0;$i<sizeof($stage);$i++){ ?> 
           <input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>
           ><?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], " - ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " | ", getCreneauById($stage[$i]['STA_CRE'])['CRE_DATE'], " - ",getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB'];?>
-          <br>
+          <br><br>
           
       <?php } ?>          
       </fieldset>
   </div>
-    </tr></td></table><br>
-                    <input type="submit" value="valider"/>
+    </tr></td></table>
+<br>
+<p>* Champ obligatoire</p>
+    <br>
+                    <input type="submit" style="padding : 10px; width: 200px" value="valider"/>
  
                     <p></p>
 

@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
       <head>
-        <center><h2 id="titre">Modification de l'inscrit </h2></center><br>
             <title> Formulaire de modification </title>
             <meta name="description" content="Formulaire de modificaion"/>
             <meta charset="utf-8"/>
@@ -10,7 +9,10 @@
             <link rel="stylesheet" type="text/css" href="css/autocomplete.css">
       </head>
       <body>
-         <center><h2>Modification Inscription </h2>
+<div id="container">
+  <br>
+  <center><h2 id="titre">Gestion des inscrits</h2></center>
+    <center><h2>Modification des inscrits</h2><br>
 
 
          <form method="post" action="./?action=upIns">
@@ -24,8 +26,8 @@
             <option value= <?= $listeStage[$i]['STA_ID'];?>><?= getFormationById($listeStage[$i]['STA_FORM'])['FORM_LIBELLE'], " ",getCreneauById($listeStage[$i]['STA_CRE'])['CRE_DATE'], " ", getCreneauById($listeStage[$i]['STA_CRE'])['CRE_HEUREDEB'];?> </option> 
           <?php } ?>
           </select>
-          
-          <input type="submit" value="valider"/>
+          <br><br>
+          <center><input type="submit" style="padding : 10px; width: 200px" value="valider"/></center>
 
                     <p></p>
                     </td></tr></table><center>

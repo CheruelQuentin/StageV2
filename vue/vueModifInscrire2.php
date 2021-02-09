@@ -1,7 +1,5 @@
 <!doctype html>
 <html>
-      <head>
-        <center><h2 id="titre">Inscrits </h2></center>
             <title> Formulaire de modification </title>
             <meta name="description" content="Formulaire de modificaion"/>
             <meta charset="utf-8"/>
@@ -10,9 +8,10 @@
             <link rel="stylesheet" type="text/css" href="css/autocomplete.css">
       </head>
       <body>
-         <center><h2>Modification Inscription </h2>
-
-
+<div id="container">
+  <br>
+  <center><h2 id="titre">Gestion des inscrits</h2></center>
+    <center><h2>Modification des inscrits</h2><br>
          <form method="post" action="./?action=upIns2">
          <table><tr><td>
          <input id="INS_ELE" type="hidden" name="INS_ELE" size="50px" maxlength="20"  value="<?=$_GET['id']?>"/>
@@ -25,7 +24,7 @@
           <?php } ?>
           </select>
           <br><br><center>
-          <input type="submit" value="valider"/>
+          <input type="submit" style="padding : 10px; width: 200px" value="valider"/>
                    </center> 
                     <p></p>
                     </td></tr></table><center>
