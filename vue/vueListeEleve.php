@@ -33,7 +33,7 @@ for ($i = 0; $i < count($listeEleve); $i++) {
             <td><center><?= $listeEleve[$i]["ELE_CLASSE"] ?></center></td>
             <td><center><?= $listeEleve[$i]["ELE_MAIL"] ?></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifEle2&id=<?=$listeEleve[$i]['ELE_ID']?>'; }" > Modifier </button></center></td>
-            <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élève de la base de données? Ses inscriptions seront également effacées.')==true) { window.location.href='./?action=delEle&id=<?=$listeEleve[$i]['ELE_ID']?>'; }" > Supprimer </button></center></td>
+            <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élève de la base de données? Ses inscriptions seront également effacées.')==true) { window.location.href='./?action=delEle&id=<?=$listeEleve[$i]['ELE_ID']?>'; }" > ❌ </button></center></td>
             
 
     <?php

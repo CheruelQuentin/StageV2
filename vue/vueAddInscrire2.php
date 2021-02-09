@@ -28,7 +28,7 @@
 			<?php } ?>
 		</select>
 	</p></td></tr></table><br>
-	<input type="submit" value="valider"/>
+	<input type="submit" style="padding : 10px; width: 200px" value="valider"/>
 	<input type="reset"/></center>
 </form>
 

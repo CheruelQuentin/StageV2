@@ -18,7 +18,7 @@
                   </tr>
                   <tr>
                         <td>
-                              <label for="UTIL_MDP3" size="40px"> Répéter le mot de passe </label><input id="UTIL_MDP3" type="password" name="UTIL_MDP3" size="50px" maxlength="150"  />
+                              <label for="UTIL_MDP3" size="40px"> Répéter le mot de passe </label><input id="UTIL_MDP3" type="password" name="UTIL_MDP3" size="50px" maxlength="150" required onblur="verifChangementMDP();" /><div><span id = "erreurChangementmdp" ></span></div><br>
                         </td>
                   </tr>
             </table>

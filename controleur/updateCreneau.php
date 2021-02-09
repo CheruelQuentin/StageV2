@@ -17,6 +17,7 @@ if(getUpdateCreneau($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN, $CRE_ID
   	exit();
 } else{
 	echo "erreur.";
+	
 }
 
 

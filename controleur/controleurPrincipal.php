@@ -46,7 +46,7 @@ function controleurPrincipal($action){
     $lesActions["addForm"] = "addFormation.php";
     $lesActions["addTra"] = "addTravailler.php";
     $lesActions["addMat"] = "addMatiere.php";
-
+    $lesActions["addAdmin"] = "addAdmin.php";
     //Inserts
     $lesActions["insertIns"] = "insertInscrit.php";
     $lesActions["insertIns2"] = "insertInscrit2.php";
@@ -60,7 +60,7 @@ function controleurPrincipal($action){
     $lesActions["insertForm"] = "insertFormation.php";
     $lesActions["insertTra"] = "insertTravailler.php";
     $lesActions["insertMat"] = "insertMatiere.php";
-
+    $lesActions["insertAdmin"] = "insertAdmin.php";
     //Delete
     $lesActions["delIns"] = "delInscrire.php";
     $lesActions["delIns2"] = "delInscrire2.php";

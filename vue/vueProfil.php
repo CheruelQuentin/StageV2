@@ -79,36 +79,65 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
 }
 ?>
 <?php } else { //Si l'utilisateur est un enseignant ... ?>
-<?php  
-    if($listeInscrire2 == null){
-        echo('Aucun élève inscrit actuellement dans un mini-stage');
-    }else{?>
-   <br>
-   <link rel="stylesheet" type="text/css" href="css/liste.css">
-    <center><h1>Liste des inscrits</h1></center>
-    <br>
-    <table class="table">
-        <thead>
-            <th align="center">Nom Prénom </th>
-            <th align="center">Salle</th>
-            <th align="center">Créneau</th>
-            <th align="center">Stage</th>
-         </thead>
-         <tbody>
+
+
+
+<div style="text-align:right;padding-bottom:5px;">
+<div id="container">
+  <br>
+  <center><h2 id="titre">Gestion des créneaux</h2></center>
+    <center><h2>Liste des créneaux</h2></center>
+</div>
+<link rel="stylesheet" type="text/css" href="css/liste.css">
+
 <?php
-for ($i = 0; $i < count($listeInscrire2); $i++) {
+$listeCreneau = getListeCreneau();
+for ($i = 0; $i < count($listeCreneau); $i++) {
+    
     ?>
-        <tr>
-            <td><center><?= getEleveById($listeInscrire2[$i]["INS_ELE"])['ELE_NOM'], " ",getEleveById($listeInscrire2[$i]["INS_ELE"])['ELE_PRENOM'] ?></center></td>
-            <td><center><?= getCreneauById($listeInscrire2[$i]["STA_CRE"])['CRE_SALLE']?></center></td>
-            <td><center><?= strftime('%d/%m/%Y',strtotime(getCreneauById($listeInscrire2[$i]["STA_CRE"])['CRE_DATE'])), " ",getCreneauById($listeInscrire2[$i]["STA_CRE"])['CRE_HEUREDEB'] ?></center></td>
-            <td><center><?= getFormationById(getStageById($listeInscrire2[$i]["INS_STA"])['STA_FORM'])['FORM_LIBELLE'] ?></center></td>
+<table class="table">
 
+
+<thead>
+       <th colspan="6"><?= $listeCreneau[$i]["FORM_LIBELLE"] ?></th>
+     </thead>
+
+
+<tbody>
+        
+            
+            <th align="center">Date</th>
+            <th align="center">Heure début</th>
+            <th align="center">Heure fin</th>
+            <th align="center">Salle</th>
+            <th align="center">Modifier</th>
+            <th align="center">Supprimer</th>
+      
+
+<?php
+
+$result=getCreneauByForm($listeCreneau[$i]["FORM_CODE"]);
+
+for ($j = 0; $j < count($result); $j++) {
+    ?>
+ <tr>
+       <td><center><?= strftime('%d/%m/%Y',strtotime($result[$j]["CRE_DATE"])) ?></center></td>
+       <td><center><?= $result[$j]["CRE_HEUREDEB"] ?></center></td>
+       <td><center><?= $result[$j]["CRE_HEUREFIN"] ?></center></td>
+       <td><center><?= $result[$j]["CRE_SALLE"] ?></center></td>
+       <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) {window.location.href='./?action=modifCre&id=<?=$result[$j]["CRE_ID"]?>';}" > Modifier </button></center></td>
+       <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) {window.location.href='./?action=delCre&id=<?=$result[$j]["CRE_ID"]?>';}" > ❌ </button></center></td>
+        </tr>
     <?php
-}
-?>
+        }
 
-<?php }} ?>
+       ?>
+<br>
+     <?php                     }
+?>
+</tbody></table>
+
+<?php } ?>
 </tbody></table>
 </div>
 

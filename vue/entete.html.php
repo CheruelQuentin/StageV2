@@ -59,6 +59,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=profil">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=listeCreneauPropo">Créneaux</a></li> 
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=listeEleve2">Elèves</a></li>
+                    <li class="nav-item"><a class="nav-link text-white " href="./?action=addAdmin">Admin</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                             Enseignants

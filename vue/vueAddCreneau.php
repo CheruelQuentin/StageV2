@@ -28,8 +28,8 @@
       <option value="17:00">17:00</option>
 	  <option value="17:55">17:00</option>
 	</select></p>
-	<p><label for="CRE_SALLE"style="width:220px;"> Salle *: </label> <input id="CRE_SALLE" type="text" name="CRE_SALLE" required pattern="[A-Z]{1}[0-9]{3}" size="50px" maxlength="5"/></p>
-	<p><label for="CRE_HEUREFIN"style="width:220px;">Heure de début *:</label><select name="CRE_HEUREFIN" id="CRE_HEUREFIN" type="time">
+	<p><label for="CRE_SALLE"style="width:220px;"> Salle *: </label> <input id="CRE_SALLE" type="text" name="CRE_SALLE" required pattern="[A-Z]{1}[0-9]{3}" size="50px" maxlength="5" onblur="verifSalle();" /><div></div><span id = "erreursalle" ></span></div><br>
+	<p><label for="CRE_HEUREFIN"style="width:220px;">Heure de fin *:</label><select name="CRE_HEUREFIN" id="CRE_HEUREFIN" type="time">
       <option value="8:15">8:15</option>
       <option value="9:10">9:10</option>
       <option value="10:05">10:05</option>
@@ -44,10 +44,10 @@
       <option value="17:00">17:00</option>
 	  <option value="17:55">17:00</option>
 	</select></p>
-
+<br>	
 	<div class="ui-widget">
 	<p><label for="STA_ELEMIN"style="width:220px;"> Nombre d'élève min *: </label> <input type="number" id="ele_min" name="STA_ELEMIN" min="1" max="1000"></p>
-	<p><label for="STA_ELEMAX"style="width:220px;"> Nombre d'élève max *: </label> <input type="number" id="ele_max" name="STA_ELEMAX" min="3" max="1000"></p>
+	<p><label for="STA_ELEMAX"style="width:220px;"> Nombre d'élève max *: </label> <input type="number" id="ele_max" name="STA_ELEMAX" min="1" max="1000"/><div><br>
 
 	
 
@@ -71,18 +71,17 @@
 					<input required type="radio"name="choixForm[]"value=<?= $formation[$i]['FORM_CODE'];?>
 					><?= getFormationById($formation[$i]['FORM_CODE'])['FORM_LIBELLE'];?>
 					<br> 
-					
+					<br>		
 			<?php } ?>          
     	</fieldset>
 	</div>
-	<br>
 
 
 	</td></tr></table>
 	<br>
 <p>* Champs obligatoires</p><br>
 
-			        <input type="submit" value="valider"/>
+			        <input type="submit" style="padding : 10px; width: 200px" value="valider"/>
 				    <input type="reset"/></p>
 				    
 				    <p></p>

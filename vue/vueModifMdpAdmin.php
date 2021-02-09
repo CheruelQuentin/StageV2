@@ -18,12 +18,12 @@
                         </tr>
                         <tr>
                               <td>
-                                    <label for="UTIL_MDP2"> Nouveau mot de passe </label> : <input id="UTIL_MDP2" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"title=" Doit contenir au moins un chiffre et une lettre majuscule et minuscule, et au moins 8 caractères ou plus" name="UTIL_MDP2" size="50px" maxlength="150"  />
+                                    <label for="UTIL_MDP2"> Nouveau mot de passe </label> : <input id="UTIL_MDP2" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"title=" Doit contenir au moins un chiffre et une lettre majuscule et minuscule, et au moins 8 caractères ou plus" name="UTIL_MDP2" size="50px" maxlength="150"  /><br>
                               </td>
                         </tr>
                         <tr>
                               <td>
-                                    <label for="UTIL_MDP3"> Répéter le mot de passe </label> : <input id="UTIL_MDP3" type="password" name="UTIL_MDP3" size="50px" maxlength="150"  />
+                                    <label for="UTIL_MDP3"> Répéter le mot de passe </label> : <input id="UTIL_MDP3" type="password" name="UTIL_MDP3" size="50px" maxlength="150"  onblur="verifChangementMDP();" /><div><span id = "erreurChangementmdp" ></span></div><br>
                               </td>
                         </tr>
                   </table>

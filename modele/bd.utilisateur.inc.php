@@ -164,6 +164,28 @@ function addUtiEtablissement($ETA_MAIL, $ETA_MDP,$ETA_ID) {
     return $resultat;
 }
 
+
+function addUtiAdmin($UTIL_MAIL, $UTIL_MDP) {
+    try {
+        $cnx = connexionPDO();
+
+        $mdpUCrypt = crypt($UTIL_MDP, "sel");
+        $req = $cnx->prepare("insert into utilisateur (UTIL_MAIL, UTIL_MDP, UTIL_CODE) values (:mail,:mdp,'ADMIN')");
+        $req->bindValue(':mail', $UTIL_MAIL, PDO::PARAM_STR);
+        $req->bindValue(':mdp', $mdpUCrypt, PDO::PARAM_STR);
+        
+        
+        
+        $resultat = $req->execute();
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage(); 
+        die();
+    }
+    return $resultat;
+}
+
+
+
 function getUpdateUtiMdp($UTIL_MAIL,$UTIL_MDP){
     $resultat = -1;
     try {
