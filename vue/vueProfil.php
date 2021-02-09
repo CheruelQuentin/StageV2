@@ -46,7 +46,7 @@ for ($i = 0; $i < count($listeStage); $i++) {
 
 
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ //Si l'utilisateur est un établissement ...  ?>
-    <br>
+    
     <link rel="stylesheet" type="text/css" href="css/liste.css">
     <?php  
     if($listeInscrire == null){
@@ -84,7 +84,6 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
 
 <div style="text-align:right;padding-bottom:5px;">
 <div id="container">
-  <br>
   <center><h2 id="titre">Gestion des créneaux</h2></center>
     <center><h2>Liste des créneaux</h2></center>
 </div>

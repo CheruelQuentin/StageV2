@@ -1,8 +1,8 @@
 	<body>
 	<br>
 	<center><h2 id="titre">Gestion des Créneaux</h2></center>
-	<br>
     <center><h2>Formulaire d'ajout </h2>
+	<br>
 <script src="js/verification.js"> </script>
 <p></p>
 <link rel="stylesheet" type="text/css" href="css/style.css">

@@ -1,6 +1,6 @@
-<center><h2 id="titre">Inscription des élèves à une formation</h2></center>
+<br><center><h2 id="titre">Inscription des élèves à une formation</h2></center>
 	<body>
-    <center><h2>Formulaire d'ajout </h2></center>
+    <center><h2>Formulaire d'ajout </h2></center><br>
 
 <p></p>
 
