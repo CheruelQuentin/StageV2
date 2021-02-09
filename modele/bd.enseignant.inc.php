@@ -25,7 +25,7 @@ function getEnseignant() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from enseignant");
+        $req = $cnx->prepare("select * from enseignant order by ENS_NOM, ENS_PRENOM");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);

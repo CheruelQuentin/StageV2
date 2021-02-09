@@ -28,7 +28,7 @@
       <option value="17:00">17:00</option>
 	  <option value="17:55">17:00</option>
 	</select></p>
-	<p><label for="CRE_SALLE"style="width:220px;"> Salle *: </label> <input id="CRE_SALLE" type="text" name="CRE_SALLE" required pattern="[A-Z]{1}[0-9]{3}" size="50px" maxlength="5" onblur="verifSalle();" /><div></div><span id = "erreursalle" ></span></div><br>
+	<p><label for="CRE_SALLE"style="width:220px;"> Salle *: </label> <input id="CRE_SALLE" style="width:75px;" type="text" name="CRE_SALLE" required pattern="[A-Z]{1}[0-9]{3}" size="50px" maxlength="5" onblur="verifSalle();" /><div></div><span id = "erreursalle" ></span></div><br>
 	<p><label for="CRE_HEUREFIN"style="width:220px;">Heure de fin *:</label><select name="CRE_HEUREFIN" id="CRE_HEUREFIN" type="time">
       <option value="8:15">8:15</option>
       <option value="9:10">9:10</option>
@@ -81,8 +81,8 @@
 	<br>
 <p>* Champs obligatoires</p><br>
 
-			        <input type="submit" style="padding : 10px; width: 200px" value="valider"/>
-				    <input type="reset"/></p>
+			  			        			        <input type="submit" style="padding : 10px; width: 100px" value="Valider"/>
+				    <input type="reset" style="padding : 10px; width: 100px"/></p>
 				    
 				    <p></p>
 </form>

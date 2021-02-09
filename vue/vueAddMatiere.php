@@ -7,8 +7,9 @@
 <table><tr><td><br>
 	<p><label for="MAT_LIBELLE"> Nouveau Libelle*: </label>  <input id="MAT_LIBELLE" type="text" name="MAT_LIBELLE" size="50px" maxlength="150" required placeholder="ex : Math"onblur="veriflibelle();" /><div><span id = "erreurlibelle" ></span></div><br>
 			       <center> <p>* Champs obligatoire</p></center>
-			        <br>
-			        <center><input type="submit" style="padding : 10px; width: 200px" value="valider"/></center>
+
+			        		<center>	        <input type="submit" style="padding : 10px; width: 100px" value="Valider"/></center>
+
 				    
 				    <p></p>
 </form>

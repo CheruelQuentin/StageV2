@@ -58,7 +58,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=profil">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=listeCreneauPropo">Créneaux</a></li> 
-                    <li class="nav-item"><a class="nav-link text-white " href="./?action=listeEleve2">Elèves</a></li>
+                    
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=addAdmin">Admin</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -99,7 +99,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Stagiaires
+                            Inscrits
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="./?action=listeInscription3">Liste</a>
@@ -138,6 +138,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf">Génération de PDF</a></li>
+                    <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php">Génération de PDF</a></li>
                 </ul>
             </div>
         </div>

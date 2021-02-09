@@ -40,8 +40,8 @@
 
 
 	</p></td></tr></table><br>
-	<input type="submit" style="padding : 10px; width: 200px" value="valider"/>
-	<input type="reset"/></center>
+			        			        <input type="submit" style="padding : 10px; width: 100px" value="Valider"/>
+				    <input type="reset" style="padding : 10px; width: 100px"/></p>
 </form>
 
  

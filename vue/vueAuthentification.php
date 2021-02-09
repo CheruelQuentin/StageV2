@@ -20,6 +20,8 @@
 		});</script>
 <div id=Form >
 <br><h1 id="titre">Connexion</h1><br>
+<h4>Bienvenu sur l'application ministage
+	</h4>
 <form action="./?action=connexion" method="POST">
 <table><tr><td>
 

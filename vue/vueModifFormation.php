@@ -50,9 +50,9 @@
           <option value= <?= $enseignant[$i]['ENS_ID'];?> ><?= $enseignant[$i]['ENS_NOM'], " ", $enseignant[$i]['ENS_PRENOM']; ?> </option> 
       <?php } ?>
   </select><br><br>
-  <label for="STA_ELEMIN"> Nb Minimum d'élèves :</label><input id="STA_ELEMIN" type="number" name="STA_ELEMIN" size="50px" maxlength="3" /><br><br>
+  <label for="STA_ELEMIN"> Nb Minimum d'élèves :</label><input id="STA_ELEMIN" type="number" name="STA_ELEMIN" size="50px" maxlength="3" value="<?=$min?>"/><br><br>
   <br>
-  <label for="STA_ELEMAX"> Nb Maximum d'élèves :</label><input id="STA_ELEMAX" type="number" name="STA_ELEMAX" size="50px" maxlength="3"  /><br>
+  <label for="STA_ELEMAX"> Nb Maximum d'élèves :</label><input id="STA_ELEMAX" type="number" name="STA_ELEMAX" size="50px" maxlength="3" value="<?=$max?>" /><br>
   </tr></td></table><br>
                     <input type="submit" value="Valider"/>
                     

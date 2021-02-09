@@ -23,8 +23,8 @@
                       </option> 
                   <?php } ?>
                 </select>
-<br>
-                    <input type="submit" value="valider"/>
+<br><br>
+                   <center><input type="submit" style="padding : 10px; width: 100px" value="Valider"/></center>
                     
                     <p></p>
                     </td></tr></table>

@@ -8,10 +8,11 @@ $UTIL_MDP=$_POST['UTIL_MDP2'];
 $UTIL_MDP3=$_POST['UTIL_MDP3'];
 if($UTIL_MDP == $UTIL_MDP3){
     getUpdateUtiMdpEnseignant($UTIL_ENS,$UTIL_MDP);
-header('Location: ./?action=profil');
+header('Refresh: 2;./?action=profil');
+?><script>alert("Mot de passe modifier, vous allez être redirigé");</script><?php
 }else{
 	header('Location: ./?action=modifMdpEnseignant');
-    echo "<script>alert(\"Le mot de passe indiqué est différent\")</script>";
+
 }
 
 

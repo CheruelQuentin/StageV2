@@ -22,7 +22,7 @@
 						<?= $etablissement[$i]['ETA_NOM'], ", ", $etablissement[$i]['ETA_VILLE']; ?> </option> 
 			<?php } ?>
 		</select></p><br>
-			        <input type="submit" style="padding : 10px; width: 200px" value="valider"/>
-				    <input type="reset"/></p>
+			        			        <input type="submit" style="padding : 10px; width: 100px" value="Valider"/>
+				    <input type="reset" style="padding : 10px; width: 100px"/></p>
 				    <p></p>
 </form>

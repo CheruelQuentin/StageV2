@@ -55,6 +55,7 @@ for ($j = 0; $j < count($result); $j++) {
     <?php
         }
 }
+
        ?>
 <br>
      <?php                     }

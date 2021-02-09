@@ -40,9 +40,9 @@
                       </option> 
                   <?php } ?>
                 </select>
-<br>
-                    <input type="submit" value="valider"/>
-                    <input type="reset"/></p>
+<br><br>
+                   <center><input type="submit" style="padding : 10px; width: 100px" value="Valider"/></center>
+                    
                     <p></p>
                     </td></tr></table>
              </form></center>

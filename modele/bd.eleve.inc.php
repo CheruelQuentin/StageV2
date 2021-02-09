@@ -204,7 +204,7 @@ function getEleve2() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from eleve, etablissement group by ELE_ID ");
+        $req = $cnx->prepare("select * from eleve, etablissement group by ELE_ID order by ELE_ETA");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);

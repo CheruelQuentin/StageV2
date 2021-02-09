@@ -8,10 +8,10 @@ $UTIL_MDP3=$_POST['UTIL_MDP3'];
 if($UTIL_MDP == $UTIL_MDP3){
 getUpdateUtiMdp($UTIL_MAIL,$UTIL_MDP);
 
-header('Location: ./?action=profil');
+header('Refresh: 2;./?action=profil');
+?><script>alert("Mot de passe modifier, vous allez être redirigé");</script><?php
 }else{
 	header('Location: ./?action=modifMdpAdmin');
-    echo "<script>alert(\"Le mot de passe indiqué est différent\")</script>";
 }
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
