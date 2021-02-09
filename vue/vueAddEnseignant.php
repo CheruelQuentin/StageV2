@@ -4,7 +4,7 @@
 </style>
 <div id="container">
 		<br><center><h2 id="titre">Gestion des enseignants</h2></center>
- <center><h2>Ajout d'enseignants</h2><br>
+ <center><h2>Formulaire d'ajout</h2><br>
 <script src="js/verification.js"> </script>
 
  <form method="post" action="./?action=insertEns">

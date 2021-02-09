@@ -1,15 +1,4 @@
-body{
-	font-family: sans-serif;
-}
 
-*{
-	box-sizing: border-box;
-}
-
-.table{
-	width: 100%;
-	border-collapse: collapse;
-}
 
 .table td,.table th{
   padding:12px 15px;

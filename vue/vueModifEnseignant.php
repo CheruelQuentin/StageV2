@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-      <head><br><br>
+      <head><br>
             <meta name="description" content="Formulaire de modification"/>
             <meta charset="utf-8"/>
       </head>

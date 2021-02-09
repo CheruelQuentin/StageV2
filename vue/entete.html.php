@@ -56,10 +56,11 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
+
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=profil">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link text-white " href="./?action=addAdmin">Admin</a></li>
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=listeCreneauPropo">Créneaux</a></li> 
                     
-                    <li class="nav-item"><a class="nav-link text-white " href="./?action=addAdmin">Admin</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                             Enseignants
@@ -108,7 +109,6 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                     </li>
                     <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php">PDF ministage</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf2">Convention de stage</a></li>
-
                 </ul>
             </div>
         </div>
