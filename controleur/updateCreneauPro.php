@@ -9,19 +9,6 @@ include_once "modele/bd.enseignant.inc.php";
 include_once "modele/bd.preferer.inc.php";
 
 
-if (isset($_POST['checkCreneau'])){
-
-foreach( $_POST['checkCreneau'] as $checkCreneau){
-
-
-
-$cnx = connexionPDO();
-$req = $cnx->prepare("update creneau set CRE_VALIDE=1 where CRE_ID=".$checkCreneau);
-        $resultat = $req->execute();
-
-}
-
-}
 
 
 

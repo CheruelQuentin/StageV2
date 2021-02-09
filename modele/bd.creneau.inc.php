@@ -226,4 +226,20 @@ function getInscritByForm($FORM_CODE) {
     }
     return $resultat;
 }
+
+function getCheckoutCreneaux() {
+    if (isset($_POST['checkCreneau'])){
+
+        foreach( $_POST['checkCreneau'] as $checkCreneau){
+        
+        
+        
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("update creneau set CRE_VALIDE=1 where CRE_ID=".$checkCreneau);
+                $resultat = $req->execute();
+        
+        }
+        
+        }
+}
 ?>
