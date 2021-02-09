@@ -6,7 +6,9 @@ $MAT_LIBELLE=htmlspecialchars($_POST['MAT_LIBELLE']);
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-getAddMatiere($MAT_LIBELLE);
+if(getAddMatiere($MAT_LIBELLE)){
+		header('Location: ./?action=listeMatiere');
+}
 
 
 // traitement si necessaire des donnees recuperees

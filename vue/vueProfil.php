@@ -8,7 +8,10 @@
 <div style="display:table; margin:auto;">
 <?php if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ //Si l'utilisateur est un admin ... ?>
 
-
+<?php  
+    if($listeStage == null){
+        echo('Aucun mini-stage');
+    }else{?>
 
 <link rel="stylesheet" type="text/css" href="css/liste.css">
            <table class="table">
@@ -37,7 +40,7 @@ for ($i = 0; $i < count($listeStage); $i++) {
             <td><center><?= $listeStage[$i]["STA_ELEMAX"] ?></center></td>
 
     <?php
-}
+}}
 ?>
 </tbody></table>        
 
@@ -76,6 +79,10 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
 }
 ?>
 <?php } else { //Si l'utilisateur est un enseignant ... ?>
+<?php  
+    if($listeInscrire2 == null){
+        echo('Aucun élève inscrit actuellement dans un mini-stage');
+    }else{?>
    <br>
    <link rel="stylesheet" type="text/css" href="css/liste.css">
     <center><h1>Liste des inscrits</h1></center>
@@ -101,7 +108,7 @@ for ($i = 0; $i < count($listeInscrire2); $i++) {
 }
 ?>
 
-<?php } ?>
+<?php }} ?>
 </tbody></table>
 </div>
 

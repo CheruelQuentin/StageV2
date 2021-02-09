@@ -8,7 +8,9 @@ $INS_STA=htmlspecialchars($_POST['INS_STA']);
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-getAddInscrire($INS_ELE, $INS_STA);
+if(getAddInscrire($INS_ELE, $INS_STA)){
+	header('Location: ./?action=listeInscription3');
+}
 
 
 // traitement si necessaire des donnees recuperees

@@ -12,7 +12,13 @@ $CRE_ID=htmlspecialchars($_POST['CRE_ID']);
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-getUpdateCreneau($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN, $CRE_ID);
+if(getUpdateCreneau($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN, $CRE_ID)){
+		header('Location: ./?action=listeCreneau');
+  	exit();
+} else{
+	echo "erreur.";
+}
+
 
 
 // traitement si necessaire des donnees recuperees

@@ -18,6 +18,22 @@ function getEleveById($ELE_ID) {
     return $resultat;
 }
 
+function getEleveByIdByEtab($ELE_ID) {
+    
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from eleve where ELE_ID=:ELE_ID and ELE_ETA = :uti_eta");
+        $req->bindValue(':ELE_ID', $ELE_ID, PDO::PARAM_INT);
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
 
 function getEleve() {
     $resultat = array();
@@ -46,6 +62,26 @@ function getEleve3() {
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from eleve");
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+function getEleveByEtab() {
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from eleve where ELE_ETA =:uti_eta");
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);

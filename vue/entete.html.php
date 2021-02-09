@@ -21,7 +21,7 @@
             
                 
     <nav class="navbar navbar-light " style="background-color: #7FACB2;">
-        <a href="http://172.20.82.34/ministage/"><img id="logo" src="image/logo_entete.png" alt="logo" height= 100/></a>
+        <a href="http://172.20.82.34/ministage/?action=deconnexion"><img id="logo" src="image/logo_entete.png" alt="logo" height= 100/></a>
             <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="nav-link text-dark "><h1> Mini-Stage </h1></a></li>
             </ul>
@@ -102,7 +102,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="./?action=listeInscription3">Liste</a>
-                            <a class="dropdown-item" href="./?action=addIns">Ajouter</a>
+                            <a class="dropdown-item" href="./?action=addIns2">Ajouter</a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php">Génération de PDF</a></li>

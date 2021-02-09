@@ -7,7 +7,7 @@ include_once "modele/bd.stage.inc.php";
 include_once "modele/bd.creneau.inc.php";
 include_once "modele/bd.matiere.inc.php";
 include_once "modele/bd.eleve.inc.php";
-$eleves=getEleve3(); 
+$eleves=getEleveByEtab(); 
 $stage=getStage();
 $titre = "Ajout inscrit";
 include "vue/entete.html.php";

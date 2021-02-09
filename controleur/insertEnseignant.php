@@ -22,8 +22,8 @@ addUtiEnseignant($ENS_MAIL, $ENS_DATENAISS,$ENS_ID);
 
 $TRA_ENS = $ENS_ID;
 
-
 getAddTravailler($TRA_ENS);
+header('location: ./?action=listeEnseignant');
 }
 // traitement si necessaire des donnees recuperees
 
