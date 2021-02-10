@@ -39,6 +39,28 @@ function getStage() {
     return $resultat;
 }
 
+
+function getStageByTout() {
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from stage,formation, creneau,enseignant,matiere where STA_ENS = ENS_ID and STA_FORM = FORM_CODE AND STA_CRE=CRE_ID and STA_MAT=MAT_CODE ");
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
 function getAddStage($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $STA_ELEMAX) {
     $resultat = -1;
     try {

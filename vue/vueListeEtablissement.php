@@ -34,7 +34,7 @@ for ($i = 0; $i < count($listeEtablissement); $i++) {
             <td><center><?= $listeEtablissement[$i]["ETA_PROVNOM"] ?></center></td>
             <td><center><?= $listeEtablissement[$i]["ETA_PROVPRENOM"] ?></center></td>
             <td><center><?= $listeEtablissement[$i]["ETA_TEL"] ?></center></td>
-            <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifEta&id=<?=$listeEtablissement[$i]['ETA_ID']?>'; }" > Modif. </button></center></td>
+            <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifEta&id=<?=$listeEtablissement[$i]['ETA_ID']?>'; }" > ✍ </button></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delEta&id=<?=$listeEtablissement[$i]['ETA_ID']?>'; }" > ❌ </button></center></td>
             
     </tr>

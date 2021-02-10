@@ -2,12 +2,16 @@
 <style type="text/css">
             @import url("css/connexion.css");
 </style>
+<<<<<<< HEAD
 <br>
 
+=======
+>>>>>>> 93e4fdf7fbca665fd129ed54afad9e95c31196e7
 
-<div style="display:table; margin:auto;">
+
 <?php if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ //Si l'utilisateur est un admin ... ?>
-
+<br>
+<h1 id="titre">Bienvenue</h1><br>
 <?php  
     if($listeStage == null){
         echo('Aucun mini-stage');
@@ -46,11 +50,16 @@ for ($i = 0; $i < count($listeStage); $i++) {
 
 
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ //Si l'utilisateur est un établissement ...  ?>
-    
+    <br>
+<h1 id="titre">Bienvenue</h1><br>
+<?php     
+echo"Bienvenue";
+?>
+
     <link rel="stylesheet" type="text/css" href="css/liste.css">
     <?php  
     if($listeInscrire == null){
-        echo('Aucun élève inscrit actuellement dans un mini-stage');
+    ?> <center> <?php  echo('Aucun élève inscrit actuellement dans un mini-stage'); ?> </center><?php
     }else{?>
     
     <center><h1>Liste des inscrits</h1></center>
@@ -95,7 +104,7 @@ for ($i = 0; $i < count($listeStage); $i++) {
     <center><h2>Liste des créneaux</h2></center>
 </div>
 <link rel="stylesheet" type="text/css" href="css/liste.css">
-
+<button onclick="window.location.href='./?action=addCre';" id="bouton2" style="display:inline-block;">Ajouter</button></div>
 <?php
 $listeCreneau = getListeCreneau();
 for ($i = 0; $i < count($listeCreneau); $i++) {
@@ -105,7 +114,7 @@ for ($i = 0; $i < count($listeCreneau); $i++) {
 
 
 <thead>
-       <th colspan="6"><?= $listeCreneau[$i]["FORM_LIBELLE"] ?></th>
+       <th colspan="6"style="background-color: #4097c9"><?= $listeCreneau[$i]["FORM_LIBELLE"] ?></th>
      </thead>
 
 
@@ -131,7 +140,7 @@ for ($j = 0; $j < count($result); $j++) {
        <td><center><?= $result[$j]["CRE_HEUREDEB"] ?></center></td>
        <td><center><?= $result[$j]["CRE_HEUREFIN"] ?></center></td>
        <td><center><?= $result[$j]["CRE_SALLE"] ?></center></td>
-       <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) {window.location.href='./?action=modifCre&id=<?=$result[$j]["CRE_ID"]?>';}" > Modifier </button></center></td>
+       <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) {window.location.href='./?action=modifCre&id=<?=$result[$j]["CRE_ID"]?>';}" > ✍ </button></center></td>
        <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) {window.location.href='./?action=delCre&id=<?=$result[$j]["CRE_ID"]?>';}" > ❌ </button></center></td>
         </tr>
     <?php
@@ -143,7 +152,7 @@ for ($j = 0; $j < count($result); $j++) {
 ?>
 </tbody></table>
 
-<?php } ?>
+<?php } ?><br><br><br><br><br>
 </tbody></table>
 </div>
 

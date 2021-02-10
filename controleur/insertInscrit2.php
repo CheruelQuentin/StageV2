@@ -4,12 +4,17 @@
 include_once "modele/bd.inscrire.inc.php";
 
 $INS_ELE=htmlspecialchars($_POST['INS_ELE']);
-$INS_STA=htmlspecialchars($_POST['INS_STA']);
 
-// appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
+
+
+for($i=0;$i<sizeof($_POST['choixForm']);$i++){
+	$INS_STA=$_POST['choixForm'][$i];
+}
+ 
 if(getAddInscrire($INS_ELE, $INS_STA)){
-	header('Location: ./?action=listeInscription3');
+header('Location: ./?action=listeInscription');
+  	exit();
 }
 
 

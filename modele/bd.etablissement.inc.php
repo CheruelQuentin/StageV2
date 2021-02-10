@@ -36,6 +36,32 @@ function getEtablissementById($ETA_ID) {
     }
     return $resultat;
 }
+
+
+
+
+function getEtablissementByMail2($ETA_MAIL) {
+    
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from etablissement where ETA_MAIL=:ETA_MAIL ");
+        $req->bindValue(':ETA_MAIL', $ETA_MAIL, PDO::PARAM_STR);
+
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
+
+
+
+
 //select un établissement selon l'utilisateur passé en paramètre
 function getEtablissementByUtilMail() {
     session_start();
@@ -170,22 +196,12 @@ function getEtablissementIdByInfo($ETA_NOM,$ETA_VILLE,$ETA_CP,$ETA_MAIL) {
 
 
 
-
-
-
-//recup partielle
-
-function getEtabIdByInfo($etablissement) {
-    
-    $etablissement=explode(" - ",$etablissement);
-    $ETA_NOM=$etablissement[0];
-    $ETA_VILLE=$etablissement[1];
+function getEtablissementWithType() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select ETA_ID from etablissement where ETA_NOM=:ETA_NOM AND ETA_VILLE=:ETA_VILLE");
-        $req->bindValue(':ETA_NOM', $ETA_NOM, PDO::PARAM_STR);
-        $req->bindValue(':ETA_VILLE', $ETA_VILLE, PDO::PARAM_STR);
+        $req = $cnx->prepare("select * from etablissement,categeta where ETA_CATEG = CAT_ID and ETA_ID =:uti_eta ");
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_STR);
 
         $req->execute();
 
@@ -196,5 +212,10 @@ function getEtabIdByInfo($etablissement) {
     }
     return $resultat['ETA_ID'];
 }
+
+
+
+
+
 
 ?>

@@ -16,13 +16,22 @@
          <table><tr><td>
          <input id="INS_ELE" type="hidden" name="INS_ELE" size="50px" maxlength="20"  value="<?=$_GET['id']?>"/>
         </p>
-          <label>Formation suivie :</label>
-          <select id="form" name="INS_STA">
-          <?php
-           for($i=0;$i<sizeof($listeStage);$i++){ ?> 
-            <option value= <?= $listeStage[$i]['STA_ID'];?>><?= getFormationById($listeStage[$i]['STA_FORM'])['FORM_LIBELLE'], " ",getCreneauById($listeStage[$i]['STA_CRE'])['CRE_DATE'], " ", getCreneauById($listeStage[$i]['STA_CRE'])['CRE_HEUREDEB'];?> </option> 
-          <?php } ?>
-          </select>
+          
+<div id="choixForm">
+    <fieldset class="scheduler-border">    
+          <legend class="scheduler-border">Choisir les ministages suivi par l’élève</legend>           
+
+        <?php
+        for($i=0;$i<sizeof($listeStage);$i++){ ?> 
+          <input type="checkbox" name="choixForm[]" value="<?= $listeStage[$i]['FORM_CODE'];?>"
+          <?php if ($listeStage[$i]['FORM_CODE']==$listeInscrire['STA_FORM']){?> checked   <?php } ?>
+
+           ><?= $listeStage[$i]['FORM_LIBELLE']?>
+          <br><br>
+          
+      <?php } ?>          
+      </fieldset>
+  </div>  
           <br><br><center>
           <input type="submit" style="padding : 10px; width: 200px" value="valider"/>
                    </center> 
