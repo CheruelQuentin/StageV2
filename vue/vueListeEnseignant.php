@@ -27,7 +27,7 @@ for ($i = 0; $i < count($listeEnseignant); $i++) {
             <td><center><?= $listeEnseignant[$i]["ENS_TEL"] ?></center></td>
             <td><center><?=strftime('%d/%m/%Y',strtotime($listeEnseignant[$i]["ENS_DATENAISS"])) ?></center></td>
 
-            <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifEns&id=<?=$listeEnseignant[$i]['ENS_ID']?>'; }" > Modif. </button></center></td>
+            <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifEns&id=<?=$listeEnseignant[$i]['ENS_ID']?>'; }" > ✍ </button></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delEns&id=<?=$listeEnseignant[$i]['ENS_ID']?>'; }" > ❌ </button></center></td>
             
 

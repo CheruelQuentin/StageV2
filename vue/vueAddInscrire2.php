@@ -7,7 +7,6 @@
  <form method="post" action="./?action=insertIns2">
 
 <center>
-	<?php echo "libelle formation ".getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE']; ?>
 	<table><tr><td>
   <p><label for="INS_ELE">Eleve : </label>
   <select name="INS_ELE">
@@ -20,15 +19,23 @@
 		</select>
 </p>
 
-	<p><label for="INS_STA"> Formation : </label>
-		<select name="INS_STA">
-			<?php
+
+
+<div id="choixForm">
+		<fieldset class="scheduler-border">    
+        	<legend class="scheduler-border">Choisir les ministages suivi par l’élève</legend>           
+
+        <?php
 				for($i=0;$i<sizeof($stage);$i++){ ?> 
-					<option value="<?= $stage[$i]['STA_ID'];?>"
-					<?php if ($stage[$i]['STA_ID']==getFormationById($stage[$i]['STA_ID'])){ ?> selected=selected <?php } ?> 
-						><?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], ", ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " - ", getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB']; ?> </option> 
-			<?php } ?>
-		</select>
+					<input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>>&nbsp;&nbsp;&nbsp;
+					<?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], " - ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " | ", getCreneauById($stage[$i]['STA_CRE'])['CRE_DATE'], " - ",substr(getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB'],0,-3);?>
+					<br><br>
+					
+			<?php } ?>          
+    	</fieldset>
+	</div>
+
+
 	</p></td></tr></table><br>
 			        			        <input type="submit" style="padding : 10px; width: 100px" value="Valider"/>
 				    <input type="reset" style="padding : 10px; width: 100px"/></p>

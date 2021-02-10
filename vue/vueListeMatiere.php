@@ -17,7 +17,7 @@ for ($i = 0; $i < count($listeMatiere); $i++) {
     ?>
         <tr>
        <td><center><?= $listeMatiere[$i]["MAT_LIBELLE"] ?></center></td>
-       <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifMat&id=<?=$listeMatiere[$i]['MAT_CODE']?>'; }" > Modif. </button></center></td>
+       <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifMat&id=<?=$listeMatiere[$i]['MAT_CODE']?>'; }" > ✍ </button></center></td>
        <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delMat&id=<?=$listeMatiere[$i]['MAT_CODE']?>'; }" > ❌ </button></center></td>
        
         </tr>

@@ -15,7 +15,7 @@ $dateN=$listeEleve['ELE_DATENAISS'];
 $classe=$listeEleve['ELE_CLASSE'];
 $mail=$listeEleve['ELE_MAIL'];
 $etablissement=getEtablissement(); 
-$stage=getStage();
+$stage=getStageByTout();
 $etaById=getEtablissementById(getEleveById($_GET['id'])['ELE_ETA']);
 $titre = "Modification Eleve";
 include "vue/entete.html.php";

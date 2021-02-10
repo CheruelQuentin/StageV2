@@ -48,7 +48,7 @@
         <?php
         for($i=0;$i<sizeof($stage);$i++){ ?> 
           <input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>
-          ><?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], " - ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " | ", getCreneauById($stage[$i]['STA_CRE'])['CRE_DATE'], " - ",getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB'];?>
+          ><?= $stage[$i]['FORM_LIBELLE'], " - ", $stage[$i]['MAT_LIBELLE'], " | ", $stage[$i]['CRE_DATE'], " - ",$stage[$i]['CRE_HEUREDEB'];?>
           <br><br>
           
       <?php } ?>          

@@ -17,7 +17,7 @@ for ($i = 0; $i < count($listeFormation); $i++) {
     ?>
         <tr>
        <td><center><?= $listeFormation[$i]["FORM_LIBELLE"] ?></center></td> 
-       <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifSta&id=<?=$listeFormation[$i]['FORM_CODE']?>'; }" > Modifier </button></center></td>
+       <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifSta&id=<?=$listeFormation[$i]['FORM_CODE']?>'; }" > ✍ </button></center></td>
        <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delSta&id=<?=$listeFormation[$i]['FORM_CODE']?>'; }" > ❌ </button></center></td>
       
         </tr>

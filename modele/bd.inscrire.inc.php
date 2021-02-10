@@ -162,7 +162,7 @@ function getInscrireListe3() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from inscrire, eleve ,stage where INS_ELE= ELE_ID and INS_STA =STA_ID order by ELE_ETA, ELE_NOM,ELE_PRENOM,STA_FORM ");
+        $req = $cnx->prepare("select * from inscrire, eleve ,stage,etablissement,formation where ELE_ETA = ETA_ID and STA_FORM = FORM_CODE and INS_ELE= ELE_ID and INS_STA =STA_ID order by ELE_ETA, ELE_NOM,ELE_PRENOM,STA_FORM ");
         
         $req->execute();
 

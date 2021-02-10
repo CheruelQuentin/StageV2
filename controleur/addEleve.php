@@ -11,7 +11,7 @@ include_once "modele/bd.etablissement.inc.php";
 include_once "java/autocomplete.php";
 
 $titre = "Ajout eleve";
-$stage=getStage();
+$stage=getStageByTout();
 include "vue/entete.html.php";
 include "vue/vueAddEleve.php";
 include "vue/pied.html.php";
