@@ -16,6 +16,6 @@ include_once "modele/bd.preferer.inc.php";
 // appel du script de vue qui permet de gerer l'affichage des donnees
 $titre = "Liste des creneaux";
 include "vue/entete.html.php";
-include "vue/vueInsertCreneau.php";
+include "vue/vueListeCreneauPropo.php";
 include "vue/pied.html.php";
 ?>

@@ -5,7 +5,16 @@ include_once "modele/bd.formation.inc.php";
 include_once "modele/bd.creneau.inc.php";
 include_once "modele/bd.stage.inc.php";
 
-$listeStage = getStage();
+$listeStage = getFormation();
+
+
+if (isset($_GET['id'])){
+
+	$idE=$_GET['id'];
+
+	$listeInscrire = getInscrireByEtudiant($idE);
+}
+
 
 
 $titre = "Modification de l'inscription";

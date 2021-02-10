@@ -12,7 +12,7 @@ include_once "modele/bd.matiere.inc.php";
 ;
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
-$listeStage= getStage();
+$listeStage= getStageByTout();
 
 // traitement si necessaire des donnees recuperees
 ;

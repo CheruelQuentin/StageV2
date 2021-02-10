@@ -178,6 +178,25 @@ function getInscrireListe3() {
     return $resultat;
 }
 
+function getInscrireByEtudiant($IdE) {
+   
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from inscrire, eleve, stage where INS_ELE= ELE_ID and STA_ID=INS_STA  and ELE_ID=:IdE ");
+                
+                $req->bindValue(':IdE', $IdE, PDO::PARAM_INT);
+
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+       
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
 
 function getInscrireByForm($FORM_CODE) {
     $resultat = array();

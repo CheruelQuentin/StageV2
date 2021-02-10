@@ -36,6 +36,32 @@ function getEtablissementById($ETA_ID) {
     }
     return $resultat;
 }
+
+
+
+
+function getEtablissementByMail2($ETA_MAIL) {
+    
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from etablissement where ETA_MAIL=:ETA_MAIL ");
+        $req->bindValue(':ETA_MAIL', $ETA_MAIL, PDO::PARAM_STR);
+
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
+
+
+
+
 //select un établissement selon l'utilisateur passé en paramètre
 function getEtablissementByUtilMail() {
     session_start();

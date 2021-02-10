@@ -19,9 +19,7 @@
 
 		});</script>
 <div id=Form >
-<br><h1 id="titre">Connexion</h1><br>
-<h4>Bienvenu sur l'application ministage
-	</h4><br>
+<br><h1 id="titre">Bienvenue sur l’application miniStage, veuillez vous identifier</h1><br>
 <form action="./?action=connexion" method="POST">
 <table>
 		<tr>
@@ -41,7 +39,7 @@
 			</td>
 		</tr>
 </td></tr></table>
-<input id="bouton1" type="submit" value="Se connecter" />
+<center><input id="bouton1" type="submit" value="Se connecter" /></center>
 </form>
 <br>
 

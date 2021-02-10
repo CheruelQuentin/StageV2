@@ -14,6 +14,8 @@ include_once "modele/bd.stage.inc.php";
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 $listeInscrire = getInscrireListe3();
 
+$listeFormation=getFormation();
+
 // traitement si necessaire des donnees recuperees
 ;
 // appel du script de vue qui permet de gerer l'affichage des donnees

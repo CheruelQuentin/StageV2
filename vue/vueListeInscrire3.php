@@ -20,10 +20,10 @@
 for ($i = 0; $i < count($listeInscrire); $i++) {
     ?>
         <tr>
-            <td><center><?= getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_NOM']?></center></td>
-            <td><center><?= getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_PRENOM'] ?></center></td>
-            <td><center><?= getEtablissementById(getEleveById($listeInscrire[$i]["INS_ELE"])['ELE_ETA'])['ETA_NOM'] ?></center></td>
-            <td><center><?= getFormationById(getStageById($listeInscrire[$i]["INS_STA"])['STA_FORM'])['FORM_LIBELLE'] ?></center></td>
+            <td><center><?= $listeInscrire[$i]['ELE_NOM'] ?></center></td>
+            <td><center><?= $listeInscrire[$i]['ELE_PRENOM'] ?></center></td>
+            <td><center><?= $listeInscrire[$i]['ETA_NOM'] ?></center></td>
+            <td><center><?= g$listeInscrire[$i]['FORM_LIBELLE'] ?></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifIns&id=<?=$listeInscrire[$i]['INS_ELE']?>'; }" > Modif. </button></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delIns2&id=<?=$listeInscrire[$i]['INS_ELE']?>&amp;stage=<?=$listeInscrire[$i]["INS_STA"]?>'; }" > ❌ </button></center></td>
 
