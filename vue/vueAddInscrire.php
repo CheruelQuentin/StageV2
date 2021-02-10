@@ -13,7 +13,7 @@
 			<?php
 				for($i=0;$i<sizeof($eleves);$i++){ ?> 
 					<option value= <?= $eleves[$i]['ELE_ID'];?> > 
-						<?= getEleveByIdByEtab($eleves[$i]['ELE_ID'])['ELE_NOM'], " , ", getEleveByIdByEtab($eleves[$i]['ELE_ID'])['ELE_PRENOM'];?>
+						<?= $eleves[$i]['ELE_NOM'], " , ", $eleves[$i]['ELE_PRENOM'];?>
 					</option> 
 			<?php } ?>
 		</select>

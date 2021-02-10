@@ -2,11 +2,11 @@
 <style type="text/css">
             @import url("css/connexion.css");
 </style>
-<br>
-<h1 id="titre">Bienvenue</h1><br>
+
 
 <?php if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ //Si l'utilisateur est un admin ... ?>
-
+<br>
+<h1 id="titre">Bienvenue</h1><br>
 <?php  
     if($listeStage == null){
         echo('Aucun mini-stage');
@@ -45,11 +45,16 @@ for ($i = 0; $i < count($listeStage); $i++) {
 
 
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ //Si l'utilisateur est un établissement ...  ?>
-    
+    <br>
+<h1 id="titre">Bienvenue</h1><br>
+<?php     
+echo"Bienvenue";
+?>
+
     <link rel="stylesheet" type="text/css" href="css/liste.css">
     <?php  
     if($listeInscrire == null){
-        echo('Aucun élève inscrit actuellement dans un mini-stage');
+    ?> <center> <?php  echo('Aucun élève inscrit actuellement dans un mini-stage'); ?> </center><?php
     }else{?>
     
     <center><h1>Liste des inscrits</h1></center>
@@ -78,7 +83,8 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
 }
 ?>
 <?php } else { //Si l'utilisateur est un enseignant ... ?>
-
+<br>
+<h1 id="titre">Bienvenue</h1><br>
 
 
 <div style="text-align:right;padding-bottom:5px;">
@@ -87,7 +93,7 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
     <center><h2>Liste des créneaux</h2></center>
 </div>
 <link rel="stylesheet" type="text/css" href="css/liste.css">
-<button onclick="window.location.href='./?action=addIns';" id="bouton2" style="display:inline-block;">Ajouter</button></div>
+<button onclick="window.location.href='./?action=addCre';" id="bouton2" style="display:inline-block;">Ajouter</button></div>
 <?php
 $listeCreneau = getListeCreneau();
 for ($i = 0; $i < count($listeCreneau); $i++) {
