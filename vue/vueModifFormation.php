@@ -26,7 +26,7 @@
   <select id="creneau" name="STA_CRE">
       <?php
         for($i=0;$i<sizeof($creneau);$i++){ ?> 
-          <option value= <?= $creneau[$i]['CRE_ID'];?> ><?= $creneau[$i]['CRE_DATE'], ", ", $creneau[$i]['CRE_SALLE'], ", ", $creneau[$i]['CRE_HEUREDEB']; ?> </option> 
+          <option value= <?= $creneau[$i]['CRE_ID'];?> ><?= strftime('%d/%m/%Y',strtotime($creneau[$i]['CRE_DATE'])), " | ", $creneau[$i]['CRE_SALLE'], " | ", $creneau[$i]['CRE_HEUREDEB']; ?> </option> 
       <?php } ?>
   </select><br><br>
   <label for="STA_FORM"> Stage :</label>

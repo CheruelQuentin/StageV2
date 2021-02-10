@@ -17,7 +17,7 @@
 <div id="container">
   <br>
   <center><h2 id="titre">Gestion des élèves</h2></center>
-    <center><h2>Modification d'élève</h2><br>
+    <center><h2>Modification d'élève</h2><br><br>
         <form method="post" action="./?action=upEle2">
         <table><tr><td>            
           <input id="ELE_ID" type="hidden" name="ELE_ID" size="50px" maxlength="20" value="<?=$_GET['id']?>" />
@@ -38,7 +38,7 @@
 
 <p><label for="ELE_DATENAISS">Date de Naissance *:</label><input id="ELE_DATENAISS" type="date" name="ELE_DATENAISS" size="50px" maxlength="20" value="<?=$dateN?>" required /></p><br>
 
-<p><label for="ELE_CLASSE">Classe *:</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="10" required value="<?=$classe?>"  onblur="verifmodifclasse();" /><div><span id = "erreurmodifclasse" ></span></div><br>
+<p><label for="ELE_CLASSE">Classe *:</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="50" required value="<?=$classe?>"  onblur="verifmodifclasse();" /><div><span id = "erreurmodifclasse" ></span></div><br>
 
 <p><label for="ELE_MAIL">E-mail :</label><input id="ELE_MAIL" type="mail" name="ELE_MAIL" size="50px" maxlength="150"   value="<?=$mail?>" /></p>
 

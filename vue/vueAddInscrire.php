@@ -1,7 +1,7 @@
-<center><h2 id="titre">Inscription des élèves à une formation</h2></center>
+<br><center><h2 id="titre">Inscription des élèves à une formation</h2></center>
 	<body>
     <center><h2>Formulaire d'ajout </h2></center>
-<br>
+<br><br>
 <p></p>
 <link rel="stylesheet" type="text/css" href="css/style.css">
  <form method="post" action="./?action=insertIns">
@@ -29,7 +29,7 @@
         <?php
 				for($i=0;$i<sizeof($stage);$i++){ ?> 
 					<input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>>&nbsp;&nbsp;&nbsp;
-					<?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], " - ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " | ", getCreneauById($stage[$i]['STA_CRE'])['CRE_DATE'], " - ",substr(getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB'],0,-3);?>
+					<?= '<i style="color:blue;">Formation</i> ',getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], '<i style="color:blue;"> Matière</i> ', getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], '<i style="color:blue;"> Date</i> ', getCreneauById($stage[$i]['STA_CRE'])['CRE_DATE'], '<i style="color:blue;"> Heure</i> ',substr(getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB'],0,-3);?>
 					<br><br>
 					
 			<?php } ?>          

@@ -10,7 +10,7 @@ include_once "modele/bd.preferer.inc.php";
 
 
 
-
+getCheckoutCreneaux();
 
 
 // appel du script de vue qui permet de gerer l'affichage des donnees

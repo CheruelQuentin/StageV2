@@ -40,8 +40,15 @@
 				<center><input id="champ" type="password" name="Mdp" placeholder="Mot de passe" required/><span class="show-password">afficher le mot de passe</span></center><br>
 			</td>
 		</tr>
-</td></tr></table>
-<input id="bouton1" type="submit" value="Se connecter" />
+        <tr>
+		    <td>
+			</td>
+		    <td>
+		        <input id="bouton1" type="submit" value="Se connecter" />
+            </td>
+        </tr>
+</table>
+
 </form>
 <br>
 

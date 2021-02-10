@@ -1,6 +1,6 @@
 	<body><br>
 							<center><h2 id="titre">Gestion des matières</h2></center>
-    <center><h2>Formulaire d'ajout </h2>
+    <center><h2>Formulaire d'ajout </h2><br>
 <script src="js/verification.js"> </script>
 <p></p>
  <form method="post" action="./?action=insertMat">

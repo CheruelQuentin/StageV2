@@ -27,15 +27,15 @@ function controleurPrincipal($action){
     $lesActions["listeStage"] = "listeStage.php";
     $lesActions["listeCreneau"] = "listeCreneau.php";
     $lesActions["listeCreneauPropo"] = "listeCreneauPropo.php";
-    $lesActions["listeInscription"] = "listeInscrire.php";
-    $lesActions["listeDesInscrits"] = "listeInscrire2.php";
-    $lesActions["listeInscription3"] = "listeInscrire3.php";
+    $lesActions["listeInscriptionEta"] = "listeInscrire.php";
+    $lesActions["listeInscriptionEns"] = "listeInscrire2.php";
+    $lesActions["listeInscriptionAdm"] = "listeInscrire3.php";
     $lesActions["inscription"] = "addInscrire.php";
 
 
     //Ajouts
     $lesActions["addIns"] = "addInscrire.php";
-    $lesActions["addIns2"] = "addInscrire2.php";
+    $lesActions["addInsAdm"] = "addInscrire2.php";
     $lesActions["addEle"] = "addEleve.php";
     $lesActions["addCre"] = "addCreneau.php";
     $lesActions["addEns"] = "addEnseignant.php";
@@ -49,7 +49,7 @@ function controleurPrincipal($action){
     $lesActions["addAdmin"] = "addAdmin.php";
     //Inserts
     $lesActions["insertIns"] = "insertInscrit.php";
-    $lesActions["insertIns2"] = "insertInscrit2.php";
+    $lesActions["insertInsAdm"] = "insertInscrit2.php";
     $lesActions["insertEle"] = "insertEleve.php";
     $lesActions["insertCre"] = "insertCreneau.php";
     $lesActions["insertEns"] = "insertEnseignant.php";
@@ -63,7 +63,7 @@ function controleurPrincipal($action){
     $lesActions["insertAdmin"] = "insertAdmin.php";
     //Delete
     $lesActions["delIns"] = "delInscrire.php";
-    $lesActions["delIns2"] = "delInscrire2.php";
+    $lesActions["delInsAdm"] = "delInscrire2.php";
     $lesActions["delEle"] = "delEleve.php";
     $lesActions["delEle2"] = "delEleve2.php";
     $lesActions["delCre"] = "delCreneau.php";
@@ -91,7 +91,7 @@ function controleurPrincipal($action){
 
     //Modif
     $lesActions["modifIns"] = "modifInscrire.php";
-    $lesActions["modifIns2"] = "modifInscrire2.php";
+    $lesActions["modifInsEta"] = "modifInscrire2.php";
     $lesActions["modifEle"] = "modifEleve.php";
     $lesActions["modifEle2"] = "modifEleve2.php";
     $lesActions["modifCre"] = "modifCreneau.php";

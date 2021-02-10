@@ -10,7 +10,7 @@
             <th align="center">Date</th>
             <th align="center">Heure début</th>
             <th align="center">Heure fin</th>
-            <th align="center">Salle</th>  
+            <th align="center">Salle</th>
             <th align="center">Validé</th>
             <th align="center">Refusé</th>
          </thead>

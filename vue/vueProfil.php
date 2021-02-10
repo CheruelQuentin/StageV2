@@ -3,7 +3,7 @@
             @import url("css/connexion.css");
 </style>
 <br>
-<h1 id="titre">Bienvenue</h1><br>
+
 
 <div style="display:table; margin:auto;">
 <?php if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ //Si l'utilisateur est un admin ... ?>
@@ -80,11 +80,18 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
 ?>
 <?php } else { //Si l'utilisateur est un enseignant ... ?>
 
+    <?php
+for ($i = 0; $i < count($listeStage); $i++) {
+    ?>
+    <?= getEnseignantById($listeStage[$i]["STA_ENS"])['ENS_PRENOM'], " ", getEnseignantById($listeStage[$i]["STA_ENS"])['ENS_NOM'] ?>
+    <?php
+}
+?>
 
-
+    <h1 id="titre">Bienvenue </h1><br>
 <div style="text-align:right;padding-bottom:5px;">
 <div id="container">
-  <center><h2 id="titre">Gestion des créneaux</h2></center>
+    <center><h2 id="titre">Gestion des créneaux</h2></center>
     <center><h2>Liste des créneaux</h2></center>
 </div>
 <link rel="stylesheet" type="text/css" href="css/liste.css">
