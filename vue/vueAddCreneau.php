@@ -12,6 +12,7 @@
 
 	<p><label for="CRE_DATE"style="width:220px;"> Date *: </label> <input id="CRE_DATE" type="date" name="CRE_DATE" size="50px" maxlength="20"  class= "instyle" /></p>
 
+	<p><label for="CRE_DATEFIN"style="width:220px;"> Date *: </label> <input id="CRE_DATEFIN" type="date" name="CRE_DATEFIN" size="50px" maxlength="20"  class= "instyle" /></p>
 
 	<p><label for="CRE_HEUREDEB"style="width:220px;">Heure de début *:</label><select name="CRE_HEUREDEB" id="CRE_HEUREDEB" type="time">
       <option value="8:15">8:15</option>
