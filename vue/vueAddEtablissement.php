@@ -1,4 +1,20 @@
-		<body>
+<body>
+	<script>
+	$(document).ready(function(){
+
+			$('.show-password').click(function() {
+				if($(this).prev('input').prop('type') == 'password') {
+					//Si c'est un input type password
+					$(this).prev('input').prop('type','text');
+					$(this).text('cacher le mot de passe');
+				} else {
+					//Sinon
+					$(this).prev('input').prop('type','password');
+					$(this).text('afficher le mot de passe');
+				}
+			});
+
+		});</script>
 <div id="container">
 	<br>
 	<center><h2 id="titre">Gestion des établissement</h2></center>
@@ -49,7 +65,7 @@
 <br><br>
 <p><label for="ETA_MDP"style="width:220px;"> Mot de passe *: </label><input id="ETA_MDP" type="password" name="ETA_MDP" size="50px" maxlength="200" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
   title=" Doit contenir au moins un chiffre et une lettre majuscule et minuscule, et au moins 8 caractères ou plus" />
-<p><label for="ETA_MDP2"style="width:220px;"> Confirmation mot de passe *: </label><input id="ETA_MDP2" type="password" name="ETA_MDP2" size="50px" maxlength="200" onblur="verifMDP();" /><div><span id = "erreurmdp" ></span></div><br>
+<p><label for="ETA_MDP2"style="width:220px;"> Confirmation mot de passe *: </label><input id="ETA_MDP2" type="password" name="ETA_MDP2" size="50px" maxlength="200" onblur="verifMDP();" /><span class="show-password">afficher le mot de passe</span><br><span id = "erreurmdp" ></span></center><br>
 
 
 

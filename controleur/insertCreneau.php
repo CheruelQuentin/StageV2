@@ -9,6 +9,7 @@ include_once "modele/bd.enseignant.inc.php";
 include_once "modele/bd.preferer.inc.php";
 
 $CRE_DATE=htmlspecialchars($_POST['CRE_DATE']);
+$CRE_DATEFIN=htmlspecialchars($_POST['CRE_DATEFIN']);
 $CRE_HEUREDEB=htmlspecialchars($_POST['CRE_HEUREDEB']);
 $CRE_SALLE=htmlspecialchars($_POST['CRE_SALLE']);
 $CRE_HEUREFIN=htmlspecialchars($_POST['CRE_HEUREFIN']);
@@ -21,7 +22,7 @@ $STA_MAT=$CRE_MAT;
 
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
-				if(getAddCreaneau($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN)){
+				if(getAddCreaneau($CRE_DATE,$CRE_DATEFIN, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN)){
 
 				for($i=0;$i<sizeof($_POST['choixForm']);$i++){
 					$STA_FORM=$_POST['choixForm'][$i];

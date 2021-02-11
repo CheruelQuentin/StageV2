@@ -8,6 +8,7 @@
         <thead>
           <th align="center">Formation</th>
             <th align="center">Date</th>
+            <th align="center">Date de fin</th>
             <th align="center">Heure début</th>
             <th align="center">Heure fin</th>
             <th align="center">Salle</th>
@@ -22,6 +23,7 @@ for ($i = 0; $i < count($listeCreneauPropo); $i++) {
         <tr><td>
        <center><?= $listeCreneauPropo[$i]["FORM_LIBELLE"] ?></center></td>
        <td><center><?= strftime('%d/%m/%Y',strtotime($listeCreneauPropo[$i]["CRE_DATE"])) ?></center></td>
+       <td><center><?= strftime('%d/%m/%Y',strtotime($listeCreneauPropo[$i]["CRE_DATEFIN"])) ?></center></td>
        <td><center><?= $listeCreneauPropo[$i]["CRE_HEUREDEB"] ?></center></td>
        <td><center><?= $listeCreneauPropo[$i]["CRE_HEUREFIN"] ?></center></td>
        <td><center><?= $listeCreneauPropo[$i]["CRE_SALLE"] ?></center></td>

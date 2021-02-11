@@ -41,16 +41,17 @@ function getCreneau() {
 }
     
 
-function getAddCreaneau($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN) {
+function getAddCreaneau($CRE_DATE,$CRE_DATEFIN, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN) {
     $resultat = -1;
 
     try {
         $cnx = connexionPDO();
 
-        $req = $cnx->prepare( "insert into creneau (CRE_DATE,CRE_HEUREDEB,CRE_SALLE,CRE_HEUREFIN,CRE_VALIDE ) values(:CRE_DATE,:CRE_HEUREDEB,:CRE_SALLE,:CRE_HEUREFIN,0)");
+        $req = $cnx->prepare( "insert into creneau (CRE_DATE,CRE_DATEFIN,CRE_HEUREDEB,CRE_SALLE,CRE_HEUREFIN,CRE_VALIDE ) values(:CRE_DATE,:CRE_DATEFIN,:CRE_HEUREDEB,:CRE_SALLE,:CRE_HEUREFIN,0)");
 
         
         $req->bindValue(':CRE_DATE', $CRE_DATE, PDO::PARAM_STR);
+        $req->bindValue(':CRE_DATEFIN', $CRE_DATEFIN, PDO::PARAM_STR);
         $req->bindValue(':CRE_HEUREDEB', $CRE_HEUREDEB, PDO::PARAM_STR);
         $req->bindValue(':CRE_SALLE', $CRE_SALLE, PDO::PARAM_STR);
         $req->bindValue(':CRE_HEUREFIN', $CRE_HEUREFIN, PDO::PARAM_STR);
@@ -79,15 +80,16 @@ function getDelCreneau($CRE_ID) {
     return $resultat;
 }
 
-function getUpdateCreneau( $CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN, $CRE_ID){
+function getUpdateCreneau( $CRE_DATE,$CRE_DATEFIN, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN, $CRE_ID){
     $resultat = -1;
     try {
 $cnx = connexionPDO();
-$req = $cnx->prepare("UPDATE `creneau` SET CRE_DATE = :CRE_DATE, CRE_HEUREDEB = :CRE_HEUREDEB,CRE_SALLE = :CRE_SALLE, CRE_HEUREFIN = :CRE_HEUREFIN  WHERE `creneau`.CRE_ID=:CRE_ID;");
+$req = $cnx->prepare("UPDATE `creneau` SET CRE_DATE = :CRE_DATE,CRE_DATEFIN = :CRE_DATEFIN, CRE_HEUREDEB = :CRE_HEUREDEB,CRE_SALLE = :CRE_SALLE, CRE_HEUREFIN = :CRE_HEUREFIN  WHERE `creneau`.CRE_ID=:CRE_ID;");
         
         $req->bindValue(':CRE_ID', $CRE_ID, PDO::PARAM_INT);
         
         $req->bindValue(':CRE_DATE', $CRE_DATE, PDO::PARAM_STR);
+        $req->bindValue(':CRE_DATEFIN', $CRE_DATEFIN, PDO::PARAM_STR);
         $req->bindValue(':CRE_HEUREDEB', $CRE_HEUREDEB, PDO::PARAM_STR);
         $req->bindValue(':CRE_SALLE', $CRE_SALLE, PDO::PARAM_STR);
         $req->bindValue(':CRE_HEUREFIN', $CRE_HEUREFIN, PDO::PARAM_STR);
