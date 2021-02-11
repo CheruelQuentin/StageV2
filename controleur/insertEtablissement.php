@@ -38,7 +38,7 @@ $info=getEtablissementByMail($ETA_MAIL);
 															}
 							}else{
 
-							header('Refresh: 15;./?action=addEta');
+							header('Refresh: 1;./?action=addEta');
 							?><script>alert("Adresse mail déjà existante");</script><?php
 
 						}

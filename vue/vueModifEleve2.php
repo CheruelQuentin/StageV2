@@ -24,10 +24,13 @@
           <div class="ui-widget">
             <label>Etablissement :</label>
             <select id="combobox" name="ELE_ETA">
-              <option selected value=<?= $etaById['ETA_ID'];?>><?=$etaById['ETA_NOM'], " ", $etaById['ETA_VILLE'];?></option>
               <?php
-                for($i=0;$i<sizeof($etablissement);$i++){ ?> 
-                  <option value= <?= $etablissement[$i]['ETA_ID'];?>><?=$etablissement[$i]['ETA_NOM'], " ", $etablissement[$i]['ETA_VILLE'];?> </option> 
+         for($i=0;$i<sizeof($etablissement);$i++){ ?> 
+          <option value="<?= $etablissement[$i]['ETA_ID'];?>"
+            
+            <?php if ($etablissement[$i]['ETA_ID']==$listeEleve2['ELE_ETA']){?> selected   <?php } ?>
+
+           ><?= $etablissement[$i]['ETA_NOM']?> </option> 
               <?php } ?>
             </select>
           </div>
@@ -44,16 +47,25 @@
 
 <div id="choixForm">
     <fieldset class="scheduler-border">    
-          <legend class="scheduler-border">Formations à suivre *</legend>           
+          <legend class="scheduler-border">Choisir les ministages suivi par l’élève *</legend>           
+
         <?php
         for($i=0;$i<sizeof($stage);$i++){ ?> 
-          <input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>
-          ><?= $stage[$i]['FORM_LIBELLE'], " - ", $stage[$i]['MAT_LIBELLE'], " | ", $stage[$i]['CRE_DATE'], " - ",$stage[$i]['CRE_HEUREDEB'];?>
+          <input type="checkbox" name="choixForm[]" value="<?= $stage[$i]['FORM_CODE'];?>"
+          <?php if ($stage[$i]['FORM_CODE']==$listeInscrire['STA_FORM']){?> checked   <?php } ?>
+
+           >&nbsp;&nbsp;<?='<i style="color:blue;">Formation</i> ',$stage[$i]['FORM_LIBELLE'], " - ", '<i style="color:blue;">Formation</i> ',$stage[$i]['MAT_LIBELLE'], " | ", '<i style="color:blue;">Formation</i> ',$stage[$i]['CRE_DATE'], " - ",'<i style="color:blue;">Formation</i> ',$stage[$i]['CRE_HEUREDEB'];?>
           <br><br>
           
       <?php } ?>          
       </fieldset>
   </div>
+
+
+
+
+
+
     </tr></td></table>
 <br>
 <p>* Champ obligatoire</p>

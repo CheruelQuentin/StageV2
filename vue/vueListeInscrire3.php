@@ -18,6 +18,7 @@
          <tbody>
 <?php
 for ($i = 0; $i < count($listeInscrire); $i++) {
+    
     ?>
         <tr>
             <td><center><?= $listeInscrire[$i]['ELE_NOM'] ?></center></td>
@@ -30,4 +31,4 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
     <?php
 }
 ?>
-</tbody></table>
+</tbody></table><br><br><br><br>

@@ -16,7 +16,24 @@ $classe=$listeEleve['ELE_CLASSE'];
 $mail=$listeEleve['ELE_MAIL'];
 $etablissement=getEtablissement(); 
 $stage=getStageByTout();
+
+
+
+
 $etaById=getEtablissementById(getEleveById($_GET['id'])['ELE_ETA']);
+
+
+
+if (isset($_GET['id'])){
+
+	$idE=$_GET['id'];
+
+	$listeEleve2 = getEleveByEta($idE);
+}
+
+
+
+
 $titre = "Modification Eleve";
 include "vue/entete.html.php";
 include "vue/vueModifEleve.php";

@@ -219,4 +219,26 @@ function getEleve2() {
     return $resultat;
 }
 
+
+function getEleveByEta($IdE) {
+   
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from etablissement, eleve where ELE_ETA=ETA_ID  and ELE_ID=:IdE ");
+                
+                $req->bindValue(':IdE', $IdE, PDO::PARAM_INT);
+
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+       
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
 ?>

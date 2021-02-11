@@ -106,4 +106,27 @@ function getFormationIdByInfo($FORM_LIBELLE) {
     }
     return $resultat['FORM_CODE'];
 }
+
+
+
+function getFormationByStage($IdS) {
+   
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from enseignant, stage, matiere, creneau, formation where STA_ENS=ENS_ID and STA_CRE=CRE_ID and STA_MAT=MAT_CODE and STA_ID=:IdS ");
+                
+                $req->bindValue(':IdS', $IdS, PDO::PARAM_INT);
+
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+       
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
 ?>

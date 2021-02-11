@@ -41,6 +41,7 @@ function getUtilisateursMail($ETA_MAIL) {
     return $resultat;
 }
 
+
 function getUtilisateurByMail($Mail) {
 
     try {

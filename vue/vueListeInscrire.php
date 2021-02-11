@@ -52,7 +52,7 @@ for ($j = 0; $j < count($result); $j++) {
        <td><center><?= $result[$j]["CRE_HEUREDEB"] ?></center></td>
        <td><center><?= $result[$j]["CRE_HEUREFIN"] ?></center></td>
        <td><center><?= $result[$j]["CRE_SALLE"] ?></center></td>
-            <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifIns2&id=<?=$result[$j]['ELE_ID'] ?>'; }" > ✍ </button></center></td>
+            <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifInsEta&id=<?=$result[$j]['ELE_ID'] ?>'; }" > ✍ </button></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delIns&id=<?=$result[$j]['ELE_ID']?>&amp;stage=<?=$result[$j]["STA_ID"]?>'; }" > ❌ </button></center></td>
         </tr>
     <?php
@@ -63,4 +63,4 @@ for ($j = 0; $j < count($result); $j++) {
 <br>
      <?php                     }
 ?>
-</tbody></table>
+</tbody></table><br><br><br><br>

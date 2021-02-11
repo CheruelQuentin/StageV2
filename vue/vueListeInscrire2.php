@@ -26,4 +26,4 @@ for ($i = 0; $i < count($listeInscrire2); $i++) {
     <?php
 }
 ?>
-</tbody></table>
+</tbody></table><br><br><br><br>

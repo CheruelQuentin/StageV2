@@ -21,25 +21,26 @@ $STA_MAT=$CRE_MAT;
 
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
-if(getAddCreaneau($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN)){
+				if(getAddCreaneau($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN)){
 
-for($i=0;$i<sizeof($_POST['choixForm']);$i++){
-	$STA_FORM=$_POST['choixForm'][$i];
-}
-$CRE_ID=getCreneauIdByInfo2($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN);
+				for($i=0;$i<sizeof($_POST['choixForm']);$i++){
+					$STA_FORM=$_POST['choixForm'][$i];
+				}
+				$CRE_ID=getCreneauIdByInfo2($CRE_DATE, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN);
 
 
-$STA_CRE=$CRE_ID;
-//Ajout des inscriptions aux formations
-getAddStage($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $STA_ELEMAX);
+				$STA_CRE=$CRE_ID;
+				//Ajout des inscriptions aux formations
+				getAddStage($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $STA_ELEMAX);
 
-$PREF_CRE=$CRE_ID;
-$PREF_ENS=$STA_ENS;
+				$PREF_CRE=$CRE_ID;
+				$PREF_ENS=$STA_ENS;
 
-getAddPreferer($PREF_ENS,$PREF_CRE);
+				getAddPreferer($PREF_ENS,$PREF_CRE);
 
-header('location: ./?action=listeCreneau');
-}
+				header('location: ./?action=listeCreneau');
+				}
+				
 // appel du script de vue qui permet de gerer l'affichage des donnees
 $titre = "Liste des creneaux";
 include "vue/entete.html.php";
