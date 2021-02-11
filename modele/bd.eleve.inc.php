@@ -40,7 +40,7 @@ function getEleve() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from eleve, etablissement where ELE_ETA=ETA_ID and ETA_ID=:uti_eta ");
+        $req = $cnx->prepare("select * from eleve, etablissement where ELE_ETA=ETA_ID and ETA_ID=:uti_eta order by ELE_NOM ASC,ELE_PRENOM ASC,ELE_CLASSE ASC ");
         $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
         $req->execute();
 

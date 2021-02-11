@@ -3,7 +3,7 @@
 
 
 <br>
-<center><h2 id="titre">Liste des inscrits</h2></center><br>
+<center><h2 id="titre">Gestion des inscrits</h2></center><br>
 <button onclick="window.location.href='./?action=addIns';" id="bouton2" style="display:inline-block;">Ajouter</button></div>
 
 <?php
@@ -55,10 +55,12 @@ for ($j = 0; $j < count($result); $j++) {
        <td><center><?= $result[$j]["CRE_HEUREFIN"] ?></center></td>
        <td><center><?= $result[$j]["CRE_SALLE"] ?></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifInsEta&id=<?=$result[$j]['ELE_ID'] ?>'; }" > ✍ </button></center></td>
-            <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delIns&id=<?=$result[$j]['ELE_ID']?>&amp;stage=<?=$result[$j]["STA_ID"]?>'; }" > ❌ </button></center></td>
+            <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delIns&id=<?=$result[$j]['ELE_ID']?>&amp;stage=<?=$result[$j]["STA_ID"] ?>'; }" > ❌ </button></center></td>
         </tr>
     <?php
         }
+} else {
+    echo("C'est vide mon con");
 }
 
        ?>

@@ -2,6 +2,8 @@
 <style type="text/css">
             @import url("css/connexion.css");
 </style>
+
+
 <?php if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ //Si l'utilisateur est un admin ... ?>
 <br>
 <h1 id="titre">Bienvenue</h1><br>
@@ -121,7 +123,11 @@ for ($j = 0; $j < count($result); $j++) {
 
 
 
-    <h1 id="titre">Bienvenue </h1><br>
+   
+    
+<!--<br>
+    <h1 id="titre">Bienvenue  <?= getEnseignantProfil($_SESSION["UTIL_ENS"])['ENS_PRENOM'], " ", getEnseignantProfil($_SESSION["UTIL_ENS"])['ENS_NOM'] ?></h1>-->
+<br>
 <div style="text-align:right;padding-bottom:5px;">
 <div id="container">
     <center><h2 id="titre">Gestion des créneaux</h2></center>
