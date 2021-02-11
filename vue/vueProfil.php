@@ -2,11 +2,8 @@
 <style type="text/css">
             @import url("css/connexion.css");
 </style>
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 43bcb00b2e6453b733ba7bfa7273fc4bf452777c
 <?php if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ //Si l'utilisateur est un admin ... ?>
 <br>
 <h1 id="titre">Bienvenue</h1><br>
