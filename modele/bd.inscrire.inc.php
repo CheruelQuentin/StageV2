@@ -227,4 +227,36 @@ AND ELE_ETA =:uti_eta");
     return $resultat;
 }
 
+
+
+
+function getInscrireByFormEns($FORM_CODE) {
+    $resultat = array();
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select *
+            from formation, stage, creneau, eleve, inscrire 
+where ELE_ID =INS_ELE 
+AND INS_STA= STA_ID 
+AND STA_FORM = FORM_CODE 
+and STA_CRE = CRE_ID 
+and FORM_CODE=:FORM_CODE 
+");
+        
+        $req->bindValue(':FORM_CODE', $FORM_CODE, PDO::PARAM_INT);
+
+        $req->execute();
+
+         $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+                $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
 ?>
