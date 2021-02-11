@@ -144,6 +144,22 @@ function getEnseignantIdByInfo2($ENS_NOM,$ENS_PRENOM,$ENS_DATENAISS,$ENS_MAIL) {
     return $resultat['ENS_ID'];
 }
 
+function getEnseignantProfil($ENS_ID) {
+    
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from enseignant,utilisateur where UTIL_ENS = ENS_ID AND UTIL_ENS=UTIL_ENS");
+        $req->bindValue(':ENS_ID', $ENS_ID, PDO::PARAM_INT);
+        $req->bindValue(':UTIL_ENS', $UTIL_ENS, PDO::PARAM_INT);
 
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
 
 ?>
