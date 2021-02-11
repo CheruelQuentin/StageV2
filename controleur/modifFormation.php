@@ -12,6 +12,21 @@ $min=$listeStage['STA_ELEMIN'];
 $max=$listeStage['STA_ELEMAX'];
 $creneau=$listeStage['STA_CRE'];
 
+$listeCreneau = getCreneau();
+$listeMatiere = getMatiere();
+$listeFormation = getFormation();
+$listeEnseignant = getEnseignant();
+
+if (isset($_GET['id'])){
+
+	$idS=$_GET['id'];
+
+	$listeFormation2 = getFormationByStage($idS);
+}
+
+
+
+
 $titre = "Modification de la formation";
 include "vue/entete.html.php";
 include "vue/vueModifFormation.php";

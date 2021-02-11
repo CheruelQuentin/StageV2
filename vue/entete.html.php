@@ -103,8 +103,8 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             Inscrits
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="./?action=listeInscription3">Liste</a>
-                            <a class="dropdown-item" href="./?action=addIns2">Ajouter</a>
+                            <a class="dropdown-item" href="./?action=listeInscriptionAdm">Liste</a>
+                            <a class="dropdown-item" href="./?action=addInsAdm">Ajouter</a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php">PDF ministage</a></li>
@@ -136,9 +136,18 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addEle">Ajouter</a>
                         </div>
                     </li>
-                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Inscrits
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="./?action=listeInscriptionEta">Liste</a>
+                            <a class="dropdown-item" href="./?action=addIns">Ajouter</a>
+                        </div>
+                    </li>
+
                     <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf">Convention de stage</a></li>
-                    <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php">PDF ministage</a></li>
+                    <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php" TARGET="_BLANK">PDF ministage</a></li>
                 </ul>
             </div>
         </div>
@@ -157,7 +166,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=profil">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="?action=listeDesInscrits">Inscrits</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="?action=listeInscriptionEns">Inscrits</a></li>
                 </ul>
             </div>
         </div>

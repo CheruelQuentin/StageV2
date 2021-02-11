@@ -9,7 +9,7 @@
 <div id="container">
   <br>
   <center><h2 id="titre">Gestion des matières</h2></center>
-    <center><h2>Modification des matières</h2><br>
+    <center><h2>Modification des matières</h2><br><br>
        <script src="js/verification.js"> </script>
 
 

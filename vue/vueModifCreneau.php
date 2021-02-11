@@ -6,7 +6,8 @@
             <meta charset="utf-8"/>
       </head>
       <body>
-         <center><h2>Modification Creneau </h2>
+      <br><center><h2 id="titre">Gestion des créneaux</h2></center>
+         <center><h2>Modification Creneau </h2><br><br>
        <script src="js/verification.js"> </script>
 
 

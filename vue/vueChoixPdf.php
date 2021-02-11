@@ -13,7 +13,7 @@
              <form method="post" action="./controleur/creationPDFLycee.php" TARGET="_BLANK">
              <table><tr><td>
               
-             <label for="STA_ID"> Stage </label> : 
+             <label for="STA_ID"> <center>Stage</center></label>
                 <select name="STA_ID">
                   <?php
                     for($i=0;$i<sizeof($stage);$i++){ ?> 

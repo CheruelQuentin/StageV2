@@ -2,7 +2,7 @@
 <div id="container">
 	<br>
 	<center><h2 id="titre">Gestion des établissement</h2></center>
-    <center><h2>Formulaire d'ajout</h2><br>
+    <center><h2>Formulaire d'ajout</h2><br><br>
 <script src="js/verification.js"> </script>
 <p></p>
  <form method="post" action="./?action=insertEta">

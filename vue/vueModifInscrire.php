@@ -13,7 +13,7 @@
   <br>
 
   <center><h2 id="titre">Gestion des inscrits</h2></center>
-    <center><h2>Modification des inscrits</h2><br>
+    <center><h2>Modification des inscrits</h2><br><br>
 
 
          <form method="post" action="./?action=upIns">

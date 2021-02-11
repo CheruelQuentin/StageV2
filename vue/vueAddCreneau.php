@@ -2,7 +2,7 @@
 	<br>
 	<center><h2 id="titre">Gestion des Créneaux</h2></center>
     <center><h2>Formulaire d'ajout </h2>
-	<br>
+	<br><br>
 <script src="js/verification.js"> </script>
 <p></p>
 <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -69,7 +69,7 @@
         <?php
 				for($i=0;$i<sizeof($formation);$i++){ ?> 
 					<input required type="radio"name="choixForm[]"value=<?= $formation[$i]['FORM_CODE'];?>
-					><?= getFormationById($formation[$i]['FORM_CODE'])['FORM_LIBELLE'];?>
+					><?= ' ',getFormationById($formation[$i]['FORM_CODE'])['FORM_LIBELLE'];?>
 					<br> 
 					<br>		
 			<?php } ?>          

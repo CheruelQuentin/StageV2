@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="css/liste.css">
 <br>
 <center><h2 id="titre">Gestion des inscrits</h2></center>
-<button onclick="window.location.href='./?action=addIns2';" id="bouton2" style="display:inline-block;">Ajouter</button></div>
+<button onclick="window.location.href='./?action=addInsAdm';" id="bouton2" style="display:inline-block;">Ajouter</button></div>
 <table class="table">
         <thead>
             <th align="center">Nom</th>
@@ -18,6 +18,7 @@
          <tbody>
 <?php
 for ($i = 0; $i < count($listeInscrire); $i++) {
+    
     ?>
         <tr>
             <td><center><?= $listeInscrire[$i]['ELE_NOM'] ?></center></td>
@@ -30,4 +31,4 @@ for ($i = 0; $i < count($listeInscrire); $i++) {
     <?php
 }
 ?>
-</tbody></table>
+</tbody></table><br><br><br><br>

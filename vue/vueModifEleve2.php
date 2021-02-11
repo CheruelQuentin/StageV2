@@ -17,17 +17,20 @@
 <div id="container">
   <br>
   <center><h2 id="titre">Gestion des élèves</h2></center>
-    <center><h2>Modification d'élève</h2><br>
+    <center><h2>Modification d'élève</h2><br><br>
         <form method="post" action="./?action=upEle2">
         <table><tr><td>            
           <input id="ELE_ID" type="hidden" name="ELE_ID" size="50px" maxlength="20" value="<?=$_GET['id']?>" />
           <div class="ui-widget">
             <label>Etablissement :</label>
             <select id="combobox" name="ELE_ETA">
-              <option selected value=<?= $etaById['ETA_ID'];?>><?=$etaById['ETA_NOM'], " ", $etaById['ETA_VILLE'];?></option>
               <?php
-                for($i=0;$i<sizeof($etablissement);$i++){ ?> 
-                  <option value= <?= $etablissement[$i]['ETA_ID'];?>><?=$etablissement[$i]['ETA_NOM'], " ", $etablissement[$i]['ETA_VILLE'];?> </option> 
+         for($i=0;$i<sizeof($etablissement);$i++){ ?> 
+          <option value="<?= $etablissement[$i]['ETA_ID'];?>"
+            
+            <?php if ($etablissement[$i]['ETA_ID']==$listeEleve2['ELE_ETA']){?> selected   <?php } ?>
+
+           ><?= $etablissement[$i]['ETA_NOM']?> </option> 
               <?php } ?>
             </select>
           </div>
@@ -38,22 +41,31 @@
 
 <p><label for="ELE_DATENAISS">Date de Naissance *:</label><input id="ELE_DATENAISS" type="date" name="ELE_DATENAISS" size="50px" maxlength="20" value="<?=$dateN?>" required /></p><br>
 
-<p><label for="ELE_CLASSE">Classe *:</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="10" required value="<?=$classe?>"  onblur="verifmodifclasse();" /><div><span id = "erreurmodifclasse" ></span></div><br>
+<p><label for="ELE_CLASSE">Classe *:</label><input id="ELE_CLASSE" type="text" name="ELE_CLASSE" size="50px" maxlength="50" required value="<?=$classe?>"  onblur="verifmodifclasse();" /><div><span id = "erreurmodifclasse" ></span></div><br>
 
 <p><label for="ELE_MAIL">E-mail :</label><input id="ELE_MAIL" type="mail" name="ELE_MAIL" size="50px" maxlength="150"   value="<?=$mail?>" /></p>
 
 <div id="choixForm">
     <fieldset class="scheduler-border">    
-          <legend class="scheduler-border">Formations à suivre *</legend>           
+          <legend class="scheduler-border">Choisir les ministages suivi par l’élève *</legend>           
+
         <?php
         for($i=0;$i<sizeof($stage);$i++){ ?> 
-          <input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>
-          ><?= $stage[$i]['FORM_LIBELLE'], " - ", $stage[$i]['MAT_LIBELLE'], " | ", $stage[$i]['CRE_DATE'], " - ",$stage[$i]['CRE_HEUREDEB'];?>
+          <input type="checkbox" name="choixForm[]" value="<?= $stage[$i]['FORM_CODE'];?>"
+          <?php if ($stage[$i]['FORM_CODE']==$listeInscrire['STA_FORM']){?> checked   <?php } ?>
+
+           >&nbsp;&nbsp;<?='<i style="color:blue;">Formation</i> ',$stage[$i]['FORM_LIBELLE'], " - ", '<i style="color:blue;">Formation</i> ',$stage[$i]['MAT_LIBELLE'], " | ", '<i style="color:blue;">Formation</i> ',$stage[$i]['CRE_DATE'], " - ",'<i style="color:blue;">Formation</i> ',$stage[$i]['CRE_HEUREDEB'];?>
           <br><br>
           
       <?php } ?>          
       </fieldset>
   </div>
+
+
+
+
+
+
     </tr></td></table>
 <br>
 <p>* Champ obligatoire</p>
