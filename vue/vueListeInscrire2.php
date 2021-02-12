@@ -2,7 +2,8 @@
 </div>
 <link rel="stylesheet" type="text/css" href="css/liste.css">
 <br>
-<center><h2 id="titre">Liste des Inscrits</h2></center>
+<center><h2 id="titre">Gestion des inscrits</h2></center>
+<center><h2>Liste des Inscrits</h2></center>
 <br>
 <?php
 $listeCreneau = getListeCreneau();

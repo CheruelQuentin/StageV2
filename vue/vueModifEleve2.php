@@ -51,8 +51,8 @@
 
         <?php
         for($i=0;$i<sizeof($stage);$i++){ ?> 
-          <input type="checkbox" name="choixForm[]" value="<?= $stage[$i]['FORM_CODE'];?>"
-          <?php if ($stage[$i]['FORM_CODE']==$listeInscrire['STA_FORM']){?> checked   <?php } ?>
+          <input type="checkbox" name="choixForm[]" value="<?= $stage[$i]['STA_ID'];?>"
+          <?php if ($stage[$i]['STA_ID']==$listeInscrire['STA_FORM']){?> checked   <?php } ?>
 
            >&nbsp;&nbsp;<?='<i style="color:blue;">Formation</i> ',$stage[$i]['FORM_LIBELLE'], " - ", '<i style="color:blue;">Formation</i> ',$stage[$i]['MAT_LIBELLE'], " | ", '<i style="color:blue;">Formation</i> ',$stage[$i]['CRE_DATE'], " - ",'<i style="color:blue;">Formation</i> ',$stage[$i]['CRE_HEUREDEB'];?>
           <br><br>

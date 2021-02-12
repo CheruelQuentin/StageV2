@@ -11,7 +11,7 @@ $ENS_PRENOM=htmlspecialchars($_POST['ENS_PRENOM']);
 $ENS_MAIL=htmlspecialchars($_POST['ENS_MAIL']);
 $ENS_TEL=htmlspecialchars($_POST['ENS_TEL']);
 $ENS_DATENAISS=htmlspecialchars($_POST['ENS_DATENAISS']);
-$info=getEnseignantByMail($ETA_MAIL);
+$info=getEnseignantByMail($ENS_MAIL);
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
 if($ENS_MAIL != $info['ENS_MAIL']){

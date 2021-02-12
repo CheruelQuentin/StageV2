@@ -42,7 +42,7 @@ for ($i = 0; $i < count($listeCreneau); $i++) {
 
 $result=getInscrireByForm($listeCreneau[$i]["FORM_CODE"]);
 
-if(count($result)>0){
+
 for ($j = 0; $j < count($result); $j++) {
     ?>
  <tr>
@@ -59,9 +59,7 @@ for ($j = 0; $j < count($result); $j++) {
         </tr>
     <?php
         }
-} else {
-    echo("C'est vide mon con");
-}
+
 
        ?>
 <br>

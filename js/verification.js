@@ -209,7 +209,7 @@ function veriftel(){
 	// alert (tel);
 	var ETA_TEL = document.getElementById("ETA_TEL");
 	var erreurtel = document.getElementById("erreurtel");
-if(ETA_TEL.value.length > 12 || ETA_TEL.value.length < 10) {
+if(ETA_TEL.value.length > 15 || ETA_TEL.value.length < 10) {
 ETA_TEL.style.borderColor="red";
 erreurtel.style.color = '#f00';
 erreurtel.innerHTML = "Merci de saisir au moins 3 caratères";

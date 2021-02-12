@@ -241,6 +241,7 @@ AND INS_STA= STA_ID
 AND STA_FORM = FORM_CODE 
 and STA_CRE = CRE_ID 
 and FORM_CODE=:FORM_CODE 
+order by CRE_DATE
 ");
         
         $req->bindValue(':FORM_CODE', $FORM_CODE, PDO::PARAM_INT);

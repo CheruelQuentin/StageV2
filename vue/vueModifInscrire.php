@@ -7,6 +7,7 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><br>
             <script src="java/jquery.chained.js" type="text/javascript" charset="utf-8"></script>
             <link rel="stylesheet" type="text/css" href="css/autocomplete.css">
+              <link rel="stylesheet" type="text/css" href="css/style.css">
       </head>
       <body>
 <div id="container">
