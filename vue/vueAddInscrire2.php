@@ -1,9 +1,11 @@
 <br><center><h2 id="titre">Inscription des élèves à une formation</h2></center>
 	<body>
     <center><h2>Formulaire d'ajout </h2></center><br><br>
-
+ <style type="text/css">
+            @import url("css/form.css");
+</style>
 <p></p>
-
+<link rel="stylesheet" type="text/css" href="css/style.css">
  <form method="post" action="./?action=insertInsAdm">
 
 <center>

@@ -5,7 +5,9 @@
 <p></p>
 <link rel="stylesheet" type="text/css" href="css/style.css">
  <form method="post" action="./?action=insertIns">
-
+ <style type="text/css">
+            @import url("css/form.css");
+</style>
 <center>
 	<table><tr><td>
   <p><label for="INS_ELE">Eleve : </label>

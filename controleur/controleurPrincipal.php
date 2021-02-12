@@ -90,6 +90,7 @@ function controleurPrincipal($action){
     $lesActions["supMat"] = "supMatiere.php";
 
     //Modif
+    $lesActions["modifProfil"] = "modifProfil.php";
     $lesActions["modifIns"] = "modifInscrire.php";
     $lesActions["modifInsEta"] = "modifInscrire2.php";
     $lesActions["modifEle"] = "modifEleve.php";

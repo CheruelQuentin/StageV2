@@ -15,10 +15,6 @@ header('Location: ./?action=listeInscription');
 }
 
 
-
-// traitement si necessaire des donnees recuperees
-
-// appel du script de vue qui permet de gerer l'affichage des donnees
 $titre = "Liste des insrits";
 include "vue/entete.html.php";
 include "vue/vueInsertInscrire.php";

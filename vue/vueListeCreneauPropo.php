@@ -18,6 +18,7 @@
          <tbody>
 
 <?php
+
 for ($i = 0; $i < count($listeCreneauPropo); $i++) {
     ?>
         <tr><td>
@@ -32,7 +33,6 @@ for ($i = 0; $i < count($listeCreneauPropo); $i++) {
         </tr>
     <?php
 }
-
 ?>
 
 </tbody></table>

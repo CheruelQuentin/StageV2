@@ -8,7 +8,7 @@ $FORM_LIBELLE=htmlspecialchars($_POST['FORM_LIBELLE']);
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
 if(getAddFormation($FORM_CODE, $FORM_LIBELLE)){
-header('Location: ./?action=listeMatiere');
+header('Location: ./?action=listeStage');
 }
 
 // traitement si necessaire des donnees recuperees
@@ -16,6 +16,6 @@ header('Location: ./?action=listeMatiere');
 // appel du script de vue qui permet de gerer l'affichage des donnees
 $titre = "Liste des stages";
 include "vue/entete.html.php";
-include "vue/vueInsertStage.php";
+
 include "vue/pied.html.php";
 ?>
