@@ -192,4 +192,22 @@ function getEtablissementIdByInfo($ETA_NOM,$ETA_VILLE,$ETA_CP,$ETA_MAIL) {
     }
     return $resultat['ETA_ID'];
 }
+
+function getEtablissementProfil($ENS_ID) {
+    
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from etablissement,utilisateur where UTIL_ETA = ETA_ID AND UTIL_ETA=:UTIL_ETA");
+        $req->bindValue(':UTIL_ETA',  $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
+
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
 ?>

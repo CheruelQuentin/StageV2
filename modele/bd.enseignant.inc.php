@@ -148,9 +148,8 @@ function getEnseignantProfil($ENS_ID) {
     
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from enseignant,utilisateur where UTIL_ENS = ENS_ID AND UTIL_ENS=UTIL_ENS");
-        $req->bindValue(':ENS_ID', $ENS_ID, PDO::PARAM_INT);
-        $req->bindValue(':UTIL_ENS', $UTIL_ENS, PDO::PARAM_INT);
+        $req = $cnx->prepare("select * from enseignant,utilisateur where UTIL_ENS = ENS_ID AND UTIL_ENS=:UTIL_ENS");
+        $req->bindValue(':UTIL_ENS',  $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
 
         $req->execute();
 

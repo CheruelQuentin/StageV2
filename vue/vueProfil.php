@@ -45,11 +45,10 @@ for ($i = 0; $i < count($listeStage); $i++) {
 
 
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ //Si l'utilisateur est un établissement ...  ?>
-    <br>
 <h1 id="titre">
-<?php     
-echo"Bienvenue ";
-?>
+<br>
+    <h1 id="titre">Bienvenue  <?= getEtablissementProfil($_SESSION["UTIL_ETA"])['ETA_NOM'] ?></h1>
+<br>
 </h1><br>
     <link rel="stylesheet" type="text/css" href="css/liste.css">
 <link rel="stylesheet" type="text/css" href="css/liste.css">
@@ -125,8 +124,8 @@ for ($j = 0; $j < count($result); $j++) {
 
    
     
-<!--<br>
-    <h1 id="titre">Bienvenue  <?= getEnseignantProfil($_SESSION["UTIL_ENS"])['ENS_PRENOM'], " ", getEnseignantProfil($_SESSION["UTIL_ENS"])['ENS_NOM'] ?></h1>-->
+<br>
+    <h1 id="titre">Bienvenue  <?= getEnseignantProfil($_SESSION["UTIL_ENS"])['ENS_PRENOM'], " ", getEnseignantProfil($_SESSION["UTIL_ENS"])['ENS_NOM'] ?></h1>
 <br>
 <div style="text-align:right;padding-bottom:5px;">
 <div id="container">
