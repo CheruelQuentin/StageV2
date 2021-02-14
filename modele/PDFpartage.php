@@ -111,7 +111,7 @@ function Table()
 
    $result=getPDFFormationById($ligne[$i]['FORM_CODE']);
 
-
+if(count($result)>0){
    
 for ($j= 0; $j < count($result); $j++) {
     
@@ -122,6 +122,11 @@ for ($j= 0; $j < count($result); $j++) {
     $this->Cell(40,10,utf8_decode($result[$j]['STA_ELEMIN']),1,0,'C');
     $this->Cell(40,10,utf8_decode($result[$j]['STA_ELEMAX']),1,0,'C');
 $this->Ln();
+}
+
+
+}else{
+     $this->Cell(190,10,utf8_decode('Pas de créneau') ,1,0,'C');
 }
 $this->Ln();$this->Ln();
  
