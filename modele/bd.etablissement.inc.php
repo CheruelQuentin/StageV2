@@ -193,11 +193,11 @@ function getEtablissementIdByInfo($ETA_NOM,$ETA_VILLE,$ETA_CP,$ETA_MAIL) {
     return $resultat['ETA_ID'];
 }
 
-function getEtablissementProfil($ENS_ID) {
+function getEtablissementProfil($ETA_ID) {
     
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from etablissement,utilisateur where UTIL_ETA = ETA_ID AND UTIL_ETA=:UTIL_ETA");
+        $req = $cnx->prepare("select * from categeta ,etablissement,utilisateur where UTIL_ETA = ETA_ID AND CAT_ID= ETA_CATEG AND UTIL_ETA=:UTIL_ETA");
         $req->bindValue(':UTIL_ETA',  $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
 
         $req->execute();

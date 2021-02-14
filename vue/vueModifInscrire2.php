@@ -23,9 +23,10 @@
           <legend class="scheduler-border">Choisir les ministages suivi par l’élève</legend>           
 
         <?php
+
         for($i=0;$i<sizeof($listeStage);$i++){ ?> 
-          <input type="checkbox" name="choixForm[]" value="<?= $listeStage[$i]['FORM_CODE'];?>"
-          <?php if ($listeStage[$i]['FORM_CODE']==$listeInscrire['STA_FORM']){?> checked   <?php } ?>
+          <input type="checkbox" name="choixForm[]" value="<?= $listeStage[$i]['STA_ID'];?>"
+          <?php if ($listeStage[$i]['STA_ID']==$listeInscrire['STA_ID']){?> checked   <?php } ?>
 
            ><?= $listeStage[$i]['FORM_LIBELLE']?>
           <br><br>
@@ -42,3 +43,9 @@
              </form>
       </body>
 </html>
+
+
+
+
+
+

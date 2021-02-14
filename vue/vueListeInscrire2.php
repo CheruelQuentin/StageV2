@@ -1,8 +1,9 @@
-<div style="text-align:right;padding-bottom:5px;">
-</div>
 <link rel="stylesheet" type="text/css" href="css/liste.css">
+<div style="text-align:right;padding-bottom:5px;">
+
+
 <br>
-<center><h2 id="titre">Gestion des inscrits</h2></center>
+<center><h2 id="titre">Gestion des inscrits</h2></center><br>
 <center><h2>Liste des Inscrits</h2></center>
 <br>
 <?php
@@ -10,18 +11,24 @@ $listeCreneau = getListeCreneau();
 for ($i = 0; $i < count($listeCreneau); $i++) {
     
     ?>
-<table class="table">
+<table class="table" style="text-align:right; margin:0px">
 
 
 <thead> 
 
 
-       <th colspan="10" style="background-color: #4097c9"><?= $listeCreneau[$i]["FORM_LIBELLE"] ?></th>
+       <th colspan="9"  style="background-color: #4097c9"><?= $listeCreneau[$i]["FORM_LIBELLE"] ?></th>
      </thead>
+   </table>
 
+<?php
+   $result=getInscrireByFormEns($listeCreneau[$i]["FORM_CODE"]);
 
-<tbody>
-        
+if(count($result)>0){
+
+  ?>
+<table class="table">
+<tbody>        
             
             <th align="center">Date</th>
             <th align="center">Date de fin</th>
@@ -38,10 +45,6 @@ for ($i = 0; $i < count($listeCreneau); $i++) {
 
 
 <?php
-
-$result=getInscrireByFormEns($listeCreneau[$i]["FORM_CODE"]);
-
-if(count($result)>0){
 for ($j = 0; $j < count($result); $j++) {
     ?>
  <tr>
@@ -58,10 +61,14 @@ for ($j = 0; $j < count($result); $j++) {
         </tr>
     <?php
         }
-}
+}else{
+   
+
+   ?><center><strong><?php echo "Aucun participant <br /><br /><br />";?></strong></center> <?php
+   }
 
        ?>
-<br>
+
      <?php                     }
 ?>
 
