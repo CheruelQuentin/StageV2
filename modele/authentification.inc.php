@@ -7,24 +7,19 @@ function login($Mail, $Mdp) {
     if (!isset($_SESSION)) {
         session_start();
     }
-
-
-
     $util = getUtilisateurByMail($Mail);
     $mdpBD = $util["UTIL_MDP"]; 
 
-    if ($util["UTIL_CODE"]=="ENS"){
+    if ($util["UTIL_CODE"]=="ETAB"){
    $eta= getEtablissementByMail($Mail);
     $etaId = $eta["ETA_ID"]; 
     }
-    else if ($util["UTIL_CODE"]=="ETAB"){
+    else if ($util["UTIL_CODE"]=="ENS"){
     
    $ens= getEnseignantByMail($Mail);
     $ensId = $ens["ENS_ID"];  
     }
     else{
-
-
     }
 
 
