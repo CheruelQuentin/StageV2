@@ -28,21 +28,16 @@ function getInscrireByEle($INS_ELE) {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from inscrire where INS_ELE=:INS_ELE");
         $req->bindValue(':INS_ELE', $INS_ELE, PDO::PARAM_INT);
-
         $req->execute();
-
-        $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        while ($ligne) {
-            $resultat[] = $ligne;
-            $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        }
-
+        
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
         die();
     }
     return $resultat;
 }
+
 
     
     function getInscrireByStage($INS_STA) {
@@ -51,9 +46,8 @@ function getInscrireByEle($INS_ELE) {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from inscrire where INS_STA=:INS_STA");
         $req->bindValue(':INS_STA', $INS_STA, PDO::PARAM_INT);
-
         $req->execute();
-
+        
         $resultat = $req->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
@@ -61,6 +55,7 @@ function getInscrireByEle($INS_ELE) {
     }
     return $resultat;
 }
+
 
 
 function getAddInscrire($INS_ELE, $INS_STA) {

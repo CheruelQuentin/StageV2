@@ -15,6 +15,7 @@ $listeInscrire2 = getInscrireListe2();
 
 
 $ETA_NOM =getEtablissementById($_SESSION["UTIL_ETA"]);
+
 $resultat=getEtablissementProfil($_SESSION["UTIL_ETA"]);
 
 $ens=getEnseignantProfil($_SESSION["UTIL_ENS"]);

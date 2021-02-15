@@ -18,13 +18,6 @@ $etablissement=getEtablissement();
 $stage=getStageByTout();
 $etaById=getEtablissementById(getEleveById($_GET['id'])['ELE_ETA']);
 
-
-
-
-
-
-
-
 if (isset($_GET['id'])){
 
 	$idE=$_GET['id'];
@@ -38,12 +31,6 @@ if (isset($_GET['id'])){
 
 	$listeInscrire = getInscrireByEtudiant($idE);
 }
-
-
-
-
-
-
 
 $titre = "Modification Eleve";
 include "vue/entete.html.php";

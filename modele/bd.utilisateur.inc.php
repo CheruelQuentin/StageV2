@@ -226,10 +226,10 @@ function getUpdateUtiMdpEnseignant($UTIL_ENS,$UTIL_MDP){
     $resultat = -1;
     try {
 $cnx = connexionPDO();
-$req = $cnx->prepare("UPDATE `utilisateur` SET UTIL_MDP = :russe WHERE `utilisateur`.UTIL_ENS=:uti_ens;");
+$req = $cnx->prepare("UPDATE `utilisateur` SET UTIL_MDP = :mdp WHERE `utilisateur`.UTIL_ENS=:uti_ens;");
         $mdpUCrypt = crypt($UTIL_MDP, "sel");
         $req->bindValue(':uti_ens', $_SESSION["UTIL_ENS"], PDO::PARAM_STR);
-        $req->bindValue(':russe', $mdpUCrypt, PDO::PARAM_STR);
+        $req->bindValue(':mdp', $mdpUCrypt, PDO::PARAM_STR);
 
         $resultat = $req->execute();
     } catch (PDOException $e) {
@@ -238,5 +238,44 @@ $req = $cnx->prepare("UPDATE `utilisateur` SET UTIL_MDP = :russe WHERE `utilisat
     }
     return $resultat;
 }
+
+
+
+function getUpdateProfilUtilEta($UTIL_ETA,$UTIL_MAIL){
+    
+    try {
+$cnx = connexionPDO();
+$req = $cnx->prepare("UPDATE `utilisateur` SET UTIL_MAIL = :mail WHERE `utilisateur`.UTIL_ETA=:uti_eta;");
+
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
+        $req->bindValue(':mail', $UTIL_MAIL, PDO::PARAM_STR);
+
+        $resultat = $req->execute();
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
+
+function getUpdateProfilUtilEns($UTIL_ENS,$UTIL_MAIL){
+    
+    try {
+$cnx = connexionPDO();
+$req = $cnx->prepare("UPDATE `utilisateur` SET UTIL_MAIL = :mail WHERE `utilisateur`.UTIL_ENS=:uti_eta;");
+
+        $req->bindValue(':uti_eta', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
+        $req->bindValue(':mail', $UTIL_MAIL, PDO::PARAM_STR);
+
+        $resultat = $req->execute();
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
 
 ?>

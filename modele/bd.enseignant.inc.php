@@ -161,4 +161,27 @@ function getEnseignantProfil($ENS_ID) {
     return $resultat;
 }
 
+
+function getUpdateProfilEns($ENS_NOM, $ENS_PRENOM, $ENS_MAIL, $ENS_TEL, $ENS_DATENAISS, $ENS_ID){
+    $resultat = -1;
+    try {
+$cnx = connexionPDO();
+$req = $cnx->prepare("UPDATE enseignant SET ENS_NOM = :ENS_NOM , ENS_PRENOM = :ENS_PRENOM , ENS_MAIL = :ENS_MAIL , ENS_TEL = :ENS_TEL , ENS_DATENAISS = :ENS_DATENAISS WHERE ENS_ID = :ENS_ID ;");
+        
+        $req->bindValue(':ENS_ID', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
+        $req->bindValue(':ENS_NOM', $ENS_NOM, PDO::PARAM_STR);
+        $req->bindValue(':ENS_PRENOM', $ENS_PRENOM, PDO::PARAM_STR);
+        $req->bindValue(':ENS_MAIL', $ENS_MAIL, PDO::PARAM_STR);
+        $req->bindValue(':ENS_TEL', $ENS_TEL, PDO::PARAM_STR);
+        $req->bindValue(':ENS_DATENAISS', $ENS_DATENAISS, PDO::PARAM_STR);
+        
+
+        $resultat = $req->execute();
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
 ?>
