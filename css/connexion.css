@@ -46,9 +46,10 @@ input {
 }
  
 .show-password {
-	font-size: 9px;
+	font-size: 20px;
+	color:red;
 	text-transform: uppercase;
 	position: absolute;
 	cursor: pointer;
-	margin-left: -48px;
+	margin-top: 0px;
 }

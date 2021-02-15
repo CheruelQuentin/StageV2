@@ -9,6 +9,10 @@ include_once "modele/authentification.inc.php";
 if (htmlspecialchars(isset($_POST["Mail"])) && htmlspecialchars(isset($_POST["Mdp"]))){
     $Mail=$_POST["Mail"];
     $Mdp=$_POST["Mdp"];
+    
+// traitement si necessaire des donnees recuperees
+login($Mail,$Mdp);
+
 }
 else
 {
@@ -19,8 +23,7 @@ else
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
 
-// traitement si necessaire des donnees recuperees
-login($Mail,$Mdp);
+
 
 
 if (isLoggedOn()){ // si l'utilisateur est connecté on redirige vers le controleur monProfil

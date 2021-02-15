@@ -8,21 +8,47 @@ function login($Mail, $Mdp) {
         session_start();
     }
 
+
+
     $util = getUtilisateurByMail($Mail);
     $mdpBD = $util["UTIL_MDP"]; 
 
+    if ($util["UTIL_CODE"]=="ENS"){
    $eta= getEtablissementByMail($Mail);
     $etaId = $eta["ETA_ID"]; 
+    }
+    else if ($util["UTIL_CODE"]=="ETAB"){
     
    $ens= getEnseignantByMail($Mail);
     $ensId = $ens["ENS_ID"];  
+    }
+    else{
+
+
+    }
+
+
+
+
  
     if (trim($mdpBD) == trim(crypt($Mdp, $mdpBD))) {
         // le mot de passe est celui de l'utilisateur dans la base de donnees
         $_SESSION["UTIL_MAIL"] = $Mail;
         $_SESSION["UTIL_MDP"] = $mdpBD;
-        $_SESSION["UTIL_ETA"]=$etaId;
-        $_SESSION["UTIL_ENS"]=$ensId;
+
+
+        if ($util["UTIL_CODE"]=="ENS"){
+            $_SESSION["UTIL_ENS"]=$ensId;
+       }
+       else if ($util["UTIL_CODE"]=="ETAB"){        
+           $_SESSION["UTIL_ETA"]=$etaId;
+       }
+       else{
+   
+   
+       }
+
+
     }
 }
 
