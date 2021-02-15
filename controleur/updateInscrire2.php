@@ -10,14 +10,11 @@ $INS_ELE=$_POST['INS_ELE'];
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 for($i=0;$i<sizeof($_POST['choixForm']);$i++){
 	$INS_STA=$_POST['choixForm'][$i];
+	getUpdateInscrire($INS_ELE, $INS_STA);
 }
-if(getUpdateInscrire($INS_ELE, $INS_STA)){
+
 
 	header('Location: ./?action=listeInscription');
-  	exit();
-} else{
-	echo "erreur.";
-}
 
 
 // traitement si necessaire des donnees recuperees

@@ -120,4 +120,28 @@ $req = $cnx->prepare("UPDATE `stage` SET STA_CRE = :STA_CRE,STA_FORM = :STA_FORM
     return $resultat;
 }
 
+function getStageFormation() {
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from stage, formation where STA_FORM = FORM_CODE order by STA_FORM ,STA_CRE ");
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
+
+
+
 ?>
