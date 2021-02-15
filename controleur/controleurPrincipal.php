@@ -91,6 +91,7 @@ function controleurPrincipal($action){
 
     //Modif
     $lesActions["modifProfil"] = "modifProfil.php";
+    $lesActions["modifProfilEns"] = "modifProfilEns.php";
     $lesActions["modifIns"] = "modifInscrire.php";
     $lesActions["modifInsEta"] = "modifInscrire2.php";
     $lesActions["modifEle"] = "modifEleve.php";
@@ -111,6 +112,8 @@ function controleurPrincipal($action){
 
     //Update
     $lesActions["upIns"] = "updateInscrire.php";
+    $lesActions["upPro"] = "updateProfil.php";
+    $lesActions["upProfilEns"] = "updateProfilEns.php";
     $lesActions["upIns2"] = "updateInscrire2.php";
     $lesActions["upEle"] = "updateEleve.php";
     $lesActions["upEle2"] = "updateEleve2.php";

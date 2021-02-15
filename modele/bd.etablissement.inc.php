@@ -210,4 +210,33 @@ function getEtablissementProfil($ETA_ID) {
     return $resultat;
 }
 
+function getUpdateProfilEta($ETA_NOM,$ETA_VILLE,$ETA_ADRESSE,$ETA_CP,$ETA_MAIL,$ETA_PROVCIVIL,$ETA_PROVNOM,$ETA_PROVPRENOM,$ETA_TEL,$ETA_SECU,$ETA_NOMSECU){
+    $resultat = -1;
+    try {
+$cnx = connexionPDO();
+$req = $cnx->prepare("UPDATE `etablissement` SET ETA_NOM = :ETA_NOM,ETA_VILLE = :ETA_VILLE, ETA_ADRESSE = :ETA_ADRESSE,ETA_CP = :ETA_CP, ETA_MAIL = :ETA_MAIL, ETA_PROVCIVIL = :ETA_PROVCIVIL, ETA_PROVNOM = :ETA_PROVNOM, ETA_PROVPRENOM = :ETA_PROVPRENOM, ETA_TEL = :ETA_TEL, ETA_SECU = :ETA_SECU, ETA_NOMSECU = :ETA_NOMSECU WHERE `etablissement`.ETA_ID=:ETA_ID;");
+        
+        $req->bindValue(':ETA_NOM', $ETA_NOM, PDO::PARAM_STR);
+        $req->bindValue(':ETA_VILLE', $ETA_VILLE, PDO::PARAM_STR);
+        $req->bindValue(':ETA_ADRESSE', $ETA_ADRESSE, PDO::PARAM_STR);
+        $req->bindValue(':ETA_CP', $ETA_CP, PDO::PARAM_STR);
+        $req->bindValue(':ETA_MAIL', $ETA_MAIL, PDO::PARAM_STR);
+        $req->bindValue(':ETA_PROVCIVIL', $ETA_PROVCIVIL, PDO::PARAM_STR);
+        $req->bindValue(':ETA_PROVNOM', $ETA_PROVNOM, PDO::PARAM_STR);
+        $req->bindValue(':ETA_PROVPRENOM', $ETA_PROVPRENOM, PDO::PARAM_STR);
+        $req->bindValue(':ETA_TEL', $ETA_TEL, PDO::PARAM_STR);
+        $req->bindValue(':ETA_SECU', $ETA_SECU, PDO::PARAM_INT);
+        $req->bindValue(':ETA_NOMSECU', $ETA_NOMSECU, PDO::PARAM_STR);
+        $req->bindValue(':ETA_ID', $_SESSION["UTIL_ETA"], PDO::PARAM_INT);
+
+        $resultat = $req->execute();
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
+
 ?>

@@ -14,13 +14,13 @@ function login($Mail, $Mdp) {
     $mdpBD = $util["UTIL_MDP"]; 
 
     if ($util["UTIL_CODE"]=="ENS"){
-   $eta= getEtablissementByMail($Mail);
-    $etaId = $eta["ETA_ID"]; 
+     $ens= getEnseignantByMail($Mail);
+        $ensId = $ens["ENS_ID"];
     }
     else if ($util["UTIL_CODE"]=="ETAB"){
     
-   $ens= getEnseignantByMail($Mail);
-    $ensId = $ens["ENS_ID"];  
+    $eta= getEtablissementByMail($Mail);
+    $etaId = $eta["ETA_ID"];
     }
     else{
 

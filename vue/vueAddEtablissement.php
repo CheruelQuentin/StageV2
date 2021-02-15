@@ -26,9 +26,6 @@
 <table><tr><td> 
 <p><label for="ETA_NOM"style="width:220px;"> Nom établissement *: </label><input id="ETA_NOM" type="text" name="ETA_NOM" size="50px" maxlength="150" placeholder="ex : Jean Rostand" required onblur="verifnomEtab();" /><div><span id = "erreurnomEtab" ></span></div><br>
 
-
-
-
 <p><label for="ETA_ADRESSE" style="width:220px;">Adresse établissement *: </label><input id="ETA_ADRESSE" type="text" name="ETA_ADRESSE" size="50px" maxlength="150" placeholder="ex : 98 route d'ifs" required onblur="verifadresse();" /><div><span id = "erreuradresse" ></span></div><br>
 
 <p><label for="ETA_CP"style="width:220px;"> Code postal *: </label><input id="ETA_CP" type="text" name="ETA_CP" size="50px" maxlength="6" pattern="[0-9]{5}" placeholder="ex : 14000" required onblur="verifcp();" /><div><span id = "erreurcp" ></span></div><br>
