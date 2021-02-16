@@ -41,13 +41,13 @@ function getCreneau() {
 }
     
 
-function getAddCreaneau($CRE_DATE,$CRE_DATEFIN, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN) {
+function getAddCreaneau($CRE_DATE,$CRE_DATEFIN, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN,$CRE_MAT) {
     $resultat = -1;
 
     try {
         $cnx = connexionPDO();
 
-        $req = $cnx->prepare( "insert into creneau (CRE_DATE,CRE_DATEFIN,CRE_HEUREDEB,CRE_SALLE,CRE_HEUREFIN,CRE_VALIDE ) values(:CRE_DATE,:CRE_DATEFIN,:CRE_HEUREDEB,:CRE_SALLE,:CRE_HEUREFIN,0)");
+        $req = $cnx->prepare( "insert into creneau (CRE_DATE,CRE_DATEFIN,CRE_HEUREDEB,CRE_SALLE,CRE_HEUREFIN,CRE_VALIDE,CRE_MAT ) values(:CRE_DATE,:CRE_DATEFIN,:CRE_HEUREDEB,:CRE_SALLE,:CRE_HEUREFIN,0,:CRE_MAT)");
 
         
         $req->bindValue(':CRE_DATE', $CRE_DATE, PDO::PARAM_STR);
@@ -55,6 +55,7 @@ function getAddCreaneau($CRE_DATE,$CRE_DATEFIN, $CRE_HEUREDEB, $CRE_SALLE, $CRE_
         $req->bindValue(':CRE_HEUREDEB', $CRE_HEUREDEB, PDO::PARAM_STR);
         $req->bindValue(':CRE_SALLE', $CRE_SALLE, PDO::PARAM_STR);
         $req->bindValue(':CRE_HEUREFIN', $CRE_HEUREFIN, PDO::PARAM_STR);
+        $req->bindValue(':CRE_MAT', $CRE_MAT, PDO::PARAM_STR);
 
         $resultat = $req->execute();
     } catch (PDOException $e) {
