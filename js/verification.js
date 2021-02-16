@@ -319,7 +319,7 @@ function verifclasse(){
 	var ELE_CLASSE = document.getElementById("ELE_CLASSE");
 	var erreurclasse = document.getElementById("erreurclasse");
 
-if(ELE_CLASSE.value.length > 10 || ELE_CLASSE.value.length < 1) {
+if(ELE_CLASSE.value.length > 100 || ELE_CLASSE.value.length < 1) {
 ELE_CLASSE.style.borderColor="red";
 erreurclasse.style.color = '#f00';
 erreurclasse.innerHTML = "Merci de saisir au moins 3 caratères";

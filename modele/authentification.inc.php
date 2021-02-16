@@ -14,7 +14,7 @@ function login($Mail, $Mdp) {
      $ens= getEnseignantByMail($Mail);
         $ensId = $ens["ENS_ID"];
     }
-    else if ($util["UTIL_CODE"]=="ENS"){
+    else if ($util["UTIL_CODE"]=="ETAB"){
     
     $eta= getEtablissementByMail($Mail);
     $etaId = $eta["ETA_ID"];

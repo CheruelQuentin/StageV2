@@ -10,7 +10,7 @@ include_once "modele/bd.etablissement.inc.php";
 include_once "modele/bd.utilisateur.inc.php";
 include_once "modele/bd.matiere.inc.php";
 $listeInscrire = getInscrireListe();
-$listeStage= getStage();
+$listeStage= getStageByTout();
 $listeInscrire2 = getInscrireListe2();
 
 

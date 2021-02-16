@@ -34,7 +34,7 @@
 
 <p><label for="ETA_MAIL"style="width:220px;"> E-Mail établissement *: </label><input id="ETA_MAIL" type="email" name="ETA_MAIL" size="50px" placeholder="Ex : rostand@lycee.fr" maxlength="150" required onblur="verifmail();" /><div><span id = "erreurmail" ></span></div><br>
 
-<p>Civilité du proviseur:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p>Civilité du proviseur:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <input type="radio" name="ETA_PROVCIVIL" value="M." for="M.">M.</label>
 <input type="radio" name="ETA_PROVCIVIL" value="Mme." for="Mme.">Mme.</label></center></p>
@@ -46,7 +46,7 @@
 
 <p><label for="ETA_SECU"style="width:220px;"> N° Assurance *: </label><input id="ETA_SECU" type="int" name="ETA_SECU" size="50px" maxlength="15"/>
 <br><br>
-<p>Type de sécu*:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p>Type de sécu*:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" name="ETA_NOMSECU" value="MAE"  for="MAE"> MAE</label>
 
 <input type="radio" name="ETA_NOMSECU" value="MAIF"  for="MAIF"> MAIF</label>

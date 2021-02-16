@@ -20,7 +20,8 @@
     <nav class="navbar navbar-light " style="background-color: #7FACB2;">
         <a href="http://172.20.82.34/ministage/?action=deconnexion"><img id="logo" src="image/logo_entete.png" alt="logo" height= 100/></a>
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link text-dark "><img src="image/logo.png" height="120" width="400"></a></li>
+           <!-- <li class="nav-item"><a class="nav-link text-dark "><img src="image/logo.png" height="120" width="400"></a></li>  -->
+            <li class="nav-item"><a class="nav-link text-dark "><h1>Mini-Stage</h1></a></li>
             </ul>
                     <?php 
                     if(isset($_SESSION["UTIL_MAIL"])){
