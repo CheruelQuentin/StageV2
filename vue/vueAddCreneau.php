@@ -43,7 +43,7 @@
 	  <option value="15:50">15:50</option>
       <option value="16:05">16:05</option>
       <option value="17:00">17:00</option>
-	  <option value="17:55">17:00</option>
+	  <option value="17:55">17:55</option>
 	</select></p>
 <br>	
 	<div class="ui-widget">

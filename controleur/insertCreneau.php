@@ -22,7 +22,7 @@ $STA_MAT=$CRE_MAT;
 
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
-				if(getAddCreaneau($CRE_DATE,$CRE_DATEFIN, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN)){
+				if(getAddCreaneau($CRE_DATE,$CRE_DATEFIN, $CRE_HEUREDEB, $CRE_SALLE, $CRE_HEUREFIN,$CRE_MAT)){
 
 				for($i=0;$i<sizeof($_POST['choixForm']);$i++){
 					$STA_FORM=$_POST['choixForm'][$i];
