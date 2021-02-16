@@ -14,9 +14,9 @@ $listeStage= getStageByTout();
 $listeInscrire2 = getInscrireListe2();
 
 
-$ETA_NOM =getEtablissementById($_SESSION["ETA_ID"]);
+$ETA_NOM =getEtablissementById($_SESSION["UTIL_ETA"]);
 
-$resultat=getEtablissementProfil($_SESSION["ETA_ID"]);
+$resultat=getEtablissementProfil($_SESSION["UTIL_ETA"]);
 
 $ens=getEnseignantProfil($_SESSION["UTIL_ENS"]);
 
