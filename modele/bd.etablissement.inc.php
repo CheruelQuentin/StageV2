@@ -25,7 +25,7 @@ function getEtablissementById($ETA_ID) {
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from etablissement where ETA_ID=:ETA_ID ");
-        $req->bindValue(':ETA_ID', $ETA_ID, PDO::PARAM_STR);
+        $req->bindValue(':ETA_ID',  $ETA_ID, PDO::PARAM_INT);
 
         $req->execute();
 

@@ -22,6 +22,6 @@ $secu = $infoEta['ETA_SECU'];
 
 $titre = "Modification du profil";
 include "vue/entete.html.php";
-include "vue/vueModifProfilEns.php";
+include "vue/vueModifProfil.php";
 include "vue/pied.html.php";
 ?>

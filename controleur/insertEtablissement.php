@@ -33,7 +33,7 @@ $info=getEtablissementByMail($ETA_MAIL);
 					$ETA_ID = getEtablissementIdByInfo($ETA_NOM,$ETA_VILLE,$ETA_CP,$ETA_MAIL);
 
 					addUtiEtablissement($ETA_MAIL, $ETA_MDP,$ETA_ID);
-					header('Location: ./?action=defaut');
+					header('Location: ./?action=listeEtablissement');
 
 															}
 							}else{
