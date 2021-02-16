@@ -236,11 +236,11 @@ AND INS_STA= STA_ID
 AND STA_FORM = FORM_CODE 
 and STA_CRE = CRE_ID 
 and FORM_CODE=:FORM_CODE 
+and STA_ENS = :uti_ens
 order by CRE_DATE
 ");
-        
+        $req->bindValue(':uti_ens', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
         $req->bindValue(':FORM_CODE', $FORM_CODE, PDO::PARAM_INT);
-
         $req->execute();
 
          $ligne = $req->fetch(PDO::FETCH_ASSOC);
