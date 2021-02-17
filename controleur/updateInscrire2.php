@@ -3,22 +3,28 @@
 
 include_once "modele/bd.inscrire.inc.php";
 
-
-
-
 $INS_ELE=$_POST['INS_ELE'];
-// appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
+$info2 = getInscrireByEle($INS_ELE);
 for($i=0;$i<sizeof($_POST['choixForm']);$i++){
 	$INS_STA=$_POST['choixForm'][$i];
+$info3 = getInscrireByStage($INS_STA);
+
+if($INS_ELE == $info2['INS_ELE']){
+	if($INS_STA == $info3['INS_STA']){
+header('Refresh: 1;./?action=listeInscriptionEta');
+?><script>alert("Élève déjà inscrit");</script><?php
+
+	}else{
 	getUpdateInscrire($INS_ELE, $INS_STA);
+	header('Location: ./?action=listeInscriptionEta');
+		 }
+
+}else{
+
+	getUpdateInscrire($INS_ELE, $INS_STA);
+	header('Location: ./?action=listeInscriptionEta');
+	
 }
-
-
-	header('Location: ./?action=listeInscription');
-
-
-// traitement si necessaire des donnees recuperees
-
-// appel du script de vue qui permet de gerer l'affichage des donnees
+}
 
 ?>

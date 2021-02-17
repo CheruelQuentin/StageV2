@@ -135,12 +135,12 @@ global $ELE_NOM ,$ELE_PRENOM, $INS_STA ,$ELE_DATENAISS , $ELE_CLASSE, $CRE_DATE,
     $this->SetFont('Times','',8);
       $stmt=getInscrirePDF($STA_ID);
          for ($i = 0; $i < count($stmt); $i++) {
-               $this->Cell(27,10,$stmt[$i]['ELE_NOM'].' - '.$stmt[$i]['ELE_PRENOM'],1,0,'C');
+               $this->Cell(27,10,utf8_decode($stmt[$i]['ELE_NOM']).' - '.utf8_decode($stmt[$i]['ELE_PRENOM']),1,0,'C');
                $this->Cell(27,10,strftime('%d/%m/%Y',strtotime($stmt[$i]['ELE_DATENAISS'])),1,0,'C');
-               $this->Cell(27,10,$stmt[$i]['ELE_CLASSE'],1,0,'C');
-               $this->Cell(28,10,$stmt[$i]['FORM_LIBELLE'],1,0,'C');
+               $this->Cell(27,10,utf8_decode($stmt[$i]['ELE_CLASSE']),1,0,'C');
+               $this->Cell(28,10,utf8_decode($stmt[$i]['FORM_LIBELLE']),1,0,'C');
                $this->Cell(27,10,$stmt[$i]['CRE_DATE'],1,0,'C');
-               $this->Cell(27,10,$stmt[$i]['CRE_SALLE'],1,0,'C');
+               $this->Cell(27,10,utf8_decode($stmt[$i]['CRE_SALLE']),1,0,'C');
                $this->Cell(27,10,substr($stmt[$i]['CRE_HEUREDEB'],0,-3).' - '.substr($stmt[$i]['CRE_HEUREFIN'],0,-3),1,0,'C');
                $this->MultiCell(0,10,"");
                 }
