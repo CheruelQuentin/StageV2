@@ -30,7 +30,7 @@
 
         <?php
         for($i=0;$i<sizeof($listeStage);$i++){ ?> 
-          <input type="checkbox" name="choixForm[]" value="<?= $listeStage[$i]['FORM_CODE'];?>"
+          <input type="checkbox" name="choixForm[]" value="<?= $listeStage[$i]['STAGE_ID'];?>"
           <?php if ($listeStage[$i]['FORM_CODE']==$listeInscrire['STA_FORM']){?> checked   <?php } ?>
 
            ><?= $listeStage[$i]['FORM_LIBELLE']?>

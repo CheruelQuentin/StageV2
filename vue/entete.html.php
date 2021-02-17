@@ -18,9 +18,8 @@
             
                 
     <nav class="navbar navbar-light " style="background-color: #7FACB2;">
-        <a href="http://172.20.82.34/ministage/?action=deconnexion"><img id="logo" src="image/logo_entete.png" alt="logo" height= 100/></a>
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link text-dark "><img src="image/logo2.png" height="110" width="400"></a></li>  
+            <li class="nav-item"><a class="nav-link text-dark " href="./?action=accueil"><img src="image/logo.PNG" height="110" width="400" ></a></li>  
             </ul>
                     <?php 
                     if(isset($_SESSION["UTIL_MAIL"])){
@@ -34,7 +33,7 @@
                     <a type="button" class="btn btn-info " href="./?action=modifMdpEnseignant">Changer de mot de passe</a>
                     <a type="button" class="btn btn-danger" href="./?action=deconnexion">Déconnexion</a>
                     <?php }} ?>
-                    
+                    <a href="./?action=deconnexion"><img id="logo" src="image/logo_entete.png" alt="logo" height= 120/></a>
     </nav>
 
 <?php 
@@ -109,40 +108,36 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #19616B;">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link text-white " href="./?action=profil">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link text-white " href="./?action=modifProfil">Profil</a></li>
-                    
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Élèves
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="./?action=listeEleve">Liste</a>
-                            <a class="dropdown-item" href="./?action=addEle">Ajouter</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Inscrits
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="./?action=listeInscriptionEta">Liste</a>
-                            <a class="dropdown-item" href="./?action=addIns">Ajouter</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf">Convention de stage</a></li>
-                    <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php" TARGET="_BLANK">PDF ministage</a></li>
-                </ul>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link text-white " href="./?action=profil">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link text-white " href="./?action=modifProfil">Profil</a></li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Élèves
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="./?action=listeEleve">Liste</a>
+                <a class="dropdown-item" href="./?action=addEle">Ajouter</a>
             </div>
-        </div>
-    </nav> 
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Inscrits
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="./?action=listeInscriptionEta">Liste</a>
+                <a class="dropdown-item" href="./?action=addIns">Ajouter</a>
+            </div>
+        </li>
+        <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf">Convention de stage</a></li>
+        <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php" TARGET="_BLANK">PDF ministage</a></li>
+    </ul>
+  </div>
+</nav>
 
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ENS"){ ?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
