@@ -255,4 +255,24 @@ order by CRE_DATE
     return $resultat;
 }
 
+    function getInscrireByStageByEle($INS_ELE,$INS_STA) {
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from inscrire where INS_ELE=:INS_ELE and INS_STA=:INS_STA");
+        $req->bindValue(':INS_ELE', $INS_ELE, PDO::PARAM_INT);
+        $req->bindValue(':INS_STA', $INS_STA, PDO::PARAM_INT);
+        $req->execute();
+        
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
+
+
 ?>
