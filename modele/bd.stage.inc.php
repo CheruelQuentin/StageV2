@@ -24,7 +24,7 @@ function getStage() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from stage order by STA_FORM ,STA_CRE ");
+        $req = $cnx->prepare("select * from stage,creneau WHERE STA_CRE=CRE_ID AND CRE_VALIDE=1 order by STA_FORM ,STA_CRE ");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
