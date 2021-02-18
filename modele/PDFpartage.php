@@ -60,7 +60,7 @@ function Header()
     // Décalage à droite
     $this->Cell(65);
     // Titre
-    $this->Cell(120,15,utf8_decode(' SESSION DE MINI-STAGE' ),1,1,'C');
+    $this->Cell(120,15,utf8_decode(' SESSIONS DE MINI-STAGE' ),1,1,'C');
     
     // Saut de ligne
     $this->Ln(10);

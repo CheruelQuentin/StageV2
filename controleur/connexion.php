@@ -12,7 +12,6 @@ if (htmlspecialchars(isset($_POST["Mail"])) && htmlspecialchars(isset($_POST["Md
     
 // traitement si necessaire des donnees recuperees
 login($Mail,$Mdp);
-
 }
 else
 {

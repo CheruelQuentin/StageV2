@@ -23,6 +23,7 @@ function controleurPrincipal($action){
 
     
     //Stage
+    $lesActions["listeAdmin"] = "listeAdmin.php";
     $lesActions["listeFormation"] = "listeFormation.php";
     $lesActions["listeStage"] = "listeStage.php";
     $lesActions["listeCreneau"] = "listeCreneau.php";
