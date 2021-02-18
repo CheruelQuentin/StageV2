@@ -50,8 +50,11 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link text-white " href="./?action=profil">Accueil</a></li>
+        <li><a class="nav-link text-white">|</a></li>
         <li class="nav-item"><a class="nav-link text-white " href="./?action=addAdmin">Admin</a></li>
+        <li><a class="nav-link text-white">|</a></li>
         <li class="nav-item"><a class="nav-link text-white " href="./?action=listeCreneauPropo">Créneaux</a></li>
+        <li><a class="nav-link text-white">|</a></li>
         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                             Enseignants
@@ -61,6 +64,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addEns">Ajouter</a>
                         </div>
                     </li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Établissement
@@ -70,6 +74,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addEta">Ajouter</a>
                         </div>
                     </li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Matières
@@ -79,7 +84,9 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addMat">Ajouter</a>
                         </div>
                     </li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=listeFormation">Mini-Stages</a></li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Formations
@@ -89,6 +96,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addSta">Ajouter</a>
                         </div>
                     </li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Inscrits
@@ -98,7 +106,9 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addInsAdm">Ajouter</a>
                         </div>
                     </li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php" TARGET="_BLANK">PDF ministage</a></li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf2">Convention de stage</a></li>
     </ul>
   </div>
