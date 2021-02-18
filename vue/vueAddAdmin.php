@@ -4,8 +4,8 @@
 </style>
 <div id="container">
 	<br>
-	<center><h2 id="titre">Gestion des Admins</h2></center>
-    <center><h2>Ajout admin</h2><br><br>
+	<center><h2 id="titre">Gestion des Administrateurs</h2></center>
+    <center><h2>Ajout</h2><br><br>
 <script src="js/verification.js"> </script>
 <p></p> 
 	<link rel="stylesheet" type="text/css" href="css/liste.css">

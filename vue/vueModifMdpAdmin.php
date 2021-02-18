@@ -44,8 +44,6 @@
 <br>
 <br>
 <br>
-<?php   
-Echo ("✨Attention le mot de passe peut actuellement être redonné par l'admin si vous le changez l'admin ne pourra plus vous le rendre");
-?>
+
       </body>
 </html>
