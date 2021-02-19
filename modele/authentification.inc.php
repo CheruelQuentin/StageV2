@@ -23,7 +23,7 @@ function login($Mail, $Mdp) {
     }
 
  
-    if (trim($mdpBD) == trim(crypt($Mdp, "sel"))) {
+    if (trim($mdpBD) == trim(crypt($Mdp, $mdpBD))) {
         // le mot de passe est celui de l'utilisateur dans la base de donnees
         $_SESSION["UTIL_MAIL"] = $Mail;
         $_SESSION["UTIL_MDP"] = $mdpBD;
