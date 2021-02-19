@@ -70,7 +70,7 @@
         <?php
 				for($i=0;$i<sizeof($formation);$i++){ ?> 
 					<input required type="radio"name="choixForm[]"value=<?= $formation[$i]['FORM_CODE'];?>
-					><?= ' ',getFormationById($formation[$i]['FORM_CODE'])['FORM_LIBELLE'];?>
+					><?= ' ',$formation[$i]['FORM_LIBELLE'];?>
 					<br> 
 					<br>		
 			<?php } ?>          

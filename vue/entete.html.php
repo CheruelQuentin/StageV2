@@ -32,8 +32,9 @@
                     <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ENS"){ ?>
                     <a type="button" class="btn btn-info " href="./?action=modifMdpEnseignant">Changer de mot de passe</a>
                     <a type="button" class="btn btn-danger" href="./?action=deconnexion">Déconnexion</a>
-                    <?php }} ?>
+                    <?php }}else{ ?>
                     <a href="./?action=deconnexion"><img id="logo" src="image/logo_Rostand.png" alt="logo" height= 120/></a>
+                <?php } ?>
     </nav>
 
 <?php 
