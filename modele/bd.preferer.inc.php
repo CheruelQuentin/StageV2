@@ -77,6 +77,27 @@ function getAddPreferer($PREF_ENS, $PREF_CRE) {
     return $resultat;
 }
 
+
+function getAddPrefererAdmin($PREF_ENS, $PREF_CRE) {
+    $resultat = -1;
+
+    try {
+        $cnx = connexionPDO();
+
+        $req = $cnx->prepare("insert into preferer ( PREF_ENS,PREF_CRE) values(:PREF_ENS,:PREF_CRE)");
+
+        $req->bindValue(':PREF_ENS', $PREF_ENS, PDO::PARAM_INT);
+        $req->bindValue(':PREF_CRE', $PREF_CRE, PDO::PARAM_INT);
+
+
+        $resultat = $req->execute();
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
 function getDelPreferer($PREF_CRE, $PREF_ENS) {
     $resultat = -1;
     try {

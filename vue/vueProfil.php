@@ -79,8 +79,81 @@ for ($j = 0; $j < count($result); $j++) {
 
        ?>
 </tbody></table>        
+<?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="SADMIN"){ //Si l'utilisateur est un établissement ...  ?>
+    <h1 id="titre">
+<br>
+    <h1 id="titre">Bienvenue </h1><br>
+</h1>
+<link rel="stylesheet" type="text/css" href="css/liste.css">
+<div style="text-align:right;padding-bottom:5px;">
+<center><h1>Liste des inscrits</h2></center><br>
+
+<?php
+$listeCreneau = getListeCreneau();
+for ($i = 0; $i < count($listeCreneau); $i++) {
+    
+    ?>
+<table class="table"  style="text-align:right; margin:0px">
 
 
+<thead> 
+
+
+       <th colspan="9"  style="background-color: #4097c9"><?= $listeCreneau[$i]["FORM_LIBELLE"] ?></th>
+     </thead>
+   </table>
+
+<?php
+   $result=getStageByTout($listeCreneau[$i]["FORM_CODE"]);
+
+if(count($result)>0){
+
+  ?>
+
+<table class="table">
+<tbody>
+        
+            
+            <th align="center">Créneau</th>
+            <th align="center">Matière</th>
+            <th align="center">Enseignant</th>
+            <th align="center">Min. Elèves</th>
+            <th align="center">Max. Elèves</th>
+      
+
+
+
+<?php
+
+
+for ($j = 0; $j < count($result); $j++) {
+    ?>
+ <tr>
+ <tr>
+            <td><center><?= strftime('%d/%m/%Y',strtotime($listeStage[$i]["CRE_DATE"])), " | ",$listeStage[$i]["CRE_HEUREDEB"]," - ", $listeStage[$i]["CRE_HEUREFIN"] ?></center></td>
+            <td><center><?= $listeStage[$i]["MAT_LIBELLE"] ?></center></td>
+            <td><center><?= $listeStage[$i]["ENS_NOM"], " ",$listeStage[$i]["ENS_PRENOM"] ?></center></td>
+            <td><center><?= $listeStage[$i]["STA_ELEMIN"] ?></center></td>
+            <td><center><?= $listeStage[$i]["STA_ELEMAX"] ?></center></td><
+    
+     <?php 
+                         }
+?>
+</tbody></table>
+<br /><br /><br />
+<?php
+       
+}else{
+   
+
+   ?><center><strong><?php echo "Aucun participant <br /><br /><br />"; ?></strong></center> 
+   <?php
+   }
+
+ }
+
+
+?>
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ //Si l'utilisateur est un établissement ...  ?>
 <h1 id="titre">
 <br>

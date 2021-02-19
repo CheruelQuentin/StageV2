@@ -82,6 +82,26 @@ function getAddStage($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $STA_
 }
 
 
+function getAddStageAdmin($STA_CRE, $STA_FORM, $STA_MAT, $STA_ENS, $STA_ELEMIN, $STA_ELEMAX) {
+    $resultat = -1;
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("insert into stage (STA_CRE,STA_FORM,STA_MAT,STA_ENS,STA_ELEMIN,STA_ELEMAX) values(:STA_CRE,:STA_FORM,:STA_MAT,:STA_ENS,:STA_ELEMIN,:STA_ELEMAX)");
+        $req->bindValue(':STA_CRE', $STA_CRE, PDO::PARAM_INT);
+        $req->bindValue(':STA_FORM', $STA_FORM, PDO::PARAM_INT);
+        $req->bindValue(':STA_MAT', $STA_MAT, PDO::PARAM_INT);
+        $req->bindValue(':STA_ENS', $STA_ENS, PDO::PARAM_INT);
+        $req->bindValue(':STA_ELEMIN', $STA_ELEMIN, PDO::PARAM_INT);
+        $req->bindValue(':STA_ELEMAX', $STA_ELEMAX, PDO::PARAM_INT);
+        
+        $resultat = $req->execute();
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
 function getDelStage($STA_ID) {
     $resultat = -1;
     try {

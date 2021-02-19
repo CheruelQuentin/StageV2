@@ -117,6 +117,95 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
     </ul>
   </div>
 </nav>
+<?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="SADMIN"){ ?>
+    
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #19616B;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link text-white " href="./?action=profil">Accueil</a></li>
+        <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            Admin
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="./?action=listeSAdmin">Liste</a>
+                            <a class="dropdown-item" href="./?action=addAdmin">Ajouter</a>
+                        </div>
+       
+        <li><a class="nav-link text-white">|</a></li>
+        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            Créneaux
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="./?action=listeCreneauAdmin">Liste</a>
+                            <a class="dropdown-item" href="./?action=listeCreneauPropo">Créneaux proposé</a>
+                            <a class="dropdown-item" href="./?action=addCreAdmin">Ajouter</a>
+                        </div>
+                    </li>
+
+
+        <li><a class="nav-link text-white">|</a></li>
+        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            Enseignants
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="./?action=listeEnseignant">Liste</a>
+                            <a class="dropdown-item" href="./?action=addEns">Ajouter</a>
+                        </div>
+                    </li>
+                    <li><a class="nav-link text-white">|</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Établissement
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="./?action=listeEtablissement">Liste</a>
+                            <a class="dropdown-item" href="./?action=addEta">Ajouter</a>
+                        </div>
+                    </li>
+                    <li><a class="nav-link text-white">|</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Matières
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="./?action=listeMatiere">Liste</a>
+                            <a class="dropdown-item" href="./?action=addMat">Ajouter</a>
+                        </div>
+                    </li>
+                    <li><a class="nav-link text-white">|</a></li>
+                    <li class="nav-item"><a class="nav-link text-white " href="./?action=listeFormation">Mini-Stages</a></li>
+                    <li><a class="nav-link text-white">|</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Formations
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="./?action=listeStage">Liste</a>
+                            <a class="dropdown-item" href="./?action=addSta">Ajouter</a>
+                        </div>
+                    </li>
+                    <li><a class="nav-link text-white">|</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Inscrits
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="./?action=listeInscriptionAdm">Liste</a>
+                            <a class="dropdown-item" href="./?action=addInsAdm">Ajouter</a>
+                        </div>
+                    </li>
+                    <li><a class="nav-link text-white">|</a></li>
+                    <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php" TARGET="_BLANK">PDF ministage</a></li>
+                    <li><a class="nav-link text-white">|</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf2">Convention de stage</a></li>
+    </ul>
+  </div>
+</nav>
 
 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ ?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    

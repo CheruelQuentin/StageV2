@@ -300,5 +300,20 @@ function getAdmin() {
 }
 
 
+function getDelAdmin($UTIL_MAIL) {
+    $resultat = -1;
+    try {
+        $cnx = connexionPDO();
+
+        $req = $cnx->prepare("delete from utilisateur where UTIL_MAIL=:UTIL_MAIL");
+        $req->bindValue(':UTIL_MAIL', $UTIL_MAIL, PDO::PARAM_STR);
+        
+        $resultat = $req->execute();
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
 
 ?>

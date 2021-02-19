@@ -18,6 +18,8 @@ function login($Mail, $Mdp) {
     
     $eta= getEtablissementByMail($Mail);
     $etaId = $eta["ETA_ID"];
+    
+    }else if ($util["UTIL_CODE"]=="SADMIN"){
     }
     else{
     }
@@ -35,6 +37,8 @@ function login($Mail, $Mdp) {
        else if ($util["UTIL_CODE"]=="ETAB"){        
            $_SESSION["UTIL_ETA"]=$etaId;
        }
+       else if ($util["UTIL_CODE"]=="SADMIN"){        
+          }
        else{
    
    

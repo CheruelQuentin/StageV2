@@ -24,9 +24,11 @@ function controleurPrincipal($action){
     
     //Stage
     $lesActions["listeAdmin"] = "listeAdmin.php";
+    $lesActions["listeSAdmin"] = "listeSAdmin.php";
     $lesActions["listeFormation"] = "listeFormation.php";
     $lesActions["listeStage"] = "listeStage.php";
     $lesActions["listeCreneau"] = "listeCreneau.php";
+    $lesActions["listeCreneauAdmin"] = "listeCreneauAdmin.php";
     $lesActions["listeCreneauPropo"] = "listeCreneauPropo.php";
     $lesActions["listeInscriptionEta"] = "listeInscrire.php";
     $lesActions["listeInscriptionEns"] = "listeInscrire2.php";
@@ -39,6 +41,7 @@ function controleurPrincipal($action){
     $lesActions["addInsAdm"] = "addInscrire2.php";
     $lesActions["addEle"] = "addEleve.php";
     $lesActions["addCre"] = "addCreneau.php";
+    $lesActions["addCreAdmin"] = "addCreneauAdmin.php";
     $lesActions["addEns"] = "addEnseignant.php";
     $lesActions["addPref"] = "addPreferer.php";
     $lesActions["addSta"] = "addStage.php";
@@ -53,6 +56,7 @@ function controleurPrincipal($action){
     $lesActions["insertInsAdm"] = "insertInscrit2.php";
     $lesActions["insertEle"] = "insertEleve.php";
     $lesActions["insertCre"] = "insertCreneau.php";
+    $lesActions["insertCreAdmin"] = "insertCreneauAdmin.php";
     $lesActions["insertEns"] = "insertEnseignant.php";
     $lesActions["insertPref"] = "insertPreferer.php";
     $lesActions["insertSta"] = "insertStage.php";
@@ -66,8 +70,10 @@ function controleurPrincipal($action){
     $lesActions["delIns"] = "delInscrire.php";
     $lesActions["delInsAdm"] = "delInscrire2.php";
     $lesActions["delEle"] = "delEleve.php";
+    $lesActions["delAdmin"] = "delAdmin.php";
     $lesActions["delEle2"] = "delEleve2.php";
     $lesActions["delCre"] = "delCreneau.php";
+    $lesActions["delCreAdmin"] = "delCreAdmin.php";
     $lesActions["delEns"] = "delEnseignant.php";
     $lesActions["delPref"] = "delPreferer.php";
     $lesActions["delSta"] = "delStage.php";
