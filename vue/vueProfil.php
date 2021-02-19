@@ -180,7 +180,7 @@ for ($j = 0; $j < count($result); $j++) {
 
 
     <?php
-    $listeCreneau = getListeCreneau();
+    $listeCreneau = getListeCreneauEns($_SESSION["UTIL_ENS"]);
     for ($i = 0; $i < count($listeCreneau); $i++) {
     ?>
 

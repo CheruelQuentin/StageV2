@@ -15,7 +15,7 @@
 			<?php
 				for($i=0;$i<sizeof($eleves);$i++){ ?> 
 					<option value= <?= $eleves[$i]['ELE_ID'];?> > 
-						<?= getEleveById($eleves[$i]['ELE_ID'])['ELE_NOM'], " , ", getEleveById($eleves[$i]['ELE_ID'])['ELE_PRENOM'];?>
+						<?= $eleves[$i]['ELE_NOM'], " , ", $eleves[$i]['ELE_PRENOM'];?>
 					</option> 
 			<?php } ?>
 		</select>
@@ -30,7 +30,7 @@
         <?php
 				for($i=0;$i<sizeof($stage);$i++){ ?> 
 					<input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>>&nbsp;&nbsp;&nbsp;
-					<?= getFormationById($stage[$i]['STA_FORM'])['FORM_LIBELLE'], " - ", getMatiereById($stage[$i]['STA_MAT'])['MAT_LIBELLE'], " | ", getCreneauById($stage[$i]['STA_CRE'])['CRE_DATE'], " - ",substr(getCreneauById($stage[$i]['STA_CRE'])['CRE_HEUREDEB'],0,-3);?>
+					<?= '<i style="color:blue;">Formation</i> ',$stage[$i]['FORM_LIBELLE'], '<i style="color:blue;"> Matière</i> ', $stage[$i]['MAT_LIBELLE'], '<i style="color:blue;"> Date</i> ', $stage[$i]['CRE_DATE'], '<i style="color:blue;"> Heure</i> ',substr($stage[$i]['CRE_HEUREDEB'],0,-3);?>
 					<br><br>
 					
 			<?php } ?>          

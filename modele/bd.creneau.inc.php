@@ -245,4 +245,29 @@ function getCheckoutCreneaux() {
         
         }
 }
+
+
+
+function getListeCreneauEns($ENS_ID) {
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from  formation,stage, enseignant where STA_ENS = ENS_ID and STA_FORM = FORM_CODE and ENS_ID =:uti_ens order by FORM_LIBELLE ");
+        $req->bindValue(':uti_ens', $_SESSION["UTIL_ENS"], PDO::PARAM_INT);
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
 ?>

@@ -7,7 +7,7 @@
 <center><h2>Liste des Inscrits</h2></center>
 <br>
 <?php
-$listeCreneau = getListeCreneau();
+$listeCreneau = getListeCreneauEns($_SESSION["UTIL_ENS"]);
 for ($i = 0; $i < count($listeCreneau); $i++) {
     
     ?>
