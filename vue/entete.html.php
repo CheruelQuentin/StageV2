@@ -32,9 +32,10 @@
                     <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ENS"){ ?>
                     <a type="button" class="btn btn-info " href="./?action=modifMdpEnseignant">Changer de mot de passe</a>
                     <a type="button" class="btn btn-danger" href="./?action=deconnexion">Déconnexion</a>
-                    <?php }}else{ ?>
-                    <a href="./?action=deconnexion"><img id="logo" src="image/logo_Rostand.png" alt="logo" height= 120/></a>
-                <?php } ?>
+                    <?php }} else { ?>
+                        <a href="./?action=deconnexion"><img id="logo" src="image/logo_Rostand.png" alt="logo" height= 120/></a>
+                    <?php } ?>
+                    
     </nav>
 
 <?php 
@@ -57,6 +58,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addAdmin">Ajouter</a>
                         </div>
         <li class="nav-item"><a class="nav-link text-white " href="./?action=listeCreneauPropo">Créneaux</a></li>
+        <li><a class="nav-link text-white">|</a></li>
         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                             Enseignants
@@ -66,6 +68,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addEns">Ajouter</a>
                         </div>
                     </li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Établissement
@@ -75,6 +78,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addEta">Ajouter</a>
                         </div>
                     </li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Matières
@@ -84,7 +88,9 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addMat">Ajouter</a>
                         </div>
                     </li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=listeFormation">Mini-Stages</a></li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Formations
@@ -94,6 +100,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addSta">Ajouter</a>
                         </div>
                     </li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Inscrits
@@ -103,7 +110,9 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             <a class="dropdown-item" href="./?action=addInsAdm">Ajouter</a>
                         </div>
                     </li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item"><a class="nav-link text-white " href="./controleur/creationPDFpartage.php" TARGET="_BLANK">PDF ministage</a></li>
+                    <li><a class="nav-link text-white">|</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf2">Convention de stage</a></li>
     </ul>
   </div>
