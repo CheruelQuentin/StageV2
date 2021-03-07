@@ -30,8 +30,14 @@
 
         <?php
 				for($i=0;$i<sizeof($stage);$i++){ ?> 
+					
 					<input type="checkbox" name="choixForm[]" value=<?= $stage[$i]['STA_ID'];?>>&nbsp;&nbsp;&nbsp;
-					<?= '<i style="color:blue;">Formation</i> ',$stage[$i]['FORM_LIBELLE'], '<i style="color:blue;"> Matière</i> ', $stage[$i]['MAT_LIBELLE'], '<i style="color:blue;"> Date</i> ', $stage[$i]['CRE_DATE'], '<i style="color:blue;"> Heure</i> ',substr($stage[$i]['CRE_HEUREDEB'],0,-3);?>
+					<?= '<i style="color:blue;">Formation</i> ',$stage[$i]['FORM_LIBELLE'], '<i style="color:blue;"> Matière</i> ', $stage[$i]['MAT_LIBELLE'], '<i style="color:blue;"> Date</i> ', $stage[$i]['CRE_DATE'], '<i style="color:blue;"> Heure</i> ',substr($stage[$i]['CRE_HEUREDEB'],0,-3),'<i style="color:blue;"> Place restante</i>'
+					;
+
+
+
+					?>
 					<br><br>
 					
 			<?php } ?>          

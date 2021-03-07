@@ -9,16 +9,27 @@ include_once "modele/bd.creneau.inc.php";
 include_once "modele/bd.etablissement.inc.php";
 include_once "modele/bd.utilisateur.inc.php";
 include_once "modele/bd.matiere.inc.php";
-$listeInscrire = getInscrireListe();
+
+
+
+
+if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){
+$listeCreneau = getListeCreneau();
 $listeStage= getStageByTout();
-$listeInscrire2 = getInscrireListe2();
+	}else if(getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="SADMIN"){
+		$listeCreneau = getListeCreneau();
+		$listeStage= getStageByTout();
+	}else if(getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){
+		$ETA_NOM =getEtablissementById($_SESSION["UTIL_ETA"]);
+		$resultat=getEtablissementProfil($_SESSION["UTIL_ETA"]);
+		$listeCreneau = getListeCreneau();
+
+	}else{
+		$ens=getEnseignantProfil($_SESSION["UTIL_ENS"]);
+		  $listeCreneau = getListeCreneauEns($_SESSION["UTIL_ENS"]);
+	}
 
 
-$ETA_NOM =getEtablissementById($_SESSION["UTIL_ETA"]);
-
-$resultat=getEtablissementProfil($_SESSION["UTIL_ETA"]);
-
-$ens=getEnseignantProfil($_SESSION["UTIL_ENS"]);
 
 
 $titre = "Profil";

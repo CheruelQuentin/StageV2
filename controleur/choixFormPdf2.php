@@ -8,7 +8,7 @@ include_once "modele/bd.formation.inc.php";
 include_once "modele/bd.stage.inc.php";
 
 $titre = "Choix Formation PDF";
-$stage=getStage();
+$stage=getStageByTout();
 $etablissement=getEtablissement();
 include "vue/entete.html.php";
 include "vue/vueChoixPdf2.php";

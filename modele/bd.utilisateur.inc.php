@@ -127,11 +127,11 @@ function addUtilisateur($Mail, $Mdp, $type) {
     return $resultat;
 }
 
-function addUtiEnseignant($ENS_MAIL, $ENS_DATENAISS,$ENS_ID) {
+function addUtiEnseignant($ENS_MAIL,$ENS_ID) {
     try {
         $cnx = connexionPDO();
 
-        $mdpUCrypt = crypt($ENS_DATENAISS, "sel");
+        $mdpUCrypt = crypt("abcd", "sel");
         $req = $cnx->prepare("insert into utilisateur (UTIL_MAIL, UTIL_MDP, UTIL_CODE,UTIL_ENS) values (:ENS_MAIL,:ENS_DATENAISS,'ENS',:ENS_ID)");
         $req->bindValue(':ENS_MAIL', $ENS_MAIL, PDO::PARAM_STR);
         $req->bindValue(':ENS_DATENAISS', $mdpUCrypt, PDO::PARAM_STR);

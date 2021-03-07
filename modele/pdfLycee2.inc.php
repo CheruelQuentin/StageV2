@@ -8,6 +8,8 @@ include_once "../modele/bd.stage.inc.php";
 include_once "../modele/bd.etablissement.inc.php";
 include_once "../modele/bd.categeta.inc.php";
 
+$date = date("m-d-Y");
+
 
 function getInscrirePDf($STA_ID) {
     $resultat = array();
@@ -17,6 +19,27 @@ function getInscrirePDf($STA_ID) {
         $req = $cnx->prepare("select DISTINCT ELE_NOM,ELE_PRENOM, ELE_DATENAISS, ELE_CLASSE, CRE_DATE, FORM_LIBELLE, CRE_SALLE, CRE_HEUREDEB, CRE_HEUREFIN from etablissement, eleve, inscrire, stage, formation, creneau where ETA_ID= ELE_ETA and INS_ELE = ELE_ID and INS_STA=STA_ID and STA_FORM = FORM_CODE and STA_CRE = CRE_ID  and STA_ID = :STA_ID");
         
         $req->bindValue(':STA_ID', $STA_ID, PDO::PARAM_INT);
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+
+function getInscriretest() {
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select DISTINCT ELE_NOM,ELE_PRENOM, ELE_DATENAISS, ELE_CLASSE, CRE_DATE, FORM_LIBELLE, CRE_SALLE, CRE_HEUREDEB, CRE_HEUREFIN from etablissement, eleve, inscrire, stage, formation, creneau where ETA_ID= ELE_ETA and INS_ELE = ELE_ID and INS_STA=STA_ID and STA_FORM = FORM_CODE and STA_CRE = CRE_ID");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -56,6 +79,8 @@ function getMiam2($STA_ID){
     }
     return $resultat;
 }
+
+
 
 function getLibelleCateg($ETA_ID) {
     $resultat = array();
@@ -103,7 +128,7 @@ function Header()
 // Pied de page
 function Footer()
 {
-global $ETA_NOM , $ETA_VILLE, $CAT_LIBELLE;
+global $ETA_NOM , $ETA_VILLE, $CAT_LIBELLE, $date;
     // Positionnement à 1,5 cm du bas
     $this->SetY(-15);
     $this->SetDrawColor(66, 66, 66);
@@ -113,7 +138,7 @@ global $ETA_NOM , $ETA_VILLE, $CAT_LIBELLE;
     $this->SetTextColor(66, 66, 66);
     $this->SetFont('Arial','I',8);
     // Numéro de page
-    $this->Cell(0,10,utf8_decode('Convention ministages '.$CAT_LIBELLE.' '.$ETA_NOM.' - '.$ETA_VILLE.' / Rostand 2020                                                                                                                  Page ').$this->PageNo().'/{nb}',0,0,'C');
+    $this->Cell(0,10,utf8_decode('Convention ministages '.$CAT_LIBELLE.' '.$ETA_NOM.' - '.$ETA_VILLE.' / Rostand '.$date.'                                                                                                                  Page ').$this->PageNo().'/{nb}',0,0,'C');
 }
 
 
@@ -133,13 +158,20 @@ function Table()
 function viewTable(){
 global $ELE_NOM ,$ELE_PRENOM, $INS_STA ,$ELE_DATENAISS , $ELE_CLASSE, $CRE_DATE, $FORM_LIBELLE, $STA_ID;
     $this->SetFont('Times','',8);
-      $stmt=getInscrirePDF($STA_ID);
+    if (!empty($STA_ID) and $STA_ID=="Sélectionner un stage"){
+      $stmt=getInscriretest();
+  }else{
+        if(!empty($STA_ID)){
+    $stmt=getInscrirePDF($STA_ID);
+}
+  }
+
          for ($i = 0; $i < count($stmt); $i++) {
                $this->Cell(27,10,utf8_decode($stmt[$i]['ELE_NOM']).' - '.utf8_decode($stmt[$i]['ELE_PRENOM']),1,0,'C');
                $this->Cell(27,10,strftime('%d/%m/%Y',strtotime($stmt[$i]['ELE_DATENAISS'])),1,0,'C');
                $this->Cell(27,10,utf8_decode($stmt[$i]['ELE_CLASSE']),1,0,'C');
                $this->Cell(28,10,utf8_decode($stmt[$i]['FORM_LIBELLE']),1,0,'C');
-               $this->Cell(27,10,$stmt[$i]['CRE_DATE'],1,0,'C');
+               $this->Cell(27,10,strftime('%A%d/%m/%Y',strtotime($stmt[$i]['CRE_DATE'])),1,0,'C');
                $this->Cell(27,10,utf8_decode($stmt[$i]['CRE_SALLE']),1,0,'C');
                $this->Cell(27,10,substr($stmt[$i]['CRE_HEUREDEB'],0,-3).' - '.substr($stmt[$i]['CRE_HEUREFIN'],0,-3),1,0,'C');
                $this->MultiCell(0,10,"");

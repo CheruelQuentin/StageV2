@@ -97,6 +97,7 @@ function controleurPrincipal($action){
     $lesActions["supMat"] = "supMatiere.php";
 
     //Modif
+    $lesActions["constante"] = "modifConstante.php";
     $lesActions["modifProfil"] = "modifProfil.php";
     $lesActions["modifProfilEns"] = "modifProfilEns.php";
     $lesActions["modifIns"] = "modifInscrire.php";
@@ -119,6 +120,7 @@ function controleurPrincipal($action){
 
     //Update
     $lesActions["upIns"] = "updateInscrire.php";
+    $lesActions["upCon"] = "updateConstante.php";
     $lesActions["upPro"] = "updateProfil.php";
     $lesActions["upProfilEns"] = "updateProfilEns.php";
     $lesActions["upIns2"] = "updateInscrire2.php";

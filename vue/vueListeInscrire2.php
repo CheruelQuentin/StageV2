@@ -63,11 +63,14 @@ for ($j = 0; $j < count($result); $j++) {
 
    ?><center><strong><?php echo "Aucun participant <br /><br /><br />";?></strong></center> <?php
    }
+}
+ if(count($listeCreneau)==0){
+            ?><center><strong>Aucun participant<br /><br /><br /></strong></center><?php
+           }
 
        ?>
 
-     <?php                     }
-?>
+
 
 
 

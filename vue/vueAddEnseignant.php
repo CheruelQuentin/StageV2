@@ -13,7 +13,7 @@
 	<p><label for="ENS_PRENOM"> Prénom *: </label>  <input id="ENS_PRENOM" type="text" name="ENS_PRENOM" size="50px" maxlength="150" required placeholder="ex : Franck"onblur="verifprenomEns();" /><div><span id = "erreurprenomEns" ></span></div><br>
 	<p><label for="ENS_MAIL"> Mail *: </label>  <input id="ENS_MAIL" type="email" name="ENS_MAIL" size="50px" maxlength="150"  required placeholder="Ex : rostand@lycee.fr" onblur="verifmailEns();" /><div><span id = "erreurmailEns" ></span></div><br>
 	<p><label for="ENS_TEL"> Téléphone *: </label>  <input id="ENS_TEL" type="tel" name="ENS_TEL" size="50px" maxlength="14" required pattern=[0-9]{10}  placeholder="ex : 0153322327" onblur="veriftelEns();" /><div><span id = "erreurtelens" ></span></div><br>
-	<p><label for="ENS_DATENAISS"> Date de naissance *: </label>  <input id="ENS_DATENAISS" type="date" name="ENS_DATENAISS" size="50px"  max="<?php $date=date("Y-m-d"); echo $date ?>" required/></p>
+	
 	</td></tr></table>
 <br>
 <p>* Champs obligatoire</p>

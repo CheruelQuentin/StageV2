@@ -39,7 +39,7 @@ $STA_MAT=$CRE_MAT;
 
 				getAddPreferer($PREF_ENS,$PREF_CRE);
 
-				header('location: ./?action=listeCreneau');
+				header('location: ./?action=profil');
 				}
 				
 // appel du script de vue qui permet de gerer l'affichage des donnees

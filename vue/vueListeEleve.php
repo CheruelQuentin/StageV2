@@ -37,6 +37,8 @@ for ($i = 0; $i < count($listeEleve); $i++) {
             
 
     <?php
-}
+}if(count($listeEleve)==0){
+            ?><center><strong>Aucun élève enregistré<br /><br /><br /></strong></center><?php
+           }
 ?>
 </tbody></table>

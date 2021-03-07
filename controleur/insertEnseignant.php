@@ -10,16 +10,15 @@ $ENS_NOM=htmlspecialchars($_POST['ENS_NOM']);
 $ENS_PRENOM=htmlspecialchars($_POST['ENS_PRENOM']);
 $ENS_MAIL=htmlspecialchars($_POST['ENS_MAIL']);
 $ENS_TEL=htmlspecialchars($_POST['ENS_TEL']);
-$ENS_DATENAISS=htmlspecialchars($_POST['ENS_DATENAISS']);
 $info=getEnseignantByMail($ENS_MAIL);
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
 if($ENS_MAIL != $info['ENS_MAIL']){
-					if(getAddEnseignant($ENS_NOM, $ENS_PRENOM, $ENS_MAIL, $ENS_TEL, $ENS_DATENAISS)){
+					if(getAddEnseignant($ENS_NOM, $ENS_PRENOM, $ENS_MAIL, $ENS_TEL)){
 						
-					$ENS_ID =getEnseignantIdByInfo2($ENS_NOM,$ENS_PRENOM,$ENS_DATENAISS,$ENS_MAIL);
+					$ENS_ID =getEnseignantIdByInfo2($ENS_NOM,$ENS_PRENOM,$ENS_MAIL);
 
-					addUtiEnseignant($ENS_MAIL, $ENS_DATENAISS,$ENS_ID);
+					addUtiEnseignant($ENS_MAIL,$ENS_ID);
 
 					$TRA_ENS = $ENS_ID;
 

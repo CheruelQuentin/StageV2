@@ -45,7 +45,7 @@ $pdf->MultiCell(0,9,"");
 $pdf->SetFont('Arial','BU',10);
 $pdf->MultiCell(0,9,utf8_decode('Article  7 :'));
 $pdf->SetFont('Arial','',10);
-$pdf->MultiCell(0,9,utf8_decode('Le lycée pourra accueillir l\'élève en demi-pension. Les frais seront facturés à l\'établissement par le lycée sur la base de 3,65 euros le repas.'));
+$pdf->MultiCell(0,9,utf8_decode('Le lycée pourra accueillir l\'élève en demi-pension. Les frais seront facturés à l\'établissement par le lycée sur la base de '.$prix.' euros le repas.'));
 $pdf->MultiCell(0,9,"");
 $pdf->SetFont('Arial','BU',10);
 $pdf->MultiCell(0,9,utf8_decode('Article  8 :'));
@@ -61,7 +61,7 @@ $pdf->MultiCell(0,9,"");
 $pdf->MultiCell(0,9,"");
 $pdf->MultiCell(0,9,utf8_decode('Le (ou la) '.$CAT_POSTE.' de l\'établissement                   Le Proviseur du Lycee JEAN ROSTAND
                                                                                     P/O DDFPT (Directeur Délégué aux Formations
-                                                                                    Professionnelles & Technologiques)  R.Legros'));
+                                                                                    Professionnelles & Technologiques)  '.$nomDdfpt.' '.$prenomDdfpt.''));
 $pdf->MultiCell(0,9,utf8_decode('A ..................,le .....................'));
 
 $pdf->MultiCell(0,9,utf8_decode('Signature et cachet de l\'établissement :  '."                    ".'              Signature et cachet de l\'établissement : '));

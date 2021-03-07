@@ -9,6 +9,7 @@ include_once "../modele/pdfLycee.inc.php";
 include_once "../modele/bd.formation.inc.php";
 include_once "../modele/bd.creneau.inc.php";
 include_once "../modele/bd.stage.inc.php";
+include_once "../modele/bd.constante.inc.php";
 
 $etablissement = getEtablissementByUtilMail();
 
@@ -24,6 +25,15 @@ $CAT_POSTE=$etablissement['CAT_POSTE'];
 
 $STA_ID =$_POST['STA_ID'];
 $Miam=getMiam($STA_ID);
+
+
+$constante=getConstante();
+$prix=$constante['CON_PRIXREPAS'];
+$nomDdfpt=$constante['CON_NOMDDFPT'];
+$prenomDdfpt=$constante['CON_PRENOMDDFPT'];
+
+
+
 require_once "../fpdf182/fpdf.php";
 include_once "../vue/vuePdfLycee.php";
 
