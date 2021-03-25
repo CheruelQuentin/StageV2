@@ -101,7 +101,7 @@ for ($j = 0; $j < count($result); $j++) {
             <td><center><?= $listeStage[$i]["MAT_LIBELLE"] ?></center></td>
             <td><center><?= $listeStage[$i]["ENS_NOM"], " ",$listeStage[$i]["ENS_PRENOM"] ?></center></td>
             <td><center><?= $listeStage[$i]["STA_ELEMIN"] ?></center></td>
-            <td><center><?= $listeStage[$i]["STA_ELEMAX"] ?></center></td><
+            <td><center><?= $listeStage[$i]["STA_ELEMAX"] ?></center></td>
     
      <?php 
                          }

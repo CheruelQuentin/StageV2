@@ -9,7 +9,7 @@ include_once "modele/bd.matiere.inc.php";
 include_once "modele/bd.eleve.inc.php";
 $eleves=getEleveByEtab(); 
 $stage=getStageByTout();
-$inscrit=getPlace($stage);
+$inscrit=getPlace(getStageById($stage));
 
 
 
