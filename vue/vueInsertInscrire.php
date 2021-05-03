@@ -1,1 +1,0 @@
-<center><a href="./?action=listeInscription">Retour à la liste</a></center>

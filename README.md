@@ -3,13 +3,17 @@ http://localhost/projet/?action=connexion
 
 ADMIN
 
-test@admin.fr  /  admin 
+superAdmin@test.fr  /  Mpsadmintest
+
+ADMIN
+
+test@admin.fr  /  Mpadmintest
 
 Etablissement
 
 
-malherbe@ac-caen.fr /  Bidet
+malherbe@ac-caen.fr /  Mpbidettest
 
 Enseignant
 
-test@enseignant.fr /  enseignant
+mailhe.patrick@gmail.com /  Mpmailhetest

@@ -101,7 +101,7 @@ for ($j = 0; $j < count($result); $j++) {
             <td><center><?= $listeStage[$i]["MAT_LIBELLE"] ?></center></td>
             <td><center><?= $listeStage[$i]["ENS_NOM"], " ",$listeStage[$i]["ENS_PRENOM"] ?></center></td>
             <td><center><?= $listeStage[$i]["STA_ELEMIN"] ?></center></td>
-            <td><center><?= $listeStage[$i]["STA_ELEMAX"] ?></center></td><
+            <td><center><?= $listeStage[$i]["STA_ELEMAX"] ?></center></td>
     
      <?php 
                          }
@@ -179,7 +179,7 @@ for ($j = 0; $j < count($result); $j++) {
        <td><center><?= $result[$j]["CRE_HEUREDEB"] ?></center></td>
        <td><center><?= $result[$j]["CRE_HEUREFIN"] ?></center></td>
        <td><center><?= $result[$j]["CRE_SALLE"] ?></center></td>
-            <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=modifInsEta&id=<?=$result[$j]['ELE_ID'] ?>'; }" > ✍ </button></center></td>
+            <td><center><button onclick="if(confirm('Voulez-vous vraiment modifier cet élément ?')==true) { window.location.href='./?action=genModifIns&id=<?=$result[$j]['ELE_ID'] ?>'; }" > ✍ </button></center></td>
             <td><center><button onclick="if(confirm('Voulez-vous vraiment supprimer cet élément ?')==true) { window.location.href='./?action=delIns&id=<?=$result[$j]['ELE_ID']?>&amp;stage=<?=$result[$j]["STA_ID"]?>'; }" > ❌ </button></center></td>
         </tr>
     

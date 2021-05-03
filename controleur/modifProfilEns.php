@@ -11,7 +11,7 @@ $nom = $infoEns['ENS_NOM'];
 $prenom = $infoEns['ENS_PRENOM'];
 $mail = $infoEns['ENS_MAIL'];
 $tel = $infoEns['ENS_TEL'];
-$datenaissance = $infoEns['ENS_DATENAISS'];
+
 
 
 

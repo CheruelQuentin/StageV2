@@ -273,25 +273,23 @@ order by CRE_DATE
 }
 
 
-    function getPlace($INS_STA) {
+   function getPlace($INS_STA) {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select STA_ELEMAX  - count(INS_STA) from inscrire, stage where INS_STA=STA_ID and INS_STA=:INS_STA");
+        $req = $cnx->prepare("select STA_ELEMAX - count(INS_STA) from inscrire, stage where INS_STA=STA_ID and INS_STA=:INS_STA");
         
         $req->bindValue(':INS_STA', $INS_STA, PDO::PARAM_INT);
         $req->execute();
-       $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        while ($ligne) {
-            $resultat[] = $ligne;
-            $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        }
-    } catch (PDOException $e) {
+
+        $resultat = $req->fetch(PDO::FETCH_NUM);
+        } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
         die();
     }
-    return $resultat;
+    return $resultat[0];
 }
+
 
 
 ?>

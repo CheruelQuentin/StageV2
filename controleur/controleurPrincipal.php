@@ -30,15 +30,11 @@ function controleurPrincipal($action){
     $lesActions["listeCreneau"] = "listeCreneau.php";
     $lesActions["listeCreneauAdmin"] = "listeCreneauAdmin.php";
     $lesActions["listeCreneauPropo"] = "listeCreneauPropo.php";
-    $lesActions["listeInscriptionEta"] = "listeInscrire.php";
-    $lesActions["listeInscriptionEns"] = "listeInscrire2.php";
-    $lesActions["listeInscriptionAdm"] = "listeInscrire3.php";
     $lesActions["inscription"] = "addInscrire.php";
+    $lesActions["ListeInscrit"] = "genListeInscrit.php";
 
 
     //Ajouts
-    $lesActions["addIns"] = "addInscrire.php";
-    $lesActions["addInsAdm"] = "addInscrire2.php";
     $lesActions["addEle"] = "addEleve.php";
     $lesActions["addCre"] = "addCreneau.php";
     $lesActions["addCreAdmin"] = "addCreneauAdmin.php";
@@ -51,9 +47,10 @@ function controleurPrincipal($action){
     $lesActions["addTra"] = "addTravailler.php";
     $lesActions["addMat"] = "addMatiere.php";
     $lesActions["addAdmin"] = "addAdmin.php";
+    $lesActions["genAddIns"] = "genAddInscrire.php";
+
+
     //Inserts
-    $lesActions["insertIns"] = "insertInscrit.php";
-    $lesActions["insertInsAdm"] = "insertInscrit2.php";
     $lesActions["insertEle"] = "insertEleve.php";
     $lesActions["insertCre"] = "insertCreneau.php";
     $lesActions["insertCreAdmin"] = "insertCreneauAdmin.php";
@@ -66,9 +63,9 @@ function controleurPrincipal($action){
     $lesActions["insertTra"] = "insertTravailler.php";
     $lesActions["insertMat"] = "insertMatiere.php";
     $lesActions["insertAdmin"] = "insertAdmin.php";
+    $lesActions["genInsertIns"] = "genInsertInscrit.php";
     //Delete
-    $lesActions["delIns"] = "delInscrire.php";
-    $lesActions["delInsAdm"] = "delInscrire2.php";
+    
     $lesActions["delEle"] = "delEleve.php";
     $lesActions["delAdmin"] = "delAdmin.php";
     $lesActions["delEle2"] = "delEleve2.php";
@@ -82,6 +79,7 @@ function controleurPrincipal($action){
     $lesActions["delForm"] = "delFormation.php";
     $lesActions["delTra"] = "delTravailler.php";
     $lesActions["delMat"] = "delMatiere.php";
+    $lesActions["genDelIns"] = "genDelInscrire.php";
 
     //Suppression
     $lesActions["supIns"] = "supInscrire.php";
@@ -100,8 +98,6 @@ function controleurPrincipal($action){
     $lesActions["constante"] = "modifConstante.php";
     $lesActions["modifProfil"] = "modifProfil.php";
     $lesActions["modifProfilEns"] = "modifProfilEns.php";
-    $lesActions["modifIns"] = "modifInscrire.php";
-    $lesActions["modifInsEta"] = "modifInscrire2.php";
     $lesActions["modifEle"] = "modifEleve.php";
     $lesActions["modifEle2"] = "modifEleve2.php";
     $lesActions["modifCre"] = "modifCreneau.php";
@@ -113,17 +109,14 @@ function controleurPrincipal($action){
     $lesActions["modifForm"] = "modifFormation.php";
     $lesActions["modifTra"] = "modifTravailler.php";
     $lesActions["modifMat"] = "modifMatiere.php";
-    $lesActions["modifMdpAdmin"] = "modifMdpAdmin.php";
-    $lesActions["modifMdpEtablissement"] = "modifMdpEtablissement.php";
-    $lesActions["modifMdpEnseignant"] = "modifMdpEnseignant.php";
     $lesActions["updateCreneauPro"] = "updateCreneauPro.php";
+    $lesActions["genModifIns"] = "genModifInscrire.php";
+    $lesActions["genModifMDP"] = "genModifMDP.php";
 
     //Update
-    $lesActions["upIns"] = "updateInscrire.php";
     $lesActions["upCon"] = "updateConstante.php";
     $lesActions["upPro"] = "updateProfil.php";
     $lesActions["upProfilEns"] = "updateProfilEns.php";
-    $lesActions["upIns2"] = "updateInscrire2.php";
     $lesActions["upEle"] = "updateEleve.php";
     $lesActions["upEle2"] = "updateEleve2.php";
     $lesActions["upCre"] = "updateCreneau.php";
@@ -135,9 +128,8 @@ function controleurPrincipal($action){
     $lesActions["upForm"] = "updateFormation.php";
     $lesActions["upTra"] = "updateTravailler.php";
     $lesActions["upMat"] = "updateMatiere.php";
-    $lesActions["upMdp"] = "updateMotDePasse.php";
-    $lesActions["upMdp2"] = "updateMotDePasseEnseignant.php";
-    $lesActions["upMdp3"] = "updateMotDePasseAdmin.php";
+    $lesActions["genUpIns"] = "genUpdateInscrire.php";
+    $lesActions["genUpMDP"] = "genUpdateMDP.php";
     //Autre
     $lesActions["listeMatiere"] = "listeMatiere.php";
     $lesActions["prefCreneau"] = "listePreferer.php";

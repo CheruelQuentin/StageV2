@@ -24,16 +24,16 @@
                     <?php 
                     if(isset($_SESSION["UTIL_MAIL"])){
                     if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
-                    <a type="button" class="btn btn-info " href="./?action=modifMdpAdmin">Changer de mot de passe</a>
+                    <a type="button" class="btn btn-info " href="./?action=genModifMDP">Changer de mot de passe</a>
                     <a type="button" class="btn btn-danger" href="./?action=deconnexion">Déconnexion</a>
                     <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ETAB"){ ?>
-                        <a type="button" class="btn btn-info " href="./?action=modifMdpEtablissement">Changer de mot de passe</a>
+                        <a type="button" class="btn btn-info " href="./?action=genModifMDP">Changer de mot de passe</a>
                         <a type="button" class="btn btn-danger" href="./?action=deconnexion">Déconnexion</a>
                     <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ENS"){ ?>
-                    <a type="button" class="btn btn-info " href="./?action=modifMdpEnseignant">Changer de mot de passe</a>
+                    <a type="button" class="btn btn-info " href="./?action=genModifMDP">Changer de mot de passe</a>
                     <a type="button" class="btn btn-danger" href="./?action=deconnexion">Déconnexion</a>
                 <?php } else if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="SADMIN"){ ?>
-                        <a type="button" class="btn btn-info " href="./?action=modifMdpAdmin">Changer de mot de passe</a>
+                        <a type="button" class="btn btn-info " href="./?action=genModifMDP">Changer de mot de passe</a>
                     <a type="button" class="btn btn-danger" href="./?action=deconnexion">Déconnexion</a>
 
                     <?php }} else { ?>
@@ -110,8 +110,8 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             Inscrits
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="./?action=listeInscriptionAdm">Liste</a>
-                            <a class="dropdown-item" href="./?action=addInsAdm">Ajouter</a>
+                            <a class="dropdown-item" href="./?action=ListeInscrit">Liste</a>
+                            <a class="dropdown-item" href="./?action=genAddIns">Ajouter</a>
                         </div>
                     </li>
                     <li><a class="nav-link text-white">|</a></li>
@@ -199,8 +199,8 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                             Inscrits
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="./?action=listeInscriptionAdm">Liste</a>
-                            <a class="dropdown-item" href="./?action=addInsAdm">Ajouter</a>
+                            <a class="dropdown-item" href="./?action=ListeInscrit">Liste</a>
+                            <a class="dropdown-item" href="./?action=genAddIns">Ajouter</a>
                         </div>
                     </li>
                     <li><a class="nav-link text-white">|</a></li>
@@ -240,8 +240,8 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                 Inscrits
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="./?action=listeInscriptionEta">Liste</a>
-                <a class="dropdown-item" href="./?action=addIns">Ajouter</a>
+                <a class="dropdown-item" href="./?action=ListeInscrit">Liste</a>
+                <a class="dropdown-item" href="./?action=genAddIns">Ajouter</a>
             </div>
         </li>
         <li class="nav-item"><a class="nav-link text-white" href="./?action=choixFormPdf">Convention de stage</a></li>
@@ -264,7 +264,7 @@ if (getTypeUtilisateurByMail($_SESSION["UTIL_MAIL"])=="ADMIN"){ ?>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=profil">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link text-white " href="./?action=modifProfilEns">Profil</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="?action=listeInscriptionEns">Inscrits</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="?action=ListeInscrit">Inscrits</a></li>
                 </ul>
             </div>
         </div>
